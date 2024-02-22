@@ -1,0 +1,2 @@
+const SKILL_STATUS = {
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GBFR Weapons Simulator</title>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container-fluid" id="app">
+    <div class="row">
+      <!-- =========== -->
+      <!-- Sigils View -->
+      <!-- =========== -->
+      <div class="col col-12 col-lg-6">
+        <div class="row" id="sigilSkillsHeader">
+          <!-- Main Skill Name -->
+          <div class="col col-3 p-0">
+            <span class="input-group-text px-1">Main Sigil Skills</span>
+          </div>
+          <!-- Main Skill Stats -->
+          <div class="col col-3 p-0">
+            <div class="row g-0">
+              <!-- Main Skill Rank -->
+              <div class="col col-5 p-0">
+                <span class="input-group-text px-1">Rank</span>
+              </div>
+              <!-- Main Skill Level Now -->
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">Lv</span>
+              </div>
+              <!-- Main Skill Level Tobe -->
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">To</span>
+              </div>
+              <div class="col col-1 p-0">
+              </div>
+            </div>
+          </div>
+          <!-- ============== -->
+          <!-- Sub Skill Name -->
+          <div class="col col-3 p-0">
+            <span class="input-group-text px-1">Sub Sigil Skills</span>
+          </div>
+          <!-- Sub Skill Stats -->
+          <div class="col col-3 p-0">
+            <div class="row g-0">
+              <!-- Sub Skill Rank -->
+              <div class="col col-5 p-0">
+                <span class="input-group-text px-1">Rank</span>
+              </div>
+              <!-- Sub Skill Level Now -->
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">Lv</span>
+              </div>
+              <!-- Sub Skill Level Tobe -->
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">To</span>
+              </div>
+              <div class="col col-1 p-0">
+                <span class="input-group-text px-1">$</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-for="(sigil, index) in sigils" :key="index" class="row">
+          <!-- Main Skill Name -->
+          <div class="col col-3 p-0">
+            <select :id="'sigil-main-name-' + index" v-model="sigils[index].sigilMainSkillName" class="select-2 form-select">
+              <option v-for="(sigil_selection, sigil_selection_idx) in messageText['ja']['sigils']" :value="sigil_selection_idx">{{sigil_selection}}</option>
+            </select>
+          </div>
+          <!-- Main Skill Stats -->
+          <div class="col col-3 p-0">
+            <div class="row g-0">
+              <!-- Main Skill Rank -->
+              <div class="col col-5 p-0">
+                <select :id="'sigil-main-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilMainSkillRank">
+                  <option value="4">V</option>
+                  <option value="3">IV</option>
+                  <option value="2">III</option>
+                  <option value="1">II</option>
+                  <option value="0">I</option>
+                </select>
+              </div>
+              <!-- Main Skill Level Now -->
+              <div class="col col-3 p-0">
+                <input class="form-control px-1" :id="'sigil-main-level-current-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelCurrent">
+              </div>
+              <!-- Main Skill Level Tobe -->
+              <div class="col col-3 p-0">
+                <input class="form-control px-1" :id="'sigil-main-level-tobe-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelToBe">
+              </div>
+              <div class="col col-1 p-0">
+              </div>
+            </div>
+          </div>
+          <!-- ============== -->
+          <!-- Sub Skill Name -->
+          <div class="col col-3 p-0">
+            <select :id="'sigil-sub-name-' + index" v-model="sigils[index].sigilSubSkillName" class="select-2 form-select">
+              <option v-for="(sigil_selection, sigil_selection_idx) in messageText['ja']['sigils']" :value="sigil_selection_idx">{{sigil_selection}}</option>
+            </select>
+          </div>
+          <!-- Sub Skill Stats -->
+          <div class="col col-3 p-0">
+            <div class="row g-0">
+              <!-- Sub Skill Rank -->
+              <div class="col col-5 p-0">
+                <select :id="'sigil-sub-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilSubSkillRank" :disabled="sigils[index].sigilSubSkillAuto">
+                  <option value="4">V</option>
+                  <option value="3">IV</option>
+                  <option value="2">III</option>
+                  <option value="1">II</option>
+                  <option value="0">I</option>
+                </select>
+              </div>
+              <!-- Sub Skill Level Now -->
+              <div class="col col-3 p-0">
+                <input class="form-control px-1" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto">
+              </div>
+              <!-- Sub Skill Level Tobe -->
+              <div class="col col-3 p-0">
+                <input class="form-control px-1" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto">
+              </div>
+              <div class="col col-1 p-0">
+                <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ======================= -->
+      <!-- Total Skill Levels View -->
+      <!-- ======================= -->
+      <div class="col col-12 col-lg-3">
+        <div class="row h-100">
+          <div class="card h-100">
+            Total skill levels
+          </div>
+        </div>
+      </div>
+      <div class="col col-12 col-lg-3">
+        <!-- ================================= -->
+        <!-- Total Skill Effective Values View -->
+        <!-- ================================= -->
+        <div class="row h-50">
+          <div class="card h-100">
+            Total Skill Effective Values
+          </div>
+        </div>
+        <!-- ============================== -->
+        <!-- Effective Caractor Status View -->
+        <!-- ============================== -->
+        <div class="row h-50">
+          <div class="card h-100">
+            Effective Caractor Status View
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- ======================== -->
+      <!-- Effective Combo DPT View -->
+      <!-- ======================== -->
+      <div class="col col-12">
+        <div class="row h-100">
+          <div class="card h-100">
+            Effective Combo DPT
+          </div>
+        </div>
+      </div>
+      <!-- ========== -->
+      <!-- Other View -->
+      <!-- ========== -->
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="message.js"></script>
+  <script src="ui.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
