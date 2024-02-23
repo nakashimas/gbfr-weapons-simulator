@@ -57,3 +57,4 @@ _gbfr-weapons-simulator_ authors.
 
 - https://granbluefantasyrelink.wiki.fextralife.com/Sigils
 - https://relink.granbluefantasy.jp/en/manual/detail?p=ps5&s=battles
+- https://qiita.com/Nag729/items/f9f21e9731bdcf6f9ea6
