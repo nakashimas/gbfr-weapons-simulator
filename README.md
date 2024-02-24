@@ -26,9 +26,11 @@
 
 ## Description
 
-現在作成中です。
-武器スキル・ジーンの組み合わせとスキル効果量をWebで確認できます。
-ジーンの強化に必要な残り素材数がわかります。
+https://nakashimas.github.io/gbfr-weapons-simulator/
+
+現在作成中です。  
+武器スキル・ジーンの組み合わせとスキル効果量をWebで確認できます。  
+ジーンの強化に必要な残り素材数がわかります。  
 
 
 ## Development
