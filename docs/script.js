@@ -3,6 +3,45 @@ new Vue({
   el: '#app',
   data: {
     lang: 'ja',
+    // status
+    healthRate: 100,
+    healthBase: 2500,
+    attackPowerBase: 0, 
+    criticalHitRateBase: 0, 
+    stunPowerBase: 0,
+    playerConditions: {
+      isEnemyBreak: true,
+      isEnemyOverdrive: true,
+      isEnemySandtomb: true,
+      isEnemyDizzy: true,
+      isEnemySlow: true,
+      isEnemyBurn: true,
+      isEnemyBlight: true,
+      isEnemyParalysis: true,
+      isEnemyGlaciate: true,
+      isEnemyPoison: true,
+      isEnemyHeldUnder: true,
+      isEnemyAttackDown: true,
+      isEnemyDeffenceDown: true,
+      isEnemySbaSealed: true,
+      isEnemySkillSealed: true,
+      isPlayerBreak: true,
+      isPlayerOverdrive: true,
+      isPlayerSandtomb: true,
+      isPlayerDizzy: true,
+      isPlayerSlow: true,
+      isPlayerBurn: true,
+      isPlayerBlight: true,
+      isPlayerParalysis: true,
+      isPlayerGlaciate: true,
+      isPlayerPoison: true,
+      isPlayerHeldUnder: true,
+      isPlayerAttackDown: true,
+      isPlayerDeffenceDown: true,
+      isPlayerSbaSealed: true,
+      isPlayerSkillSealed: true,
+    },
+    // weapons
     weaponName: 'amenoHabakiri',
     weaponLevel: 160,
     weaponTraits: [],
@@ -11,11 +50,13 @@ new Vue({
       weaponTraitSkillLevel: 25,
       weaponTraitSkillAuto: true, 
     },
+    // imbues
     imbues: [],
     imbueTemplate: {
       imbueSkillName: '-',
       imbueSkillLevel: 10,
     },
+    // sigils
     sigils: [],
     sigilTemplate: {
       sigilMainSkillName: '-',
@@ -28,6 +69,7 @@ new Vue({
       sigilSubSkillLevelToBe: 15, 
       sigilSubSkillAuto: true, 
     },
+    // const
     messageText: MESSAGE_TEXT,
     skillStatus: SKILL_STATUS,
     weaponsStatus: WEAPONS_STATUS,
@@ -195,6 +237,18 @@ new Vue({
       }
       // convert map to arraylist
       return Object.keys(totalEffects).map(function (key) {return {statusName: key, effects: totalEffects[key]}});
+    },
+    health: function() {
+      return this.healthBase;
+    },
+    attackPower: function() {
+      return this.attackPowerBase;
+    },
+    criticalHitRate: function() {
+      return this.criticalHitRateBase;
+    },
+    stunPower: function() {
+      return this.stunPowerBase;
     },
   },
   watch: {
