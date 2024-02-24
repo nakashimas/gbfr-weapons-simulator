@@ -27,6 +27,7 @@ const MESSAGE_TEXT = {
       "cannotGuard": "ガードできない",
       "cannotDodge": "回避できない",
       "potentGreens": "キュアポーション強化",
+      "sigilBoost": "ジーンレベル",
     },
     "caractor": {
     },
@@ -136,6 +137,8 @@ const MESSAGE_TEXT = {
       "stoutHeart": "怯み無効",
       "crabbyResonance": "カニの共鳴",
       "crabby": "カニの恩返し",
+      "catastrophe": "カタストロフィ",
+      "sigilBooster": "ジーン強化",
       // 
     }
   },

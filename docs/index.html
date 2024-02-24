@@ -41,7 +41,20 @@
         <!-- Weapons Traits -->
         <!-- ============== -->
         <div class="row">
-          <div class="col col-9 p-0">
+          <div class="col col-3 p-0">
+            <span class="input-group-text px-1">Weapon Traits</span>
+          </div>
+          <div class="col col-3 p-0">
+            <div class="row g-0">
+              <div class="col col-11 p-0">
+                <span class="input-group-text px-1">Level</span>
+              </div>
+              <div class="col col-1 p-0">
+                <span class="input-group-text px-1">$</span>
+              </div>
+            </div>
+          </div>
+          <div class="col col-3 p-0">
             <span class="input-group-text px-1">Weapon Traits</span>
           </div>
           <div class="col col-3 p-0">
@@ -56,8 +69,8 @@
           </div>
           <template v-for="(weaponTrait, index) in weaponTraits">
             <!-- Skill Name -->
-            <div class="col col-9 p-0">
-              <select :id="'weapon-trait-name-' + index" v-model="weaponTraits[index].weaponTraitSkillName" class="select-2 form-select" :disabled="weaponTraits[index].weaponTraitSkillAuto">
+            <div class="col col-3 p-0">
+              <select :id="'weapon-trait-name-' + index" v-model="weaponTraits[index].weaponTraitSkillName" class="form-select" :disabled="weaponTraits[index].weaponTraitSkillAuto">
                 <option v-for="(weapon_trait_selection, weapon_trait_selection_idx) in messageText[lang]['sigils']" :value="weapon_trait_selection_idx">{{weapon_trait_selection}}</option>
               </select>
             </div>

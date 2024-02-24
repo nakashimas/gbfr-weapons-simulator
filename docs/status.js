@@ -982,4 +982,212 @@ const SKILL_STATUS = {
       {"attackPower": "1000|0%"}, // 45
     ]
   },
+  "sigilBooster": {
+    // ジーン強化 
+    "minLevel": 1,
+    "maxLevel": 1,
+    "levels": [
+      {"sigilBoost": "1|0%"}
+    ],
+  },
+  "catastrophe": {
+    // カタストロフィ 
+    "minLevel": 25,
+    "maxLevel": 25,
+    "levels": [
+      {"attackPower": "0|50%", "attackDamageCap": "0|100%", "skilledDamageCap": "0|100%", "sbaDamageCap": "0|100%"}
+    ],
+  }
+}
+const WEAPONS_STATUS = {
+  "amenoHabakiri": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "balmung": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "blutgang": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "caduceus": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "daggerOfBahamutCoda": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "damascusKnife": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "draconicFire": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "ereshkigal": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "etherealLasher": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "freikugel": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "gaeBulg": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "galatine": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "gottfried": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "mjolnir": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "sevenStarSword": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "skyPiercer": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "swordfish": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "swordOfBahamut": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
+  "zosimos": {
+    "maxLevel": 160,
+    "minLevel": 160,
+    "levelsSkill": [
+      {"catastrophe": 25, "regen": 15, "damageCap": 5, "sigilBooster": 1},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
 }

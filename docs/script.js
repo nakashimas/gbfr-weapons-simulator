@@ -4,7 +4,7 @@ new Vue({
   data: {
     lang: 'ja',
     weaponName: 'amenoHabakiri',
-    weaponLevel: 150,
+    weaponLevel: 160,
     weaponTraits: [],
     weaponTraitTemplate: {
       weaponTraitSkillName: '-',
@@ -29,13 +29,14 @@ new Vue({
       sigilSubSkillAuto: true, 
     },
     messageText: MESSAGE_TEXT,
-    skillStatus: SKILL_STATUS
+    skillStatus: SKILL_STATUS,
+    weaponsStatus: WEAPONS_STATUS,
   },
   created() {
     // ページが読み込まれたときに初期のひな形をリストに追加
     this.createSigils(12);
     this.createImbues(3);
-    this.createWeaponTraits(2);
+    this.createWeaponTraits(4);
   },
   mounted() {
     $('.select-2')
@@ -84,20 +85,51 @@ new Vue({
       bPercentile = parseInt(b.split("|")[1].replace("%", ""));
       bNumerical = parseInt(b.split("|")[0]);
       return '' + (aNumerical + bNumerical) + '|' + (aPercentile + bPercentile) + '%'
+    },
+    resetWeaponSkills() {
+      for (let i=0; i < this.weaponTraits.length; i++) {
+        const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
+        if (this.weaponTraits[i].weaponTraitSkillAuto && Object.keys(weaponsSkill).length > i) {
+          this.weaponTraits[i].weaponTraitSkillName = Object.keys(weaponsSkill)[i];
+          this.weaponTraits[i].weaponTraitSkillLevel = weaponsSkill[Object.keys(weaponsSkill)[i]];
+        }
+      }
     }
   },
   computed: {
     totalSkillLevels: function () {
       // ジーンと加護、武器スキルのレベル合計を計算
       let totalLevels = {};
+      // total weapons skill levels
+      for (let i=0; i < this.weaponTraits.length; i++) {
+        const mainName = this.weaponTraits[i].weaponTraitSkillName;
+        const mainLevel = this.weaponTraits[i].weaponTraitSkillLevel;
+
+        if (mainName in totalLevels) {
+          totalLevels[mainName] = [
+            parseInt(totalLevels[mainName][0]) + parseInt(mainLevel),
+            parseInt(totalLevels[mainName][1]) + parseInt(mainLevel),
+          ]
+        } else {
+          totalLevels[mainName] = [mainLevel, mainLevel]
+        }
+      }
       // total sigil skill levels
       for (let i=0; i < this.sigils.length; i++) {
         const mainName = this.sigils[i].sigilMainSkillName;
         const subName = this.sigils[i].sigilSubSkillName;
-        const mainLevel = this.sigils[i].sigilMainSkillLevelCurrent;
-        const subLevel = this.sigils[i].sigilSubSkillAuto ? mainLevel : this.sigils[i].sigilSubSkillLevelCurrent;
-        const mainLevelTo = this.sigils[i].sigilMainSkillLevelToBe;
-        const subLevelTo = this.sigils[i].sigilSubSkillAuto ? mainLevelTo : this.sigils[i].sigilSubSkillLevelToBe;
+        let mainLevel = this.sigils[i].sigilMainSkillLevelCurrent;
+        let subLevel = this.sigils[i].sigilSubSkillAuto ? mainLevel : this.sigils[i].sigilSubSkillLevelCurrent;
+        let mainLevelTo = this.sigils[i].sigilMainSkillLevelToBe;
+        let subLevelTo = this.sigils[i].sigilSubSkillAuto ? mainLevelTo : this.sigils[i].sigilSubSkillLevelToBe;
+
+        if('sigilBooster' in totalLevels){
+          // ジーンにジーン強化が実装された場合ここで判定するとバグが起きるので注意
+          mainLevel ++;
+          subLevel ++;
+          mainLevelTo ++;
+          subLevelTo ++;
+        }
 
         if (mainName in totalLevels) {
           totalLevels[mainName] = [
@@ -114,20 +146,6 @@ new Vue({
           ]
         } else {
           totalLevels[subName] = [subLevel, subLevelTo]
-        }
-      }
-      // total weapons skill levels
-      for (let i=0; i < this.weaponTraits.length; i++) {
-        const mainName = this.weaponTraits[i].weaponTraitSkillName;
-        const mainLevel = this.weaponTraits[i].weaponTraitSkillLevel;
-
-        if (mainName in totalLevels) {
-          totalLevels[mainName] = [
-            parseInt(totalLevels[mainName][0]) + parseInt(mainLevel),
-            parseInt(totalLevels[mainName][1]) + parseInt(mainLevel),
-          ]
-        } else {
-          totalLevels[mainName] = [mainLevel, mainLevel]
         }
       }
       // total imbue skill levels
@@ -193,6 +211,36 @@ new Vue({
       },
       deep: true,
       immediate: false
-    }
+    },
+    weaponName: {
+      handler: function(newValue, oldValue) {
+        // 武器スキルを自動補完
+        this.resetWeaponSkills();
+      },
+      immediate: false
+    },
+    weaponLevel: {
+      handler: function(newValue, oldValue) {
+        // レベル最大値に丸める
+        if (this.weaponLevel > this.weaponsStatus[this.weaponName]['maxLevel']) {
+          this.weaponLevel = this.weaponsStatus[this.weaponName]['maxLevel'];
+        }
+        // レベル最小値に丸める
+        if (this.weaponLevel < this.weaponsStatus[this.weaponName]['minLevel']) {
+          this.weaponLevel = this.weaponsStatus[this.weaponName]['minLevel'];
+        }
+        // 武器スキルを自動補完
+        this.resetWeaponSkills();
+      },
+      immediate: false
+    },
+    weaponTraits: {
+      handler: function(newValue, oldValue) {
+        // 武器スキルを自動補完
+        this.resetWeaponSkills();
+      },
+      deep: true,
+      immediate: false
+    },
   }
 });
