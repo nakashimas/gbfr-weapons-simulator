@@ -78,8 +78,12 @@ new Vue({
     },
     sumSkillEffects(a, b) {
       // マイナス記号・パーセント表記などを考慮して足し算を行う
-      // Todo: 実装
-      return a + b
+      // 
+      aPercentile = parseInt(a.split("|")[1].replace("%", ""));
+      aNumerical = parseInt(a.split("|")[0]);
+      bPercentile = parseInt(b.split("|")[1].replace("%", ""));
+      bNumerical = parseInt(b.split("|")[0]);
+      return '' + (aNumerical + bNumerical) + '|' + (aPercentile + bPercentile) + '%'
     }
   },
   computed: {
@@ -157,14 +161,14 @@ new Vue({
         skillLevel = skillLevel < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevel;
         skillLevelToBe = skillLevelToBe < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevelToBe;
         // 効果量
-        let skillEffect = this.skillStatus[skillName]['levels'][parseInt(skillLevel) - 1];
-        let skillEffectToBe = this.skillStatus[skillName]['levels'][parseInt(skillLevelToBe) - 1];
+        let skillEffect = this.skillStatus[skillName]['levels'][parseInt(skillLevel) - this.skillStatus[skillName]['minLevel']];
+        let skillEffectToBe = this.skillStatus[skillName]['levels'][parseInt(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
         // 合計を計算
         for (let key in skillEffect){
           if (key in totalEffects) {
             totalEffects[key] = [
-              sumSkillEffects(totalEffects[key][0], skillEffect[key]), 
-              sumSkillEffects(totalEffects[key][0], skillEffectToBe[key]),
+              this.sumSkillEffects(totalEffects[key][0], skillEffect[key]), 
+              this.sumSkillEffects(totalEffects[key][0], skillEffectToBe[key]),
             ]
           } else {
             totalEffects[key] = [skillEffect[key], skillEffectToBe[key]]
