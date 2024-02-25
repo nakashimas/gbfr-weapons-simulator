@@ -16,76 +16,96 @@
       <!-- ============ -->
       <div class="col col-12 col-lg-6 mb-3">
         <div class="row">
-          <!-- ============ -->
-          <!-- Weapons Name -->
-          <!-- ============ -->
-          <div class="col col-3 p-0">
-            <span class="input-group-text px-1">Weapons</span>
-          </div>
-          <div class="col col-3 p-0">
-            <select id="weapon-name" v-model="weaponName" class="select-2 form-select">
-              <option v-for="(weapon_selection, weapon_selection_idx) in messageText[lang]['weapons']" :value="weapon_selection_idx">{{weapon_selection}}</option>
-            </select>
-          </div>
-          <!-- ============= -->
-          <!-- Weapons Level -->
-          <!-- ============= -->
-          <div class="col col-3 p-0">
-            <span class="input-group-text px-1">Level</span>
-          </div>
-          <div class="col col-3 p-0">
-            <input class="form-control px-1" id="weapon-level" type="number" v-model="weaponLevel">
-          </div>
-        </div>
-        <!-- ============== -->
-        <!-- Weapons Traits -->
-        <!-- ============== -->
-        <div class="row">
-          <div class="col col-3 p-0">
-            <span class="input-group-text px-1">Weapon Traits</span>
-          </div>
-          <div class="col col-3 p-0">
-            <div class="row g-0">
-              <div class="col col-11 p-0">
+          <div class="card px-4">
+            <div class="row">
+              <!-- ============ -->
+              <!-- Weapons Name -->
+              <!-- ============ -->
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">Weapons</span>
+              </div>
+              <div class="col col-3 p-0">
+                <select id="weapon-name" v-model="weaponName" class="select-2 form-select">
+                  <option v-for="(weapon_selection, weapon_selection_idx) in messageText[lang]['weapons']" :value="weapon_selection_idx">
+                    {{weapon_selection}}
+                  </option>
+                </select>
+              </div>
+              <!-- ============= -->
+              <!-- Weapons Level -->
+              <!-- ============= -->
+              <div class="col col-3 p-0">
                 <span class="input-group-text px-1">Level</span>
               </div>
-              <div class="col col-1 p-0">
-                <span class="input-group-text px-1">$</span>
+              <div class="col col-3 p-0">
+                <input class="form-control px-1" id="weapon-level" type="number" v-model="weaponLevel">
               </div>
             </div>
-          </div>
-          <div class="col col-3 p-0">
-            <span class="input-group-text px-1">Weapon Traits</span>
-          </div>
-          <div class="col col-3 p-0">
-            <div class="row g-0">
-              <div class="col col-11 p-0">
-                <span class="input-group-text px-1">Level</span>
+            <!-- ============== -->
+            <!-- Weapons Traits -->
+            <!-- ============== -->
+            <div class="row">
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">
+                  <small>Weapon Traits</small>
+                </span>
               </div>
-              <div class="col col-1 p-0">
-                <span class="input-group-text px-1">$</span>
-              </div>
-            </div>
-          </div>
-          <template v-for="(weaponTrait, index) in weaponTraits">
-            <!-- Skill Name -->
-            <div class="col col-3 p-0">
-              <select :id="'weapon-trait-name-' + index" v-model="weaponTraits[index].weaponTraitSkillName" class="form-select" :disabled="weaponTraits[index].weaponTraitSkillAuto">
-                <option v-for="(weapon_trait_selection, weapon_trait_selection_idx) in messageText[lang]['sigils']" :value="weapon_trait_selection_idx">{{weapon_trait_selection}}</option>
-              </select>
-            </div>
-            <!-- Skill Level -->
-            <div class="col col-3 p-0">
-              <div class="row g-0">
-                <div class="col col-11 p-0">
-                  <input class="form-control px-1" :id="'weapon-trait-level-' + index" type="number" v-model="weaponTraits[index].weaponTraitSkillLevel" :disabled="weaponTraits[index].weaponTraitSkillAuto">
-                </div>
-                <div class="col col-1 p-0">
-                  <input class="form-check-input px-1" type="checkbox" :id="'weapon-trait-auto' + index" v-model="weaponTraits[index].weaponTraitSkillAuto">
+              <div class="col col-3 p-0">
+                <div class="row g-0">
+                  <div class="col col-11 p-0">
+                    <span class="input-group-text px-1">
+                      <small>Level</small>
+                    </span>
+                  </div>
+                  <div class="col col-1 p-0">
+                    <span class="input-group-text px-1">
+                      <small>$</small>
+                    </span>
+                  </div>
                 </div>
               </div>
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">
+                  <small>Weapon Traits</small>
+                </span>
+              </div>
+              <div class="col col-3 p-0">
+                <div class="row g-0">
+                  <div class="col col-11 p-0">
+                    <span class="input-group-text px-1">
+                      <small>Level</small>
+                    </span>
+                  </div>
+                  <div class="col col-1 p-0">
+                    <span class="input-group-text px-1">
+                      <small>$</small>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <template v-for="(weaponTrait, index) in weaponTraits">
+                <!-- Skill Name -->
+                <div class="col col-3 p-0">
+                  <select :id="'weapon-trait-name-' + index" v-model="weaponTraits[index].weaponTraitSkillName" class="form-select" :disabled="weaponTraits[index].weaponTraitSkillAuto">
+                    <option v-for="(weapon_trait_selection, weapon_trait_selection_idx) in messageText[lang]['sigils']" :value="weapon_trait_selection_idx">
+                      {{weapon_trait_selection}}
+                    </option>
+                  </select>
+                </div>
+                <!-- Skill Level -->
+                <div class="col col-3 p-0">
+                  <div class="row g-0">
+                    <div class="col col-11 p-0">
+                      <input class="form-control px-1" :id="'weapon-trait-level-' + index" type="number" v-model="weaponTraits[index].weaponTraitSkillLevel" :disabled="weaponTraits[index].weaponTraitSkillAuto">
+                    </div>
+                    <div class="col col-1 p-0">
+                      <input class="form-check-input px-1" type="checkbox" :id="'weapon-trait-auto' + index" v-model="weaponTraits[index].weaponTraitSkillAuto">
+                    </div>
+                  </div>
+                </div>
+              </template>
             </div>
-          </template>
+          </div>
         </div>
       </div>
       <!-- =========== -->
@@ -93,24 +113,34 @@
       <!-- =========== -->
       <div class="col col-12 col-lg-6 mb-3">
         <div class="row">
-          <div class="col col-9 p-0">
-            <span class="input-group-text px-1">Imbue Skills</span>
-          </div>
-          <div class="col col-3 p-0">
-            <span class="input-group-text px-1">Level</span>
-          </div>
-          <template v-for="(imbue, index) in imbues">
-            <!-- Skill Name -->
-            <div class="col col-9 p-0">
-              <select :id="'imbue-name-' + index" v-model="imbues[index].imbueSkillName" class="select-2 form-select">
-                <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">{{sigil_selection}}</option>
-              </select>
+          <div class="card px-4">
+            <div class="row">
+              <div class="col col-9 p-0">
+                <span class="input-group-text px-1">
+                  <small>Imbue Skills</small>
+                </span>
+              </div>
+              <div class="col col-3 p-0">
+                <span class="input-group-text px-1">
+                  <small>Level</small>
+                </span>
+              </div>
+              <template v-for="(imbue, index) in imbues">
+                <!-- Skill Name -->
+                <div class="col col-9 p-0">
+                  <select :id="'imbue-name-' + index" v-model="imbues[index].imbueSkillName" class="select-2 form-select">
+                    <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">
+                      {{sigil_selection}}
+                    </option>
+                  </select>
+                </div>
+                <!-- Skill Level -->
+                <div class="col col-3 p-0">
+                  <input class="form-control px-1" :id="'imbue-level-' + index" type="number" v-model="imbues[index].imbueSkillLevel">
+                </div>
+              </template>
             </div>
-            <!-- Skill Level -->
-            <div class="col col-3 p-0">
-              <input class="form-control px-1" :id="'imbue-level-' + index" type="number" v-model="imbues[index].imbueSkillLevel">
-            </div>
-          </template>
+          </div>
         </div>
       </div>
     </div>
@@ -118,119 +148,125 @@
       <!-- =========== -->
       <!-- Sigils View -->
       <!-- =========== -->
-      <div class="col col-12 col-lg-6 mb-3">
-        <div class="row" id="sigilSkillsHeader">
-          <!-- Main Skill Name -->
-          <div class="col col-3 p-0">
-            <span class="input-group-text px-1">Main Sigil Skills</span>
-          </div>
-          <!-- Main Skill Stats -->
-          <div class="col col-3 p-0">
-            <div class="row g-0">
-              <!-- Main Skill Rank -->
-              <div class="col col-5 p-0">
-                <span class="input-group-text px-1">Rank</span>
+      <div class="col col-12 col-lg-6 mb-3 p-0">
+        <div class="card px-4">
+          <div class="row" id="sigilSkillsHeader">
+            <!-- Main Skill Name -->
+            <div class="col col-3 p-0">
+              <span class="input-group-text px-1">Main Sigil Skills</span>
+            </div>
+            <!-- Main Skill Stats -->
+            <div class="col col-3 p-0">
+              <div class="row g-0">
+                <!-- Main Skill Rank -->
+                <div class="col col-5 p-0">
+                  <span class="input-group-text px-1">Rank</span>
+                </div>
+                <!-- Main Skill Level Now -->
+                <div class="col col-3 p-0">
+                  <span class="input-group-text px-1">Lv</span>
+                </div>
+                <!-- Main Skill Level Tobe -->
+                <div class="col col-3 p-0">
+                  <span class="input-group-text px-1">To</span>
+                </div>
+                <div class="col col-1 p-0">
+                </div>
               </div>
-              <!-- Main Skill Level Now -->
-              <div class="col col-3 p-0">
-                <span class="input-group-text px-1">Lv</span>
-              </div>
-              <!-- Main Skill Level Tobe -->
-              <div class="col col-3 p-0">
-                <span class="input-group-text px-1">To</span>
-              </div>
-              <div class="col col-1 p-0">
+            </div>
+            <!-- ============== -->
+            <!-- Sub Skill Name -->
+            <div class="col col-3 p-0">
+              <span class="input-group-text px-1">Sub Sigil Skills</span>
+            </div>
+            <!-- Sub Skill Stats -->
+            <div class="col col-3 p-0">
+              <div class="row g-0">
+                <!-- Sub Skill Rank -->
+                <div class="col col-5 p-0">
+                  <span class="input-group-text px-1">Rank</span>
+                </div>
+                <!-- Sub Skill Level Now -->
+                <div class="col col-3 p-0">
+                  <span class="input-group-text px-1">Lv</span>
+                </div>
+                <!-- Sub Skill Level Tobe -->
+                <div class="col col-3 p-0">
+                  <span class="input-group-text px-1">To</span>
+                </div>
+                <div class="col col-1 p-0">
+                  <span class="input-group-text px-1">$</span>
+                </div>
               </div>
             </div>
           </div>
-          <!-- ============== -->
-          <!-- Sub Skill Name -->
-          <div class="col col-3 p-0">
-            <span class="input-group-text px-1">Sub Sigil Skills</span>
-          </div>
-          <!-- Sub Skill Stats -->
-          <div class="col col-3 p-0">
-            <div class="row g-0">
-              <!-- Sub Skill Rank -->
-              <div class="col col-5 p-0">
-                <span class="input-group-text px-1">Rank</span>
-              </div>
-              <!-- Sub Skill Level Now -->
-              <div class="col col-3 p-0">
-                <span class="input-group-text px-1">Lv</span>
-              </div>
-              <!-- Sub Skill Level Tobe -->
-              <div class="col col-3 p-0">
-                <span class="input-group-text px-1">To</span>
-              </div>
-              <div class="col col-1 p-0">
-                <span class="input-group-text px-1">$</span>
+          <div v-for="(sigil, index) in sigils" :key="index" class="row">
+            <!-- Main Skill Name -->
+            <div class="col col-3 p-0">
+              <select :id="'sigil-main-name-' + index" v-model="sigils[index].sigilMainSkillName" class="select-2 form-select">
+                <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">
+                  {{sigil_selection}}
+                </option>
+              </select>
+            </div>
+            <!-- Main Skill Stats -->
+            <div class="col col-3 p-0">
+              <div class="row g-0">
+                <!-- Main Skill Rank -->
+                <div class="col col-5 p-0">
+                  <select :id="'sigil-main-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilMainSkillRank">
+                    <option value="4">V</option>
+                    <option value="3">IV</option>
+                    <option value="2">III</option>
+                    <option value="1">II</option>
+                    <option value="0">I</option>
+                  </select>
+                </div>
+                <!-- Main Skill Level Now -->
+                <div class="col col-3 p-0">
+                  <input class="form-control px-1" :id="'sigil-main-level-current-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelCurrent">
+                </div>
+                <!-- Main Skill Level Tobe -->
+                <div class="col col-3 p-0">
+                  <input class="form-control px-1" :id="'sigil-main-level-tobe-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelToBe">
+                </div>
+                <div class="col col-1 p-0">
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div v-for="(sigil, index) in sigils" :key="index" class="row">
-          <!-- Main Skill Name -->
-          <div class="col col-3 p-0">
-            <select :id="'sigil-main-name-' + index" v-model="sigils[index].sigilMainSkillName" class="select-2 form-select">
-              <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">{{sigil_selection}}</option>
-            </select>
-          </div>
-          <!-- Main Skill Stats -->
-          <div class="col col-3 p-0">
-            <div class="row g-0">
-              <!-- Main Skill Rank -->
-              <div class="col col-5 p-0">
-                <select :id="'sigil-main-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilMainSkillRank">
-                  <option value="4">V</option>
-                  <option value="3">IV</option>
-                  <option value="2">III</option>
-                  <option value="1">II</option>
-                  <option value="0">I</option>
-                </select>
-              </div>
-              <!-- Main Skill Level Now -->
-              <div class="col col-3 p-0">
-                <input class="form-control px-1" :id="'sigil-main-level-current-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelCurrent">
-              </div>
-              <!-- Main Skill Level Tobe -->
-              <div class="col col-3 p-0">
-                <input class="form-control px-1" :id="'sigil-main-level-tobe-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelToBe">
-              </div>
-              <div class="col col-1 p-0">
-              </div>
+            <!-- ============== -->
+            <!-- Sub Skill Name -->
+            <div class="col col-3 p-0">
+              <select :id="'sigil-sub-name-' + index" v-model="sigils[index].sigilSubSkillName" class="select-2 form-select">
+                <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">
+                  {{sigil_selection}}
+                </option>
+              </select>
             </div>
-          </div>
-          <!-- ============== -->
-          <!-- Sub Skill Name -->
-          <div class="col col-3 p-0">
-            <select :id="'sigil-sub-name-' + index" v-model="sigils[index].sigilSubSkillName" class="select-2 form-select">
-              <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">{{sigil_selection}}</option>
-            </select>
-          </div>
-          <!-- Sub Skill Stats -->
-          <div class="col col-3 p-0">
-            <div class="row g-0">
-              <!-- Sub Skill Rank -->
-              <div class="col col-5 p-0">
-                <select :id="'sigil-sub-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilSubSkillRank" :disabled="sigils[index].sigilSubSkillAuto">
-                  <option value="4">V</option>
-                  <option value="3">IV</option>
-                  <option value="2">III</option>
-                  <option value="1">II</option>
-                  <option value="0">I</option>
-                </select>
-              </div>
-              <!-- Sub Skill Level Now -->
-              <div class="col col-3 p-0">
-                <input class="form-control px-1" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto">
-              </div>
-              <!-- Sub Skill Level Tobe -->
-              <div class="col col-3 p-0">
-                <input class="form-control px-1" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto">
-              </div>
-              <div class="col col-1 p-0">
-                <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto">
+            <!-- Sub Skill Stats -->
+            <div class="col col-3 p-0">
+              <div class="row g-0">
+                <!-- Sub Skill Rank -->
+                <div class="col col-5 p-0">
+                  <select :id="'sigil-sub-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilSubSkillRank" :disabled="sigils[index].sigilSubSkillAuto">
+                    <option value="4">V</option>
+                    <option value="3">IV</option>
+                    <option value="2">III</option>
+                    <option value="1">II</option>
+                    <option value="0">I</option>
+                  </select>
+                </div>
+                <!-- Sub Skill Level Now -->
+                <div class="col col-3 p-0">
+                  <input class="form-control px-1" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto">
+                </div>
+                <!-- Sub Skill Level Tobe -->
+                <div class="col col-3 p-0">
+                  <input class="form-control px-1" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto">
+                </div>
+                <div class="col col-1 p-0">
+                  <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto">
+                </div>
               </div>
             </div>
           </div>
@@ -241,27 +277,39 @@
       <!-- ======================= -->
       <div class="col col-12 col-lg-3 mb-3">
         <div class="row h-100">
-          <div class="card h-100">
+          <div class="card h-100 px-4">
             <div class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">Total Skills</span>
+                <span class="input-group-text px-1">
+                  <small>Total Skills</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">Level</span>
+                <span class="input-group-text px-1">
+                  <small>Level</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">ToBe</span>
+                <span class="input-group-text px-1">
+                  <small>ToBe</small>
+                </span>
               </div>
             </div>
             <div v-for="(skill, index) in totalSkillLevels" :key="index" class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">{{messageText[lang]['sigils'][skill.skillName]}}</span>
+                <span class="input-group-text px-1">
+                  <small>{{messageText[lang]['sigils'][skill.skillName]}}</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">{{skill.level[0]}}/{{skillStatus[skill.skillName]['maxLevel']}}</span>
+                <span class="input-group-text px-1">
+                  <small>{{skill.level[0]}}/{{skillStatus[skill.skillName]['maxLevel']}}</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">{{skill.level[1]}}/{{skillStatus[skill.skillName]['maxLevel']}}</span>
+                <span class="input-group-text px-1">
+                  <small>{{skill.level[1]}}/{{skillStatus[skill.skillName]['maxLevel']}}</small>
+                </span>
               </div>
             </div>
           </div>
@@ -272,27 +320,39 @@
       <!-- ================================= -->
       <div class="col col-12 col-lg-3 mb-3">
         <div class="row h-100">
-          <div class="card h-100">
+          <div class="card h-100 px-4">
             <div class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">Total Effects</span>
+                <span class="input-group-text px-1">
+                  <small>Total Effects</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">Now</span>
+                <span class="input-group-text px-1">
+                  <small>Now</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">ToBe</span>
+                <span class="input-group-text px-1">
+                  <small>ToBe</small>
+                </span>
               </div>
             </div>
             <div v-for="(skillEffect, index) in totalSkillEffects" :key="index" class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">{{messageText[lang]['status'][skillEffect.statusName]}}</span>
+                <span class="input-group-text px-1">
+                  <small>{{messageText[lang]['status'][skillEffect.statusName]}}</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">{{skillEffect.effects[0]}}</span>
+                <span class="input-group-text px-1">
+                  <small>{{skillEffect.effects[0]}}</small>
+                </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">{{skillEffect.effects[1]}}</span>
+                <span class="input-group-text px-1">
+                  <small>{{skillEffect.effects[1]}}</small>
+                </span>
               </div>
             </div>
           </div>
@@ -305,15 +365,17 @@
       <!-- ============================== -->
       <div class="col col-12 mb-3">
         <div class="row h-100">
-          <div class="card h-100">
+          <div class="card h-100 px-4">
             <div class="row">
               <!-- == -->
               <!-- HP -->
               <!-- == -->
-              <div class="col col-3 col-lg-2 p-0">
-                <span class="input-group-text px-1">HP: {{health * healthRate / 100}} / {{health}}</span>
+              <div class="col col-4 col-lg-2 p-0">
+                <span class="input-group-text px-1">
+                  <small>HP: {{health * healthRate / 100}}/{{health}}</small>
+                </span>
               </div>
-              <div class="col col-9 col-lg-4 p-0">
+              <div class="col col-8 col-lg-4 p-0">
                 <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                   <div class="progress-bar bg-danger" :style="'width:' + healthRate + '%'">{{healthRate}}%</div>
                 </div>
@@ -323,29 +385,31 @@
               <!-- Other Stats -->
               <!-- =========== -->
               <div class="col col-4 col-lg-2 p-0">
-                <span class="input-group-text px-1">ATK: {{attackPower}}</span>
+                <span class="input-group-text px-1">
+                  <small>ATK: {{attackPower}}</small>
+                </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <span class="input-group-text px-1">CRT: {{criticalHitRate}}</span>
+                <span class="input-group-text px-1">
+                  <small>CRT: {{criticalHitRate}}</small>
+                </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <span class="input-group-text px-1">STN: {{stunPower}}</span>
+                <span class="input-group-text px-1">
+                  <small>STN: {{stunPower}}</small>
+                </span>
               </div>
               <!-- ========== -->
               <!-- Conditions -->
               <!-- ========== -->
-              <div class="col col-12 p-0">
+              <div class="col col-12 p-0 m-2">
                 <div class="row">
-                  <template v-for="(playerConditon, index) in playerConditions" :key="index">
-                    <div class="col col-2 col-lg-1">
-                      <input class="form-check-input" type="checkbox" id="" v-model="playerConditions[index]">
-                    </div>
-                    <div class="col col-4 col-lg-2">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        {{messageText[lang]['conditions'][index]}}
-                      </label>
-                    </div>
-                  </template>
+                  <div v-for="(playerConditon, index) in playerConditions" :key="index" class="col col-6 col-lg-2">
+                    <input type="checkbox" id="" v-model="playerConditions[index]">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      <small>{{messageText[lang]['conditions'][index]}}</small>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
