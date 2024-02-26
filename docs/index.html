@@ -22,7 +22,7 @@
               <!-- Weapons Name -->
               <!-- ============ -->
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">Weapons</span>
+                <span class="input-group-text px-1 h-100">Weapons</span>
               </div>
               <div class="col col-3 p-0">
                 <select id="weapon-name" v-model="weaponName" class="select-2 form-select">
@@ -35,10 +35,10 @@
               <!-- Weapons Level -->
               <!-- ============= -->
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">Level</span>
+                <span class="input-group-text px-1 h-100">Level</span>
               </div>
               <div class="col col-3 p-0">
-                <input class="form-control px-1" id="weapon-level" type="number" v-model="weaponLevel">
+                <input class="form-control px-1 h-100" id="weapon-level" type="number" v-model="weaponLevel">
               </div>
             </div>
             <!-- ============== -->
@@ -46,39 +46,39 @@
             <!-- ============== -->
             <div class="row">
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Weapon Traits</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
                 <div class="row g-0">
                   <div class="col col-11 p-0">
-                    <span class="input-group-text px-1">
+                    <span class="input-group-text px-1 h-100">
                       <small>Level</small>
                     </span>
                   </div>
                   <div class="col col-1 p-0">
-                    <span class="input-group-text px-1">
-                      <small>$</small>
+                    <span class="input-group-text px-0 h-100">
+                      <small>A</small>
                     </span>
                   </div>
                 </div>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Weapon Traits</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
                 <div class="row g-0">
                   <div class="col col-11 p-0">
-                    <span class="input-group-text px-1">
+                    <span class="input-group-text px-1 h-100">
                       <small>Level</small>
                     </span>
                   </div>
                   <div class="col col-1 p-0">
-                    <span class="input-group-text px-1">
-                      <small>$</small>
+                    <span class="input-group-text px-0 h-100">
+                      <small>A</small>
                     </span>
                   </div>
                 </div>
@@ -116,12 +116,12 @@
           <div class="card px-4">
             <div class="row">
               <div class="col col-9 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Imbue Skills</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Level</small>
                 </span>
               </div>
@@ -136,7 +136,7 @@
                 </div>
                 <!-- Skill Level -->
                 <div class="col col-3 p-0">
-                  <input class="form-control px-1" :id="'imbue-level-' + index" type="number" v-model="imbues[index].imbueSkillLevel">
+                  <input class="form-control px-1 h-100" :id="'imbue-level-' + index" type="number" v-model="imbues[index].imbueSkillLevel">
                 </div>
               </template>
             </div>
@@ -153,22 +153,22 @@
           <div class="row" id="sigilSkillsHeader">
             <!-- Main Skill Name -->
             <div class="col col-3 p-0">
-              <span class="input-group-text px-1">Main Sigil Skills</span>
+              <span class="input-group-text px-1 h-100">Main Sigil Skills</span>
             </div>
             <!-- Main Skill Stats -->
             <div class="col col-3 p-0">
               <div class="row g-0">
                 <!-- Main Skill Rank -->
                 <div class="col col-5 p-0">
-                  <span class="input-group-text px-1">Rank</span>
+                  <span class="input-group-text px-1 h-100">Rank</span>
                 </div>
                 <!-- Main Skill Level Now -->
                 <div class="col col-3 p-0">
-                  <span class="input-group-text px-1">Lv</span>
+                  <span class="input-group-text px-1 h-100">Lv</span>
                 </div>
                 <!-- Main Skill Level Tobe -->
                 <div class="col col-3 p-0">
-                  <span class="input-group-text px-1">To</span>
+                  <span class="input-group-text px-1 h-100">To</span>
                 </div>
                 <div class="col col-1 p-0">
                 </div>
@@ -177,25 +177,25 @@
             <!-- ============== -->
             <!-- Sub Skill Name -->
             <div class="col col-3 p-0">
-              <span class="input-group-text px-1">Sub Sigil Skills</span>
+              <span class="input-group-text px-1 h-100">Sub Sigil Skills</span>
             </div>
             <!-- Sub Skill Stats -->
             <div class="col col-3 p-0">
               <div class="row g-0">
                 <!-- Sub Skill Rank -->
                 <div class="col col-5 p-0">
-                  <span class="input-group-text px-1">Rank</span>
+                  <span class="input-group-text px-1 h-100">Rank</span>
                 </div>
                 <!-- Sub Skill Level Now -->
                 <div class="col col-3 p-0">
-                  <span class="input-group-text px-1">Lv</span>
+                  <span class="input-group-text px-1 h-100">Lv</span>
                 </div>
                 <!-- Sub Skill Level Tobe -->
                 <div class="col col-3 p-0">
-                  <span class="input-group-text px-1">To</span>
+                  <span class="input-group-text px-1 h-100">To</span>
                 </div>
                 <div class="col col-1 p-0">
-                  <span class="input-group-text px-1">$</span>
+                  <span class="input-group-text px-0 h-100">A</span>
                 </div>
               </div>
             </div>
@@ -211,10 +211,10 @@
             </div>
             <!-- Main Skill Stats -->
             <div class="col col-3 p-0">
-              <div class="row g-0">
+              <div class="row g-0 h-100">
                 <!-- Main Skill Rank -->
-                <div class="col col-5 p-0">
-                  <select :id="'sigil-main-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilMainSkillRank">
+                <div class="col col-5 p-0 h-100">
+                  <select :id="'sigil-main-rank-' + index" class="form-select px-2 h-100" v-model="sigils[index].sigilMainSkillRank">
                     <option value="4">V</option>
                     <option value="3">IV</option>
                     <option value="2">III</option>
@@ -223,14 +223,14 @@
                   </select>
                 </div>
                 <!-- Main Skill Level Now -->
-                <div class="col col-3 p-0">
-                  <input class="form-control px-1" :id="'sigil-main-level-current-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelCurrent">
+                <div class="col col-3 p-0 h-100">
+                  <input class="form-control px-1 h-100" :id="'sigil-main-level-current-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelCurrent">
                 </div>
                 <!-- Main Skill Level Tobe -->
-                <div class="col col-3 p-0">
-                  <input class="form-control px-1" :id="'sigil-main-level-tobe-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelToBe">
+                <div class="col col-3 p-0 h-100">
+                  <input class="form-control px-1 h-100" :id="'sigil-main-level-tobe-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelToBe">
                 </div>
-                <div class="col col-1 p-0">
+                <div class="col col-1 p-0 h-100">
                 </div>
               </div>
             </div>
@@ -245,10 +245,10 @@
             </div>
             <!-- Sub Skill Stats -->
             <div class="col col-3 p-0">
-              <div class="row g-0">
+              <div class="row g-0 h-100">
                 <!-- Sub Skill Rank -->
-                <div class="col col-5 p-0">
-                  <select :id="'sigil-sub-rank-' + index" class="form-select px-2" v-model="sigils[index].sigilSubSkillRank" :disabled="sigils[index].sigilSubSkillAuto">
+                <div class="col col-5 p-0 h-100">
+                  <select :id="'sigil-sub-rank-' + index" class="form-select px-2 h-100" v-model="sigils[index].sigilSubSkillRank" :disabled="sigils[index].sigilSubSkillAuto">
                     <option value="4">V</option>
                     <option value="3">IV</option>
                     <option value="2">III</option>
@@ -257,12 +257,12 @@
                   </select>
                 </div>
                 <!-- Sub Skill Level Now -->
-                <div class="col col-3 p-0">
-                  <input class="form-control px-1" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto">
+                <div class="col col-3 p-0 h-100">
+                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto">
                 </div>
                 <!-- Sub Skill Level Tobe -->
-                <div class="col col-3 p-0">
-                  <input class="form-control px-1" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto">
+                <div class="col col-3 p-0 h-100">
+                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto">
                 </div>
                 <div class="col col-1 p-0">
                   <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto">
@@ -280,34 +280,34 @@
           <div class="card h-100 px-4">
             <div class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Total Skills</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Level</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>ToBe</small>
                 </span>
               </div>
             </div>
             <div v-for="(skill, index) in totalSkillLevels" :key="index" class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>{{messageText[lang]['sigils'][skill.skillName]}}</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>{{skill.level[0]}}/{{skillStatus[skill.skillName]['maxLevel']}}</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>{{skill.level[1]}}/{{skillStatus[skill.skillName]['maxLevel']}}</small>
                 </span>
               </div>
@@ -323,34 +323,34 @@
           <div class="card h-100 px-4">
             <div class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Total Effects</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>Now</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>ToBe</small>
                 </span>
               </div>
             </div>
             <div v-for="(skillEffect, index) in totalSkillEffects" :key="index" class="row">
               <div class="col col-6 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>{{messageText[lang]['status'][skillEffect.statusName]}}</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>{{skillEffect.effects[0]}}</small>
                 </span>
               </div>
               <div class="col col-3 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>{{skillEffect.effects[1]}}</small>
                 </span>
               </div>
@@ -370,8 +370,48 @@
               <!-- == -->
               <!-- HP -->
               <!-- == -->
+              <div class="col col-2 col-lg-1 p-0">
+                <span class="input-group-text px-1 h-100">
+                  <small>Base HP</small>
+                </span>
+              </div>
               <div class="col col-4 col-lg-2 p-0">
-                <span class="input-group-text px-1">
+                <input class="form-control px-1" id="healthBase" type="number" v-model="healthBase">
+              </div>
+              <!-- =========== -->
+              <!-- Other Stats -->
+              <!-- =========== -->
+              <div class="col col-2 col-lg-1 p-0">
+                <span class="input-group-text px-1 h-100">
+                  <small>Base ATK</small>
+                </span>
+              </div>
+              <div class="col col-4 col-lg-2 p-0">
+                <input class="form-control px-1" id="attackPowerBase" type="number" v-model="attackPowerBase">
+              </div>
+              <div class="col col-2 col-lg-1 p-0">
+                <span class="input-group-text px-1 h-100">
+                  <small>Base CRT</small>
+                </span>
+              </div>
+              <div class="col col-4 col-lg-2 p-0">
+                <input class="form-control px-1" id="criticalHitRateBase" type="number" v-model="criticalHitRateBase">
+              </div>
+              <div class="col col-2 col-lg-1 p-0">
+                <span class="input-group-text px-1 h-100">
+                  <small>Base STN</small>
+                </span>
+              </div>
+              <div class="col col-4 col-lg-2 p-0">
+                <input class="form-control px-1" id="stunPowerBase" type="number" v-model="stunPowerBase">
+              </div>
+            </div>
+            <div class="row">
+              <!-- == -->
+              <!-- HP -->
+              <!-- == -->
+              <div class="col col-4 col-lg-2 p-0">
+                <span class="input-group-text px-1 h-100">
                   <small>HP: {{health * healthRate / 100}}/{{health}}</small>
                 </span>
               </div>
@@ -385,17 +425,17 @@
               <!-- Other Stats -->
               <!-- =========== -->
               <div class="col col-4 col-lg-2 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>ATK: {{attackPower}}</small>
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>CRT: {{criticalHitRate}}</small>
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <span class="input-group-text px-1">
+                <span class="input-group-text px-1 h-100">
                   <small>STN: {{stunPower}}</small>
                 </span>
               </div>

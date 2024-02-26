@@ -207,7 +207,7 @@ new Vue({
       // convert map to arraylist
       return Object.keys(totalLevels).map(function (key) {return {skillName: key, level: totalLevels[key]}});
     },
-    totalSkillEffects: function () {
+    totalSkillEffectMaps: function () {
       // スキルの上昇量を計算
       let totalEffects = {};
       for (let i=0; i < this.totalSkillLevels.length; i++) {
@@ -236,18 +236,27 @@ new Vue({
         }
       }
       // convert map to arraylist
+      return totalEffects;
+    },
+    totalSkillEffects: function () {
+      // convert map to arraylist
+      const totalEffects = this.totalSkillEffectMaps;
       return Object.keys(totalEffects).map(function (key) {return {statusName: key, effects: totalEffects[key]}});
     },
     health: function() {
+      // 体力を計算
       return this.healthBase;
     },
     attackPower: function() {
+      // 攻撃力を計算
       return this.attackPowerBase;
     },
     criticalHitRate: function() {
+      // クリティカル率を計算
       return this.criticalHitRateBase;
     },
     stunPower: function() {
+      // スタン値を計算
       return this.stunPowerBase;
     },
   },
