@@ -982,6 +982,14 @@ const SKILL_STATUS = {
       {"attackPower": "1000|0%"}, // 45
     ]
   },
+  "crabvestmentReturns": {
+    // カニの恩返し 
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {"health": "0|20%", "reduceDamageTaken": "0|10%"}, // 15
+    ]
+  },
   "sigilBooster": {
     // ジーン強化 
     "minLevel": 1,

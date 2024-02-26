@@ -14,6 +14,7 @@ const MESSAGE_TEXT = {
       "criticalHitRate": "クリティカル確率",
       "attackPower": "攻撃力",
       "health": "体力",
+      "reduceDamageTaken": "被ダメージ軽減",
       "damage": "与ダメージ",
       "damageWeakness": "弱点部位に対する与ダメージ",
       "damageBehind": "背後攻撃の与ダメージ",
@@ -166,7 +167,7 @@ const MESSAGE_TEXT = {
       "potentGreens": "万能薬",
       "stoutHeart": "怯み無効",
       "crabbyResonance": "カニの共鳴",
-      "crabby": "カニの恩返し",
+      "crabvestmentReturns": "カニの恩返し",
       "catastrophe": "カタストロフィ",
       "sigilBooster": "ジーン強化",
       // 
