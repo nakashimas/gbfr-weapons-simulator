@@ -128,6 +128,23 @@ new Vue({
       bNumerical = parseInt(b.split("|")[0]);
       return '' + (aNumerical + bNumerical) + '|' + (aPercentile + bPercentile) + '%'
     },
+    applySkillEffects(baseStatus, skillEffects, isToBe) {
+      // スキル効果量を実数値にかける関数
+      if (skillEffects === void 0) {
+        return baseStatus;
+      }
+      
+      let skillEffectValue = '';
+      if (isToBe) {
+        skillEffectValue = skillEffects[1];
+      } else {
+        skillEffectValue = skillEffects[0];
+      }
+
+      skillEffectsPercentile = parseInt(skillEffectValue.split("|")[1].replace("%", ""));
+      skillEffectsNumerical = parseInt(skillEffectValue.split("|")[0]);
+      return (parseInt(baseStatus) + skillEffectsNumerical) * (100 + skillEffectsPercentile) / 100
+    },
     resetWeaponSkills() {
       for (let i=0; i < this.weaponTraits.length; i++) {
         const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
@@ -257,7 +274,23 @@ new Vue({
     },
     stunPower: function() {
       // スタン値を計算
-      return this.stunPowerBase;
+      return this.applySkillEffects(this.stunPowerBase, this.totalSkillEffectMaps['stunPower'], 0);
+    },
+    healthToBe: function() {
+      // 体力を計算 (ToBeの方のレベルで計算)
+      return this.healthBase;
+    },
+    attackPowerToBe: function() {
+      // 攻撃力を計算 (ToBeの方のレベルで計算)
+      return this.attackPowerBase;
+    },
+    criticalHitRateToBe: function() {
+      // クリティカル率を計算 (ToBeの方のレベルで計算)
+      return this.criticalHitRateBase;
+    },
+    stunPowerToBe: function() {
+      // スタン値を計算 (ToBeの方のレベルで計算)
+      return this.applySkillEffects(this.stunPowerBase, this.totalSkillEffectMaps['stunPower'], 1);
     },
   },
   watch: {
