@@ -63,6 +63,9 @@ const MESSAGE_TEXT = {
       "isPlayerDeffenceDown": "PCが防御DOWN状態",
       "isPlayerSbaSealed": "PCが奥義封印状態",
       "isPlayerSkillSealed": "PCがアビリティ封印状態",
+      // その他
+      "isPerfectDodgeRecently": "直近にジャスト回避",
+      "isPerfectGuardRecently": "直近にジャストガード",
     },
     "weapons": {
       "amenoHabakiri": "天羽々斬",

@@ -40,6 +40,8 @@ new Vue({
       isPlayerDeffenceDown: true,
       isPlayerSbaSealed: true,
       isPlayerSkillSealed: true,
+      isPerfectDodgeRecently: true,
+      isPerfectGuardRecently: true,
     },
     // weapons
     weaponName: 'amenoHabakiri',
@@ -146,13 +148,20 @@ new Vue({
       return (parseInt(baseStatus) + skillEffectsNumerical) * (100 + skillEffectsPercentile) / 100
     },
     resetWeaponSkills() {
+      const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
       for (let i=0; i < this.weaponTraits.length; i++) {
-        const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
         if (this.weaponTraits[i].weaponTraitSkillAuto && Object.keys(weaponsSkill).length > i) {
           this.weaponTraits[i].weaponTraitSkillName = Object.keys(weaponsSkill)[i];
           this.weaponTraits[i].weaponTraitSkillLevel = weaponsSkill[Object.keys(weaponsSkill)[i]];
         }
       }
+    },
+    resetWeaponStatus() {
+      const weaponsStatus = this.weaponsStatus[this.weaponName]['levelsStatus'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
+      this.healthBase = weaponsStatus['health'];
+      this.attackPowerBase = weaponsStatus['attackPower'];
+      this.criticalHitRateBase = weaponsStatus['criticalHitRate'];
+      this.stunPowerBase = weaponsStatus['stunPower'];
     }
   },
   computed: {
@@ -270,7 +279,7 @@ new Vue({
     },
     criticalHitRate: function() {
       // クリティカル率を計算
-      return this.criticalHitRateBase;
+      return this.applySkillEffects(this.criticalHitRateBase, this.totalSkillEffectMaps['criticalHitRate'], 0);
     },
     stunPower: function() {
       // スタン値を計算
@@ -286,7 +295,7 @@ new Vue({
     },
     criticalHitRateToBe: function() {
       // クリティカル率を計算 (ToBeの方のレベルで計算)
-      return this.criticalHitRateBase;
+      return this.applySkillEffects(this.criticalHitRateBase, this.totalSkillEffectMaps['criticalHitRate'], 1);
     },
     stunPowerToBe: function() {
       // スタン値を計算 (ToBeの方のレベルで計算)
@@ -312,6 +321,8 @@ new Vue({
       handler: function(newValue, oldValue) {
         // 武器スキルを自動補完
         this.resetWeaponSkills();
+        // 武器ステータスを自動補完
+        this.resetWeaponStatus();
       },
       immediate: false
     },
@@ -327,6 +338,8 @@ new Vue({
         }
         // 武器スキルを自動補完
         this.resetWeaponSkills();
+        // 武器ステータスを自動補完
+        this.resetWeaponStatus();
       },
       immediate: false
     },
@@ -334,6 +347,8 @@ new Vue({
       handler: function(newValue, oldValue) {
         // 武器スキルを自動補完
         this.resetWeaponSkills();
+        // 武器ステータスを自動補完
+        this.resetWeaponStatus();
       },
       deep: true,
       immediate: false
