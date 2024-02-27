@@ -3,7 +3,7 @@ const MESSAGE_TEXT = {
     "title": {
       "weapons": "武器",
       "imbueSkills": "加護スキル",
-      "weaponSkills": "武器スキル",
+      "weaponTraits": "武器スキル",
       "mainSigilSkills": "ジーン（メイン）",
       "subSigilSkills": "ジーン（サブ）",
       "totalSkills": "スキル集計",
@@ -31,6 +31,7 @@ const MESSAGE_TEXT = {
       "sigilBoost": "ジーンレベル",
     },
     "conditions": {
+      // 敵の状態
       "isEnemyBreak": "敵がブレイク状態",
       "isEnemyOverdrive": "敵がオーバードライブ状態",
       "isEnemySandtomb": "敵が砂だるま状態",
@@ -46,6 +47,7 @@ const MESSAGE_TEXT = {
       "isEnemyDeffenceDown": "敵が防御DOWN状態",
       "isEnemySbaSealed": "敵が奥義封印状態",
       "isEnemySkillSealed": "敵がアビリティ封印状態",
+      // プレイヤーの状態
       "isPlayerBreak": "PCがブレイク状態",
       "isPlayerOverdrive": "PCがオーバードライブ状態",
       "isPlayerSandtomb": "PCが砂だるま状態",

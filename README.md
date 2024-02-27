@@ -5,7 +5,7 @@
     </div>
 </p>
 
-<h4 align="center"></h4>
+<h4 align="center">Weapons skills set simulator for Granblue Fantasy: Relink</h4>
 
 <p align="center">
   <a>
@@ -40,6 +40,16 @@ https://nakashimas.github.io/gbfr-weapons-simulator/
 ```sh
 cd docs
 python -m http.server 8000
+```
+
+今のところ武器やスキルの情報は連想配列で持っています。
+
+```sh
+./docs/
+  ├── index.html
+  ├── script.js 状態や計算、メインの処理を記述
+  ├── status.js 各スキルで変化する値と武器の情報を記述
+  └── message.js メッセージを記述
 ```
 
 
