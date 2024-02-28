@@ -123,6 +123,44 @@ new Vue({
         this.weaponTraits.push(Object.assign({}, this.weaponTraitTemplate));
       }
     },
+    getSkillEffect(statusName) {
+      // スキルの上昇量を計算
+      let totalEffects = {};
+      for (let i=0; i < this.totalSkillLevels.length; i++) {
+        const skillName = this.totalSkillLevels[i]['skillName'];
+        let skillLevel = this.totalSkillLevels[i]['level'][0];
+        let skillLevelToBe = this.totalSkillLevels[i]['level'][1];
+        // 最大レベルで丸める
+        skillLevel = skillLevel > this.skillStatus[skillName]['maxLevel'] ? this.skillStatus[skillName]['maxLevel'] : skillLevel;
+        skillLevelToBe = skillLevelToBe > this.skillStatus[skillName]['maxLevel'] ? this.skillStatus[skillName]['maxLevel'] : skillLevelToBe;
+        // 最小レベルで丸める
+        skillLevel = skillLevel < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevel;
+        skillLevelToBe = skillLevelToBe < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevelToBe;
+        // 効果量
+        let skillEffect = this.skillStatus[skillName]['levels'][parseInt(skillLevel) - this.skillStatus[skillName]['minLevel']];
+        let skillEffectToBe = this.skillStatus[skillName]['levels'][parseInt(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
+        // 合計を計算
+        for (let key in skillEffect){
+          if (!(statusName === void 0)) {
+            if (!(statusName == key)) {
+              continue;
+            }
+          }
+          if (key in totalEffects) {
+            totalEffects[key] = [
+              this.sumSkillEffects(totalEffects[key][0], skillEffect[key]), 
+              this.sumSkillEffects(totalEffects[key][0], skillEffectToBe[key]),
+            ]
+          } else {
+            totalEffects[key] = [
+              this.sumSkillEffects('0|0%', skillEffect[key]), 
+              this.sumSkillEffects('0|0%', skillEffectToBe[key])
+            ]
+          }
+        }
+      }
+      return totalEffects;
+    },
     getCaseConditions(k) {
       switch (k) {
         case 'maxHealth':
@@ -156,6 +194,8 @@ new Vue({
       } else if (skillEffectsCase.includes('<=') || skillEffectsCase.includes('=<')) {
         const term = skillEffectsCase.replace('=<', '<=').split('<=');
         return this.getCaseConditions(term[0]) <= this.getCaseConditions(term[1]);
+      } else {
+        return this.getCaseConditions(skillEffectsCase);
       }
     },
     sumSkillEffects(a, b) {
@@ -291,76 +331,43 @@ new Vue({
       // convert map to arraylist
       return Object.keys(totalLevels).map(function (key) {return {skillName: key, level: totalLevels[key]}});
     },
-    totalSkillEffectMaps: function () {
-      // スキルの上昇量を計算
-      let totalEffects = {};
-      for (let i=0; i < this.totalSkillLevels.length; i++) {
-        const skillName = this.totalSkillLevels[i]['skillName'];
-        let skillLevel = this.totalSkillLevels[i]['level'][0];
-        let skillLevelToBe = this.totalSkillLevels[i]['level'][1];
-        // 最大レベルで丸める
-        skillLevel = skillLevel > this.skillStatus[skillName]['maxLevel'] ? this.skillStatus[skillName]['maxLevel'] : skillLevel;
-        skillLevelToBe = skillLevelToBe > this.skillStatus[skillName]['maxLevel'] ? this.skillStatus[skillName]['maxLevel'] : skillLevelToBe;
-        // 最小レベルで丸める
-        skillLevel = skillLevel < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevel;
-        skillLevelToBe = skillLevelToBe < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevelToBe;
-        // 効果量
-        let skillEffect = this.skillStatus[skillName]['levels'][parseInt(skillLevel) - this.skillStatus[skillName]['minLevel']];
-        let skillEffectToBe = this.skillStatus[skillName]['levels'][parseInt(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
-        // 合計を計算
-        for (let key in skillEffect){
-          if (key in totalEffects) {
-            totalEffects[key] = [
-              this.sumSkillEffects(totalEffects[key][0], skillEffect[key]), 
-              this.sumSkillEffects(totalEffects[key][0], skillEffectToBe[key]),
-            ]
-          } else {
-            totalEffects[key] = [
-              this.sumSkillEffects('0|0%', skillEffect[key]), 
-              this.sumSkillEffects('0|0%', skillEffectToBe[key])
-            ]
-          }
-        }
-      }
-      // convert map to arraylist
-      return totalEffects;
-    },
     totalSkillEffects: function () {
+      // スキルの上昇量を計算
+      const totalEffects = this.getSkillEffect(undefined);
       // convert map to arraylist
-      const totalEffects = this.totalSkillEffectMaps;
       return Object.keys(totalEffects).map(function (key) {return {statusName: key, effects: totalEffects[key]}});
     },
     health: function() {
       // 体力を計算
-      return this.healthBase;
+      return this.applySkillEffects(this.healthBase, this.getSkillEffect('health')['health'], 0);
     },
     attackPower: function() {
       // 攻撃力を計算
-      return this.attackPowerBase;
+      return this.applySkillEffects(this.attackPowerBase, this.getSkillEffect('attackPower')['attackPower'], 0);
     },
     criticalHitRate: function() {
       // クリティカル率を計算
-      return this.applySkillEffects(this.criticalHitRateBase, this.totalSkillEffectMaps['criticalHitRate'], 0);
+      return this.applySkillEffects(this.criticalHitRateBase, this.getSkillEffect('criticalHitRate')['criticalHitRate'], 0);
     },
     stunPower: function() {
       // スタン値を計算
-      return this.applySkillEffects(this.stunPowerBase, this.totalSkillEffectMaps['stunPower'], 0);
+      return this.applySkillEffects(this.stunPowerBase, this.getSkillEffect('stunPower')['stunPower'], 0);
     },
     healthToBe: function() {
       // 体力を計算 (ToBeの方のレベルで計算)
-      return this.healthBase;
+      return this.applySkillEffects(this.healthBase, this.getSkillEffect('health')['health'], 1);
     },
     attackPowerToBe: function() {
       // 攻撃力を計算 (ToBeの方のレベルで計算)
-      return this.attackPowerBase;
+      return this.applySkillEffects(this.attackPowerBase, this.getSkillEffect('attackPower')['attackPower'], 1);
     },
     criticalHitRateToBe: function() {
       // クリティカル率を計算 (ToBeの方のレベルで計算)
-      return this.applySkillEffects(this.criticalHitRateBase, this.totalSkillEffectMaps['criticalHitRate'], 1);
+      return this.applySkillEffects(this.criticalHitRateBase, this.getSkillEffect('criticalHitRate')['criticalHitRate'], 1);
     },
     stunPowerToBe: function() {
       // スタン値を計算 (ToBeの方のレベルで計算)
-      return this.applySkillEffects(this.stunPowerBase, this.totalSkillEffectMaps['stunPower'], 1);
+      return this.applySkillEffects(this.stunPowerBase, this.getSkillEffect('stunPower')['stunPower'], 1);
     },
   },
   watch: {

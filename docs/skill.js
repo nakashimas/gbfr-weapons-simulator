@@ -371,8 +371,39 @@ const SKILL_STATUS = {
   "dodgePayback": {
     // 回避リベンジ 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|5%|isPerfectDodgeRecently"}, // 1
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|7%|isPerfectDodgeRecently"}, // 2
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|9%|isPerfectDodgeRecently"}, // 3
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|11%|isPerfectDodgeRecently"}, // 4
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|12%|isPerfectDodgeRecently"}, // 5
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|13%|isPerfectDodgeRecently"}, // 6
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|14%|isPerfectDodgeRecently"}, // 7
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|15%|isPerfectDodgeRecently"}, // 8
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|16%|isPerfectDodgeRecently"}, // 9
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|17%|isPerfectDodgeRecently"}, // 10
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|18%|isPerfectDodgeRecently"}, // 11
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|19%|isPerfectDodgeRecently"}, // 12
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|20%|isPerfectDodgeRecently"}, // 13
+      {"extendsDodgeInvincibility": "1|0%", "attackPower": "0|21%|isPerfectDodgeRecently"}, // 14
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|22%|isPerfectDodgeRecently"}, // 15
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|23%|isPerfectDodgeRecently"}, // 16
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|23.5%|isPerfectDodgeRecently"}, // 17
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|24%|isPerfectDodgeRecently"}, // 18
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|24.5%|isPerfectDodgeRecently"}, // 19
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|25%|isPerfectDodgeRecently"}, // 20
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|25.5%|isPerfectDodgeRecently"}, // 21
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|26%|isPerfectDodgeRecently"}, // 22
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|26.5%|isPerfectDodgeRecently"}, // 23
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|27%|isPerfectDodgeRecently"}, // 24
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|27.5%|isPerfectDodgeRecently"}, // 25
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|28%|isPerfectDodgeRecently"}, // 26
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|28.5%|isPerfectDodgeRecently"}, // 27
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|29%|isPerfectDodgeRecently"}, // 28
+      {"extendsDodgeInvincibility": "2|0%", "attackPower": "0|29.5%|isPerfectDodgeRecently"}, // 29
+      {"extendsDodgeInvincibility": "3|0%", "attackPower": "0|30%|isPerfectDodgeRecently"}, // 30
+    ]
   },
   "criticalDamage": {
     // クリティカルダメージ 
@@ -425,8 +456,39 @@ const SKILL_STATUS = {
   "guardPayback": {
     // ガードリベンジ 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"extendsGuardStunPowoer": "0|10%", "attackPower": "0|5%|isPerfectGuardRecently"}, // 1
+      {"extendsGuardStunPowoer": "0|16%", "attackPower": "0|8%|isPerfectGuardRecently"}, // 2
+      {"extendsGuardStunPowoer": "0|22%", "attackPower": "0|11%|isPerfectGuardRecently"}, // 3
+      {"extendsGuardStunPowoer": "0|26%", "attackPower": "0|13%|isPerfectGuardRecently"}, // 4
+      {"extendsGuardStunPowoer": "0|30%", "attackPower": "0|15%|isPerfectGuardRecently"}, // 5
+      {"extendsGuardStunPowoer": "0|34%", "attackPower": "0|17%|isPerfectGuardRecently"}, // 6
+      {"extendsGuardStunPowoer": "0|38%", "attackPower": "0|19%|isPerfectGuardRecently"}, // 7
+      {"extendsGuardStunPowoer": "0|42%", "attackPower": "0|21%|isPerfectGuardRecently"}, // 8
+      {"extendsGuardStunPowoer": "0|46%", "attackPower": "0|23%|isPerfectGuardRecently"}, // 9
+      {"extendsGuardStunPowoer": "0|50%", "attackPower": "0|25%|isPerfectGuardRecently"}, // 10
+      {"extendsGuardStunPowoer": "0|54%", "attackPower": "0|27%|isPerfectGuardRecently"}, // 11
+      {"extendsGuardStunPowoer": "0|58%", "attackPower": "0|29%|isPerfectGuardRecently"}, // 12
+      {"extendsGuardStunPowoer": "0|62%", "attackPower": "0|31%|isPerfectGuardRecently"}, // 13
+      {"extendsGuardStunPowoer": "0|66%", "attackPower": "0|33%|isPerfectGuardRecently"}, // 14
+      {"extendsGuardStunPowoer": "0|70%", "attackPower": "0|35%|isPerfectGuardRecently"}, // 15
+      {"extendsGuardStunPowoer": "0|72%", "attackPower": "0|36%|isPerfectGuardRecently"}, // 16
+      {"extendsGuardStunPowoer": "0|74%", "attackPower": "0|37%|isPerfectGuardRecently"}, // 17
+      {"extendsGuardStunPowoer": "0|76%", "attackPower": "0|38%|isPerfectGuardRecently"}, // 18
+      {"extendsGuardStunPowoer": "0|78%", "attackPower": "0|39%|isPerfectGuardRecently"}, // 19
+      {"extendsGuardStunPowoer": "0|80%", "attackPower": "0|40%|isPerfectGuardRecently"}, // 20
+      {"extendsGuardStunPowoer": "0|82%", "attackPower": "0|41%|isPerfectGuardRecently"}, // 21
+      {"extendsGuardStunPowoer": "0|84%", "attackPower": "0|42%|isPerfectGuardRecently"}, // 22
+      {"extendsGuardStunPowoer": "0|86%", "attackPower": "0|43%|isPerfectGuardRecently"}, // 23
+      {"extendsGuardStunPowoer": "0|88%", "attackPower": "0|44%|isPerfectGuardRecently"}, // 24
+      {"extendsGuardStunPowoer": "0|90%", "attackPower": "0|45%|isPerfectGuardRecently"}, // 25
+      {"extendsGuardStunPowoer": "0|92%", "attackPower": "0|46%|isPerfectGuardRecently"}, // 26
+      {"extendsGuardStunPowoer": "0|94%", "attackPower": "0|47%|isPerfectGuardRecently"}, // 27
+      {"extendsGuardStunPowoer": "0|96%", "attackPower": "0|48%|isPerfectGuardRecently"}, // 28
+      {"extendsGuardStunPowoer": "0|98%", "attackPower": "0|49%|isPerfectGuardRecently"}, // 29
+      {"extendsGuardStunPowoer": "0|100%", "attackPower": "0|50%|isPerfectGuardRecently"}, // 30
+    ]
   },
   "lifeOnTheLine": {
     // 捨て身 

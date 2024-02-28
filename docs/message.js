@@ -29,6 +29,8 @@ const MESSAGE_TEXT = {
       "cannotDodge": "回避できない",
       "potentGreens": "キュアポーション強化",
       "sigilBoost": "ジーンレベル",
+      "extendsDodgeInvincibility": "ジャスト回避無敵時間延長",
+      "extendsGuardStunPowoer": "ジャストガードスタン値増加",
     },
     "conditions": {
       // 敵の状態
