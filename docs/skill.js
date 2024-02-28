@@ -1003,7 +1003,7 @@ const SKILL_STATUS = {
     "minLevel": 25,
     "maxLevel": 25,
     "levels": [
-      {"attackPower": "0|50%", "attackDamageCap": "0|100%", "skilledDamageCap": "0|100%", "sbaDamageCap": "0|100%"}
+      {"attackPower": "0|50%|health<=45000", "attackDamageCap": "0|100%|health<=45000", "skilledDamageCap": "0|100%|health<=45000", "sbaDamageCap": "0|100%|health<=45000"}
     ],
   }
 }

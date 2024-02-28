@@ -9,7 +9,7 @@ new Vue({
     attackPowerBase: 0, 
     criticalHitRateBase: 0, 
     stunPowerBase: 0,
-    playerConditions: {
+    playConditions: {
       isEnemyBreak: true,
       isEnemyOverdrive: true,
       isEnemySandtomb: true,
@@ -123,13 +123,66 @@ new Vue({
         this.weaponTraits.push(Object.assign({}, this.weaponTraitTemplate));
       }
     },
+    getCaseConditions(k) {
+      switch (k) {
+        case 'maxHealth':
+          return this.health;
+        case 'health':
+          return this.health * this.healthRate / 100;
+        case 'attackPower':
+          return this.attackPower;
+        case 'criticalHitRate':
+          return this.criticalHitRate;
+        default:
+          if (k in this.playConditions) {
+            return this.playConditions[k];
+          } else {
+            return parseInt(k);
+          }
+      }
+    },
+    evaluateSkillEffectsCaseConditions(skillEffectsCase) {
+      // 条件式を評価する
+      // AND ORなどは未実装
+      if (skillEffectsCase.includes('==')) {
+        const term = skillEffectsCase.split('==');
+        return this.getCaseConditions(term[0]) == this.getCaseConditions(term[1]);
+      } else if (skillEffectsCase.includes('<>')) {
+        const term = skillEffectsCase.split('<>');
+        return !(this.getCaseConditions(term[0]) == this.getCaseConditions(term[1]));
+      } else if (skillEffectsCase.includes('>=') || skillEffectsCase.includes('=>')) {
+        const term = skillEffectsCase.replace('=>', '>=').split('>=');
+        return this.getCaseConditions(term[0]) >= this.getCaseConditions(term[1]);
+      } else if (skillEffectsCase.includes('<=') || skillEffectsCase.includes('=<')) {
+        const term = skillEffectsCase.replace('=<', '<=').split('<=');
+        return this.getCaseConditions(term[0]) <= this.getCaseConditions(term[1]);
+      }
+    },
     sumSkillEffects(a, b) {
       // マイナス記号・パーセント表記などを考慮して足し算を行う
       aPercentile = parseInt(a.split("|")[1].replace("%", ""));
       aNumerical = parseInt(a.split("|")[0]);
       bPercentile = parseInt(b.split("|")[1].replace("%", ""));
       bNumerical = parseInt(b.split("|")[0]);
-      return '' + (aNumerical + bNumerical) + '|' + (aPercentile + bPercentile) + '%'
+      if (a.split("|").length > 2) {
+        // aに条件あり、それを満たさない場合0にする
+        const aCase = a.split("|")[2];
+        let aCaseFailed = !this.evaluateSkillEffectsCaseConditions(aCase);
+        if (aCaseFailed) {
+          aPercentile = 0;
+          aNumerical = 0;
+        }
+      }
+      if (b.split("|").length > 2) {
+        // bに条件あり、それを満たさない場合0にする
+        const bCase = b.split("|")[2];
+        let bCaseFailed = !this.evaluateSkillEffectsCaseConditions(bCase);
+        if (bCaseFailed) {
+          bPercentile = 0;
+          bNumerical = 0;
+        }
+      }
+      return '' + (aNumerical + bNumerical) + '|' + (aPercentile + bPercentile) + '%';
     },
     applySkillEffects(baseStatus, skillEffects, isToBe) {
       // スキル効果量を実数値にかける関数
@@ -262,7 +315,10 @@ new Vue({
               this.sumSkillEffects(totalEffects[key][0], skillEffectToBe[key]),
             ]
           } else {
-            totalEffects[key] = [skillEffect[key], skillEffectToBe[key]]
+            totalEffects[key] = [
+              this.sumSkillEffects('0|0%', skillEffect[key]), 
+              this.sumSkillEffects('0|0%', skillEffectToBe[key])
+            ]
           }
         }
       }
