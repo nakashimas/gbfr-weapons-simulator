@@ -46,6 +46,7 @@ new Vue({
     // weapons
     weaponName: 'amenoHabakiri',
     weaponLevel: 160,
+    mirageMunitions: 99,
     weaponTraits: [],
     weaponTraitTemplate: {
       weaponTraitSkillName: '-',
@@ -75,6 +76,7 @@ new Vue({
     messageText: MESSAGE_TEXT,
     skillStatus: SKILL_STATUS,
     weaponsStatus: WEAPONS_STATUS,
+    characterStatus: CHARACTER_STATUS,
   },
   created() {
     // ページが読み込まれたときに初期のひな形をリストに追加
@@ -123,7 +125,6 @@ new Vue({
     },
     sumSkillEffects(a, b) {
       // マイナス記号・パーセント表記などを考慮して足し算を行う
-      // 
       aPercentile = parseInt(a.split("|")[1].replace("%", ""));
       aNumerical = parseInt(a.split("|")[0]);
       bPercentile = parseInt(b.split("|")[1].replace("%", ""));
@@ -157,11 +158,15 @@ new Vue({
       }
     },
     resetWeaponStatus() {
+      // 武器でステータスの基礎値を変える
       const weaponsStatus = this.weaponsStatus[this.weaponName]['levelsStatus'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
-      this.healthBase = weaponsStatus['health'];
-      this.attackPowerBase = weaponsStatus['attackPower'];
-      this.criticalHitRateBase = weaponsStatus['criticalHitRate'];
-      this.stunPowerBase = weaponsStatus['stunPower'];
+      // キャラクターでステータスの基礎値を変える(レベル毎のステータスは未実装のため0を参照)
+      const characterStatus = this.characterStatus[this.weaponsStatus[this.weaponName]['character']]['levelsStatus'][0];
+      // 計算
+      this.healthBase = weaponsStatus['health'] + this.mirageMunitions * 10 + characterStatus['health'];
+      this.attackPowerBase = weaponsStatus['attackPower'] + this.mirageMunitions * 2 + characterStatus['attackPower'];
+      this.criticalHitRateBase = weaponsStatus['criticalHitRate'] + characterStatus['criticalHitRate'];
+      this.stunPowerBase = weaponsStatus['stunPower'] + characterStatus['stunPower'];
     }
   },
   computed: {
@@ -351,6 +356,13 @@ new Vue({
         this.resetWeaponStatus();
       },
       deep: true,
+      immediate: false
+    },
+    mirageMunitions: {
+      handler: function(newValue, oldValue) {
+        // 武器ステータスを自動補完
+        this.resetWeaponStatus();
+      },
       immediate: false
     },
   }

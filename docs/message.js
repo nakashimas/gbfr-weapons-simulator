@@ -6,7 +6,7 @@ const MESSAGE_TEXT = {
       "weaponTraits": "武器スキル",
       "mainSigilSkills": "ジーン（メイン）",
       "subSigilSkills": "ジーン（サブ）",
-      "totalSkills": "スキル集計",
+      "totalSkills": "スキル集計"
     },
     "status": {
       "-": "-",
