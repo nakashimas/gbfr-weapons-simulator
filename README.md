@@ -30,12 +30,14 @@ https://nakashimas.github.io/gbfr-weapons-simulator/
 
 現在作成中です。  
 武器スキル・ジーンの組み合わせとスキル効果量をWebで確認できます。  
-ジーンの強化に必要な残り素材数がわかります。  
+コンボを登録して予測DPTを計算できます。  
+ジーンの強化に必要な残り素材数がわかります(それよりもシード・オン・シードを周回しよう)。  
 
 
 ## Development
 
-ローカル環境でHTMLを眺めながら開発します。
+ローカル環境でHTMLを眺めながら開発します。  
+詳しい更新方法は[資料](./.github/CONTRIBUTING.md)を参考にしてください。
 
 ```sh
 cd docs
@@ -48,8 +50,10 @@ python -m http.server 8000
 ./docs/
   ├── index.html
   ├── script.js 状態や計算、メインの処理を記述
-  ├── status.js 各スキルで変化する値と武器の情報を記述
-  └── message.js メッセージを記述
+  ├── skill.js 各スキルで変化する値の情報を記述
+  ├── weapons.js 各武器の情報を記述
+  ├── character.js 各キャラクターの情報を記述
+  └── message.js 表示メッセージを記述
 ```
 
 
