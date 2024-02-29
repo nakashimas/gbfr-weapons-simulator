@@ -482,8 +482,39 @@ const SKILL_STATUS = {
   "injuryToInsult": {
     // 弱体状態特攻 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"damage": "0|5%|isEnemyInjury"}, // 1
+      {"damage": "0|7%|isEnemyInjury"}, // 2
+      {"damage": "0|9%|isEnemyInjury"}, // 3
+      {"damage": "0|11%|isEnemyInjury"}, // 4
+      {"damage": "0|12%|isEnemyInjury"}, // 5
+      {"damage": "0|13%|isEnemyInjury"}, // 6
+      {"damage": "0|14%|isEnemyInjury"}, // 7
+      {"damage": "0|15%|isEnemyInjury"}, // 8
+      {"damage": "0|16%|isEnemyInjury"}, // 9
+      {"damage": "0|17%|isEnemyInjury"}, // 10
+      {"damage": "0|18%|isEnemyInjury"}, // 11
+      {"damage": "0|19%|isEnemyInjury"}, // 12
+      {"damage": "0|20%|isEnemyInjury"}, // 13
+      {"damage": "0|21%|isEnemyInjury"}, // 14
+      {"damage": "0|22%|isEnemyInjury"}, // 15
+      {"damage": "0|23%|isEnemyInjury"}, // 16
+      {"damage": "0|23.5%|isEnemyInjury"}, // 17
+      {"damage": "0|24%|isEnemyInjury"}, // 18
+      {"damage": "0|24.5%|isEnemyInjury"}, // 19
+      {"damage": "0|25%|isEnemyInjury"}, // 20
+      {"damage": "0|25.5%|isEnemyInjury"}, // 21
+      {"damage": "0|26%|isEnemyInjury"}, // 22
+      {"damage": "0|26.5%|isEnemyInjury"}, // 23
+      {"damage": "0|27%|isEnemyInjury"}, // 24
+      {"damage": "0|27.5%|isEnemyInjury"}, // 25
+      {"damage": "0|28%|isEnemyInjury"}, // 26
+      {"damage": "0|28.5%|isEnemyInjury"}, // 27
+      {"damage": "0|29%|isEnemyInjury"}, // 28
+      {"damage": "0|29.5%|isEnemyInjury"}, // 29
+      {"damage": "0|30%|isEnemyInjury"}, // 30
+    ]
   },
   "luckyCharge": {
     // 溜め会心 
@@ -494,8 +525,39 @@ const SKILL_STATUS = {
   "throw": {
     // 投擲 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"damageThrow": "0|10%"}, // 1
+      {"damageThrow": "0|16%"}, // 2
+      {"damageThrow": "0|22%"}, // 3
+      {"damageThrow": "0|27%"}, // 4
+      {"damageThrow": "0|31%"}, // 5
+      {"damageThrow": "0|35%"}, // 6
+      {"damageThrow": "0|39%"}, // 7
+      {"damageThrow": "0|42%"}, // 8
+      {"damageThrow": "0|46%"}, // 9
+      {"damageThrow": "0|50%"}, // 10
+      {"damageThrow": "0|54%"}, // 11
+      {"damageThrow": "0|58%"}, // 12
+      {"damageThrow": "0|62%"}, // 13
+      {"damageThrow": "0|66%"}, // 14
+      {"damageThrow": "0|70%"}, // 15
+      {"damageThrow": "0|72%"}, // 16
+      {"damageThrow": "0|74%"}, // 17
+      {"damageThrow": "0|76%"}, // 18
+      {"damageThrow": "0|78%"}, // 19
+      {"damageThrow": "0|80%"}, // 20
+      {"damageThrow": "0|82%"}, // 21
+      {"damageThrow": "0|84%"}, // 22
+      {"damageThrow": "0|86%"}, // 23
+      {"damageThrow": "0|88%"}, // 24
+      {"damageThrow": "0|90%"}, // 25
+      {"damageThrow": "0|92%"}, // 26
+      {"damageThrow": "0|94%"}, // 27
+      {"damageThrow": "0|96%"}, // 28
+      {"damageThrow": "0|98%"}, // 29
+      {"damageThrow": "0|100%"}, // 30
+    ]
   },
   "linkedTogether": {
     // 連携攻撃 
@@ -664,14 +726,76 @@ const SKILL_STATUS = {
   "concentratedFire": {
     // 集中砲火 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"damageRanged": "0|5%"}, // 1
+      {"damageRanged": "0|8%"}, // 2
+      {"damageRanged": "0|11%"}, // 3
+      {"damageRanged": "0|13%"}, // 4
+      {"damageRanged": "0|15%"}, // 5
+      {"damageRanged": "0|17%"}, // 6
+      {"damageRanged": "0|19%"}, // 7
+      {"damageRanged": "0|21%"}, // 8
+      {"damageRanged": "0|23%"}, // 9
+      {"damageRanged": "0|25%"}, // 10
+      {"damageRanged": "0|27%"}, // 11
+      {"damageRanged": "0|29%"}, // 12
+      {"damageRanged": "0|31%"}, // 13
+      {"damageRanged": "0|33%"}, // 14
+      {"damageRanged": "0|35%"}, // 15
+      {"damageRanged": "0|36%"}, // 16
+      {"damageRanged": "0|37%"}, // 17
+      {"damageRanged": "0|38%"}, // 18
+      {"damageRanged": "0|39%"}, // 19
+      {"damageRanged": "0|40%"}, // 20
+      {"damageRanged": "0|41%"}, // 21
+      {"damageRanged": "0|42%"}, // 22
+      {"damageRanged": "0|43%"}, // 23
+      {"damageRanged": "0|44%"}, // 24
+      {"damageRanged": "0|45%"}, // 25
+      {"damageRanged": "0|46%"}, // 26
+      {"damageRanged": "0|47%"}, // 27
+      {"damageRanged": "0|48%"}, // 28
+      {"damageRanged": "0|49%"}, // 29
+      {"damageRanged": "0|50%"}, // 30
+    ]
   },
   "skilledAssault": {
     // アビリティダメージ 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"damageSkilled": "0|10%"}, // 1
+      {"damageSkilled": "0|16%"}, // 2
+      {"damageSkilled": "0|22%"}, // 3
+      {"damageSkilled": "0|27%"}, // 4
+      {"damageSkilled": "0|31%"}, // 5
+      {"damageSkilled": "0|35%"}, // 6
+      {"damageSkilled": "0|39%"}, // 7
+      {"damageSkilled": "0|42%"}, // 8
+      {"damageSkilled": "0|46%"}, // 9
+      {"damageSkilled": "0|50%"}, // 10
+      {"damageSkilled": "0|54%"}, // 11
+      {"damageSkilled": "0|58%"}, // 12
+      {"damageSkilled": "0|62%"}, // 13
+      {"damageSkilled": "0|66%"}, // 14
+      {"damageSkilled": "0|70%"}, // 15
+      {"damageSkilled": "0|72%"}, // 16
+      {"damageSkilled": "0|74%"}, // 17
+      {"damageSkilled": "0|76%"}, // 18
+      {"damageSkilled": "0|78%"}, // 19
+      {"damageSkilled": "0|80%"}, // 20
+      {"damageSkilled": "0|82%"}, // 21
+      {"damageSkilled": "0|84%"}, // 22
+      {"damageSkilled": "0|86%"}, // 23
+      {"damageSkilled": "0|88%"}, // 24
+      {"damageSkilled": "0|90%"}, // 25
+      {"damageSkilled": "0|92%"}, // 26
+      {"damageSkilled": "0|94%"}, // 27
+      {"damageSkilled": "0|96%"}, // 28
+      {"damageSkilled": "0|98%"}, // 29
+      {"damageSkilled": "0|100%"}, // 30
+    ]
   },
   "glassCannon": {
     // 紙一重 
@@ -704,7 +828,7 @@ const SKILL_STATUS = {
   "breakAssassin": {
     // ブレイク特攻 
     "minLevel": 1,
-    "maxLevel": 45,
+    "maxLevel": 30,
     "levels": [
       {"damage": "0|20%|isEnemyBreak"}, // 1
       {"damage": "0|32%|isEnemyBreak"}, // 2
@@ -748,7 +872,53 @@ const SKILL_STATUS = {
     // 追撃 
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"supplementaryDamageHitRate": "0|12%"}, // 1
+      {"supplementaryDamageHitRate": "0|14%"}, // 2
+      {"supplementaryDamageHitRate": "0|16%"}, // 3
+      {"supplementaryDamageHitRate": "0|18%"}, // 4
+      {"supplementaryDamageHitRate": "0|20%"}, // 5
+      {"supplementaryDamageHitRate": "0|22%"}, // 6
+      {"supplementaryDamageHitRate": "0|24%"}, // 7
+      {"supplementaryDamageHitRate": "0|26%"}, // 8
+      {"supplementaryDamageHitRate": "0|28%"}, // 9
+      {"supplementaryDamageHitRate": "0|30%"}, // 10
+      {"supplementaryDamageHitRate": "0|32%"}, // 11
+      {"supplementaryDamageHitRate": "0|34%"}, // 12
+      {"supplementaryDamageHitRate": "0|36%"}, // 13
+      {"supplementaryDamageHitRate": "0|38%"}, // 14
+      {"supplementaryDamageHitRate": "0|40%"}, // 15
+      {"supplementaryDamageHitRate": "0|42%"}, // 16
+      {"supplementaryDamageHitRate": "0|44%"}, // 17
+      {"supplementaryDamageHitRate": "0|46%"}, // 18
+      {"supplementaryDamageHitRate": "0|48%"}, // 19
+      {"supplementaryDamageHitRate": "0|50%"}, // 20
+      {"supplementaryDamageHitRate": "0|52%"}, // 21
+      {"supplementaryDamageHitRate": "0|54%"}, // 22
+      {"supplementaryDamageHitRate": "0|56%"}, // 23
+      {"supplementaryDamageHitRate": "0|58%"}, // 24
+      {"supplementaryDamageHitRate": "0|60%"}, // 25
+      {"supplementaryDamageHitRate": "0|62%"}, // 26
+      {"supplementaryDamageHitRate": "0|64%"}, // 27
+      {"supplementaryDamageHitRate": "0|66%"}, // 28
+      {"supplementaryDamageHitRate": "0|68%"}, // 29
+      {"supplementaryDamageHitRate": "0|70%"}, // 30
+      {"supplementaryDamageHitRate": "0|72%"}, // 31
+      {"supplementaryDamageHitRate": "0|74%"}, // 32
+      {"supplementaryDamageHitRate": "0|76%"}, // 33
+      {"supplementaryDamageHitRate": "0|78%"}, // 34
+      {"supplementaryDamageHitRate": "0|80%"}, // 35
+      {"supplementaryDamageHitRate": "0|82%"}, // 36
+      {"supplementaryDamageHitRate": "0|84%"}, // 37
+      {"supplementaryDamageHitRate": "0|86%"}, // 38
+      {"supplementaryDamageHitRate": "0|88%"}, // 39
+      {"supplementaryDamageHitRate": "0|90%"}, // 40
+      {"supplementaryDamageHitRate": "0|92%"}, // 41
+      {"supplementaryDamageHitRate": "0|94%"}, // 42
+      {"supplementaryDamageHitRate": "0|96%"}, // 43
+      {"supplementaryDamageHitRate": "0|98%"}, // 44
+      {"supplementaryDamageHitRate": "0|100%"}, // 45
+    ]
   },
   "powerHungry": {
     // 修羅 
@@ -834,14 +1004,76 @@ const SKILL_STATUS = {
   "sandtombResistance": {
     // 砂だるま耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"sandtombDuration": "0|-10%"}, // 1
+      {"sandtombDuration": "0|-16%"}, // 2
+      {"sandtombDuration": "0|-22%"}, // 3
+      {"sandtombDuration": "0|-27%"}, // 4
+      {"sandtombDuration": "0|-31%"}, // 5
+      {"sandtombDuration": "0|-35%"}, // 6
+      {"sandtombDuration": "0|-39%"}, // 7
+      {"sandtombDuration": "0|-42%"}, // 8
+      {"sandtombDuration": "0|-46%"}, // 9
+      {"sandtombDuration": "0|-50%"}, // 10
+      {"sandtombDuration": "0|-54%"}, // 11
+      {"sandtombDuration": "0|-58%"}, // 12
+      {"sandtombDuration": "0|-62%"}, // 13
+      {"sandtombDuration": "0|-66%"}, // 14
+      {"sandtombDuration": "0|-70%"}, // 15
+      {"sandtombDuration": "0|-72%"}, // 16
+      {"sandtombDuration": "0|-74%"}, // 17
+      {"sandtombDuration": "0|-76%"}, // 18
+      {"sandtombDuration": "0|-78%"}, // 19
+      {"sandtombDuration": "0|-80%"}, // 20
+      {"sandtombDuration": "0|-82%"}, // 21
+      {"sandtombDuration": "0|-84%"}, // 22
+      {"sandtombDuration": "0|-86%"}, // 23
+      {"sandtombDuration": "0|-88%"}, // 24
+      {"sandtombDuration": "0|-90%"}, // 25
+      {"sandtombDuration": "0|-92%"}, // 26
+      {"sandtombDuration": "0|-94%"}, // 27
+      {"sandtombDuration": "0|-96%"}, // 28
+      {"sandtombDuration": "0|-98%"}, // 29
+      {"sandtombDuration": "0|-100%"}, // 30
+    ]
   },
   "dizzyResistance": {
     // 気絶耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"dizzyDuration": "0|-10%"}, // 1
+      {"dizzyDuration": "0|-16%"}, // 2
+      {"dizzyDuration": "0|-22%"}, // 3
+      {"dizzyDuration": "0|-27%"}, // 4
+      {"dizzyDuration": "0|-31%"}, // 5
+      {"dizzyDuration": "0|-35%"}, // 6
+      {"dizzyDuration": "0|-39%"}, // 7
+      {"dizzyDuration": "0|-42%"}, // 8
+      {"dizzyDuration": "0|-46%"}, // 9
+      {"dizzyDuration": "0|-50%"}, // 10
+      {"dizzyDuration": "0|-54%"}, // 11
+      {"dizzyDuration": "0|-58%"}, // 12
+      {"dizzyDuration": "0|-62%"}, // 13
+      {"dizzyDuration": "0|-66%"}, // 14
+      {"dizzyDuration": "0|-70%"}, // 15
+      {"dizzyDuration": "0|-72%"}, // 16
+      {"dizzyDuration": "0|-74%"}, // 17
+      {"dizzyDuration": "0|-76%"}, // 18
+      {"dizzyDuration": "0|-78%"}, // 19
+      {"dizzyDuration": "0|-80%"}, // 20
+      {"dizzyDuration": "0|-82%"}, // 21
+      {"dizzyDuration": "0|-84%"}, // 22
+      {"dizzyDuration": "0|-86%"}, // 23
+      {"dizzyDuration": "0|-88%"}, // 24
+      {"dizzyDuration": "0|-90%"}, // 25
+      {"dizzyDuration": "0|-92%"}, // 26
+      {"dizzyDuration": "0|-94%"}, // 27
+      {"dizzyDuration": "0|-96%"}, // 28
+      {"dizzyDuration": "0|-98%"}, // 29
+      {"dizzyDuration": "0|-100%"}, // 30
+    ]
   },
   "improvedGuard": {
     // ガード性能 
@@ -864,14 +1096,76 @@ const SKILL_STATUS = {
   "slowResistance": {
     // スロウ耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"slowDuration": "0|-10%"}, // 1
+      {"slowDuration": "0|-16%"}, // 2
+      {"slowDuration": "0|-22%"}, // 3
+      {"slowDuration": "0|-27%"}, // 4
+      {"slowDuration": "0|-31%"}, // 5
+      {"slowDuration": "0|-35%"}, // 6
+      {"slowDuration": "0|-39%"}, // 7
+      {"slowDuration": "0|-42%"}, // 8
+      {"slowDuration": "0|-46%"}, // 9
+      {"slowDuration": "0|-50%"}, // 10
+      {"slowDuration": "0|-54%"}, // 11
+      {"slowDuration": "0|-58%"}, // 12
+      {"slowDuration": "0|-62%"}, // 13
+      {"slowDuration": "0|-66%"}, // 14
+      {"slowDuration": "0|-70%"}, // 15
+      {"slowDuration": "0|-72%"}, // 16
+      {"slowDuration": "0|-74%"}, // 17
+      {"slowDuration": "0|-76%"}, // 18
+      {"slowDuration": "0|-78%"}, // 19
+      {"slowDuration": "0|-80%"}, // 20
+      {"slowDuration": "0|-82%"}, // 21
+      {"slowDuration": "0|-84%"}, // 22
+      {"slowDuration": "0|-86%"}, // 23
+      {"slowDuration": "0|-88%"}, // 24
+      {"slowDuration": "0|-90%"}, // 25
+      {"slowDuration": "0|-92%"}, // 26
+      {"slowDuration": "0|-94%"}, // 27
+      {"slowDuration": "0|-96%"}, // 28
+      {"slowDuration": "0|-98%"}, // 29
+      {"slowDuration": "0|-100%"}, // 30
+    ]
   },
   "burnResistance": {
     // 灼熱耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"burnDamageTaken": "0|-10%"}, // 1
+      {"burnDamageTaken": "0|-16%"}, // 2
+      {"burnDamageTaken": "0|-22%"}, // 3
+      {"burnDamageTaken": "0|-27%"}, // 4
+      {"burnDamageTaken": "0|-31%"}, // 5
+      {"burnDamageTaken": "0|-35%"}, // 6
+      {"burnDamageTaken": "0|-39%"}, // 7
+      {"burnDamageTaken": "0|-42%"}, // 8
+      {"burnDamageTaken": "0|-46%"}, // 9
+      {"burnDamageTaken": "0|-50%"}, // 10
+      {"burnDamageTaken": "0|-54%"}, // 11
+      {"burnDamageTaken": "0|-58%"}, // 12
+      {"burnDamageTaken": "0|-62%"}, // 13
+      {"burnDamageTaken": "0|-66%"}, // 14
+      {"burnDamageTaken": "0|-70%"}, // 15
+      {"burnDamageTaken": "0|-72%"}, // 16
+      {"burnDamageTaken": "0|-74%"}, // 17
+      {"burnDamageTaken": "0|-76%"}, // 18
+      {"burnDamageTaken": "0|-78%"}, // 19
+      {"burnDamageTaken": "0|-80%"}, // 20
+      {"burnDamageTaken": "0|-82%"}, // 21
+      {"burnDamageTaken": "0|-84%"}, // 22
+      {"burnDamageTaken": "0|-86%"}, // 23
+      {"burnDamageTaken": "0|-88%"}, // 24
+      {"burnDamageTaken": "0|-90%"}, // 25
+      {"burnDamageTaken": "0|-92%"}, // 26
+      {"burnDamageTaken": "0|-94%"}, // 27
+      {"burnDamageTaken": "0|-96%"}, // 28
+      {"burnDamageTaken": "0|-98%"}, // 29
+      {"burnDamageTaken": "0|-100%"}, // 30
+    ]
   },
   "preciseResilience": {
     // 抗戦 
@@ -882,8 +1176,39 @@ const SKILL_STATUS = {
   "blightResistance": {
     // 災禍耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"blightDamageTaken": "0|-10%"}, // 1
+      {"blightDamageTaken": "0|-16%"}, // 2
+      {"blightDamageTaken": "0|-22%"}, // 3
+      {"blightDamageTaken": "0|-27%"}, // 4
+      {"blightDamageTaken": "0|-31%"}, // 5
+      {"blightDamageTaken": "0|-35%"}, // 6
+      {"blightDamageTaken": "0|-39%"}, // 7
+      {"blightDamageTaken": "0|-42%"}, // 8
+      {"blightDamageTaken": "0|-46%"}, // 9
+      {"blightDamageTaken": "0|-50%"}, // 10
+      {"blightDamageTaken": "0|-54%"}, // 11
+      {"blightDamageTaken": "0|-58%"}, // 12
+      {"blightDamageTaken": "0|-62%"}, // 13
+      {"blightDamageTaken": "0|-66%"}, // 14
+      {"blightDamageTaken": "0|-70%"}, // 15
+      {"blightDamageTaken": "0|-72%"}, // 16
+      {"blightDamageTaken": "0|-74%"}, // 17
+      {"blightDamageTaken": "0|-76%"}, // 18
+      {"blightDamageTaken": "0|-78%"}, // 19
+      {"blightDamageTaken": "0|-80%"}, // 20
+      {"blightDamageTaken": "0|-82%"}, // 21
+      {"blightDamageTaken": "0|-84%"}, // 22
+      {"blightDamageTaken": "0|-86%"}, // 23
+      {"blightDamageTaken": "0|-88%"}, // 24
+      {"blightDamageTaken": "0|-90%"}, // 25
+      {"blightDamageTaken": "0|-92%"}, // 26
+      {"blightDamageTaken": "0|-94%"}, // 27
+      {"blightDamageTaken": "0|-96%"}, // 28
+      {"blightDamageTaken": "0|-98%"}, // 29
+      {"blightDamageTaken": "0|-100%"}, // 30
+    ]
   },
   "aegis": {
     // 守護 
@@ -894,8 +1219,39 @@ const SKILL_STATUS = {
   "paralysisResistance": {
     // 麻痺耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"paralysisDuration": "0|-10%"}, // 1
+      {"paralysisDuration": "0|-16%"}, // 2
+      {"paralysisDuration": "0|-22%"}, // 3
+      {"paralysisDuration": "0|-27%"}, // 4
+      {"paralysisDuration": "0|-31%"}, // 5
+      {"paralysisDuration": "0|-35%"}, // 6
+      {"paralysisDuration": "0|-39%"}, // 7
+      {"paralysisDuration": "0|-42%"}, // 8
+      {"paralysisDuration": "0|-46%"}, // 9
+      {"paralysisDuration": "0|-50%"}, // 10
+      {"paralysisDuration": "0|-54%"}, // 11
+      {"paralysisDuration": "0|-58%"}, // 12
+      {"paralysisDuration": "0|-62%"}, // 13
+      {"paralysisDuration": "0|-66%"}, // 14
+      {"paralysisDuration": "0|-70%"}, // 15
+      {"paralysisDuration": "0|-72%"}, // 16
+      {"paralysisDuration": "0|-74%"}, // 17
+      {"paralysisDuration": "0|-76%"}, // 18
+      {"paralysisDuration": "0|-78%"}, // 19
+      {"paralysisDuration": "0|-80%"}, // 20
+      {"paralysisDuration": "0|-82%"}, // 21
+      {"paralysisDuration": "0|-84%"}, // 22
+      {"paralysisDuration": "0|-86%"}, // 23
+      {"paralysisDuration": "0|-88%"}, // 24
+      {"paralysisDuration": "0|-90%"}, // 25
+      {"paralysisDuration": "0|-92%"}, // 26
+      {"paralysisDuration": "0|-94%"}, // 27
+      {"paralysisDuration": "0|-96%"}, // 28
+      {"paralysisDuration": "0|-98%"}, // 29
+      {"paralysisDuration": "0|-100%"}, // 30
+    ]
   },
   "nimbleDefense": {
     // 精神一到 
@@ -959,21 +1315,85 @@ const SKILL_STATUS = {
   },
   "flightOverFight": {
     // フラジャイルドッジ 
-    "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {"attackPower": "0|-50%", "alwaysBePerfectDodge": "1|0%"}, // 15
+    ]
   },
   "skillSealedResistance": {
     // アビリティ封印耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"skillSealedDuration": "0|-10%"}, // 1
+      {"skillSealedDuration": "0|-16%"}, // 2
+      {"skillSealedDuration": "0|-22%"}, // 3
+      {"skillSealedDuration": "0|-27%"}, // 4
+      {"skillSealedDuration": "0|-31%"}, // 5
+      {"skillSealedDuration": "0|-35%"}, // 6
+      {"skillSealedDuration": "0|-39%"}, // 7
+      {"skillSealedDuration": "0|-42%"}, // 8
+      {"skillSealedDuration": "0|-46%"}, // 9
+      {"skillSealedDuration": "0|-50%"}, // 10
+      {"skillSealedDuration": "0|-54%"}, // 11
+      {"skillSealedDuration": "0|-58%"}, // 12
+      {"skillSealedDuration": "0|-62%"}, // 13
+      {"skillSealedDuration": "0|-66%"}, // 14
+      {"skillSealedDuration": "0|-70%"}, // 15
+      {"skillSealedDuration": "0|-72%"}, // 16
+      {"skillSealedDuration": "0|-74%"}, // 17
+      {"skillSealedDuration": "0|-76%"}, // 18
+      {"skillSealedDuration": "0|-78%"}, // 19
+      {"skillSealedDuration": "0|-80%"}, // 20
+      {"skillSealedDuration": "0|-82%"}, // 21
+      {"skillSealedDuration": "0|-84%"}, // 22
+      {"skillSealedDuration": "0|-86%"}, // 23
+      {"skillSealedDuration": "0|-88%"}, // 24
+      {"skillSealedDuration": "0|-90%"}, // 25
+      {"skillSealedDuration": "0|-92%"}, // 26
+      {"skillSealedDuration": "0|-94%"}, // 27
+      {"skillSealedDuration": "0|-96%"}, // 28
+      {"skillSealedDuration": "0|-98%"}, // 29
+      {"skillSealedDuration": "0|-100%"}, // 30
+    ]
   },
   "darkflameResistance": {
     // レジストオルタ 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"darkflameDuration": "0|-10%"}, // 1
+      {"darkflameDuration": "0|-16%"}, // 2
+      {"darkflameDuration": "0|-22%"}, // 3
+      {"darkflameDuration": "0|-27%"}, // 4
+      {"darkflameDuration": "0|-31%"}, // 5
+      {"darkflameDuration": "0|-35%"}, // 6
+      {"darkflameDuration": "0|-39%"}, // 7
+      {"darkflameDuration": "0|-42%"}, // 8
+      {"darkflameDuration": "0|-46%"}, // 9
+      {"darkflameDuration": "0|-50%"}, // 10
+      {"darkflameDuration": "0|-54%"}, // 11
+      {"darkflameDuration": "0|-58%"}, // 12
+      {"darkflameDuration": "0|-62%"}, // 13
+      {"darkflameDuration": "0|-66%"}, // 14
+      {"darkflameDuration": "0|-70%"}, // 15
+      {"darkflameDuration": "0|-72%"}, // 16
+      {"darkflameDuration": "0|-74%"}, // 17
+      {"darkflameDuration": "0|-76%"}, // 18
+      {"darkflameDuration": "0|-78%"}, // 19
+      {"darkflameDuration": "0|-80%"}, // 20
+      {"darkflameDuration": "0|-82%"}, // 21
+      {"darkflameDuration": "0|-84%"}, // 22
+      {"darkflameDuration": "0|-86%"}, // 23
+      {"darkflameDuration": "0|-88%"}, // 24
+      {"darkflameDuration": "0|-90%"}, // 25
+      {"darkflameDuration": "0|-92%"}, // 26
+      {"darkflameDuration": "0|-94%"}, // 27
+      {"darkflameDuration": "0|-96%"}, // 28
+      {"darkflameDuration": "0|-98%"}, // 29
+      {"darkflameDuration": "0|-100%"}, // 30
+    ]
   },
   "untouchable": {
     // 回避距離 
@@ -1083,7 +1503,53 @@ const SKILL_STATUS = {
     // 取得MSP 
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"pathToMastery": "0|2%"}, // 1
+      {"pathToMastery": "0|3%"}, // 2
+      {"pathToMastery": "0|4%"}, // 3
+      {"pathToMastery": "0|5%"}, // 4
+      {"pathToMastery": "0|6%"}, // 5
+      {"pathToMastery": "0|7%"}, // 6
+      {"pathToMastery": "0|8%"}, // 7
+      {"pathToMastery": "0|10%"}, // 8
+      {"pathToMastery": "0|10.5%"}, // 9
+      {"pathToMastery": "0|11%"}, // 10
+      {"pathToMastery": "0|12%"}, // 11
+      {"pathToMastery": "0|12.5%"}, // 12
+      {"pathToMastery": "0|13%"}, // 13
+      {"pathToMastery": "0|13.5%"}, // 14
+      {"pathToMastery": "0|15%"}, // 15
+      {"pathToMastery": "0|15.5%"}, // 16
+      {"pathToMastery": "0|16%"}, // 17
+      {"pathToMastery": "0|16.5%"}, // 18
+      {"pathToMastery": "0|17%"}, // 19
+      {"pathToMastery": "0|17.5%"}, // 20
+      {"pathToMastery": "0|18%"}, // 21
+      {"pathToMastery": "0|18.5%"}, // 22
+      {"pathToMastery": "0|19%"}, // 23
+      {"pathToMastery": "0|19.5%"}, // 24
+      {"pathToMastery": "0|20%"}, // 25
+      {"pathToMastery": "0|20.5%"}, // 26
+      {"pathToMastery": "0|21%"}, // 27
+      {"pathToMastery": "0|21.5%"}, // 28
+      {"pathToMastery": "0|22%"}, // 29
+      {"pathToMastery": "0|22.5%"}, // 30
+      {"pathToMastery": "0|23%"}, // 31
+      {"pathToMastery": "0|23.5%"}, // 32
+      {"pathToMastery": "0|24%"}, // 33
+      {"pathToMastery": "0|24.5%"}, // 34
+      {"pathToMastery": "0|25%"}, // 35
+      {"pathToMastery": "0|25.5%"}, // 36
+      {"pathToMastery": "0|26%"}, // 37
+      {"pathToMastery": "0|26.5%"}, // 38
+      {"pathToMastery": "0|27%"}, // 39
+      {"pathToMastery": "0|27.5%"}, // 40
+      {"pathToMastery": "0|28%"}, // 41
+      {"pathToMastery": "0|28.5%"}, // 42
+      {"pathToMastery": "0|29%"}, // 43
+      {"pathToMastery": "0|29.5%"}, // 44
+      {"pathToMastery": "0|30%"}, // 45
+    ]
   },
   "potentGreens": {
     // 万能薬 

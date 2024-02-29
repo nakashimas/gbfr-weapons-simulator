@@ -171,6 +171,24 @@ new Vue({
           return this.attackPower;
         case 'criticalHitRate':
           return this.criticalHitRate;
+        case 'isEnemyInjury':
+          return [
+            this.playConditions.isEnemyBreak,
+            this.playConditions.isEnemyOverdrive,
+            this.playConditions.isEnemySandtomb,
+            this.playConditions.isEnemyDizzy,
+            this.playConditions.isEnemySlow,
+            this.playConditions.isEnemyBurn,
+            this.playConditions.isEnemyBlight,
+            this.playConditions.isEnemyParalysis,
+            this.playConditions.isEnemyGlaciate,
+            this.playConditions.isEnemyPoison,
+            this.playConditions.isEnemyHeldUnder,
+            this.playConditions.isEnemyAttackDown,
+            this.playConditions.isEnemyDeffenceDown,
+            this.playConditions.isEnemySbaSealed,
+            this.playConditions.isEnemySkillSealed,
+          ].some(v => v);
         default:
           if (k in this.playConditions) {
             return this.playConditions[k];
