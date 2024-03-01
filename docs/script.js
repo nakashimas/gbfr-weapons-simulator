@@ -137,8 +137,8 @@ new Vue({
         skillLevel = skillLevel < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevel;
         skillLevelToBe = skillLevelToBe < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevelToBe;
         // 効果量
-        let skillEffect = this.skillStatus[skillName]['levels'][parseInt(skillLevel) - this.skillStatus[skillName]['minLevel']];
-        let skillEffectToBe = this.skillStatus[skillName]['levels'][parseInt(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
+        const skillEffect = this.skillStatus[skillName]['levels'][parseInt(skillLevel) - this.skillStatus[skillName]['minLevel']];
+        const skillEffectToBe = this.skillStatus[skillName]['levels'][parseInt(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
         // 合計を計算
         for (let key in skillEffect){
           if (!(statusName === void 0)) {
@@ -146,10 +146,10 @@ new Vue({
               continue;
             }
           }
-          if (key in totalEffects) {
+          if (totalEffects.hasOwnProperty(key)) {
             totalEffects[key] = [
               this.sumSkillEffects(totalEffects[key][0], skillEffect[key]), 
-              this.sumSkillEffects(totalEffects[key][0], skillEffectToBe[key]),
+              this.sumSkillEffects(totalEffects[key][1], skillEffectToBe[key]),
             ]
           } else {
             totalEffects[key] = [
