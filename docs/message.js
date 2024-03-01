@@ -19,6 +19,7 @@ const MESSAGE_TEXT = {
       "health": "体力",
       "sacrificeHealth": "自傷",
       "reduceDamageTaken": "被ダメージ軽減",
+      "defence": "防御力",
       "damage": "与ダメージ",
       "damageWeakness": "弱点部位に対する与ダメージ",
       "damageBehind": "背後攻撃の与ダメージ",
@@ -45,10 +46,19 @@ const MESSAGE_TEXT = {
       "cannotGuard": "ガードできない",
       "cannotDodge": "回避できない",
       "pathToMastery": "取得MSP",
+      "fastLearner": "取得経験値", 
+      "rupieTycoon": "取得ルピ", 
       "potentGreens": "キュアポーション強化",
       "sigilBoost": "ジーンレベル",
       "extendsDodgeInvincibility": "ジャスト回避無敵時間延長",
       "extendsGuardStunPowoer": "ジャストガードスタン値増加",
+      "autoreviveCooldown": "自動復活のクールダウン",
+      "gutsCooldown": "ガッツのクールダウン",
+      "provoke": "敵対心",
+      "greenPotion": "キュアポーション", 
+      "bluePotion": "オールポーション", 
+      "megaPotion": "メガポーション", 
+      "revivalPotion": "蘇生薬",
     },
     "conditions": {
       // 敵の状態
@@ -86,6 +96,7 @@ const MESSAGE_TEXT = {
       // その他
       "isPerfectDodgeRecently": "直近にジャスト回避",
       "isPerfectGuardRecently": "直近にジャストガード",
+      "isCharging": "チャージ中",
     },
     "weapons": {
       "amenoHabakiri": "天羽々斬",

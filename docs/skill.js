@@ -1455,49 +1455,257 @@ const SKILL_STATUS = {
     // ガッツ 
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"gutsCooldown": "600|0%"}, // 1
+      {"gutsCooldown": "550|0%"}, // 2
+      {"gutsCooldown": "500|0%"}, // 3
+      {"gutsCooldown": "450|0%"}, // 4
+      {"gutsCooldown": "400|0%"}, // 5
+      {"gutsCooldown": "350|0%"}, // 6
+      {"gutsCooldown": "300|0%"}, // 7
+      {"gutsCooldown": "280|0%"}, // 8
+      {"gutsCooldown": "260|0%"}, // 9
+      {"gutsCooldown": "240|0%"}, // 10
+      {"gutsCooldown": "220|0%"}, // 11
+      {"gutsCooldown": "200|0%"}, // 12
+      {"gutsCooldown": "190|0%"}, // 13
+      {"gutsCooldown": "180|0%"}, // 14
+      {"gutsCooldown": "170|0%"}, // 15
+      {"gutsCooldown": "160|0%"}, // 16
+      {"gutsCooldown": "150|0%"}, // 17
+      {"gutsCooldown": "140|0%"}, // 18
+      {"gutsCooldown": "130|0%"}, // 19
+      {"gutsCooldown": "120|0%"}, // 20
+    ]
   },
   "rupieTycoon": {
     // 取得ルピ 
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"rupieTycoon": "0|2%"}, // 1
+      {"rupieTycoon": "0|4%"}, // 2
+      {"rupieTycoon": "0|6%"}, // 3
+      {"rupieTycoon": "0|8%"}, // 4
+      {"rupieTycoon": "0|10%"}, // 5
+      {"rupieTycoon": "0|12%"}, // 6
+      {"rupieTycoon": "0|14%"}, // 7
+      {"rupieTycoon": "0|16%"}, // 8
+      {"rupieTycoon": "0|18%"}, // 9
+      {"rupieTycoon": "0|20%"}, // 10
+      {"rupieTycoon": "0|22%"}, // 11
+      {"rupieTycoon": "0|24%"}, // 12
+      {"rupieTycoon": "0|26%"}, // 13
+      {"rupieTycoon": "0|28%"}, // 14
+      {"rupieTycoon": "0|30%"}, // 15
+      {"rupieTycoon": "0|31%"}, // 16
+      {"rupieTycoon": "0|32%"}, // 17
+      {"rupieTycoon": "0|33%"}, // 18
+      {"rupieTycoon": "0|34%"}, // 19
+      {"rupieTycoon": "0|35%"}, // 20
+      {"rupieTycoon": "0|36%"}, // 21
+      {"rupieTycoon": "0|37%"}, // 22
+      {"rupieTycoon": "0|38%"}, // 23
+      {"rupieTycoon": "0|39%"}, // 24
+      {"rupieTycoon": "0|40%"}, // 25
+      {"rupieTycoon": "0|41%"}, // 26
+      {"rupieTycoon": "0|42%"}, // 27
+      {"rupieTycoon": "0|43%"}, // 28
+      {"rupieTycoon": "0|44%"}, // 29
+      {"rupieTycoon": "0|45%"}, // 30
+      {"rupieTycoon": "0|46%"}, // 31
+      {"rupieTycoon": "0|47%"}, // 32
+      {"rupieTycoon": "0|48%"}, // 33
+      {"rupieTycoon": "0|49%"}, // 34
+      {"rupieTycoon": "0|50%"}, // 35
+      {"rupieTycoon": "0|51%"}, // 36
+      {"rupieTycoon": "0|52%"}, // 37
+      {"rupieTycoon": "0|53%"}, // 38
+      {"rupieTycoon": "0|54%"}, // 39
+      {"rupieTycoon": "0|55%"}, // 40
+      {"rupieTycoon": "0|56%"}, // 41
+      {"rupieTycoon": "0|57%"}, // 42
+      {"rupieTycoon": "0|58%"}, // 43
+      {"rupieTycoon": "0|59%"}, // 44
+      {"rupieTycoon": "0|60%"}, // 45
+    ]
   },
   "lowProfile": {
     // ステルス 
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"provoke": "-3|0%"}, // 1
+      {"provoke": "-5|0%"}, // 2
+      {"provoke": "-7|0%"}, // 3
+      {"provoke": "-10|0%"}, // 4
+      {"provoke": "-13|0%"}, // 5
+      {"provoke": "-15|0%"}, // 6
+      {"provoke": "-17|0%"}, // 7
+      {"provoke": "-20|0%"}, // 8
+      {"provoke": "-23|0%"}, // 9
+      {"provoke": "-25|0%"}, // 10
+      {"provoke": "-27|0%"}, // 11
+      {"provoke": "-30|0%"}, // 12
+      {"provoke": "-33|0%"}, // 13
+      {"provoke": "-35|0%"}, // 14
+      {"provoke": "-37|0%"}, // 15
+      {"provoke": "-40|0%"}, // 16
+      {"provoke": "-43|0%"}, // 17
+      {"provoke": "-45|0%"}, // 18
+      {"provoke": "-47|0%"}, // 19
+      {"provoke": "-50|0%"}, // 20
+    ]
   },
   "fastLearner": {
     // 取得経験値 
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"fastLearner": "0|2%"}, // 1
+      {"fastLearner": "0|3%"}, // 2
+      {"fastLearner": "0|4%"}, // 3
+      {"fastLearner": "0|5%"}, // 4
+      {"fastLearner": "0|6%"}, // 5
+      {"fastLearner": "0|7%"}, // 6
+      {"fastLearner": "0|8%"}, // 7
+      {"fastLearner": "0|10%"}, // 8
+      {"fastLearner": "0|10.5%"}, // 9
+      {"fastLearner": "0|11%"}, // 10
+      {"fastLearner": "0|12%"}, // 11
+      {"fastLearner": "0|12.5%"}, // 12
+      {"fastLearner": "0|13%"}, // 13
+      {"fastLearner": "0|13.5%"}, // 14
+      {"fastLearner": "0|15%"}, // 15
+      {"fastLearner": "0|15.5%"}, // 16
+      {"fastLearner": "0|16%"}, // 17
+      {"fastLearner": "0|16.5%"}, // 18
+      {"fastLearner": "0|17%"}, // 19
+      {"fastLearner": "0|17.5%"}, // 20
+      {"fastLearner": "0|18%"}, // 21
+      {"fastLearner": "0|18.5%"}, // 22
+      {"fastLearner": "0|19%"}, // 23
+      {"fastLearner": "0|19.5%"}, // 24
+      {"fastLearner": "0|20%"}, // 25
+      {"fastLearner": "0|20.5%"}, // 26
+      {"fastLearner": "0|21%"}, // 27
+      {"fastLearner": "0|21.5%"}, // 28
+      {"fastLearner": "0|22%"}, // 29
+      {"fastLearner": "0|22.5%"}, // 30
+      {"fastLearner": "0|23%"}, // 31
+      {"fastLearner": "0|23.5%"}, // 32
+      {"fastLearner": "0|24%"}, // 33
+      {"fastLearner": "0|24.5%"}, // 34
+      {"fastLearner": "0|25%"}, // 35
+      {"fastLearner": "0|25.5%"}, // 36
+      {"fastLearner": "0|26%"}, // 37
+      {"fastLearner": "0|26.5%"}, // 38
+      {"fastLearner": "0|27%"}, // 39
+      {"fastLearner": "0|27.5%"}, // 40
+      {"fastLearner": "0|28%"}, // 41
+      {"fastLearner": "0|28.5%"}, // 42
+      {"fastLearner": "0|29%"}, // 43
+      {"fastLearner": "0|29.5%"}, // 44
+      {"fastLearner": "0|30%"}, // 45
+    ]
   },
   "potionHoarder": {
     // ポーション所持数 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 15,
+    "levels": [
+      {"greenPotion": "0|0%", "bluePotion": "1|0%", "megaPotion": "0|0%", "revivalPotion": "0|0%"}, // 1
+      {"greenPotion": "0|0%", "bluePotion": "1|0%", "megaPotion": "1|0%", "revivalPotion": "0|0%"}, // 2
+      {"greenPotion": "1|0%", "bluePotion": "1|0%", "megaPotion": "1|0%", "revivalPotion": "0|0%"}, // 3
+      {"greenPotion": "1|0%", "bluePotion": "2|0%", "megaPotion": "1|0%", "revivalPotion": "0|0%"}, // 4
+      {"greenPotion": "1|0%", "bluePotion": "2|0%", "megaPotion": "2|0%", "revivalPotion": "0|0%"}, // 5
+      {"greenPotion": "1|0%", "bluePotion": "2|0%", "megaPotion": "2|0%", "revivalPotion": "1|0%"}, // 6
+      {"greenPotion": "2|0%", "bluePotion": "2|0%", "megaPotion": "2|0%", "revivalPotion": "1|0%"}, // 7
+      {"greenPotion": "2|0%", "bluePotion": "3|0%", "megaPotion": "2|0%", "revivalPotion": "1|0%"}, // 8
+      {"greenPotion": "2|0%", "bluePotion": "3|0%", "megaPotion": "3|0%", "revivalPotion": "1|0%"}, // 9
+      {"greenPotion": "2|0%", "bluePotion": "4|0%", "megaPotion": "3|0%", "revivalPotion": "1|0%"}, // 10
+      {"greenPotion": "2|0%", "bluePotion": "4|0%", "megaPotion": "4|0%", "revivalPotion": "1|0%"}, // 11
+      {"greenPotion": "2|0%", "bluePotion": "5|0%", "megaPotion": "4|0%", "revivalPotion": "1|0%"}, // 12
+      {"greenPotion": "2|0%", "bluePotion": "5|0%", "megaPotion": "5|0%", "revivalPotion": "1|0%"}, // 13
+      {"greenPotion": "3|0%", "bluePotion": "5|0%", "megaPotion": "5|0%", "revivalPotion": "1|0%"}, // 14
+      {"greenPotion": "3|0%", "bluePotion": "5|0%", "megaPotion": "5|0%", "revivalPotion": "2|0%"}, // 15
+    ]
   },
   "provoke": {
     // 挑発 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 20,
+    "levels": [
+      {"provoke": "3|0%"}, // 1
+      {"provoke": "5|0%"}, // 2
+      {"provoke": "7|0%"}, // 3
+      {"provoke": "10|0%"}, // 4
+      {"provoke": "13|0%"}, // 5
+      {"provoke": "15|0%"}, // 6
+      {"provoke": "17|0%"}, // 7
+      {"provoke": "20|0%"}, // 8
+      {"provoke": "23|0%"}, // 9
+      {"provoke": "25|0%"}, // 10
+      {"provoke": "27|0%"}, // 11
+      {"provoke": "30|0%"}, // 12
+      {"provoke": "33|0%"}, // 13
+      {"provoke": "35|0%"}, // 14
+      {"provoke": "37|0%"}, // 15
+      {"provoke": "40|0%"}, // 16
+      {"provoke": "43|0%"}, // 17
+      {"provoke": "45|0%"}, // 18
+      {"provoke": "47|0%"}, // 19
+      {"provoke": "50|0%"}, // 20
+    ]
   },
   "steadyFocus": {
     // チャージ強化 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 15,
+    "levels": [
+      {"defence": "0|6%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 1
+      {"defence": "0|7%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 2
+      {"defence": "0|8%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 3
+      {"defence": "0|9%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 4
+      {"defence": "0|10%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 5
+      {"defence": "0|11%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 6
+      {"defence": "0|12%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 7
+      {"defence": "0|13%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 8
+      {"defence": "0|14%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 9
+      {"defence": "0|15%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 10
+      {"defence": "0|16%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 11
+      {"defence": "0|17%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 12
+      {"defence": "0|18%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 13
+      {"defence": "0|19%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 14
+      {"defence": "0|20%|isCharging", "stoutHeart": "1|0%|isCharging"}, // 15
+    ]
   },
   "autorevive": {
     // 自動復活 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 20,
+    "levels": [
+      {"autoreviveCooldown": "600|0%"}, // 1
+      {"autoreviveCooldown": "550|0%"}, // 2
+      {"autoreviveCooldown": "500|0%"}, // 3
+      {"autoreviveCooldown": "450|0%"}, // 4
+      {"autoreviveCooldown": "400|0%"}, // 5
+      {"autoreviveCooldown": "350|0%"}, // 6
+      {"autoreviveCooldown": "300|0%"}, // 7
+      {"autoreviveCooldown": "280|0%"}, // 8
+      {"autoreviveCooldown": "260|0%"}, // 9
+      {"autoreviveCooldown": "240|0%"}, // 10
+      {"autoreviveCooldown": "220|0%"}, // 11
+      {"autoreviveCooldown": "200|0%"}, // 12
+      {"autoreviveCooldown": "190|0%"}, // 13
+      {"autoreviveCooldown": "180|0%"}, // 14
+      {"autoreviveCooldown": "170|0%"}, // 15
+      {"autoreviveCooldown": "160|0%"}, // 16
+      {"autoreviveCooldown": "150|0%"}, // 17
+      {"autoreviveCooldown": "140|0%"}, // 18
+      {"autoreviveCooldown": "130|0%"}, // 19
+      {"autoreviveCooldown": "120|0%"}, // 20
+    ]
   },
   "pathToMastery": {
     // 取得MSP 

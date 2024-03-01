@@ -42,6 +42,7 @@ new Vue({
       isPlayerSkillSealed: true,
       isPerfectDodgeRecently: true,
       isPerfectGuardRecently: true,
+      isCharging: true,
     },
     // weapons
     weaponName: 'amenoHabakiri',
