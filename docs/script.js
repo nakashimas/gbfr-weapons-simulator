@@ -278,6 +278,11 @@ new Vue({
       this.attackPowerBase = weaponsStatus['attackPower'] + this.mirageMunitions * 2 + characterStatus['attackPower'];
       this.criticalHitRateBase = weaponsStatus['criticalHitRate'] + characterStatus['criticalHitRate'];
       this.stunPowerBase = weaponsStatus['stunPower'] + characterStatus['stunPower'];
+    },
+    setPlayConditionsAll(playCondition) {
+      Object.keys(this.playConditions).forEach(key => {
+        this.playConditions[key] = playCondition;
+      });
     }
   },
   computed: {
