@@ -822,8 +822,39 @@ const SKILL_STATUS = {
   "lessIsMore": {
     // 裸一貫 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"lessIsMore": "0|4%"}, // 1
+      {"lessIsMore": "0|8%"}, // 2
+      {"lessIsMore": "0|12%"}, // 3
+      {"lessIsMore": "0|16%"}, // 4
+      {"lessIsMore": "0|20%"}, // 5
+      {"lessIsMore": "0|24%"}, // 6
+      {"lessIsMore": "0|28%"}, // 7
+      {"lessIsMore": "0|32%"}, // 8
+      {"lessIsMore": "0|36%"}, // 9
+      {"lessIsMore": "0|40%"}, // 10
+      {"lessIsMore": "0|44%"}, // 11
+      {"lessIsMore": "0|48%"}, // 12
+      {"lessIsMore": "0|52%"}, // 13
+      {"lessIsMore": "0|56%"}, // 14
+      {"lessIsMore": "0|60%"}, // 15
+      {"lessIsMore": "0|64%"}, // 16
+      {"lessIsMore": "0|68%"}, // 17
+      {"lessIsMore": "0|72%"}, // 18
+      {"lessIsMore": "0|76%"}, // 19
+      {"lessIsMore": "0|80%"}, // 20
+      {"lessIsMore": "0|84%"}, // 21
+      {"lessIsMore": "0|88%"}, // 22
+      {"lessIsMore": "0|92%"}, // 23
+      {"lessIsMore": "0|96%"}, // 24
+      {"lessIsMore": "0|100%"}, // 25
+      {"lessIsMore": "0|104%"}, // 26
+      {"lessIsMore": "0|108%"}, // 27
+      {"lessIsMore": "0|112%"}, // 28
+      {"lessIsMore": "0|116%"}, // 29
+      {"lessIsMore": "0|120%"}, // 30
+    ]
   },
   "breakAssassin": {
     // ブレイク特攻 
@@ -865,8 +896,39 @@ const SKILL_STATUS = {
   "headStart": {
     // 先制 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"attackPower": "0|16%|isFewMinutesFromStart"}, // 1
+      {"attackPower": "0|17%|isFewMinutesFromStart"}, // 2
+      {"attackPower": "0|18%|isFewMinutesFromStart"}, // 3
+      {"attackPower": "0|19%|isFewMinutesFromStart"}, // 4
+      {"attackPower": "0|20%|isFewMinutesFromStart"}, // 5
+      {"attackPower": "0|21%|isFewMinutesFromStart"}, // 6
+      {"attackPower": "0|22%|isFewMinutesFromStart"}, // 7
+      {"attackPower": "0|23%|isFewMinutesFromStart"}, // 8
+      {"attackPower": "0|24%|isFewMinutesFromStart"}, // 9
+      {"attackPower": "0|25%|isFewMinutesFromStart"}, // 10
+      {"attackPower": "0|26%|isFewMinutesFromStart"}, // 11
+      {"attackPower": "0|27%|isFewMinutesFromStart"}, // 12
+      {"attackPower": "0|28%|isFewMinutesFromStart"}, // 13
+      {"attackPower": "0|29%|isFewMinutesFromStart"}, // 14
+      {"attackPower": "0|30%|isFewMinutesFromStart"}, // 15
+      {"attackPower": "0|32%|isFewMinutesFromStart"}, // 16
+      {"attackPower": "0|34%|isFewMinutesFromStart"}, // 17
+      {"attackPower": "0|36%|isFewMinutesFromStart"}, // 18
+      {"attackPower": "0|38%|isFewMinutesFromStart"}, // 19
+      {"attackPower": "0|40%|isFewMinutesFromStart"}, // 20
+      {"attackPower": "0|42%|isFewMinutesFromStart"}, // 21
+      {"attackPower": "0|44%|isFewMinutesFromStart"}, // 22
+      {"attackPower": "0|46%|isFewMinutesFromStart"}, // 23
+      {"attackPower": "0|48%|isFewMinutesFromStart"}, // 24
+      {"attackPower": "0|50%|isFewMinutesFromStart"}, // 25
+      {"attackPower": "0|52%|isFewMinutesFromStart"}, // 26
+      {"attackPower": "0|54%|isFewMinutesFromStart"}, // 27
+      {"attackPower": "0|56%|isFewMinutesFromStart"}, // 28
+      {"attackPower": "0|58%|isFewMinutesFromStart"}, // 29
+      {"attackPower": "0|60%|isFewMinutesFromStart"}, // 30
+    ]
   },
   "supplementaryDamage": {
     // 追撃 
@@ -996,9 +1058,12 @@ const SKILL_STATUS = {
   },
   "rollOfTheDie": {
     // 一天六地 
-    "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      // 変わらない確率は書かない
+      {"alwaysDamageOne": "0|46%", "alwaysDamageDoubled": "0|16%", "alwaysDamageTripled": "0|10%", "alwaysDamageQuadrupled": "0|1%"}, // 15
+    ]
   },
   // 耐久
   "sandtombResistance": {

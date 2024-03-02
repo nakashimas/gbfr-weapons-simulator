@@ -9,6 +9,7 @@ new Vue({
     attackPowerBase: 0, 
     criticalHitRateBase: 0, 
     stunPowerBase: 0,
+    playerAbilityEquipped: 4,
     playConditions: {
       isEnemyBreak: true,
       isEnemyOverdrive: true,
@@ -43,6 +44,7 @@ new Vue({
       isPerfectDodgeRecently: true,
       isPerfectGuardRecently: true,
       isCharging: true,
+      isFewMinutesFromStart: true,
     },
     // weapons
     weaponName: 'amenoHabakiri',
@@ -367,7 +369,18 @@ new Vue({
     },
     attackPower: function() {
       // 攻撃力を計算
-      return this.applySkillEffects(this.attackPowerBase, this.getSkillEffect('attackPower')['attackPower'], 0);
+      const idx = 0;
+      // ベース
+      let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
+      // 裸一貫
+      let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
+      // 全体
+      return this.attackPowerBase * (
+        based + (
+          // 裸一貫
+          (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
+        )
+      ) / 100;
     },
     criticalHitRate: function() {
       // クリティカル率を計算
@@ -383,7 +396,18 @@ new Vue({
     },
     attackPowerToBe: function() {
       // 攻撃力を計算 (ToBeの方のレベルで計算)
-      return this.applySkillEffects(this.attackPowerBase, this.getSkillEffect('attackPower')['attackPower'], 1);
+      const idx = 1;
+      // ベース
+      let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
+      // 裸一貫
+      let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
+      // 全体
+      return this.attackPowerBase * (
+        based + (
+          // 裸一貫
+          (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
+        )
+      ) / 100;
     },
     criticalHitRateToBe: function() {
       // クリティカル率を計算 (ToBeの方のレベルで計算)

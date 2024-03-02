@@ -451,14 +451,14 @@
               <div class="col col-12 p-0 m-2">
                 <div class="row">
                   <div v-for="(playerConditon, index) in playConditions" :key="index" class="col col-6 col-lg-2">
-                    <input type="checkbox" id="" v-model="playConditions[index]">
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <input type="checkbox" :id="'condition-' + index" v-model="playConditions[index]">
+                    <label class="form-check-label" :for="'condition-' + index">
                       <small>{{messageText[lang]['conditions'][index]}}</small>
                     </label>
                   </div>
                 </div>
               </div>
-              <div class="col col-12 p-0">
+              <div class="col col-12 p-0 mb-2">
                 <div class="row">
                   <div class="col col-6">
                     <button type="button" class="btn btn-outline-primary btn-sm w-100 h-100" v-on:click="setPlayConditionsAll(true)">{{messageText[lang]['title']['selectAll']}}</button>
@@ -467,6 +467,12 @@
                     <button type="button" class="btn btn-outline-primary btn-sm w-100 h-100" v-on:click="setPlayConditionsAll(false)">{{messageText[lang]['title']['deselectAll']}}</button>
                   </div>
                 </div>
+              </div>
+              <div class="col col-12 p-0 input-group">
+                <label class="input-group-text">
+                  <small>{{messageText[lang]['title']['playerAbilityEquipped']}}</small>
+                </label>
+                <input class="form-control" type="number" v-model="playerAbilityEquipped" max="4" min="0">
               </div>
             </div>
           </div>

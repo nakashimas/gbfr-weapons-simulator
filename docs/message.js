@@ -8,7 +8,8 @@ const MESSAGE_TEXT = {
       "subSigilSkills": "ジーン（サブ）",
       "totalSkills": "スキル集計",
       "selectAll": "全て選択",
-      "deselectAll": "全て選択解除"
+      "deselectAll": "全て選択解除",
+      "playerAbilityEquipped": "アビリティ装備数",
     },
     "status": {
       "-": "-",
@@ -59,6 +60,11 @@ const MESSAGE_TEXT = {
       "bluePotion": "オールポーション", 
       "megaPotion": "メガポーション", 
       "revivalPotion": "蘇生薬",
+      "alwaysDamageOne": "常にダメージが1になる", 
+      "alwaysDamageDoubled": "常にダメージが2倍になる", 
+      "alwaysDamageTripled": "常にダメージが3倍になる",
+      "alwaysDamageQuadrupled": "常にダメージが4倍になる(ダメージ上限を無視する)",
+      "lessIsMore": "アビリティなしの攻撃力",
     },
     "conditions": {
       // 敵の状態
@@ -97,6 +103,7 @@ const MESSAGE_TEXT = {
       "isPerfectDodgeRecently": "直近にジャスト回避",
       "isPerfectGuardRecently": "直近にジャストガード",
       "isCharging": "チャージ中",
+      "isFewMinutesFromStart": "戦闘開始後3分以内",
     },
     "weapons": {
       "amenoHabakiri": "天羽々斬",
