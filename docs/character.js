@@ -1,97 +1,97 @@
 const CHARACTER_STATUS = {
   "narmaya": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "siegfried": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "katalina": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "io": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "rosetta": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "lancelot": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "eugen": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "vaseraga": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "ferry": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "rackam": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "zeta": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "charlotta": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "percival": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "vane": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "gran": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "ghandagoza": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "yodarha": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "id": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
   "cagliostro": {
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 30000, "attackPower": 6000, "criticalHitRate": 50, "stunPower": 120},
     ]
   },
 }
