@@ -140,8 +140,8 @@ new Vue({
         skillLevel = skillLevel < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevel;
         skillLevelToBe = skillLevelToBe < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevelToBe;
         // 効果量
-        const skillEffect = this.skillStatus[skillName]['levels'][parseInt(skillLevel) - this.skillStatus[skillName]['minLevel']];
-        const skillEffectToBe = this.skillStatus[skillName]['levels'][parseInt(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
+        const skillEffect = this.skillStatus[skillName]['levels'][parseFloat(skillLevel) - this.skillStatus[skillName]['minLevel']];
+        const skillEffectToBe = this.skillStatus[skillName]['levels'][parseFloat(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
         // 合計を計算
         for (let key in skillEffect){
           if (!(statusName === void 0)) {
@@ -196,7 +196,7 @@ new Vue({
           if (k in this.playConditions) {
             return this.playConditions[k];
           } else {
-            return parseInt(k);
+            return parseFloat(k);
           }
       }
     },
@@ -221,10 +221,10 @@ new Vue({
     },
     sumSkillEffects(a, b) {
       // マイナス記号・パーセント表記などを考慮して足し算を行う
-      aPercentile = parseInt(a.split("|")[1].replace("%", ""));
-      aNumerical = parseInt(a.split("|")[0]);
-      bPercentile = parseInt(b.split("|")[1].replace("%", ""));
-      bNumerical = parseInt(b.split("|")[0]);
+      aPercentile = parseFloat(a.split("|")[1].replace("%", ""));
+      aNumerical = parseFloat(a.split("|")[0]);
+      bPercentile = parseFloat(b.split("|")[1].replace("%", ""));
+      bNumerical = parseFloat(b.split("|")[0]);
       if (a.split("|").length > 2) {
         // aに条件あり、それを満たさない場合0にする
         const aCase = a.split("|")[2];
@@ -258,9 +258,9 @@ new Vue({
         skillEffectValue = skillEffects[0];
       }
 
-      skillEffectsPercentile = parseInt(skillEffectValue.split("|")[1].replace("%", ""));
-      skillEffectsNumerical = parseInt(skillEffectValue.split("|")[0]);
-      return (parseInt(baseStatus) + skillEffectsNumerical) * (100 + skillEffectsPercentile) / 100
+      skillEffectsPercentile = parseFloat(skillEffectValue.split("|")[1].replace("%", ""));
+      skillEffectsNumerical = parseFloat(skillEffectValue.split("|")[0]);
+      return (parseFloat(baseStatus) + skillEffectsNumerical) * (100 + skillEffectsPercentile) / 100
     },
     resetWeaponSkills() {
       const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
@@ -299,8 +299,8 @@ new Vue({
 
         if (mainName in totalLevels) {
           totalLevels[mainName] = [
-            parseInt(totalLevels[mainName][0]) + parseInt(mainLevel),
-            parseInt(totalLevels[mainName][1]) + parseInt(mainLevel),
+            parseFloat(totalLevels[mainName][0]) + parseFloat(mainLevel),
+            parseFloat(totalLevels[mainName][1]) + parseFloat(mainLevel),
           ]
         } else {
           totalLevels[mainName] = [mainLevel, mainLevel]
@@ -325,16 +325,16 @@ new Vue({
 
         if (mainName in totalLevels) {
           totalLevels[mainName] = [
-            parseInt(totalLevels[mainName][0]) + parseInt(mainLevel),
-            parseInt(totalLevels[mainName][1]) + parseInt(mainLevelTo),
+            parseFloat(totalLevels[mainName][0]) + parseFloat(mainLevel),
+            parseFloat(totalLevels[mainName][1]) + parseFloat(mainLevelTo),
           ]
         } else {
           totalLevels[mainName] = [mainLevel, mainLevelTo]
         }
         if (subName in totalLevels) {
           totalLevels[subName] = [
-            parseInt(totalLevels[subName][0]) + parseInt(subLevel),
-            parseInt(totalLevels[subName][1]) + parseInt(subLevelTo),
+            parseFloat(totalLevels[subName][0]) + parseFloat(subLevel),
+            parseFloat(totalLevels[subName][1]) + parseFloat(subLevelTo),
           ]
         } else {
           totalLevels[subName] = [subLevel, subLevelTo]
@@ -347,8 +347,8 @@ new Vue({
 
         if (mainName in totalLevels) {
           totalLevels[mainName] = [
-            parseInt(totalLevels[mainName][0]) + parseInt(mainLevel),
-            parseInt(totalLevels[mainName][1]) + parseInt(mainLevel),
+            parseFloat(totalLevels[mainName][0]) + parseFloat(mainLevel),
+            parseFloat(totalLevels[mainName][1]) + parseFloat(mainLevel),
           ]
         } else {
           totalLevels[mainName] = [mainLevel, mainLevel]

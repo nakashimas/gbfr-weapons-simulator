@@ -418,7 +418,7 @@
               <!-- == -->
               <div class="col col-6 col-lg-2 p-0">
                 <span class="input-group-text px-1 h-100">
-                  <small>HP: {{health * healthRate / 100}}/{{health}} -> {{healthToBe * healthRate / 100}}/{{healthToBe}}</small>
+                  <small>HP: {{parseInt(health * healthRate / 100)}}/{{parseInt(health)}} -> {{parseInt(healthToBe * healthRate / 100)}}/{{parseInt(healthToBe)}}</small>
                 </span>
               </div>
               <div class="col col-6 col-lg-4 p-0">
@@ -432,17 +432,17 @@
               <!-- =========== -->
               <div class="col col-4 col-lg-2 p-0">
                 <span class="input-group-text px-1 h-100">
-                  <small>ATK: {{attackPower}} -> {{attackPowerToBe}}</small>
+                  <small>ATK: {{parseInt(attackPower)}} -> {{parseInt(attackPowerToBe)}}</small>
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
                 <span class="input-group-text px-1 h-100">
-                  <small>CRT: {{criticalHitRate}} -> {{criticalHitRateToBe}}</small>
+                  <small>CRT: {{parseInt(criticalHitRate)}} -> {{parseInt(criticalHitRateToBe)}}</small>
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
                 <span class="input-group-text px-1 h-100">
-                  <small>STN: {{stunPower}} -> {{stunPowerToBe}}</small>
+                  <small>STN: {{parseInt(stunPower)}} -> {{parseInt(stunPowerToBe)}}</small>
                 </span>
               </div>
               <!-- ========== -->
