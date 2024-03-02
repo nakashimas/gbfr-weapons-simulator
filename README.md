@@ -71,7 +71,7 @@ _gbfr-weapons-simulator_ authors.
 
 ## Refs
 
-Any sigils
+Any sigils and English Translate
 - https://granbluefantasyrelink.wiki.fextralife.com/Sigils
 - https://relink.granbluefantasy.jp/en/manual/detail?p=ps5&s=battles
 

@@ -1279,7 +1279,53 @@ const SKILL_STATUS = {
     // 守護 
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"health": "0|5%"}, // 1
+      {"health": "0|8%"}, // 2
+      {"health": "0|11%"}, // 3
+      {"health": "0|13%"}, // 4
+      {"health": "0|15%"}, // 5
+      {"health": "0|17%"}, // 6
+      {"health": "0|19%"}, // 7
+      {"health": "0|21%"}, // 8
+      {"health": "0|23%"}, // 9
+      {"health": "0|25%"}, // 10
+      {"health": "0|27%"}, // 11
+      {"health": "0|29%"}, // 12
+      {"health": "0|31%"}, // 13
+      {"health": "0|33%"}, // 14
+      {"health": "0|35%"}, // 15
+      {"health": "0|36%"}, // 16
+      {"health": "0|37%"}, // 17
+      {"health": "0|38%"}, // 18
+      {"health": "0|39%"}, // 19
+      {"health": "0|40%"}, // 20
+      {"health": "0|41%"}, // 21
+      {"health": "0|42%"}, // 22
+      {"health": "0|43%"}, // 23
+      {"health": "0|44%"}, // 24
+      {"health": "0|45%"}, // 25
+      {"health": "0|46%"}, // 26
+      {"health": "0|47%"}, // 27
+      {"health": "0|48%"}, // 28
+      {"health": "0|49%"}, // 29
+      {"health": "0|50%"}, // 30
+      {"health": "0|52%"}, // 31
+      {"health": "0|54%"}, // 32
+      {"health": "0|56%"}, // 33
+      {"health": "0|58%"}, // 34
+      {"health": "0|60%"}, // 35
+      {"health": "0|62%"}, // 36
+      {"health": "0|64%"}, // 37
+      {"health": "0|66%"}, // 38
+      {"health": "0|68%"}, // 39
+      {"health": "0|70%"}, // 40
+      {"health": "0|72%"}, // 41
+      {"health": "0|74%"}, // 42
+      {"health": "0|76%"}, // 43
+      {"health": "0|78%"}, // 44
+      {"health": "0|80%"}, // 45
+    ]
   },
   "paralysisResistance": {
     // 麻痺耐性 
@@ -1327,44 +1373,261 @@ const SKILL_STATUS = {
   "glaciateResistance": {
     // 氷結耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"glaciateDuration": "0|-10%"}, // 1
+      {"glaciateDuration": "0|-16%"}, // 2
+      {"glaciateDuration": "0|-22%"}, // 3
+      {"glaciateDuration": "0|-27%"}, // 4
+      {"glaciateDuration": "0|-31%"}, // 5
+      {"glaciateDuration": "0|-35%"}, // 6
+      {"glaciateDuration": "0|-39%"}, // 7
+      {"glaciateDuration": "0|-42%"}, // 8
+      {"glaciateDuration": "0|-46%"}, // 9
+      {"glaciateDuration": "0|-50%"}, // 10
+      {"glaciateDuration": "0|-54%"}, // 11
+      {"glaciateDuration": "0|-58%"}, // 12
+      {"glaciateDuration": "0|-62%"}, // 13
+      {"glaciateDuration": "0|-66%"}, // 14
+      {"glaciateDuration": "0|-70%"}, // 15
+      {"glaciateDuration": "0|-72%"}, // 16
+      {"glaciateDuration": "0|-74%"}, // 17
+      {"glaciateDuration": "0|-76%"}, // 18
+      {"glaciateDuration": "0|-78%"}, // 19
+      {"glaciateDuration": "0|-80%"}, // 20
+      {"glaciateDuration": "0|-82%"}, // 21
+      {"glaciateDuration": "0|-84%"}, // 22
+      {"glaciateDuration": "0|-86%"}, // 23
+      {"glaciateDuration": "0|-88%"}, // 24
+      {"glaciateDuration": "0|-90%"}, // 25
+      {"glaciateDuration": "0|-92%"}, // 26
+      {"glaciateDuration": "0|-94%"}, // 27
+      {"glaciateDuration": "0|-96%"}, // 28
+      {"glaciateDuration": "0|-98%"}, // 29
+      {"glaciateDuration": "0|-100%"}, // 30
+    ]
   },
   "firmStance": {
     // 不動 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"moveRestrictionTaken": "0|-10%"}, // 1
+      {"moveRestrictionTaken": "0|-16%"}, // 2
+      {"moveRestrictionTaken": "0|-22%"}, // 3
+      {"moveRestrictionTaken": "0|-27%"}, // 4
+      {"moveRestrictionTaken": "0|-31%"}, // 5
+      {"moveRestrictionTaken": "0|-35%"}, // 6
+      {"moveRestrictionTaken": "0|-39%"}, // 7
+      {"moveRestrictionTaken": "0|-42%"}, // 8
+      {"moveRestrictionTaken": "0|-46%"}, // 9
+      {"moveRestrictionTaken": "0|-50%"}, // 10
+      {"moveRestrictionTaken": "0|-54%"}, // 11
+      {"moveRestrictionTaken": "0|-58%"}, // 12
+      {"moveRestrictionTaken": "0|-62%"}, // 13
+      {"moveRestrictionTaken": "0|-66%"}, // 14
+      {"moveRestrictionTaken": "0|-70%"}, // 15
+      {"moveRestrictionTaken": "0|-72%"}, // 16
+      {"moveRestrictionTaken": "0|-74%"}, // 17
+      {"moveRestrictionTaken": "0|-76%"}, // 18
+      {"moveRestrictionTaken": "0|-78%"}, // 19
+      {"moveRestrictionTaken": "0|-80%"}, // 20
+      {"moveRestrictionTaken": "0|-82%"}, // 21
+      {"moveRestrictionTaken": "0|-84%"}, // 22
+      {"moveRestrictionTaken": "0|-86%"}, // 23
+      {"moveRestrictionTaken": "0|-88%"}, // 24
+      {"moveRestrictionTaken": "0|-90%"}, // 25
+      {"moveRestrictionTaken": "0|-92%"}, // 26
+      {"moveRestrictionTaken": "0|-94%"}, // 27
+      {"moveRestrictionTaken": "0|-96%"}, // 28
+      {"moveRestrictionTaken": "0|-98%"}, // 29
+      {"moveRestrictionTaken": "0|-100%"}, // 30
+    ]
   },
   "poisonResistance": {
     // 毒耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"poisonDamageTaken": "0|-10%"}, // 1
+      {"poisonDamageTaken": "0|-16%"}, // 2
+      {"poisonDamageTaken": "0|-22%"}, // 3
+      {"poisonDamageTaken": "0|-27%"}, // 4
+      {"poisonDamageTaken": "0|-31%"}, // 5
+      {"poisonDamageTaken": "0|-35%"}, // 6
+      {"poisonDamageTaken": "0|-39%"}, // 7
+      {"poisonDamageTaken": "0|-42%"}, // 8
+      {"poisonDamageTaken": "0|-46%"}, // 9
+      {"poisonDamageTaken": "0|-50%"}, // 10
+      {"poisonDamageTaken": "0|-54%"}, // 11
+      {"poisonDamageTaken": "0|-58%"}, // 12
+      {"poisonDamageTaken": "0|-62%"}, // 13
+      {"poisonDamageTaken": "0|-66%"}, // 14
+      {"poisonDamageTaken": "0|-70%"}, // 15
+      {"poisonDamageTaken": "0|-72%"}, // 16
+      {"poisonDamageTaken": "0|-74%"}, // 17
+      {"poisonDamageTaken": "0|-76%"}, // 18
+      {"poisonDamageTaken": "0|-78%"}, // 19
+      {"poisonDamageTaken": "0|-80%"}, // 20
+      {"poisonDamageTaken": "0|-82%"}, // 21
+      {"poisonDamageTaken": "0|-84%"}, // 22
+      {"poisonDamageTaken": "0|-86%"}, // 23
+      {"poisonDamageTaken": "0|-88%"}, // 24
+      {"poisonDamageTaken": "0|-90%"}, // 25
+      {"poisonDamageTaken": "0|-92%"}, // 26
+      {"poisonDamageTaken": "0|-94%"}, // 27
+      {"poisonDamageTaken": "0|-96%"}, // 28
+      {"poisonDamageTaken": "0|-98%"}, // 29
+      {"poisonDamageTaken": "0|-100%"}, // 30
+    ]
   },
   "heldUnderResistance": {
     // 水牢耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"heldUnderDuration": "0|-10%"}, // 1
+      {"heldUnderDuration": "0|-16%"}, // 2
+      {"heldUnderDuration": "0|-22%"}, // 3
+      {"heldUnderDuration": "0|-27%"}, // 4
+      {"heldUnderDuration": "0|-31%"}, // 5
+      {"heldUnderDuration": "0|-35%"}, // 6
+      {"heldUnderDuration": "0|-39%"}, // 7
+      {"heldUnderDuration": "0|-42%"}, // 8
+      {"heldUnderDuration": "0|-46%"}, // 9
+      {"heldUnderDuration": "0|-50%"}, // 10
+      {"heldUnderDuration": "0|-54%"}, // 11
+      {"heldUnderDuration": "0|-58%"}, // 12
+      {"heldUnderDuration": "0|-62%"}, // 13
+      {"heldUnderDuration": "0|-66%"}, // 14
+      {"heldUnderDuration": "0|-70%"}, // 15
+      {"heldUnderDuration": "0|-72%"}, // 16
+      {"heldUnderDuration": "0|-74%"}, // 17
+      {"heldUnderDuration": "0|-76%"}, // 18
+      {"heldUnderDuration": "0|-78%"}, // 19
+      {"heldUnderDuration": "0|-80%"}, // 20
+      {"heldUnderDuration": "0|-82%"}, // 21
+      {"heldUnderDuration": "0|-84%"}, // 22
+      {"heldUnderDuration": "0|-86%"}, // 23
+      {"heldUnderDuration": "0|-88%"}, // 24
+      {"heldUnderDuration": "0|-90%"}, // 25
+      {"heldUnderDuration": "0|-92%"}, // 26
+      {"heldUnderDuration": "0|-94%"}, // 27
+      {"heldUnderDuration": "0|-96%"}, // 28
+      {"heldUnderDuration": "0|-98%"}, // 29
+      {"heldUnderDuration": "0|-100%"}, // 30
+    ]
   },
   "attackDownResistance": {
     // 攻撃DOWN耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"attackDownDuration": "0|-10%"}, // 1
+      {"attackDownDuration": "0|-16%"}, // 2
+      {"attackDownDuration": "0|-22%"}, // 3
+      {"attackDownDuration": "0|-27%"}, // 4
+      {"attackDownDuration": "0|-31%"}, // 5
+      {"attackDownDuration": "0|-35%"}, // 6
+      {"attackDownDuration": "0|-39%"}, // 7
+      {"attackDownDuration": "0|-42%"}, // 8
+      {"attackDownDuration": "0|-46%"}, // 9
+      {"attackDownDuration": "0|-50%"}, // 10
+      {"attackDownDuration": "0|-54%"}, // 11
+      {"attackDownDuration": "0|-58%"}, // 12
+      {"attackDownDuration": "0|-62%"}, // 13
+      {"attackDownDuration": "0|-66%"}, // 14
+      {"attackDownDuration": "0|-70%"}, // 15
+      {"attackDownDuration": "0|-72%"}, // 16
+      {"attackDownDuration": "0|-74%"}, // 17
+      {"attackDownDuration": "0|-76%"}, // 18
+      {"attackDownDuration": "0|-78%"}, // 19
+      {"attackDownDuration": "0|-80%"}, // 20
+      {"attackDownDuration": "0|-82%"}, // 21
+      {"attackDownDuration": "0|-84%"}, // 22
+      {"attackDownDuration": "0|-86%"}, // 23
+      {"attackDownDuration": "0|-88%"}, // 24
+      {"attackDownDuration": "0|-90%"}, // 25
+      {"attackDownDuration": "0|-92%"}, // 26
+      {"attackDownDuration": "0|-94%"}, // 27
+      {"attackDownDuration": "0|-96%"}, // 28
+      {"attackDownDuration": "0|-98%"}, // 29
+      {"attackDownDuration": "0|-100%"}, // 30
+    ]
   },
   "deffenceDownResistance": {
     // 防御DOWN耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"deffenceDownDuration": "0|-10%"}, // 1
+      {"deffenceDownDuration": "0|-16%"}, // 2
+      {"deffenceDownDuration": "0|-22%"}, // 3
+      {"deffenceDownDuration": "0|-27%"}, // 4
+      {"deffenceDownDuration": "0|-31%"}, // 5
+      {"deffenceDownDuration": "0|-35%"}, // 6
+      {"deffenceDownDuration": "0|-39%"}, // 7
+      {"deffenceDownDuration": "0|-42%"}, // 8
+      {"deffenceDownDuration": "0|-46%"}, // 9
+      {"deffenceDownDuration": "0|-50%"}, // 10
+      {"deffenceDownDuration": "0|-54%"}, // 11
+      {"deffenceDownDuration": "0|-58%"}, // 12
+      {"deffenceDownDuration": "0|-62%"}, // 13
+      {"deffenceDownDuration": "0|-66%"}, // 14
+      {"deffenceDownDuration": "0|-70%"}, // 15
+      {"deffenceDownDuration": "0|-72%"}, // 16
+      {"deffenceDownDuration": "0|-74%"}, // 17
+      {"deffenceDownDuration": "0|-76%"}, // 18
+      {"deffenceDownDuration": "0|-78%"}, // 19
+      {"deffenceDownDuration": "0|-80%"}, // 20
+      {"deffenceDownDuration": "0|-82%"}, // 21
+      {"deffenceDownDuration": "0|-84%"}, // 22
+      {"deffenceDownDuration": "0|-86%"}, // 23
+      {"deffenceDownDuration": "0|-88%"}, // 24
+      {"deffenceDownDuration": "0|-90%"}, // 25
+      {"deffenceDownDuration": "0|-92%"}, // 26
+      {"deffenceDownDuration": "0|-94%"}, // 27
+      {"deffenceDownDuration": "0|-96%"}, // 28
+      {"deffenceDownDuration": "0|-98%"}, // 29
+      {"deffenceDownDuration": "0|-100%"}, // 30
+    ]
   },
   "sbaSealedResistance": {
     // 奥義封印耐性 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"sbaSealedDuration": "0|-10%"}, // 1
+      {"sbaSealedDuration": "0|-16%"}, // 2
+      {"sbaSealedDuration": "0|-22%"}, // 3
+      {"sbaSealedDuration": "0|-27%"}, // 4
+      {"sbaSealedDuration": "0|-31%"}, // 5
+      {"sbaSealedDuration": "0|-35%"}, // 6
+      {"sbaSealedDuration": "0|-39%"}, // 7
+      {"sbaSealedDuration": "0|-42%"}, // 8
+      {"sbaSealedDuration": "0|-46%"}, // 9
+      {"sbaSealedDuration": "0|-50%"}, // 10
+      {"sbaSealedDuration": "0|-54%"}, // 11
+      {"sbaSealedDuration": "0|-58%"}, // 12
+      {"sbaSealedDuration": "0|-62%"}, // 13
+      {"sbaSealedDuration": "0|-66%"}, // 14
+      {"sbaSealedDuration": "0|-70%"}, // 15
+      {"sbaSealedDuration": "0|-72%"}, // 16
+      {"sbaSealedDuration": "0|-74%"}, // 17
+      {"sbaSealedDuration": "0|-76%"}, // 18
+      {"sbaSealedDuration": "0|-78%"}, // 19
+      {"sbaSealedDuration": "0|-80%"}, // 20
+      {"sbaSealedDuration": "0|-82%"}, // 21
+      {"sbaSealedDuration": "0|-84%"}, // 22
+      {"sbaSealedDuration": "0|-86%"}, // 23
+      {"sbaSealedDuration": "0|-88%"}, // 24
+      {"sbaSealedDuration": "0|-90%"}, // 25
+      {"sbaSealedDuration": "0|-92%"}, // 26
+      {"sbaSealedDuration": "0|-94%"}, // 27
+      {"sbaSealedDuration": "0|-96%"}, // 28
+      {"sbaSealedDuration": "0|-98%"}, // 29
+      {"sbaSealedDuration": "0|-100%"}, // 30
+    ]
   },
   "improvedDodge": {
     // 回避性能 
@@ -1930,5 +2193,310 @@ const SKILL_STATUS = {
     "levels": [
       {"attackPower": "0|50%|health<=45000", "attackDamageCap": "0|100%|health<=45000", "skilledDamageCap": "0|100%|health<=45000", "sbaDamageCap": "0|100%|health<=45000"}
     ],
-  }
+  },
+  // キャラクター専用ジーン
+  "fearlessDrive": {
+    // ブレイブドライブ
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "fearlessSpirit": {
+    // ブレイブオーラ
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "guardiansConviction": {
+    // 守護者の決意
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "guardiansHonor": {
+    // 守護者の矜持
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "helmsmansTenacity": {
+    // 操舵士の意地
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "helmsmansNavigation": {
+    // 操舵士の導き
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  // "unknown": {
+  //   // 魔導士の機転
+  //   "minLevel": 15,
+  //   "maxLevel": 15,
+  //   "levels": [
+  //     {},
+  //   ]
+  // }, 
+  "magesAspiration": {
+    // 魔導士の願い
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  // "unknown": {
+  //   // 老兵の知恵
+  //   "minLevel": 15,
+  //   "maxLevel": 15,
+  //   "levels": [
+  //     {},
+  //   ]
+  // }, 
+  // "unknown": {
+  //   // 老兵の一隻眼
+  //   "minLevel": 15,
+  //   "maxLevel": 15,
+  //   "levels": [
+  //     {},
+  //   ]
+  // }, 
+  "rosesBlooming": {
+    // 薔薇の早咲き
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "rosesProfusion": {
+    // 薔薇の繚乱
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  // "unknown": {
+  //   // 聖騎士の威風
+  //   "minLevel": 15,
+  //   "maxLevel": 15,
+  //   "levels": [
+  //     {},
+  //   ]
+  // }, 
+  // "unknown": {
+  //   // 聖騎士の剣光
+  //   "minLevel": 15,
+  //   "maxLevel": 15,
+  //   "levels": [
+  //     {},
+  //   ]
+  // }, 
+  "eternalRagesMettle": {
+    // 古今無双の気風
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "eternalRagesEthos": {
+    // 古今無双の腕達者
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "phantasmsConcord": {
+    // 幽幻の絆
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "phantasmsHarmony": {
+    // 幽幻の呼応
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "butterflysGrace": {
+    // 斬姫の武芸
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "butterflysValor": {
+    // 斬姫の夢幻
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "whiteDragonsOath": {
+    // 白竜の誓い
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "whiteDragonsGlory": {
+    // 白竜の誇り
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "herosCreed": {
+    // 勇士の根性
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "herosWill": {
+    // 勇士の信念
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "loadsProcession": {
+    // 王者の一心
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "loadsAmbition": {
+    // 王者の行進
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "dragonslayersDominance": {
+    // 竜殺しの猛威
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "dragonslayersIngenuity": {
+    // 竜殺しの才覚
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "foundersStrategy": {
+    // 極致の計略
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "foundersTruth": {
+    // 極致の真理
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "swordmastersProwess": {
+    // 変幻自在の快刀
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "swordmastersArt": {
+    // 変幻自在の妖剣士
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "crimsonsClout": {
+    // 真紅の気焔
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "crimsonsFlight": {
+    // 真紅の翔舞
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "ebonysPresence": {
+    // 冥闇の剛刃
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "ebonysPoise": {
+    // 冥闇の自若
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "versalisFoundation": {
+    // オルタナティブクロウ
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "versalisIgnition": {
+    // オルタナティブブレイカー
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
 }
