@@ -1,12 +1,14 @@
 const SKILL_STATUS = {
   "-": {
     // 指定なし
+    "skillType": "-",
     "minLevel": 0,
     "maxLevel": 0,
     "levels": []
   },
   "stunPower": {
     // スタン
+    "skillType": "basic",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -59,6 +61,7 @@ const SKILL_STATUS = {
   },
   "criticalHitRate": {
     // クリティカル確率 
+    "skillType": "basic",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -111,6 +114,7 @@ const SKILL_STATUS = {
   },
   "attackPower": {
     // 攻撃力 
+    "skillType": "basic",
     "minLevel": 1,
     "maxLevel": 50,
     "levels": [
@@ -168,6 +172,7 @@ const SKILL_STATUS = {
   },
   "health": {
     // 体力 
+    "skillType": "basic",
     "minLevel": 1,
     "maxLevel": 50,
     "levels": [
@@ -226,6 +231,7 @@ const SKILL_STATUS = {
   // 攻撃
   "exploiter": {
     // 弱点攻撃 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -278,6 +284,7 @@ const SKILL_STATUS = {
   },
   "comboBooster": {
     // コンボボーナス 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -315,6 +322,7 @@ const SKILL_STATUS = {
   },
   "tyranny": {
     // 暴君 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -352,6 +360,7 @@ const SKILL_STATUS = {
   },
   "enmity": {
     // 背水 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -389,6 +398,7 @@ const SKILL_STATUS = {
   },
   "stamina": {
     // 渾身 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -426,6 +436,7 @@ const SKILL_STATUS = {
   },
   "chargedAttack": {
     // チャージアタック 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -463,6 +474,7 @@ const SKILL_STATUS = {
   },
   "dodgePayback": {
     // 回避リベンジ 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -500,6 +512,7 @@ const SKILL_STATUS = {
   },
   "criticalDamage": {
     // クリティカルダメージ 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -537,6 +550,7 @@ const SKILL_STATUS = {
   },
   "overdriveAssassin": {
     // オーバードライブ特攻 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -574,6 +588,7 @@ const SKILL_STATUS = {
   },
   "injuryToInsult": {
     // 弱体状態特攻 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -611,6 +626,7 @@ const SKILL_STATUS = {
   },
   "luckyCharge": {
     // 溜め会心 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 20,
     "levels": [
@@ -638,6 +654,7 @@ const SKILL_STATUS = {
   },
   "throw": {
     // 投擲 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -675,6 +692,7 @@ const SKILL_STATUS = {
   },
   "linkedTogether": {
     // 連携攻撃 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -712,6 +730,7 @@ const SKILL_STATUS = {
   },
   "comboFinisher": {
     // コンボフィニッシュ 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -749,6 +768,7 @@ const SKILL_STATUS = {
   },
   "quickCharge": {
     // クイックチャージ 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -786,6 +806,7 @@ const SKILL_STATUS = {
   },
   "guardPayback": {
     // ガードリベンジ 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -823,6 +844,7 @@ const SKILL_STATUS = {
   },
   "lifeOnTheLine": {
     // 捨て身 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -860,6 +882,7 @@ const SKILL_STATUS = {
   },
   "damageCap": {
     // ダメージ上限 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 65,
     "levels": [
@@ -932,6 +955,7 @@ const SKILL_STATUS = {
   },
   "concentratedFire": {
     // 集中砲火 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -969,6 +993,7 @@ const SKILL_STATUS = {
   },
   "skilledAssault": {
     // アビリティダメージ 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1006,6 +1031,7 @@ const SKILL_STATUS = {
   },
   "glassCannon": {
     // 紙一重 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 15,
     "levels": [
@@ -1028,6 +1054,7 @@ const SKILL_STATUS = {
   },
   "lessIsMore": {
     // 裸一貫 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1065,6 +1092,7 @@ const SKILL_STATUS = {
   },
   "breakAssassin": {
     // ブレイク特攻 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1102,6 +1130,7 @@ const SKILL_STATUS = {
   },
   "headStart": {
     // 先制 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1139,6 +1168,7 @@ const SKILL_STATUS = {
   },
   "supplementaryDamage": {
     // 追撃 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -1191,6 +1221,7 @@ const SKILL_STATUS = {
   },
   "powerHungry": {
     // 修羅 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1228,6 +1259,7 @@ const SKILL_STATUS = {
   },
   "berserker": {
     // 窮鼠 
+    "skillType": "attack",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1265,6 +1297,7 @@ const SKILL_STATUS = {
   },
   "rollOfTheDie": {
     // 一天六地 
+    "skillType": "attack",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -1275,6 +1308,7 @@ const SKILL_STATUS = {
   // 耐久
   "sandtombResistance": {
     // 砂だるま耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1312,6 +1346,7 @@ const SKILL_STATUS = {
   },
   "dizzyResistance": {
     // 気絶耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1349,24 +1384,28 @@ const SKILL_STATUS = {
   },
   "improvedGuard": {
     // ガード性能 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "garrison": {
     // 堅守 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "steelNerves": {
     // ふんばり 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "slowResistance": {
     // スロウ耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1404,6 +1443,7 @@ const SKILL_STATUS = {
   },
   "burnResistance": {
     // 灼熱耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1441,12 +1481,14 @@ const SKILL_STATUS = {
   },
   "preciseResilience": {
     // 抗戦 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "blightResistance": {
     // 災禍耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1484,6 +1526,7 @@ const SKILL_STATUS = {
   },
   "aegis": {
     // 守護 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -1536,6 +1579,7 @@ const SKILL_STATUS = {
   },
   "paralysisResistance": {
     // 麻痺耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1573,12 +1617,14 @@ const SKILL_STATUS = {
   },
   "nimbleDefense": {
     // 精神一到 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "glaciateResistance": {
     // 氷結耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1616,6 +1662,7 @@ const SKILL_STATUS = {
   },
   "firmStance": {
     // 不動 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1653,6 +1700,7 @@ const SKILL_STATUS = {
   },
   "poisonResistance": {
     // 毒耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1690,6 +1738,7 @@ const SKILL_STATUS = {
   },
   "heldUnderResistance": {
     // 水牢耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1727,6 +1776,7 @@ const SKILL_STATUS = {
   },
   "attackDownResistance": {
     // 攻撃DOWN耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1764,6 +1814,7 @@ const SKILL_STATUS = {
   },
   "deffenceDownResistance": {
     // 防御DOWN耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1801,6 +1852,7 @@ const SKILL_STATUS = {
   },
   "sbaSealedResistance": {
     // 奥義封印耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1838,18 +1890,21 @@ const SKILL_STATUS = {
   },
   "improvedDodge": {
     // 回避性能 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "stronghold": {
     // 剛健 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "flightOverFight": {
     // フラジャイルドッジ 
+    "skillType": "defence",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -1858,6 +1913,7 @@ const SKILL_STATUS = {
   },
   "skillSealedResistance": {
     // アビリティ封印耐性 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1895,6 +1951,7 @@ const SKILL_STATUS = {
   },
   "darkflameResistance": {
     // レジストオルタ 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
@@ -1932,6 +1989,7 @@ const SKILL_STATUS = {
   },
   "untouchable": {
     // 回避距離 
+    "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
@@ -1939,48 +1997,56 @@ const SKILL_STATUS = {
   // 支援
   "uplift": {
     // 高揚 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "quickCooldown": {
     // クイックアビリティ 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "nimbleOnslaught": {
     // 明鏡止水 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "preciseWrath": {
     // 怒髪天 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "drain": {
     // HP吸収 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "regen": {
     // リジェネレーション 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "improvedHealing": {
     // 回復性能 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
   },
   "cascade": {
     // 怒涛 
+    "skillType": "support",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": []
@@ -1988,6 +2054,7 @@ const SKILL_STATUS = {
   // 特殊
   "guts": {
     // ガッツ 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -2015,6 +2082,7 @@ const SKILL_STATUS = {
   },
   "rupieTycoon": {
     // 取得ルピ 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -2067,6 +2135,7 @@ const SKILL_STATUS = {
   },
   "lowProfile": {
     // ステルス 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -2094,6 +2163,7 @@ const SKILL_STATUS = {
   },
   "fastLearner": {
     // 取得経験値 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -2146,6 +2216,7 @@ const SKILL_STATUS = {
   },
   "potionHoarder": {
     // ポーション所持数 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 15,
     "levels": [
@@ -2168,6 +2239,7 @@ const SKILL_STATUS = {
   },
   "provoke": {
     // 挑発 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 20,
     "levels": [
@@ -2195,6 +2267,7 @@ const SKILL_STATUS = {
   },
   "steadyFocus": {
     // チャージ強化 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 15,
     "levels": [
@@ -2217,6 +2290,7 @@ const SKILL_STATUS = {
   },
   "autorevive": {
     // 自動復活 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 20,
     "levels": [
@@ -2244,6 +2318,7 @@ const SKILL_STATUS = {
   },
   "pathToMastery": {
     // 取得MSP 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -2296,6 +2371,7 @@ const SKILL_STATUS = {
   },
   "potentGreens": {
     // 万能薬 
+    "skillType": "special",
     "minLevel": 15,
     "maxLevel": 30,
     "levels": [
@@ -2319,6 +2395,7 @@ const SKILL_STATUS = {
   },
   "stoutHeart": {
     // 怯み無効 
+    "skillType": "special",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2327,6 +2404,7 @@ const SKILL_STATUS = {
   },
   "crabbyResonance": {
     // カニの共鳴 
+    "skillType": "special",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -2379,6 +2457,7 @@ const SKILL_STATUS = {
   },
   "crabvestmentReturns": {
     // カニの恩返し 
+    "skillType": "special",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2387,6 +2466,7 @@ const SKILL_STATUS = {
   },
   "sigilBooster": {
     // ジーン強化 
+    "skillType": "other",
     "minLevel": 1,
     "maxLevel": 1,
     "levels": [
@@ -2395,6 +2475,7 @@ const SKILL_STATUS = {
   },
   "catastrophe": {
     // カタストロフィ 
+    "skillType": "other",
     "minLevel": 25,
     "maxLevel": 25,
     "levels": [
@@ -2404,6 +2485,7 @@ const SKILL_STATUS = {
   // キャラクター専用ジーン
   "fearlessDrive": {
     // ブレイブドライブ
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2412,6 +2494,7 @@ const SKILL_STATUS = {
   }, 
   "fearlessSpirit": {
     // ブレイブオーラ
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2420,6 +2503,7 @@ const SKILL_STATUS = {
   }, 
   "guardiansConviction": {
     // 守護者の決意
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2428,6 +2512,7 @@ const SKILL_STATUS = {
   }, 
   "guardiansHonor": {
     // 守護者の矜持
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2436,6 +2521,7 @@ const SKILL_STATUS = {
   }, 
   "helmsmansTenacity": {
     // 操舵士の意地
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2444,6 +2530,7 @@ const SKILL_STATUS = {
   }, 
   "helmsmansNavigation": {
     // 操舵士の導き
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2452,6 +2539,7 @@ const SKILL_STATUS = {
   }, 
   // "unknown": {
   //   // 魔導士の機転
+  //   "skillType": "awakening",
   //   "minLevel": 15,
   //   "maxLevel": 15,
   //   "levels": [
@@ -2460,6 +2548,7 @@ const SKILL_STATUS = {
   // }, 
   "magesAspiration": {
     // 魔導士の願い
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2468,6 +2557,7 @@ const SKILL_STATUS = {
   }, 
   // "unknown": {
   //   // 老兵の知恵
+  //   "skillType": "awakening",
   //   "minLevel": 15,
   //   "maxLevel": 15,
   //   "levels": [
@@ -2476,6 +2566,7 @@ const SKILL_STATUS = {
   // }, 
   // "unknown": {
   //   // 老兵の一隻眼
+  //   "skillType": "awakening",
   //   "minLevel": 15,
   //   "maxLevel": 15,
   //   "levels": [
@@ -2484,6 +2575,7 @@ const SKILL_STATUS = {
   // }, 
   "rosesBlooming": {
     // 薔薇の早咲き
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2492,6 +2584,7 @@ const SKILL_STATUS = {
   }, 
   "rosesProfusion": {
     // 薔薇の繚乱
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2500,6 +2593,7 @@ const SKILL_STATUS = {
   }, 
   // "unknown": {
   //   // 聖騎士の威風
+  //   "skillType": "awakening",
   //   "minLevel": 15,
   //   "maxLevel": 15,
   //   "levels": [
@@ -2508,6 +2602,7 @@ const SKILL_STATUS = {
   // }, 
   // "unknown": {
   //   // 聖騎士の剣光
+  //   "skillType": "awakening",
   //   "minLevel": 15,
   //   "maxLevel": 15,
   //   "levels": [
@@ -2516,6 +2611,7 @@ const SKILL_STATUS = {
   // }, 
   "eternalRagesMettle": {
     // 古今無双の気風
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2524,6 +2620,7 @@ const SKILL_STATUS = {
   }, 
   "eternalRagesEthos": {
     // 古今無双の腕達者
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2532,6 +2629,7 @@ const SKILL_STATUS = {
   }, 
   "phantasmsConcord": {
     // 幽幻の絆
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2540,6 +2638,7 @@ const SKILL_STATUS = {
   }, 
   "phantasmsHarmony": {
     // 幽幻の呼応
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2548,6 +2647,7 @@ const SKILL_STATUS = {
   }, 
   "butterflysGrace": {
     // 斬姫の武芸
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2556,6 +2656,7 @@ const SKILL_STATUS = {
   }, 
   "butterflysValor": {
     // 斬姫の夢幻
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2564,6 +2665,7 @@ const SKILL_STATUS = {
   }, 
   "whiteDragonsOath": {
     // 白竜の誓い
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2572,6 +2674,7 @@ const SKILL_STATUS = {
   }, 
   "whiteDragonsGlory": {
     // 白竜の誇り
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2580,6 +2683,7 @@ const SKILL_STATUS = {
   }, 
   "herosCreed": {
     // 勇士の根性
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2588,6 +2692,7 @@ const SKILL_STATUS = {
   }, 
   "herosWill": {
     // 勇士の信念
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2596,6 +2701,7 @@ const SKILL_STATUS = {
   }, 
   "loadsProcession": {
     // 王者の一心
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2604,6 +2710,7 @@ const SKILL_STATUS = {
   }, 
   "loadsAmbition": {
     // 王者の行進
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2612,6 +2719,7 @@ const SKILL_STATUS = {
   }, 
   "dragonslayersDominance": {
     // 竜殺しの猛威
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2620,6 +2728,7 @@ const SKILL_STATUS = {
   }, 
   "dragonslayersIngenuity": {
     // 竜殺しの才覚
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2628,6 +2737,7 @@ const SKILL_STATUS = {
   }, 
   "foundersStrategy": {
     // 極致の計略
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2636,6 +2746,7 @@ const SKILL_STATUS = {
   }, 
   "foundersTruth": {
     // 極致の真理
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2644,6 +2755,7 @@ const SKILL_STATUS = {
   }, 
   "swordmastersProwess": {
     // 変幻自在の快刀
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2652,6 +2764,7 @@ const SKILL_STATUS = {
   }, 
   "swordmastersArt": {
     // 変幻自在の妖剣士
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2660,6 +2773,7 @@ const SKILL_STATUS = {
   }, 
   "crimsonsClout": {
     // 真紅の気焔
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2668,6 +2782,7 @@ const SKILL_STATUS = {
   }, 
   "crimsonsFlight": {
     // 真紅の翔舞
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2676,6 +2791,7 @@ const SKILL_STATUS = {
   }, 
   "ebonysPresence": {
     // 冥闇の剛刃
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2684,6 +2800,7 @@ const SKILL_STATUS = {
   }, 
   "ebonysPoise": {
     // 冥闇の自若
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2692,6 +2809,7 @@ const SKILL_STATUS = {
   }, 
   "versalisFoundation": {
     // オルタナティブクロウ
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2700,6 +2818,7 @@ const SKILL_STATUS = {
   }, 
   "versalisIgnition": {
     // オルタナティブブレイカー
+    "skillType": "awakening",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [

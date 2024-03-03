@@ -210,9 +210,11 @@
             <!-- Main Skill Name -->
             <div class="col col-3 p-0">
               <select :id="'sigil-main-name-' + index" v-model="sigils[index].sigilMainSkillName" class="select-2 form-select">
-                <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">
-                  {{sigil_selection}}
-                </option>
+                <template v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']">
+                  <option :value="sigil_selection_idx">
+                    {{sigil_selection}}
+                  </option>
+                </template>
               </select>
             </div>
             <!-- Main Skill Stats -->
@@ -244,9 +246,11 @@
             <!-- Sub Skill Name -->
             <div class="col col-3 p-0">
               <select :id="'sigil-sub-name-' + index" v-model="sigils[index].sigilSubSkillName" class="select-2 form-select">
-                <option v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']" :value="sigil_selection_idx">
-                  {{sigil_selection}}
-                </option>
+                <template v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']">
+                  <option v-if="isObtainableSigil(sigils[index].sigilMainSkillName, sigil_selection_idx)" :value="sigil_selection_idx">
+                    {{sigil_selection}}
+                  </option>
+                </template>
               </select>
             </div>
             <!-- Sub Skill Stats -->

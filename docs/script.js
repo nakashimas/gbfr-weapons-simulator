@@ -126,6 +126,27 @@ new Vue({
         this.weaponTraits.push(Object.assign({}, this.weaponTraitTemplate));
       }
     },
+    isObtainableSigil(mainSkillName, subSkillName) {
+      const mainSkillType = this.skillStatus[mainSkillName]["skillType"];
+      const subSkillType = this.skillStatus[subSkillName]["skillType"];
+      const skillWeight = {
+        '-': 90,
+        'other': 80,
+        'awakening': 60,
+        'basic': 50,
+        'attack': 40,
+        'defence': 30,
+        'support': 20,
+        'special': 10,
+      }
+      if (subSkillType == '-' || subSkillType == 'other'){
+        return true;
+      } else if (subSkillName == 'attackPower'){
+        return true;
+      } else {
+        return skillWeight[mainSkillType] > skillWeight[subSkillType]
+      }
+    },
     getSkillEffect(statusName) {
       // スキルの上昇量を計算
       let totalEffects = {};
@@ -134,14 +155,16 @@ new Vue({
         let skillLevel = this.totalSkillLevels[i]['level'][0];
         let skillLevelToBe = this.totalSkillLevels[i]['level'][1];
         // 最大レベルで丸める
-        skillLevel = skillLevel > this.skillStatus[skillName]['maxLevel'] ? this.skillStatus[skillName]['maxLevel'] : skillLevel;
-        skillLevelToBe = skillLevelToBe > this.skillStatus[skillName]['maxLevel'] ? this.skillStatus[skillName]['maxLevel'] : skillLevelToBe;
+        const maxLevel = this.skillStatus[skillName]['maxLevel'];
+        skillLevel = skillLevel > maxLevel ? maxLevel : skillLevel;
+        skillLevelToBe = skillLevelToBe > maxLevel ? maxLevel : skillLevelToBe;
         // 最小レベルで丸める
-        skillLevel = skillLevel < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevel;
-        skillLevelToBe = skillLevelToBe < this.skillStatus[skillName]['minLevel'] ? this.skillStatus[skillName]['minLevel'] : skillLevelToBe;
+        const minLevel = this.skillStatus[skillName]['minLevel'];
+        skillLevel = skillLevel < minLevel ? minLevel : skillLevel;
+        skillLevelToBe = skillLevelToBe < minLevel ? minLevel : skillLevelToBe;
         // 効果量
-        const skillEffect = this.skillStatus[skillName]['levels'][parseFloat(skillLevel) - this.skillStatus[skillName]['minLevel']];
-        const skillEffectToBe = this.skillStatus[skillName]['levels'][parseFloat(skillLevelToBe) - this.skillStatus[skillName]['minLevel']];
+        const skillEffect = this.skillStatus[skillName]['levels'][parseFloat(skillLevel) - minLevel];
+        const skillEffectToBe = this.skillStatus[skillName]['levels'][parseFloat(skillLevelToBe) - minLevel];
         // 合計を計算
         for (let key in skillEffect){
           if (!(statusName === void 0)) {
