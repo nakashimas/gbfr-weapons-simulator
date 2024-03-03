@@ -863,71 +863,71 @@ const SKILL_STATUS = {
     "minLevel": 1,
     "maxLevel": 65,
     "levels": [
-      {"attackDamageCap": "0|3%", "skilledDamageCap": "0|3%", "sbaDamageCap":  "0|3%"}, // 1
-      {"attackDamageCap": "0|6%", "skilledDamageCap": "0|6%", "sbaDamageCap":  "0|6%"}, // 2
-      {"attackDamageCap": "0|9%", "skilledDamageCap": "0|9%", "sbaDamageCap":  "0|9%"}, // 3
-      {"attackDamageCap": "0|12%", "skilledDamageCap": "0|12%", "sbaDamageCap":  "0|12%"}, // 4
-      {"attackDamageCap": "0|15%", "skilledDamageCap": "0|15%", "sbaDamageCap":  "0|15%"}, // 5
-      {"attackDamageCap": "0|18%", "skilledDamageCap": "0|18%", "sbaDamageCap":  "0|18%"}, // 6
-      {"attackDamageCap": "0|21%", "skilledDamageCap": "0|21%", "sbaDamageCap":  "0|21%"}, // 7
-      {"attackDamageCap": "0|24%", "skilledDamageCap": "0|24%", "sbaDamageCap":  "0|24%"}, // 8
-      {"attackDamageCap": "0|27%", "skilledDamageCap": "0|27%", "sbaDamageCap":  "0|27%"}, // 9
-      {"attackDamageCap": "0|30%", "skilledDamageCap": "0|30%", "sbaDamageCap":  "0|30%"}, // 10
-      {"attackDamageCap": "0|33%", "skilledDamageCap": "0|33%", "sbaDamageCap":  "0|33%"}, // 11
-      {"attackDamageCap": "0|36%", "skilledDamageCap": "0|36%", "sbaDamageCap":  "0|36%"}, // 12
-      {"attackDamageCap": "0|39%", "skilledDamageCap": "0|39%", "sbaDamageCap":  "0|39%"}, // 13
-      {"attackDamageCap": "0|42%", "skilledDamageCap": "0|42%", "sbaDamageCap":  "0|42%"}, // 14
-      {"attackDamageCap": "0|45%", "skilledDamageCap": "0|45%", "sbaDamageCap":  "0|45%"}, // 15
-      {"attackDamageCap": "0|48%", "skilledDamageCap": "0|48%", "sbaDamageCap":  "0|48%"}, // 16
-      {"attackDamageCap": "0|51%", "skilledDamageCap": "0|51%", "sbaDamageCap":  "0|51%"}, // 17
-      {"attackDamageCap": "0|54%", "skilledDamageCap": "0|54%", "sbaDamageCap":  "0|54%"}, // 18
-      {"attackDamageCap": "0|57%", "skilledDamageCap": "0|57%", "sbaDamageCap":  "0|57%"}, // 19
-      {"attackDamageCap": "0|60%", "skilledDamageCap": "0|60%", "sbaDamageCap":  "0|60%"}, // 20
-      {"attackDamageCap": "0|63%", "skilledDamageCap": "0|63%", "sbaDamageCap":  "0|63%"}, // 21
-      {"attackDamageCap": "0|66%", "skilledDamageCap": "0|66%", "sbaDamageCap":  "0|66%"}, // 22
-      {"attackDamageCap": "0|69%", "skilledDamageCap": "0|69%", "sbaDamageCap":  "0|69%"}, // 23
-      {"attackDamageCap": "0|72%", "skilledDamageCap": "0|72%", "sbaDamageCap":  "0|72%"}, // 24
-      {"attackDamageCap": "0|75%", "skilledDamageCap": "0|75%", "sbaDamageCap":  "0|75%"}, // 25
-      {"attackDamageCap": "0|78%", "skilledDamageCap": "0|78%", "sbaDamageCap":  "0|78%"}, // 26
-      {"attackDamageCap": "0|81%", "skilledDamageCap": "0|81%", "sbaDamageCap":  "0|81%"}, // 27
-      {"attackDamageCap": "0|84%", "skilledDamageCap": "0|84%", "sbaDamageCap":  "0|84%"}, // 28
-      {"attackDamageCap": "0|87%", "skilledDamageCap": "0|87%", "sbaDamageCap":  "0|87%"}, // 29
-      {"attackDamageCap": "0|90%", "skilledDamageCap": "0|90%", "sbaDamageCap":  "0|90%"}, // 30
-      {"attackDamageCap": "0|94%", "skilledDamageCap": "0|94%", "sbaDamageCap":  "0|94%"}, // 31
-      {"attackDamageCap": "0|98%", "skilledDamageCap": "0|98%", "sbaDamageCap":  "0|98%"}, // 32
-      {"attackDamageCap": "0|102%", "skilledDamageCap": "0|102%", "sbaDamageCap":  "0|102%"}, // 33
-      {"attackDamageCap": "0|106%", "skilledDamageCap": "0|106%", "sbaDamageCap":  "0|106%"}, // 34
-      {"attackDamageCap": "0|110%", "skilledDamageCap": "0|110%", "sbaDamageCap":  "0|110%"}, // 35
-      {"attackDamageCap": "0|114%", "skilledDamageCap": "0|114%", "sbaDamageCap":  "0|114%"}, // 36
-      {"attackDamageCap": "0|118%", "skilledDamageCap": "0|118%", "sbaDamageCap":  "0|118%"}, // 37
-      {"attackDamageCap": "0|122%", "skilledDamageCap": "0|122%", "sbaDamageCap":  "0|122%"}, // 38
-      {"attackDamageCap": "0|126%", "skilledDamageCap": "0|126%", "sbaDamageCap":  "0|126%"}, // 39
-      {"attackDamageCap": "0|130%", "skilledDamageCap": "0|130%", "sbaDamageCap":  "0|130%"}, // 40
-      {"attackDamageCap": "0|134%", "skilledDamageCap": "0|134%", "sbaDamageCap":  "0|134%"}, // 41
-      {"attackDamageCap": "0|138%", "skilledDamageCap": "0|138%", "sbaDamageCap":  "0|138%"}, // 42
-      {"attackDamageCap": "0|142%", "skilledDamageCap": "0|142%", "sbaDamageCap":  "0|142%"}, // 43
-      {"attackDamageCap": "0|146%", "skilledDamageCap": "0|146%", "sbaDamageCap":  "0|146%"}, // 44
-      {"attackDamageCap": "0|150%", "skilledDamageCap": "0|150%", "sbaDamageCap":  "0|150%"}, // 45
-      {"attackDamageCap": "0|154%", "skilledDamageCap": "0|154%", "sbaDamageCap":  "0|154%"}, // 46
-      {"attackDamageCap": "0|158%", "skilledDamageCap": "0|158%", "sbaDamageCap":  "0|158%"}, // 47
-      {"attackDamageCap": "0|162%", "skilledDamageCap": "0|162%", "sbaDamageCap":  "0|162%"}, // 48
-      {"attackDamageCap": "0|166%", "skilledDamageCap": "0|166%", "sbaDamageCap":  "0|166%"}, // 49
-      {"attackDamageCap": "0|170%", "skilledDamageCap": "0|170%", "sbaDamageCap":  "0|170%"}, // 50
-      {"attackDamageCap": "0|175%", "skilledDamageCap": "0|175%", "sbaDamageCap":  "0|175%"}, // 51
-      {"attackDamageCap": "0|180%", "skilledDamageCap": "0|180%", "sbaDamageCap":  "0|180%"}, // 52
-      {"attackDamageCap": "0|185%", "skilledDamageCap": "0|185%", "sbaDamageCap":  "0|185%"}, // 53
-      {"attackDamageCap": "0|190%", "skilledDamageCap": "0|190%", "sbaDamageCap":  "0|190%"}, // 54
-      {"attackDamageCap": "0|195%", "skilledDamageCap": "0|195%", "sbaDamageCap":  "0|195%"}, // 55
-      {"attackDamageCap": "0|200%", "skilledDamageCap": "0|200%", "sbaDamageCap":  "0|200%"}, // 56
-      {"attackDamageCap": "0|205%", "skilledDamageCap": "0|205%", "sbaDamageCap":  "0|205%"}, // 57
-      {"attackDamageCap": "0|210%", "skilledDamageCap": "0|210%", "sbaDamageCap":  "0|210%"}, // 58
-      {"attackDamageCap": "0|215%", "skilledDamageCap": "0|215%", "sbaDamageCap":  "0|215%"}, // 59
-      {"attackDamageCap": "0|220%", "skilledDamageCap": "0|220%", "sbaDamageCap":  "0|220%"}, // 60
-      {"attackDamageCap": "0|226%", "skilledDamageCap": "0|226%", "sbaDamageCap":  "0|226%"}, // 61
-      {"attackDamageCap": "0|232%", "skilledDamageCap": "0|232%", "sbaDamageCap":  "0|232%"}, // 62
-      {"attackDamageCap": "0|238%", "skilledDamageCap": "0|238%", "sbaDamageCap":  "0|238%"}, // 63
-      {"attackDamageCap": "0|244%", "skilledDamageCap": "0|244%", "sbaDamageCap":  "0|244%"}, // 64
-      {"attackDamageCap": "0|250%", "skilledDamageCap": "0|250%", "sbaDamageCap":  "0|250%"}, // 65
+      {"damageCap": "0|3%", "attackDamageCap": "0|3%", "skilledDamageCap": "0|3%", "sbaDamageCap":  "0|3%"}, // 1
+      {"damageCap": "0|6%", "attackDamageCap": "0|6%", "skilledDamageCap": "0|6%", "sbaDamageCap":  "0|6%"}, // 2
+      {"damageCap": "0|9%", "attackDamageCap": "0|9%", "skilledDamageCap": "0|9%", "sbaDamageCap":  "0|9%"}, // 3
+      {"damageCap": "0|12%", "attackDamageCap": "0|12%", "skilledDamageCap": "0|12%", "sbaDamageCap":  "0|12%"}, // 4
+      {"damageCap": "0|15%", "attackDamageCap": "0|15%", "skilledDamageCap": "0|15%", "sbaDamageCap":  "0|15%"}, // 5
+      {"damageCap": "0|18%", "attackDamageCap": "0|18%", "skilledDamageCap": "0|18%", "sbaDamageCap":  "0|18%"}, // 6
+      {"damageCap": "0|21%", "attackDamageCap": "0|21%", "skilledDamageCap": "0|21%", "sbaDamageCap":  "0|21%"}, // 7
+      {"damageCap": "0|24%", "attackDamageCap": "0|24%", "skilledDamageCap": "0|24%", "sbaDamageCap":  "0|24%"}, // 8
+      {"damageCap": "0|27%", "attackDamageCap": "0|27%", "skilledDamageCap": "0|27%", "sbaDamageCap":  "0|27%"}, // 9
+      {"damageCap": "0|30%", "attackDamageCap": "0|30%", "skilledDamageCap": "0|30%", "sbaDamageCap":  "0|30%"}, // 10
+      {"damageCap": "0|33%", "attackDamageCap": "0|33%", "skilledDamageCap": "0|33%", "sbaDamageCap":  "0|33%"}, // 11
+      {"damageCap": "0|36%", "attackDamageCap": "0|36%", "skilledDamageCap": "0|36%", "sbaDamageCap":  "0|36%"}, // 12
+      {"damageCap": "0|39%", "attackDamageCap": "0|39%", "skilledDamageCap": "0|39%", "sbaDamageCap":  "0|39%"}, // 13
+      {"damageCap": "0|42%", "attackDamageCap": "0|42%", "skilledDamageCap": "0|42%", "sbaDamageCap":  "0|42%"}, // 14
+      {"damageCap": "0|45%", "attackDamageCap": "0|45%", "skilledDamageCap": "0|45%", "sbaDamageCap":  "0|45%"}, // 15
+      {"damageCap": "0|48%", "attackDamageCap": "0|48%", "skilledDamageCap": "0|48%", "sbaDamageCap":  "0|48%"}, // 16
+      {"damageCap": "0|51%", "attackDamageCap": "0|51%", "skilledDamageCap": "0|51%", "sbaDamageCap":  "0|51%"}, // 17
+      {"damageCap": "0|54%", "attackDamageCap": "0|54%", "skilledDamageCap": "0|54%", "sbaDamageCap":  "0|54%"}, // 18
+      {"damageCap": "0|57%", "attackDamageCap": "0|57%", "skilledDamageCap": "0|57%", "sbaDamageCap":  "0|57%"}, // 19
+      {"damageCap": "0|60%", "attackDamageCap": "0|60%", "skilledDamageCap": "0|60%", "sbaDamageCap":  "0|60%"}, // 20
+      {"damageCap": "0|63%", "attackDamageCap": "0|63%", "skilledDamageCap": "0|63%", "sbaDamageCap":  "0|63%"}, // 21
+      {"damageCap": "0|66%", "attackDamageCap": "0|66%", "skilledDamageCap": "0|66%", "sbaDamageCap":  "0|66%"}, // 22
+      {"damageCap": "0|69%", "attackDamageCap": "0|69%", "skilledDamageCap": "0|69%", "sbaDamageCap":  "0|69%"}, // 23
+      {"damageCap": "0|72%", "attackDamageCap": "0|72%", "skilledDamageCap": "0|72%", "sbaDamageCap":  "0|72%"}, // 24
+      {"damageCap": "0|75%", "attackDamageCap": "0|75%", "skilledDamageCap": "0|75%", "sbaDamageCap":  "0|75%"}, // 25
+      {"damageCap": "0|78%", "attackDamageCap": "0|78%", "skilledDamageCap": "0|78%", "sbaDamageCap":  "0|78%"}, // 26
+      {"damageCap": "0|81%", "attackDamageCap": "0|81%", "skilledDamageCap": "0|81%", "sbaDamageCap":  "0|81%"}, // 27
+      {"damageCap": "0|84%", "attackDamageCap": "0|84%", "skilledDamageCap": "0|84%", "sbaDamageCap":  "0|84%"}, // 28
+      {"damageCap": "0|87%", "attackDamageCap": "0|87%", "skilledDamageCap": "0|87%", "sbaDamageCap":  "0|87%"}, // 29
+      {"damageCap": "0|90%", "attackDamageCap": "0|90%", "skilledDamageCap": "0|90%", "sbaDamageCap":  "0|90%"}, // 30
+      {"damageCap": "0|94%", "attackDamageCap": "0|94%", "skilledDamageCap": "0|94%", "sbaDamageCap":  "0|94%"}, // 31
+      {"damageCap": "0|98%", "attackDamageCap": "0|98%", "skilledDamageCap": "0|98%", "sbaDamageCap":  "0|98%"}, // 32
+      {"damageCap": "0|102%", "attackDamageCap": "0|102%", "skilledDamageCap": "0|102%", "sbaDamageCap":  "0|102%"}, // 33
+      {"damageCap": "0|106%", "attackDamageCap": "0|106%", "skilledDamageCap": "0|106%", "sbaDamageCap":  "0|106%"}, // 34
+      {"damageCap": "0|110%", "attackDamageCap": "0|110%", "skilledDamageCap": "0|110%", "sbaDamageCap":  "0|110%"}, // 35
+      {"damageCap": "0|114%", "attackDamageCap": "0|114%", "skilledDamageCap": "0|114%", "sbaDamageCap":  "0|114%"}, // 36
+      {"damageCap": "0|118%", "attackDamageCap": "0|118%", "skilledDamageCap": "0|118%", "sbaDamageCap":  "0|118%"}, // 37
+      {"damageCap": "0|122%", "attackDamageCap": "0|122%", "skilledDamageCap": "0|122%", "sbaDamageCap":  "0|122%"}, // 38
+      {"damageCap": "0|126%", "attackDamageCap": "0|126%", "skilledDamageCap": "0|126%", "sbaDamageCap":  "0|126%"}, // 39
+      {"damageCap": "0|130%", "attackDamageCap": "0|130%", "skilledDamageCap": "0|130%", "sbaDamageCap":  "0|130%"}, // 40
+      {"damageCap": "0|134%", "attackDamageCap": "0|134%", "skilledDamageCap": "0|134%", "sbaDamageCap":  "0|134%"}, // 41
+      {"damageCap": "0|138%", "attackDamageCap": "0|138%", "skilledDamageCap": "0|138%", "sbaDamageCap":  "0|138%"}, // 42
+      {"damageCap": "0|142%", "attackDamageCap": "0|142%", "skilledDamageCap": "0|142%", "sbaDamageCap":  "0|142%"}, // 43
+      {"damageCap": "0|146%", "attackDamageCap": "0|146%", "skilledDamageCap": "0|146%", "sbaDamageCap":  "0|146%"}, // 44
+      {"damageCap": "0|150%", "attackDamageCap": "0|150%", "skilledDamageCap": "0|150%", "sbaDamageCap":  "0|150%"}, // 45
+      {"damageCap": "0|154%", "attackDamageCap": "0|154%", "skilledDamageCap": "0|154%", "sbaDamageCap":  "0|154%"}, // 46
+      {"damageCap": "0|158%", "attackDamageCap": "0|158%", "skilledDamageCap": "0|158%", "sbaDamageCap":  "0|158%"}, // 47
+      {"damageCap": "0|162%", "attackDamageCap": "0|162%", "skilledDamageCap": "0|162%", "sbaDamageCap":  "0|162%"}, // 48
+      {"damageCap": "0|166%", "attackDamageCap": "0|166%", "skilledDamageCap": "0|166%", "sbaDamageCap":  "0|166%"}, // 49
+      {"damageCap": "0|170%", "attackDamageCap": "0|170%", "skilledDamageCap": "0|170%", "sbaDamageCap":  "0|170%"}, // 50
+      {"damageCap": "0|175%", "attackDamageCap": "0|175%", "skilledDamageCap": "0|175%", "sbaDamageCap":  "0|175%"}, // 51
+      {"damageCap": "0|180%", "attackDamageCap": "0|180%", "skilledDamageCap": "0|180%", "sbaDamageCap":  "0|180%"}, // 52
+      {"damageCap": "0|185%", "attackDamageCap": "0|185%", "skilledDamageCap": "0|185%", "sbaDamageCap":  "0|185%"}, // 53
+      {"damageCap": "0|190%", "attackDamageCap": "0|190%", "skilledDamageCap": "0|190%", "sbaDamageCap":  "0|190%"}, // 54
+      {"damageCap": "0|195%", "attackDamageCap": "0|195%", "skilledDamageCap": "0|195%", "sbaDamageCap":  "0|195%"}, // 55
+      {"damageCap": "0|200%", "attackDamageCap": "0|200%", "skilledDamageCap": "0|200%", "sbaDamageCap":  "0|200%"}, // 56
+      {"damageCap": "0|205%", "attackDamageCap": "0|205%", "skilledDamageCap": "0|205%", "sbaDamageCap":  "0|205%"}, // 57
+      {"damageCap": "0|210%", "attackDamageCap": "0|210%", "skilledDamageCap": "0|210%", "sbaDamageCap":  "0|210%"}, // 58
+      {"damageCap": "0|215%", "attackDamageCap": "0|215%", "skilledDamageCap": "0|215%", "sbaDamageCap":  "0|215%"}, // 59
+      {"damageCap": "0|220%", "attackDamageCap": "0|220%", "skilledDamageCap": "0|220%", "sbaDamageCap":  "0|220%"}, // 60
+      {"damageCap": "0|226%", "attackDamageCap": "0|226%", "skilledDamageCap": "0|226%", "sbaDamageCap":  "0|226%"}, // 61
+      {"damageCap": "0|232%", "attackDamageCap": "0|232%", "skilledDamageCap": "0|232%", "sbaDamageCap":  "0|232%"}, // 62
+      {"damageCap": "0|238%", "attackDamageCap": "0|238%", "skilledDamageCap": "0|238%", "sbaDamageCap":  "0|238%"}, // 63
+      {"damageCap": "0|244%", "attackDamageCap": "0|244%", "skilledDamageCap": "0|244%", "sbaDamageCap":  "0|244%"}, // 64
+      {"damageCap": "0|250%", "attackDamageCap": "0|250%", "skilledDamageCap": "0|250%", "sbaDamageCap":  "0|250%"}, // 65
     ]
   },
   "concentratedFire": {
@@ -1009,21 +1009,21 @@ const SKILL_STATUS = {
     "minLevel": 1,
     "maxLevel": 15,
     "levels": [
-      {"glassCannon": "0|2%", "attackDamageCap": "0|2%", "skilledDamageCap": "0|2%", "sbaDamageCap": "0|2%", "alwaysBeStuned": '1|0%'}, // 1
-      {"glassCannon": "0|4%", "attackDamageCap": "0|4%", "skilledDamageCap": "0|4%", "sbaDamageCap": "0|4%", "alwaysBeStuned": '1|0%'}, // 2
-      {"glassCannon": "0|6%", "attackDamageCap": "0|6%", "skilledDamageCap": "0|6%", "sbaDamageCap": "0|6%", "alwaysBeStuned": '1|0%'}, // 3
-      {"glassCannon": "0|8%", "attackDamageCap": "0|8%", "skilledDamageCap": "0|8%", "sbaDamageCap": "0|8%", "alwaysBeStuned": '1|0%'}, // 4
-      {"glassCannon": "0|10%", "attackDamageCap": "0|10%", "skilledDamageCap": "0|10%", "sbaDamageCap": "0|10%", "alwaysBeStuned": '1|0%'}, // 5
-      {"glassCannon": "0|12%", "attackDamageCap": "0|12%", "skilledDamageCap": "0|12%", "sbaDamageCap": "0|12%", "alwaysBeStuned": '1|0%'}, // 6
-      {"glassCannon": "0|14%", "attackDamageCap": "0|14%", "skilledDamageCap": "0|14%", "sbaDamageCap": "0|14%", "alwaysBeStuned": '1|0%'}, // 7
-      {"glassCannon": "0|16%", "attackDamageCap": "0|16%", "skilledDamageCap": "0|16%", "sbaDamageCap": "0|16%", "alwaysBeStuned": '1|0%'}, // 8
-      {"glassCannon": "0|18%", "attackDamageCap": "0|18%", "skilledDamageCap": "0|18%", "sbaDamageCap": "0|18%", "alwaysBeStuned": '1|0%'}, // 9
-      {"glassCannon": "0|20%", "attackDamageCap": "0|20%", "skilledDamageCap": "0|20%", "sbaDamageCap": "0|20%", "alwaysBeStuned": '1|0%'}, // 10
-      {"glassCannon": "0|22%", "attackDamageCap": "0|22%", "skilledDamageCap": "0|22%", "sbaDamageCap": "0|22%", "alwaysBeStuned": '1|0%'}, // 11
-      {"glassCannon": "0|24%", "attackDamageCap": "0|24%", "skilledDamageCap": "0|24%", "sbaDamageCap": "0|24%", "alwaysBeStuned": '1|0%'}, // 12
-      {"glassCannon": "0|26%", "attackDamageCap": "0|26%", "skilledDamageCap": "0|26%", "sbaDamageCap": "0|26%", "alwaysBeStuned": '1|0%'}, // 13
-      {"glassCannon": "0|28%", "attackDamageCap": "0|28%", "skilledDamageCap": "0|28%", "sbaDamageCap": "0|28%", "alwaysBeStuned": '1|0%'}, // 14
-      {"glassCannon": "0|30%", "attackDamageCap": "0|30%", "skilledDamageCap": "0|30%", "sbaDamageCap": "0|30%", "alwaysBeStuned": '1|0%'}, // 15
+      {"glassCannon": "0|2%", "damageCap": "0|2%", "alwaysBeStuned": '1|0%'}, // 1
+      {"glassCannon": "0|4%", "damageCap": "0|4%", "alwaysBeStuned": '1|0%'}, // 2
+      {"glassCannon": "0|6%", "damageCap": "0|6%", "alwaysBeStuned": '1|0%'}, // 3
+      {"glassCannon": "0|8%", "damageCap": "0|8%", "alwaysBeStuned": '1|0%'}, // 4
+      {"glassCannon": "0|10%", "damageCap": "0|10%", "alwaysBeStuned": '1|0%'}, // 5
+      {"glassCannon": "0|12%", "damageCap": "0|12%", "alwaysBeStuned": '1|0%'}, // 6
+      {"glassCannon": "0|14%", "damageCap": "0|14%", "alwaysBeStuned": '1|0%'}, // 7
+      {"glassCannon": "0|16%", "damageCap": "0|16%", "alwaysBeStuned": '1|0%'}, // 8
+      {"glassCannon": "0|18%", "damageCap": "0|18%", "alwaysBeStuned": '1|0%'}, // 9
+      {"glassCannon": "0|20%", "damageCap": "0|20%", "alwaysBeStuned": '1|0%'}, // 10
+      {"glassCannon": "0|22%", "damageCap": "0|22%", "alwaysBeStuned": '1|0%'}, // 11
+      {"glassCannon": "0|24%", "damageCap": "0|24%", "alwaysBeStuned": '1|0%'}, // 12
+      {"glassCannon": "0|26%", "damageCap": "0|26%", "alwaysBeStuned": '1|0%'}, // 13
+      {"glassCannon": "0|28%", "damageCap": "0|28%", "alwaysBeStuned": '1|0%'}, // 14
+      {"glassCannon": "0|30%", "damageCap": "0|30%", "alwaysBeStuned": '1|0%'}, // 15
     ]
   },
   "lessIsMore": {
@@ -1853,7 +1853,7 @@ const SKILL_STATUS = {
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
-      {"attackPower": "0|-50%", "alwaysBePerfectDodge": "1|0%"}, // 15
+      {"alwaysAttackHalf": "0|100%", "alwaysBePerfectDodge": "1|0%"}, // 15
     ]
   },
   "skillSealedResistance": {
@@ -2398,7 +2398,7 @@ const SKILL_STATUS = {
     "minLevel": 25,
     "maxLevel": 25,
     "levels": [
-      {"attackPower": "0|50%|health<=45000", "attackDamageCap": "0|100%|health<=45000", "skilledDamageCap": "0|100%|health<=45000", "sbaDamageCap": "0|100%|health<=45000"}
+      {"attackPower": "0|50%|health<=45000", "damageCap": "0|100%|health<=45000"}
     ],
   },
   // キャラクター専用ジーン

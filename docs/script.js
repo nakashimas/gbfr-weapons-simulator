@@ -390,6 +390,9 @@ new Vue({
       let enmity = this.applySkillEffects(100, this.getSkillEffect('enmity')['enmity'], idx);
       // stamina 渾身
       let stamina = this.applySkillEffects(100, this.getSkillEffect('stamina')['stamina'], idx);
+      // alwaysAttackHalf 攻撃力半減
+      let alwaysAttackHalf = this.applySkillEffects(100, this.getSkillEffect('alwaysAttackHalf')['alwaysAttackHalf'], idx);
+      alwaysAttackHalf = alwaysAttackHalf >= 200 ? 0.5 : 1.0;
       // 全体
       return this.attackPowerBase * (
         based + (
@@ -422,7 +425,7 @@ new Vue({
           // 最低値は最大値の15%で、100%から25%までの幅で変化すると計算
           (15 + Math.max(0, (this.healthRate - 25) / 75) * 85) * (stamina - 100) / 100
         )
-      ) / 100;
+      ) / 100 * alwaysAttackHalf;
     },
     criticalHitRate: function() {
       // クリティカル率を計算
@@ -459,6 +462,9 @@ new Vue({
       let enmity = this.applySkillEffects(100, this.getSkillEffect('enmity')['enmity'], idx);
       // stamina 渾身
       let stamina = this.applySkillEffects(100, this.getSkillEffect('stamina')['stamina'], idx);
+      // alwaysAttackHalf 攻撃力半減
+      let alwaysAttackHalf = this.applySkillEffects(100, this.getSkillEffect('alwaysAttackHalf')['alwaysAttackHalf'], idx);
+      alwaysAttackHalf = alwaysAttackHalf >= 200 ? 0.5 : 1.0;
       // 全体
       return this.attackPowerBase * (
         based + (
@@ -491,7 +497,7 @@ new Vue({
           // 最低値は最大値の15%で、100%から25%までの幅で変化すると計算
           (15 + Math.max(0, (this.healthRate - 25) / 75) * 85) * (stamina - 100) / 100
         )
-      ) / 100;
+      ) / 100 * alwaysAttackHalf;
     },
     criticalHitRateToBe: function() {
       // クリティカル率を計算 (ToBeの方のレベルで計算)
