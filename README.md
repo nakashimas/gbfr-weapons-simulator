@@ -77,3 +77,6 @@ Any sigils and English Translate
 
 Roll of the Die sigil
 - https://steamcommunity.com/app/881020/discussions/0/4208119923884744284/
+
+Damage Calcs
+- https://www.reddit.com/r/GranblueFantasyRelink/comments/1awnyap/relink_damage_calculator_v20/

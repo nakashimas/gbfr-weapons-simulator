@@ -374,11 +374,53 @@ new Vue({
       let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
       // 裸一貫
       let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
+      // tyranny 暴君
+      let tyranny = this.applySkillEffects(100, this.getSkillEffect('tyranny')['tyranny'], idx);
+      // lifeOnTheLine 捨て身
+      let lifeOnTheLine = this.applySkillEffects(100, this.getSkillEffect('lifeOnTheLine')['lifeOnTheLine'], idx);
+      // glassCannon 紙一重
+      let glassCannon = this.applySkillEffects(100, this.getSkillEffect('glassCannon')['glassCannon'], idx);
+      // headStart 先制
+      let headStart = this.applySkillEffects(100, this.getSkillEffect('headStart')['headStart'], idx);
+      // powerHungry 修羅
+      let powerHungry = this.applySkillEffects(100, this.getSkillEffect('powerHungry')['powerHungry'], idx);
+      // berserker 窮鼠
+      let berserker = this.applySkillEffects(100, this.getSkillEffect('berserker')['berserker'], idx);
+      // enmity 背水
+      let enmity = this.applySkillEffects(100, this.getSkillEffect('enmity')['enmity'], idx);
+      // stamina 渾身
+      let stamina = this.applySkillEffects(100, this.getSkillEffect('stamina')['stamina'], idx);
       // 全体
       return this.attackPowerBase * (
         based + (
           // 裸一貫
           (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
+        ) + (
+          // 暴君
+          tyranny - 100
+        ) + (
+          // 捨て身
+          lifeOnTheLine - 100
+        ) + (
+          // 紙一重
+          glassCannon - 100
+        ) + (
+          // 先制
+          headStart - 100
+        ) + (
+          // 修羅
+          powerHungry - 100
+        ) + (
+          // 窮鼠
+          berserker - 100
+        ) + (
+          // 背水
+          // 100%から0%(1)までの幅で変化すると計算
+          (100 - this.healthRate) * (enmity - 100) / 100
+        ) + (
+          // 渾身
+          // 最低値は最大値の15%で、100%から25%までの幅で変化すると計算
+          (15 + Math.max(0, (this.healthRate - 25) / 75) * 85) * (stamina - 100) / 100
         )
       ) / 100;
     },
@@ -401,11 +443,53 @@ new Vue({
       let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
       // 裸一貫
       let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
+      // tyranny 暴君
+      let tyranny = this.applySkillEffects(100, this.getSkillEffect('tyranny')['tyranny'], idx);
+      // lifeOnTheLine 捨て身
+      let lifeOnTheLine = this.applySkillEffects(100, this.getSkillEffect('lifeOnTheLine')['lifeOnTheLine'], idx);
+      // glassCannon 紙一重
+      let glassCannon = this.applySkillEffects(100, this.getSkillEffect('glassCannon')['glassCannon'], idx);
+      // headStart 先制
+      let headStart = this.applySkillEffects(100, this.getSkillEffect('headStart')['headStart'], idx);
+      // powerHungry 修羅
+      let powerHungry = this.applySkillEffects(100, this.getSkillEffect('powerHungry')['powerHungry'], idx);
+      // berserker 窮鼠
+      let berserker = this.applySkillEffects(100, this.getSkillEffect('berserker')['berserker'], idx);
+      // enmity 背水
+      let enmity = this.applySkillEffects(100, this.getSkillEffect('enmity')['enmity'], idx);
+      // stamina 渾身
+      let stamina = this.applySkillEffects(100, this.getSkillEffect('stamina')['stamina'], idx);
       // 全体
       return this.attackPowerBase * (
         based + (
           // 裸一貫
           (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
+        ) + (
+          // 暴君
+          tyranny - 100
+        ) + (
+          // 捨て身
+          lifeOnTheLine - 100
+        ) + (
+          // 紙一重
+          glassCannon - 100
+        ) + (
+          // 先制
+          headStart - 100
+        ) + (
+          // 修羅
+          powerHungry - 100
+        ) + (
+          // 窮鼠
+          berserker - 100
+        ) + (
+          // 背水
+          // 100%から0%(1)までの幅で変化すると計算
+          (100 - this.healthRate) * (enmity - 100) / 100
+        ) + (
+          // 渾身
+          // 最低値は最大値の15%で、100%から25%までの幅で変化すると計算
+          (15 + Math.max(0, (this.healthRate - 25) / 75) * 85) * (stamina - 100) / 100
         )
       ) / 100;
     },

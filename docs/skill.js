@@ -279,57 +279,150 @@ const SKILL_STATUS = {
   "comboBooster": {
     // コンボボーナス 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"comboBooster": "0|10%"}, // 1
+      {"comboBooster": "0|16%"}, // 2
+      {"comboBooster": "0|22%"}, // 3
+      {"comboBooster": "0|26%"}, // 4
+      {"comboBooster": "0|30%"}, // 5
+      {"comboBooster": "0|34%"}, // 6
+      {"comboBooster": "0|38%"}, // 7
+      {"comboBooster": "0|42%"}, // 8
+      {"comboBooster": "0|46%"}, // 9
+      {"comboBooster": "0|50%"}, // 10
+      {"comboBooster": "0|54%"}, // 11
+      {"comboBooster": "0|58%"}, // 12
+      {"comboBooster": "0|62%"}, // 13
+      {"comboBooster": "0|66%"}, // 14
+      {"comboBooster": "0|70%"}, // 15
+      {"comboBooster": "0|72%"}, // 16
+      {"comboBooster": "0|74%"}, // 17
+      {"comboBooster": "0|76%"}, // 18
+      {"comboBooster": "0|78%"}, // 19
+      {"comboBooster": "0|80%"}, // 20
+      {"comboBooster": "0|82%"}, // 21
+      {"comboBooster": "0|84%"}, // 22
+      {"comboBooster": "0|86%"}, // 23
+      {"comboBooster": "0|88%"}, // 24
+      {"comboBooster": "0|90%"}, // 25
+      {"comboBooster": "0|92%"}, // 26
+      {"comboBooster": "0|94%"}, // 27
+      {"comboBooster": "0|96%"}, // 28
+      {"comboBooster": "0|98%"}, // 29
+      {"comboBooster": "0|100%"}, // 30
+    ]
   },
   "tyranny": {
     // 暴君 
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
-      {"attackPower": "0|5%", "health": "0|-20%"}, // 1
-      {"attackPower": "0|8%", "health": "0|-20%"},  // 2
-      {"attackPower": "0|11%", "health": "0|-20%"},  // 3
-      {"attackPower": "0|13%", "health": "0|-20%"},  // 4
-      {"attackPower": "0|15%", "health": "0|-20%"},  // 5
-      {"attackPower": "0|17%", "health": "0|-20%"},  // 6
-      {"attackPower": "0|19%", "health": "0|-20%"},  // 7
-      {"attackPower": "0|21%", "health": "0|-20%"},  // 8
-      {"attackPower": "0|23%", "health": "0|-20%"},  // 9
-      {"attackPower": "0|25%", "health": "0|-20%"},  // 10
-      {"attackPower": "0|27%", "health": "0|-20%"},  // 11
-      {"attackPower": "0|29%", "health": "0|-20%"},  // 12
-      {"attackPower": "0|31%", "health": "0|-20%"},  // 13
-      {"attackPower": "0|33%", "health": "0|-20%"},  // 14
-      {"attackPower": "0|35%", "health": "0|-20%"},  // 15
-      {"attackPower": "0|36%", "health": "0|-20%"},  // 16
-      {"attackPower": "0|37%", "health": "0|-20%"},  // 17
-      {"attackPower": "0|38%", "health": "0|-20%"},  // 18
-      {"attackPower": "0|39%", "health": "0|-20%"},  // 19
-      {"attackPower": "0|40%", "health": "0|-20%"},  // 20
-      {"attackPower": "0|41%", "health": "0|-20%"},  // 21
-      {"attackPower": "0|42%", "health": "0|-20%"},  // 22
-      {"attackPower": "0|43%", "health": "0|-20%"},  // 23
-      {"attackPower": "0|44%", "health": "0|-20%"},  // 24
-      {"attackPower": "0|45%", "health": "0|-20%"},  // 25
-      {"attackPower": "0|46%", "health": "0|-20%"},  // 26
-      {"attackPower": "0|47%", "health": "0|-20%"},  // 27
-      {"attackPower": "0|48%", "health": "0|-20%"},  // 28
-      {"attackPower": "0|49%", "health": "0|-20%"},  // 29
-      {"attackPower": "0|50%", "health": "0|-20%"},  // 30
+      {"tyranny": "0|5%", "health": "0|-20%"}, // 1
+      {"tyranny": "0|8%", "health": "0|-20%"},  // 2
+      {"tyranny": "0|11%", "health": "0|-20%"},  // 3
+      {"tyranny": "0|13%", "health": "0|-20%"},  // 4
+      {"tyranny": "0|15%", "health": "0|-20%"},  // 5
+      {"tyranny": "0|17%", "health": "0|-20%"},  // 6
+      {"tyranny": "0|19%", "health": "0|-20%"},  // 7
+      {"tyranny": "0|21%", "health": "0|-20%"},  // 8
+      {"tyranny": "0|23%", "health": "0|-20%"},  // 9
+      {"tyranny": "0|25%", "health": "0|-20%"},  // 10
+      {"tyranny": "0|27%", "health": "0|-20%"},  // 11
+      {"tyranny": "0|29%", "health": "0|-20%"},  // 12
+      {"tyranny": "0|31%", "health": "0|-20%"},  // 13
+      {"tyranny": "0|33%", "health": "0|-20%"},  // 14
+      {"tyranny": "0|35%", "health": "0|-20%"},  // 15
+      {"tyranny": "0|36%", "health": "0|-20%"},  // 16
+      {"tyranny": "0|37%", "health": "0|-20%"},  // 17
+      {"tyranny": "0|38%", "health": "0|-20%"},  // 18
+      {"tyranny": "0|39%", "health": "0|-20%"},  // 19
+      {"tyranny": "0|40%", "health": "0|-20%"},  // 20
+      {"tyranny": "0|41%", "health": "0|-20%"},  // 21
+      {"tyranny": "0|42%", "health": "0|-20%"},  // 22
+      {"tyranny": "0|43%", "health": "0|-20%"},  // 23
+      {"tyranny": "0|44%", "health": "0|-20%"},  // 24
+      {"tyranny": "0|45%", "health": "0|-20%"},  // 25
+      {"tyranny": "0|46%", "health": "0|-20%"},  // 26
+      {"tyranny": "0|47%", "health": "0|-20%"},  // 27
+      {"tyranny": "0|48%", "health": "0|-20%"},  // 28
+      {"tyranny": "0|49%", "health": "0|-20%"},  // 29
+      {"tyranny": "0|50%", "health": "0|-20%"},  // 30
     ]
   },
   "enmity": {
     // 背水 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"enmity": "0|10%"}, // 1
+      {"enmity": "0|16%"}, // 2
+      {"enmity": "0|22%"}, // 3
+      {"enmity": "0|26%"}, // 4
+      {"enmity": "0|30%"}, // 5
+      {"enmity": "0|34%"}, // 6
+      {"enmity": "0|38%"}, // 7
+      {"enmity": "0|42%"}, // 8
+      {"enmity": "0|46%"}, // 9
+      {"enmity": "0|50%"}, // 10
+      {"enmity": "0|54%"}, // 11
+      {"enmity": "0|58%"}, // 12
+      {"enmity": "0|62%"}, // 13
+      {"enmity": "0|66%"}, // 14
+      {"enmity": "0|70%"}, // 15
+      {"enmity": "0|72%"}, // 16
+      {"enmity": "0|74%"}, // 17
+      {"enmity": "0|76%"}, // 18
+      {"enmity": "0|78%"}, // 19
+      {"enmity": "0|80%"}, // 20
+      {"enmity": "0|82%"}, // 21
+      {"enmity": "0|84%"}, // 22
+      {"enmity": "0|86%"}, // 23
+      {"enmity": "0|88%"}, // 24
+      {"enmity": "0|90%"}, // 25
+      {"enmity": "0|92%"}, // 26
+      {"enmity": "0|94%"}, // 27
+      {"enmity": "0|96%"}, // 28
+      {"enmity": "0|98%"}, // 29
+      {"enmity": "0|100%"}, // 30
+    ]
   },
   "stamina": {
     // 渾身 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"stamina": "0|8%"}, // 1
+      {"stamina": "0|11%"}, // 2
+      {"stamina": "0|14%"}, // 3
+      {"stamina": "0|17%"}, // 4
+      {"stamina": "0|20%"}, // 5
+      {"stamina": "0|23%"}, // 6
+      {"stamina": "0|26%"}, // 7
+      {"stamina": "0|29%"}, // 8
+      {"stamina": "0|32%"}, // 9
+      {"stamina": "0|35%"}, // 10
+      {"stamina": "0|38%"}, // 11
+      {"stamina": "0|41%"}, // 12
+      {"stamina": "0|44%"}, // 13
+      {"stamina": "0|47%"}, // 14
+      {"stamina": "0|50%"}, // 15
+      {"stamina": "0|51%"}, // 16
+      {"stamina": "0|52%"}, // 17
+      {"stamina": "0|53%"}, // 18
+      {"stamina": "0|54%"}, // 19
+      {"stamina": "0|55%"}, // 20
+      {"stamina": "0|56%"}, // 21
+      {"stamina": "0|57%"}, // 22
+      {"stamina": "0|58%"}, // 23
+      {"stamina": "0|59%"}, // 24
+      {"stamina": "0|60%"}, // 25
+      {"stamina": "0|62%"}, // 26
+      {"stamina": "0|64%"}, // 27
+      {"stamina": "0|66%"}, // 28
+      {"stamina": "0|68%"}, // 29
+      {"stamina": "0|70%"}, // 30
+    ]
   },
   "chargedAttack": {
     // チャージアタック 
@@ -519,8 +612,29 @@ const SKILL_STATUS = {
   "luckyCharge": {
     // 溜め会心 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 20,
+    "levels": [
+      {"criticalHitRateCharged": "0|6%"}, // 1
+      {"criticalHitRateCharged": "0|12%"}, // 2
+      {"criticalHitRateCharged": "0|18%"}, // 3
+      {"criticalHitRateCharged": "0|24%"}, // 4
+      {"criticalHitRateCharged": "0|27%"}, // 5
+      {"criticalHitRateCharged": "0|30%"}, // 6
+      {"criticalHitRateCharged": "0|33%"}, // 7
+      {"criticalHitRateCharged": "0|36%"}, // 8
+      {"criticalHitRateCharged": "0|39%"}, // 9
+      {"criticalHitRateCharged": "0|42%"}, // 10
+      {"criticalHitRateCharged": "0|45%"}, // 11
+      {"criticalHitRateCharged": "0|47%"}, // 12
+      {"criticalHitRateCharged": "0|50%"}, // 13
+      {"criticalHitRateCharged": "0|52%"}, // 14
+      {"criticalHitRateCharged": "0|54%"}, // 15
+      {"criticalHitRateCharged": "0|56%"}, // 16
+      {"criticalHitRateCharged": "0|57%"}, // 17
+      {"criticalHitRateCharged": "0|58%"}, // 18
+      {"criticalHitRateCharged": "0|59%"}, // 19
+      {"criticalHitRateCharged": "0|60%"}, // 20
+    ]
   },
   "throw": {
     // 投擲 
@@ -562,20 +676,113 @@ const SKILL_STATUS = {
   "linkedTogether": {
     // 連携攻撃 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"damageLinkedAttack": "0|10%", "damageSBA": "0|5%", "damageChain": "0|5%", "linkLevelGain": "0|5%"}, // 1
+      {"damageLinkedAttack": "0|16%", "damageSBA": "0|8%", "damageChain": "0|8%", "linkLevelGain": "0|8%"}, // 2
+      {"damageLinkedAttack": "0|22%", "damageSBA": "0|11%", "damageChain": "0|11%", "linkLevelGain": "0|11%"}, // 3
+      {"damageLinkedAttack": "0|26%", "damageSBA": "0|13%", "damageChain": "0|13%", "linkLevelGain": "0|13%"}, // 4
+      {"damageLinkedAttack": "0|30%", "damageSBA": "0|15%", "damageChain": "0|15%", "linkLevelGain": "0|15%"}, // 5
+      {"damageLinkedAttack": "0|34%", "damageSBA": "0|17%", "damageChain": "0|17%", "linkLevelGain": "0|17%"}, // 6
+      {"damageLinkedAttack": "0|38%", "damageSBA": "0|19%", "damageChain": "0|19%", "linkLevelGain": "0|19%"}, // 7
+      {"damageLinkedAttack": "0|42%", "damageSBA": "0|21%", "damageChain": "0|21%", "linkLevelGain": "0|21%"}, // 8
+      {"damageLinkedAttack": "0|46%", "damageSBA": "0|23%", "damageChain": "0|23%", "linkLevelGain": "0|23%"}, // 9
+      {"damageLinkedAttack": "0|50%", "damageSBA": "0|25%", "damageChain": "0|50%", "linkLevelGain": "0|25%"}, // 10
+      {"damageLinkedAttack": "0|54%", "damageSBA": "0|27%", "damageChain": "0|27%", "linkLevelGain": "0|27%"}, // 11
+      {"damageLinkedAttack": "0|58%", "damageSBA": "0|29%", "damageChain": "0|29%", "linkLevelGain": "0|29%"}, // 12
+      {"damageLinkedAttack": "0|62%", "damageSBA": "0|31%", "damageChain": "0|31%", "linkLevelGain": "0|31%"}, // 13
+      {"damageLinkedAttack": "0|66%", "damageSBA": "0|33%", "damageChain": "0|33%", "linkLevelGain": "0|33%"}, // 14
+      {"damageLinkedAttack": "0|70%", "damageSBA": "0|35%", "damageChain": "0|35%", "linkLevelGain": "0|35%"}, // 15
+      {"damageLinkedAttack": "0|72%", "damageSBA": "0|36%", "damageChain": "0|36%", "linkLevelGain": "0|36%"}, // 16
+      {"damageLinkedAttack": "0|74%", "damageSBA": "0|37%", "damageChain": "0|37%", "linkLevelGain": "0|37%"}, // 17
+      {"damageLinkedAttack": "0|76%", "damageSBA": "0|38%", "damageChain": "0|38%", "linkLevelGain": "0|38%"}, // 18
+      {"damageLinkedAttack": "0|78%", "damageSBA": "0|39%", "damageChain": "0|39%", "linkLevelGain": "0|39%"}, // 19
+      {"damageLinkedAttack": "0|80%", "damageSBA": "0|40%", "damageChain": "0|40%", "linkLevelGain": "0|40%"}, // 20
+      {"damageLinkedAttack": "0|82%", "damageSBA": "0|41%", "damageChain": "0|41%", "linkLevelGain": "0|41%"}, // 21
+      {"damageLinkedAttack": "0|84%", "damageSBA": "0|42%", "damageChain": "0|42%", "linkLevelGain": "0|42%"}, // 22
+      {"damageLinkedAttack": "0|86%", "damageSBA": "0|43%", "damageChain": "0|43%", "linkLevelGain": "0|43%"}, // 23
+      {"damageLinkedAttack": "0|88%", "damageSBA": "0|44%", "damageChain": "0|44%", "linkLevelGain": "0|44%"}, // 24
+      {"damageLinkedAttack": "0|90%", "damageSBA": "0|45%", "damageChain": "0|45%", "linkLevelGain": "0|45%"}, // 25
+      {"damageLinkedAttack": "0|92%", "damageSBA": "0|46%", "damageChain": "0|46%", "linkLevelGain": "0|46%"}, // 26
+      {"damageLinkedAttack": "0|94%", "damageSBA": "0|47%", "damageChain": "0|47%", "linkLevelGain": "0|47%"}, // 27
+      {"damageLinkedAttack": "0|96%", "damageSBA": "0|48%", "damageChain": "0|48%", "linkLevelGain": "0|48%"}, // 28
+      {"damageLinkedAttack": "0|98%", "damageSBA": "0|49%", "damageChain": "0|49%", "linkLevelGain": "0|49%"}, // 29
+      {"damageLinkedAttack": "0|100%", "damageSBA": "0|50%", "damageChain": "0|50%", "linkLevelGain": "0|50%"}, // 30
+    ]
   },
   "comboFinisher": {
     // コンボフィニッシュ 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": [] 
+    "maxLevel": 30,
+    "levels": [
+      {"damageFinisher": "0|5%"}, // 1
+      {"damageFinisher": "0|8%"}, // 2
+      {"damageFinisher": "0|11%"}, // 3
+      {"damageFinisher": "0|13%"}, // 4
+      {"damageFinisher": "0|15%"}, // 5
+      {"damageFinisher": "0|17%"}, // 6
+      {"damageFinisher": "0|19%"}, // 7
+      {"damageFinisher": "0|21%"}, // 8
+      {"damageFinisher": "0|23%"}, // 9
+      {"damageFinisher": "0|25%"}, // 10
+      {"damageFinisher": "0|27%"}, // 11
+      {"damageFinisher": "0|29%"}, // 12
+      {"damageFinisher": "0|31%"}, // 13
+      {"damageFinisher": "0|33%"}, // 14
+      {"damageFinisher": "0|35%"}, // 15
+      {"damageFinisher": "0|36%"}, // 16
+      {"damageFinisher": "0|37%"}, // 17
+      {"damageFinisher": "0|38%"}, // 18
+      {"damageFinisher": "0|39%"}, // 19
+      {"damageFinisher": "0|40%"}, // 20
+      {"damageFinisher": "0|41%"}, // 21
+      {"damageFinisher": "0|42%"}, // 22
+      {"damageFinisher": "0|43%"}, // 23
+      {"damageFinisher": "0|44%"}, // 24
+      {"damageFinisher": "0|45%"}, // 25
+      {"damageFinisher": "0|46%"}, // 26
+      {"damageFinisher": "0|47%"}, // 27
+      {"damageFinisher": "0|48%"}, // 28
+      {"damageFinisher": "0|49%"}, // 29
+      {"damageFinisher": "0|50%"}, // 30
+    ] 
   },
   "quickCharge": {
     // クイックチャージ 
     "minLevel": 1,
-    "maxLevel": 45,
-    "levels": []
+    "maxLevel": 30,
+    "levels": [
+      {"chargedAttackCooldown": "0|-3%", "attackPower": "0|2%"}, // 1
+      {"chargedAttackCooldown": "0|-4.8%", "attackPower": "0|3.2%"}, // 2
+      {"chargedAttackCooldown": "0|-6.6%", "attackPower": "0|4.4%"}, // 3
+      {"chargedAttackCooldown": "0|-7.8%", "attackPower": "0|5.2%"}, // 4
+      {"chargedAttackCooldown": "0|-9%", "attackPower": "0|6%"}, // 5
+      {"chargedAttackCooldown": "0|-10.2%", "attackPower": "0|6.8%"}, // 6
+      {"chargedAttackCooldown": "0|-11.4%", "attackPower": "0|7.6%"}, // 7
+      {"chargedAttackCooldown": "0|-12.6%", "attackPower": "0|8.4%"}, // 8
+      {"chargedAttackCooldown": "0|-13.8%", "attackPower": "0|9.2%"}, // 9
+      {"chargedAttackCooldown": "0|-15%", "attackPower": "0|10%"}, // 10
+      {"chargedAttackCooldown": "0|-16.2%", "attackPower": "0|10.8%"}, // 11
+      {"chargedAttackCooldown": "0|-17.4%", "attackPower": "0|11.6%"}, // 12
+      {"chargedAttackCooldown": "0|-18.6%", "attackPower": "0|12.4%"}, // 13
+      {"chargedAttackCooldown": "0|-19.8%", "attackPower": "0|13.2%"}, // 14
+      {"chargedAttackCooldown": "0|-21%", "attackPower": "0|14%"}, // 15
+      {"chargedAttackCooldown": "0|-21.6%", "attackPower": "0|14.4%"}, // 16
+      {"chargedAttackCooldown": "0|-22.2%", "attackPower": "0|14.8%"}, // 17
+      {"chargedAttackCooldown": "0|-22.8%", "attackPower": "0|15.2%"}, // 18
+      {"chargedAttackCooldown": "0|-23.4%", "attackPower": "0|15.6%"}, // 19
+      {"chargedAttackCooldown": "0|-24%", "attackPower": "0|16%"}, // 20
+      {"chargedAttackCooldown": "0|-24.6%", "attackPower": "0|16.4%"}, // 21
+      {"chargedAttackCooldown": "0|-25.2%", "attackPower": "0|16.8%"}, // 22
+      {"chargedAttackCooldown": "0|-25.8%", "attackPower": "0|17.2%"}, // 23
+      {"chargedAttackCooldown": "0|-26.4%", "attackPower": "0|17.6%"}, // 24
+      {"chargedAttackCooldown": "0|-27%", "attackPower": "0|18%"}, // 25
+      {"chargedAttackCooldown": "0|-27.6%", "attackPower": "0|18.4%"}, // 26
+      {"chargedAttackCooldown": "0|-28.2%", "attackPower": "0|18.8%"}, // 27
+      {"chargedAttackCooldown": "0|-28.8%", "attackPower": "0|19.2%"}, // 28
+      {"chargedAttackCooldown": "0|-29.4%", "attackPower": "0|19.6%"}, // 29
+      {"chargedAttackCooldown": "0|-30%", "attackPower": "0|20%"}, // 30
+    ]
   },
   "guardPayback": {
     // ガードリベンジ 
@@ -619,36 +826,36 @@ const SKILL_STATUS = {
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
-      {"attackPower": "0|5%", "cannotHeal": "1|0%"}, // 1
-      {"attackPower": "0|8%", "cannotHeal": "1|0%"}, // 2
-      {"attackPower": "0|11%", "cannotHeal": "1|0%"}, // 3
-      {"attackPower": "0|13%", "cannotHeal": "1|0%"}, // 4
-      {"attackPower": "0|15%", "cannotHeal": "1|0%"}, // 5
-      {"attackPower": "0|17%", "cannotHeal": "1|0%"}, // 6
-      {"attackPower": "0|19%", "cannotHeal": "1|0%"}, // 7
-      {"attackPower": "0|21%", "cannotHeal": "1|0%"}, // 8
-      {"attackPower": "0|23%", "cannotHeal": "1|0%"}, // 9
-      {"attackPower": "0|25%", "cannotHeal": "1|0%"}, // 10
-      {"attackPower": "0|27%", "cannotHeal": "1|0%"}, // 11
-      {"attackPower": "0|29%", "cannotHeal": "1|0%"}, // 12
-      {"attackPower": "0|31%", "cannotHeal": "1|0%"}, // 13
-      {"attackPower": "0|33%", "cannotHeal": "1|0%"}, // 14
-      {"attackPower": "0|35%", "cannotHeal": "1|0%"}, // 15
-      {"attackPower": "0|36%", "cannotHeal": "1|0%"}, // 16
-      {"attackPower": "0|37%", "cannotHeal": "1|0%"}, // 17
-      {"attackPower": "0|38%", "cannotHeal": "1|0%"}, // 18
-      {"attackPower": "0|39%", "cannotHeal": "1|0%"}, // 19
-      {"attackPower": "0|40%", "cannotHeal": "1|0%"}, // 20
-      {"attackPower": "0|41%", "cannotHeal": "1|0%"}, // 21
-      {"attackPower": "0|42%", "cannotHeal": "1|0%"}, // 22
-      {"attackPower": "0|43%", "cannotHeal": "1|0%"}, // 23
-      {"attackPower": "0|44%", "cannotHeal": "1|0%"}, // 24
-      {"attackPower": "0|45%", "cannotHeal": "1|0%"}, // 25
-      {"attackPower": "0|46%", "cannotHeal": "1|0%"}, // 26
-      {"attackPower": "0|47%", "cannotHeal": "1|0%"}, // 27
-      {"attackPower": "0|48%", "cannotHeal": "1|0%"}, // 28
-      {"attackPower": "0|49%", "cannotHeal": "1|0%"}, // 29
-      {"attackPower": "0|50%", "cannotHeal": "1|0%"}, // 30
+      {"lifeOnTheLine": "0|5%", "cannotHeal": "1|0%"}, // 1
+      {"lifeOnTheLine": "0|8%", "cannotHeal": "1|0%"}, // 2
+      {"lifeOnTheLine": "0|11%", "cannotHeal": "1|0%"}, // 3
+      {"lifeOnTheLine": "0|13%", "cannotHeal": "1|0%"}, // 4
+      {"lifeOnTheLine": "0|15%", "cannotHeal": "1|0%"}, // 5
+      {"lifeOnTheLine": "0|17%", "cannotHeal": "1|0%"}, // 6
+      {"lifeOnTheLine": "0|19%", "cannotHeal": "1|0%"}, // 7
+      {"lifeOnTheLine": "0|21%", "cannotHeal": "1|0%"}, // 8
+      {"lifeOnTheLine": "0|23%", "cannotHeal": "1|0%"}, // 9
+      {"lifeOnTheLine": "0|25%", "cannotHeal": "1|0%"}, // 10
+      {"lifeOnTheLine": "0|27%", "cannotHeal": "1|0%"}, // 11
+      {"lifeOnTheLine": "0|29%", "cannotHeal": "1|0%"}, // 12
+      {"lifeOnTheLine": "0|31%", "cannotHeal": "1|0%"}, // 13
+      {"lifeOnTheLine": "0|33%", "cannotHeal": "1|0%"}, // 14
+      {"lifeOnTheLine": "0|35%", "cannotHeal": "1|0%"}, // 15
+      {"lifeOnTheLine": "0|36%", "cannotHeal": "1|0%"}, // 16
+      {"lifeOnTheLine": "0|37%", "cannotHeal": "1|0%"}, // 17
+      {"lifeOnTheLine": "0|38%", "cannotHeal": "1|0%"}, // 18
+      {"lifeOnTheLine": "0|39%", "cannotHeal": "1|0%"}, // 19
+      {"lifeOnTheLine": "0|40%", "cannotHeal": "1|0%"}, // 20
+      {"lifeOnTheLine": "0|41%", "cannotHeal": "1|0%"}, // 21
+      {"lifeOnTheLine": "0|42%", "cannotHeal": "1|0%"}, // 22
+      {"lifeOnTheLine": "0|43%", "cannotHeal": "1|0%"}, // 23
+      {"lifeOnTheLine": "0|44%", "cannotHeal": "1|0%"}, // 24
+      {"lifeOnTheLine": "0|45%", "cannotHeal": "1|0%"}, // 25
+      {"lifeOnTheLine": "0|46%", "cannotHeal": "1|0%"}, // 26
+      {"lifeOnTheLine": "0|47%", "cannotHeal": "1|0%"}, // 27
+      {"lifeOnTheLine": "0|48%", "cannotHeal": "1|0%"}, // 28
+      {"lifeOnTheLine": "0|49%", "cannotHeal": "1|0%"}, // 29
+      {"lifeOnTheLine": "0|50%", "cannotHeal": "1|0%"}, // 30
     ]
   },
   "damageCap": {
@@ -802,21 +1009,21 @@ const SKILL_STATUS = {
     "minLevel": 1,
     "maxLevel": 15,
     "levels": [
-      {"attackPower": "0|2%", "attackDamageCap": "0|2%", "skilledDamageCap": "0|2%", "sbaDamageCap": "0|2%", "alwaysBeStuned": '1|0%'}, // 1
-      {"attackPower": "0|4%", "attackDamageCap": "0|4%", "skilledDamageCap": "0|4%", "sbaDamageCap": "0|4%", "alwaysBeStuned": '1|0%'}, // 2
-      {"attackPower": "0|6%", "attackDamageCap": "0|6%", "skilledDamageCap": "0|6%", "sbaDamageCap": "0|6%", "alwaysBeStuned": '1|0%'}, // 3
-      {"attackPower": "0|8%", "attackDamageCap": "0|8%", "skilledDamageCap": "0|8%", "sbaDamageCap": "0|8%", "alwaysBeStuned": '1|0%'}, // 4
-      {"attackPower": "0|10%", "attackDamageCap": "0|10%", "skilledDamageCap": "0|10%", "sbaDamageCap": "0|10%", "alwaysBeStuned": '1|0%'}, // 5
-      {"attackPower": "0|12%", "attackDamageCap": "0|12%", "skilledDamageCap": "0|12%", "sbaDamageCap": "0|12%", "alwaysBeStuned": '1|0%'}, // 6
-      {"attackPower": "0|14%", "attackDamageCap": "0|14%", "skilledDamageCap": "0|14%", "sbaDamageCap": "0|14%", "alwaysBeStuned": '1|0%'}, // 7
-      {"attackPower": "0|16%", "attackDamageCap": "0|16%", "skilledDamageCap": "0|16%", "sbaDamageCap": "0|16%", "alwaysBeStuned": '1|0%'}, // 8
-      {"attackPower": "0|18%", "attackDamageCap": "0|18%", "skilledDamageCap": "0|18%", "sbaDamageCap": "0|18%", "alwaysBeStuned": '1|0%'}, // 9
-      {"attackPower": "0|20%", "attackDamageCap": "0|20%", "skilledDamageCap": "0|20%", "sbaDamageCap": "0|20%", "alwaysBeStuned": '1|0%'}, // 10
-      {"attackPower": "0|22%", "attackDamageCap": "0|22%", "skilledDamageCap": "0|22%", "sbaDamageCap": "0|22%", "alwaysBeStuned": '1|0%'}, // 11
-      {"attackPower": "0|24%", "attackDamageCap": "0|24%", "skilledDamageCap": "0|24%", "sbaDamageCap": "0|24%", "alwaysBeStuned": '1|0%'}, // 12
-      {"attackPower": "0|26%", "attackDamageCap": "0|26%", "skilledDamageCap": "0|26%", "sbaDamageCap": "0|26%", "alwaysBeStuned": '1|0%'}, // 13
-      {"attackPower": "0|28%", "attackDamageCap": "0|28%", "skilledDamageCap": "0|28%", "sbaDamageCap": "0|28%", "alwaysBeStuned": '1|0%'}, // 14
-      {"attackPower": "0|30%", "attackDamageCap": "0|30%", "skilledDamageCap": "0|30%", "sbaDamageCap": "0|30%", "alwaysBeStuned": '1|0%'}, // 15
+      {"glassCannon": "0|2%", "attackDamageCap": "0|2%", "skilledDamageCap": "0|2%", "sbaDamageCap": "0|2%", "alwaysBeStuned": '1|0%'}, // 1
+      {"glassCannon": "0|4%", "attackDamageCap": "0|4%", "skilledDamageCap": "0|4%", "sbaDamageCap": "0|4%", "alwaysBeStuned": '1|0%'}, // 2
+      {"glassCannon": "0|6%", "attackDamageCap": "0|6%", "skilledDamageCap": "0|6%", "sbaDamageCap": "0|6%", "alwaysBeStuned": '1|0%'}, // 3
+      {"glassCannon": "0|8%", "attackDamageCap": "0|8%", "skilledDamageCap": "0|8%", "sbaDamageCap": "0|8%", "alwaysBeStuned": '1|0%'}, // 4
+      {"glassCannon": "0|10%", "attackDamageCap": "0|10%", "skilledDamageCap": "0|10%", "sbaDamageCap": "0|10%", "alwaysBeStuned": '1|0%'}, // 5
+      {"glassCannon": "0|12%", "attackDamageCap": "0|12%", "skilledDamageCap": "0|12%", "sbaDamageCap": "0|12%", "alwaysBeStuned": '1|0%'}, // 6
+      {"glassCannon": "0|14%", "attackDamageCap": "0|14%", "skilledDamageCap": "0|14%", "sbaDamageCap": "0|14%", "alwaysBeStuned": '1|0%'}, // 7
+      {"glassCannon": "0|16%", "attackDamageCap": "0|16%", "skilledDamageCap": "0|16%", "sbaDamageCap": "0|16%", "alwaysBeStuned": '1|0%'}, // 8
+      {"glassCannon": "0|18%", "attackDamageCap": "0|18%", "skilledDamageCap": "0|18%", "sbaDamageCap": "0|18%", "alwaysBeStuned": '1|0%'}, // 9
+      {"glassCannon": "0|20%", "attackDamageCap": "0|20%", "skilledDamageCap": "0|20%", "sbaDamageCap": "0|20%", "alwaysBeStuned": '1|0%'}, // 10
+      {"glassCannon": "0|22%", "attackDamageCap": "0|22%", "skilledDamageCap": "0|22%", "sbaDamageCap": "0|22%", "alwaysBeStuned": '1|0%'}, // 11
+      {"glassCannon": "0|24%", "attackDamageCap": "0|24%", "skilledDamageCap": "0|24%", "sbaDamageCap": "0|24%", "alwaysBeStuned": '1|0%'}, // 12
+      {"glassCannon": "0|26%", "attackDamageCap": "0|26%", "skilledDamageCap": "0|26%", "sbaDamageCap": "0|26%", "alwaysBeStuned": '1|0%'}, // 13
+      {"glassCannon": "0|28%", "attackDamageCap": "0|28%", "skilledDamageCap": "0|28%", "sbaDamageCap": "0|28%", "alwaysBeStuned": '1|0%'}, // 14
+      {"glassCannon": "0|30%", "attackDamageCap": "0|30%", "skilledDamageCap": "0|30%", "sbaDamageCap": "0|30%", "alwaysBeStuned": '1|0%'}, // 15
     ]
   },
   "lessIsMore": {
@@ -898,36 +1105,36 @@ const SKILL_STATUS = {
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
-      {"attackPower": "0|16%|isFewMinutesFromStart"}, // 1
-      {"attackPower": "0|17%|isFewMinutesFromStart"}, // 2
-      {"attackPower": "0|18%|isFewMinutesFromStart"}, // 3
-      {"attackPower": "0|19%|isFewMinutesFromStart"}, // 4
-      {"attackPower": "0|20%|isFewMinutesFromStart"}, // 5
-      {"attackPower": "0|21%|isFewMinutesFromStart"}, // 6
-      {"attackPower": "0|22%|isFewMinutesFromStart"}, // 7
-      {"attackPower": "0|23%|isFewMinutesFromStart"}, // 8
-      {"attackPower": "0|24%|isFewMinutesFromStart"}, // 9
-      {"attackPower": "0|25%|isFewMinutesFromStart"}, // 10
-      {"attackPower": "0|26%|isFewMinutesFromStart"}, // 11
-      {"attackPower": "0|27%|isFewMinutesFromStart"}, // 12
-      {"attackPower": "0|28%|isFewMinutesFromStart"}, // 13
-      {"attackPower": "0|29%|isFewMinutesFromStart"}, // 14
-      {"attackPower": "0|30%|isFewMinutesFromStart"}, // 15
-      {"attackPower": "0|32%|isFewMinutesFromStart"}, // 16
-      {"attackPower": "0|34%|isFewMinutesFromStart"}, // 17
-      {"attackPower": "0|36%|isFewMinutesFromStart"}, // 18
-      {"attackPower": "0|38%|isFewMinutesFromStart"}, // 19
-      {"attackPower": "0|40%|isFewMinutesFromStart"}, // 20
-      {"attackPower": "0|42%|isFewMinutesFromStart"}, // 21
-      {"attackPower": "0|44%|isFewMinutesFromStart"}, // 22
-      {"attackPower": "0|46%|isFewMinutesFromStart"}, // 23
-      {"attackPower": "0|48%|isFewMinutesFromStart"}, // 24
-      {"attackPower": "0|50%|isFewMinutesFromStart"}, // 25
-      {"attackPower": "0|52%|isFewMinutesFromStart"}, // 26
-      {"attackPower": "0|54%|isFewMinutesFromStart"}, // 27
-      {"attackPower": "0|56%|isFewMinutesFromStart"}, // 28
-      {"attackPower": "0|58%|isFewMinutesFromStart"}, // 29
-      {"attackPower": "0|60%|isFewMinutesFromStart"}, // 30
+      {"headStart": "0|16%|isFewMinutesFromStart"}, // 1
+      {"headStart": "0|17%|isFewMinutesFromStart"}, // 2
+      {"headStart": "0|18%|isFewMinutesFromStart"}, // 3
+      {"headStart": "0|19%|isFewMinutesFromStart"}, // 4
+      {"headStart": "0|20%|isFewMinutesFromStart"}, // 5
+      {"headStart": "0|21%|isFewMinutesFromStart"}, // 6
+      {"headStart": "0|22%|isFewMinutesFromStart"}, // 7
+      {"headStart": "0|23%|isFewMinutesFromStart"}, // 8
+      {"headStart": "0|24%|isFewMinutesFromStart"}, // 9
+      {"headStart": "0|25%|isFewMinutesFromStart"}, // 10
+      {"headStart": "0|26%|isFewMinutesFromStart"}, // 11
+      {"headStart": "0|27%|isFewMinutesFromStart"}, // 12
+      {"headStart": "0|28%|isFewMinutesFromStart"}, // 13
+      {"headStart": "0|29%|isFewMinutesFromStart"}, // 14
+      {"headStart": "0|30%|isFewMinutesFromStart"}, // 15
+      {"headStart": "0|32%|isFewMinutesFromStart"}, // 16
+      {"headStart": "0|34%|isFewMinutesFromStart"}, // 17
+      {"headStart": "0|36%|isFewMinutesFromStart"}, // 18
+      {"headStart": "0|38%|isFewMinutesFromStart"}, // 19
+      {"headStart": "0|40%|isFewMinutesFromStart"}, // 20
+      {"headStart": "0|42%|isFewMinutesFromStart"}, // 21
+      {"headStart": "0|44%|isFewMinutesFromStart"}, // 22
+      {"headStart": "0|46%|isFewMinutesFromStart"}, // 23
+      {"headStart": "0|48%|isFewMinutesFromStart"}, // 24
+      {"headStart": "0|50%|isFewMinutesFromStart"}, // 25
+      {"headStart": "0|52%|isFewMinutesFromStart"}, // 26
+      {"headStart": "0|54%|isFewMinutesFromStart"}, // 27
+      {"headStart": "0|56%|isFewMinutesFromStart"}, // 28
+      {"headStart": "0|58%|isFewMinutesFromStart"}, // 29
+      {"headStart": "0|60%|isFewMinutesFromStart"}, // 30
     ]
   },
   "supplementaryDamage": {
@@ -987,36 +1194,36 @@ const SKILL_STATUS = {
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
-      {"sacrificeHealth": "0|50%", "attackPower": "0|1%"}, // 1
-      {"sacrificeHealth": "0|50%", "attackPower": "0|2%"}, // 2
-      {"sacrificeHealth": "0|50%", "attackPower": "0|3%"}, // 3
-      {"sacrificeHealth": "0|50%", "attackPower": "0|4%"}, // 4
-      {"sacrificeHealth": "0|50%", "attackPower": "0|5%"}, // 5
-      {"sacrificeHealth": "0|50%", "attackPower": "0|6%"}, // 6
-      {"sacrificeHealth": "0|50%", "attackPower": "0|7%"}, // 7
-      {"sacrificeHealth": "0|50%", "attackPower": "0|8%"}, // 8
-      {"sacrificeHealth": "0|50%", "attackPower": "0|9%"}, // 9
-      {"sacrificeHealth": "0|50%", "attackPower": "0|10%"}, // 10
-      {"sacrificeHealth": "0|50%", "attackPower": "0|11%"}, // 11
-      {"sacrificeHealth": "0|50%", "attackPower": "0|12%"}, // 12
-      {"sacrificeHealth": "0|50%", "attackPower": "0|13%"}, // 13
-      {"sacrificeHealth": "0|50%", "attackPower": "0|14%"}, // 14
-      {"sacrificeHealth": "0|50%", "attackPower": "0|15%"}, // 15
-      {"sacrificeHealth": "0|50%", "attackPower": "0|16%"}, // 16
-      {"sacrificeHealth": "0|50%", "attackPower": "0|17%"}, // 17
-      {"sacrificeHealth": "0|50%", "attackPower": "0|18%"}, // 18
-      {"sacrificeHealth": "0|50%", "attackPower": "0|19%"}, // 19
-      {"sacrificeHealth": "0|50%", "attackPower": "0|20%"}, // 20
-      {"sacrificeHealth": "0|50%", "attackPower": "0|21%"}, // 21
-      {"sacrificeHealth": "0|50%", "attackPower": "0|22%"}, // 22
-      {"sacrificeHealth": "0|50%", "attackPower": "0|23%"}, // 23
-      {"sacrificeHealth": "0|50%", "attackPower": "0|24%"}, // 24
-      {"sacrificeHealth": "0|50%", "attackPower": "0|25%"}, // 25
-      {"sacrificeHealth": "0|50%", "attackPower": "0|26%"}, // 26
-      {"sacrificeHealth": "0|50%", "attackPower": "0|27%"}, // 27
-      {"sacrificeHealth": "0|50%", "attackPower": "0|28%"}, // 28
-      {"sacrificeHealth": "0|50%", "attackPower": "0|29%"}, // 29
-      {"sacrificeHealth": "0|50%", "attackPower": "0|30%"}, // 30
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|1%"}, // 1
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|2%"}, // 2
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|3%"}, // 3
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|4%"}, // 4
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|5%"}, // 5
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|6%"}, // 6
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|7%"}, // 7
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|8%"}, // 8
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|9%"}, // 9
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|10%"}, // 10
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|11%"}, // 11
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|12%"}, // 12
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|13%"}, // 13
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|14%"}, // 14
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|15%"}, // 15
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|16%"}, // 16
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|17%"}, // 17
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|18%"}, // 18
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|19%"}, // 19
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|20%"}, // 20
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|21%"}, // 21
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|22%"}, // 22
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|23%"}, // 23
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|24%"}, // 24
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|25%"}, // 25
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|26%"}, // 26
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|27%"}, // 27
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|28%"}, // 28
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|29%"}, // 29
+      {"sacrificeHealth": "0|50%", "powerHungry": "0|30%"}, // 30
     ]
   },
   "berserker": {
@@ -1024,36 +1231,36 @@ const SKILL_STATUS = {
     "minLevel": 1,
     "maxLevel": 30,
     "levels": [
-      {"attackPower": "0|36%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 1
-      {"attackPower": "0|37%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 2
-      {"attackPower": "0|38%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 3
-      {"attackPower": "0|39%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 4
-      {"attackPower": "0|40%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 5
-      {"attackPower": "0|41%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 6
-      {"attackPower": "0|42%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 7
-      {"attackPower": "0|43%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 8
-      {"attackPower": "0|44%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 9
-      {"attackPower": "0|45%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 10
-      {"attackPower": "0|46%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 11
-      {"attackPower": "0|47%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 12
-      {"attackPower": "0|48%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 13
-      {"attackPower": "0|49%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 14
-      {"attackPower": "0|50%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 15
-      {"attackPower": "0|52%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 16
-      {"attackPower": "0|54%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 17
-      {"attackPower": "0|56%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 18
-      {"attackPower": "0|58%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 19
-      {"attackPower": "0|60%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 20
-      {"attackPower": "0|62%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 21
-      {"attackPower": "0|64%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 22
-      {"attackPower": "0|66%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 23
-      {"attackPower": "0|68%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 24
-      {"attackPower": "0|70%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 25
-      {"attackPower": "0|72%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 26
-      {"attackPower": "0|74%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 27
-      {"attackPower": "0|76%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 28
-      {"attackPower": "0|78%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 29
-      {"attackPower": "0|80%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 30
+      {"berserker": "0|36%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 1
+      {"berserker": "0|37%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 2
+      {"berserker": "0|38%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 3
+      {"berserker": "0|39%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 4
+      {"berserker": "0|40%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 5
+      {"berserker": "0|41%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 6
+      {"berserker": "0|42%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 7
+      {"berserker": "0|43%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 8
+      {"berserker": "0|44%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 9
+      {"berserker": "0|45%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 10
+      {"berserker": "0|46%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 11
+      {"berserker": "0|47%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 12
+      {"berserker": "0|48%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 13
+      {"berserker": "0|49%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 14
+      {"berserker": "0|50%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 15
+      {"berserker": "0|52%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 16
+      {"berserker": "0|54%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 17
+      {"berserker": "0|56%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 18
+      {"berserker": "0|58%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 19
+      {"berserker": "0|60%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 20
+      {"berserker": "0|62%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 21
+      {"berserker": "0|64%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 22
+      {"berserker": "0|66%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 23
+      {"berserker": "0|68%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 24
+      {"berserker": "0|70%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 25
+      {"berserker": "0|72%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 26
+      {"berserker": "0|74%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 27
+      {"berserker": "0|76%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 28
+      {"berserker": "0|78%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 29
+      {"berserker": "0|80%", "cannotGuard": '1|0%', "cannotDodge": '1|0%'}, // 30
     ]
   },
   "rollOfTheDie": {
