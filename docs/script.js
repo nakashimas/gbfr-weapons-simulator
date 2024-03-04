@@ -1,4 +1,16 @@
+const URL_LANG = 'hl';
+const URL_HP_RATE = 'hr';
+const URL_HP_BASE = 'hb';
+const URL_ATK_BASE = 'ab';
+const URL_CRT_BASE = 'cb';
+const URL_STN_BASE = 'sb';
+const URL_ABILITY_EQUIPPED = 'ae';
+const URL_WEAPON_NAME = 'wn';
+const URL_WEAPON_LEVEL = 'wl';
+const URL_MIRAGE_MUNITIONS = 'mm';
+
 // Add your JavaScript code here
+
 new Vue({
   el: '#app',
   data: {
@@ -89,9 +101,42 @@ new Vue({
     // ===================
     // URL param analysis
     // ===================
-    const hl = this.getURLParameter('hl');
+    // lang
+    let hl = this.getURLParameter(URL_LANG);
+    hl = hl ? hl : 'ja';
     $("html").attr("lang", hl);
     this.lang = hl;
+    // healthRate
+    let hr = this.getURLParameter(URL_HP_RATE);
+    this.healthRate = hr ? hr : this.healthRate;
+    // healthBase
+    let hb = this.getURLParameter(URL_HP_BASE);
+    this.healthBase = hb ? hb : this.healthBase;
+    // attackPowerBase 
+    let ab = this.getURLParameter(URL_ATK_BASE);
+    this.attackPowerBase = ab ? ab : this.attackPowerBase;
+    // criticalHitRateBase
+    let cb = this.getURLParameter(URL_CRT_BASE);
+    this.criticalHitRateBase = cb ? cb : this.criticalHitRateBase;
+    // stunPowerBase
+    let sb = this.getURLParameter(URL_STN_BASE);
+    this.stunPowerBase = sb ? sb : this.stunPowerBase;
+    // playerAbilityEquipped
+    let ae = this.getURLParameter(URL_ABILITY_EQUIPPED);
+    this.playerAbilityEquipped = ae ? ae : this.playerAbilityEquipped;
+    // playConditions
+    // weaponName
+    let wn = this.getURLParameter(URL_WEAPON_NAME);
+    this.weaponName = wn ? wn : this.weaponName;
+    // weaponLevel
+    let wl = this.getURLParameter(URL_WEAPON_LEVEL);
+    this.weaponLevel = wl ? wl : this.weaponLevel;
+    // mirageMunitions
+    let mm = this.getURLParameter(URL_MIRAGE_MUNITIONS);
+    this.mirageMunitions = mm ? mm : this.mirageMunitions;
+    // weaponTraits
+    // imbues
+    // sigils
   },
   mounted() {
     $('.select-2')
@@ -117,6 +162,16 @@ new Vue({
     );
   },
   methods: {
+    setURLParameter(name, param) {
+      // 現在のURLを取得
+      let urlParams = new URLSearchParams(window.location.search);
+      // 新しい値を設定
+      urlParams.set(name, param);
+      // 新しいURLを構築
+      const newUrl = window.location.pathname + '?' + urlParams.toString();
+      // 新しいURLを履歴に追加
+      window.history.pushState({}, '', newUrl);
+    },
     getURLParameter(name, url) {
       url = url ? url : window.location.href;
       let re = new RegExp(
@@ -553,31 +608,61 @@ new Vue({
     },
   },
   watch: {
-    sigils: {
-      handler: function(newValue, oldValue) {
-        // サブスキルのレベルを自動補完
-        for (let i=0; i < this.sigils.length; i++) {
-          if (this.sigils[i].sigilSubSkillAuto) {
-            this.sigils[i].sigilSubSkillRank = this.sigils[i].sigilMainSkillRank;
-            this.sigils[i].sigilSubSkillLevelCurrent = this.sigils[i].sigilMainSkillLevelCurrent;
-            this.sigils[i].sigilSubSkillLevelToBe = this.sigils[i].sigilMainSkillLevelToBe;
-          }
-        }
+    healthRate: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_HP_RATE, this.healthRate);
       },
-      deep: true,
+      immediate: false
+    },
+    healthBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_HP_BASE, this.healthBase);
+      },
+      immediate: false
+    },
+    attackPowerBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_ATK_BASE, this.attackPowerBase);
+      },
+      immediate: false
+    },
+    criticalHitRateBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_CRT_BASE, this.criticalHitRateBase);
+      },
+      immediate: false
+    },
+    stunPowerBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_STN_BASE, this.stunPowerBase);
+      },
+      immediate: false
+    },
+    playerAbilityEquipped: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_ABILITY_EQUIPPED, this.playerAbilityEquipped);
+      },
       immediate: false
     },
     weaponName: {
-      handler: function(newValue, oldValue) {
+      handler: function() {
         // 武器スキルを自動補完
         this.resetWeaponSkills();
         // 武器ステータスを自動補完
         this.resetWeaponStatus();
+        // update URL
+        this.setURLParameter(URL_WEAPON_NAME, this.weaponName);
       },
       immediate: false
     },
     weaponLevel: {
-      handler: function(newValue, oldValue) {
+      handler: function() {
         // レベル最大値に丸める
         if (this.weaponLevel > this.weaponsStatus[this.weaponName]['maxLevel']) {
           this.weaponLevel = this.weaponsStatus[this.weaponName]['maxLevel'];
@@ -590,11 +675,22 @@ new Vue({
         this.resetWeaponSkills();
         // 武器ステータスを自動補完
         this.resetWeaponStatus();
+        // update URL
+        this.setURLParameter(URL_WEAPON_LEVEL, this.weaponLevel);
+      },
+      immediate: false
+    },
+    mirageMunitions: {
+      handler: function() {
+        // 武器ステータスを自動補完
+        this.resetWeaponStatus();
+        // update URL
+        this.setURLParameter(URL_MIRAGE_MUNITIONS, this.mirageMunitions);
       },
       immediate: false
     },
     weaponTraits: {
-      handler: function(newValue, oldValue) {
+      handler: function() {
         // 武器スキルを自動補完
         this.resetWeaponSkills();
         // 武器ステータスを自動補完
@@ -603,11 +699,18 @@ new Vue({
       deep: true,
       immediate: false
     },
-    mirageMunitions: {
-      handler: function(newValue, oldValue) {
-        // 武器ステータスを自動補完
-        this.resetWeaponStatus();
+    sigils: {
+      handler: function() {
+        // サブスキルのレベルを自動補完
+        for (let i=0; i < this.sigils.length; i++) {
+          if (this.sigils[i].sigilSubSkillAuto) {
+            this.sigils[i].sigilSubSkillRank = this.sigils[i].sigilMainSkillRank;
+            this.sigils[i].sigilSubSkillLevelCurrent = this.sigils[i].sigilMainSkillLevelCurrent;
+            this.sigils[i].sigilSubSkillLevelToBe = this.sigils[i].sigilMainSkillLevelToBe;
+          }
+        }
       },
+      deep: true,
       immediate: false
     },
   }
