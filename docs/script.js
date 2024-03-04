@@ -86,6 +86,12 @@ new Vue({
     this.createSigils(12);
     this.createImbues(3);
     this.createWeaponTraits(4);
+    // ===================
+    // URL param analysis
+    // ===================
+    const hl = this.getURLParameter('hl');
+    $("html").attr("lang", hl);
+    this.lang = hl;
   },
   mounted() {
     $('.select-2')
@@ -111,6 +117,21 @@ new Vue({
     );
   },
   methods: {
+    getURLParameter(name, url) {
+      url = url ? url : window.location.href;
+      let re = new RegExp(
+        "[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)"
+      );
+      let r = re.exec(url);
+
+      if (!r) {
+        return null;
+      } else if (!r[2]) {
+        return '';
+      }
+      
+      return decodeURIComponent(r[2].replace(/\+/g, " "));
+    },
     createSigils(n) {
       for (let i=0; i < n; i++) {
         this.sigils.push(Object.assign({}, this.sigilTemplate));
