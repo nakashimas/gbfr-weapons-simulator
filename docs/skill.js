@@ -2537,15 +2537,15 @@ const SKILL_STATUS = {
       {},
     ]
   }, 
-  // "unknown": {
-  //   // 魔導士の機転
-  //   "skillType": "awakening",
-  //   "minLevel": 15,
-  //   "maxLevel": 15,
-  //   "levels": [
-  //     {},
-  //   ]
-  // }, 
+  "magesSavvy": {
+    // 魔導士の機転
+    "skillType": "awakening",
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
   "magesAspiration": {
     // 魔導士の願い
     "skillType": "awakening",
@@ -2555,24 +2555,24 @@ const SKILL_STATUS = {
       {},
     ]
   }, 
-  // "unknown": {
-  //   // 老兵の知恵
-  //   "skillType": "awakening",
-  //   "minLevel": 15,
-  //   "maxLevel": 15,
-  //   "levels": [
-  //     {},
-  //   ]
-  // }, 
-  // "unknown": {
-  //   // 老兵の一隻眼
-  //   "skillType": "awakening",
-  //   "minLevel": 15,
-  //   "maxLevel": 15,
-  //   "levels": [
-  //     {},
-  //   ]
-  // }, 
+  "veteransInsight": {
+    // 老兵の知恵
+    "skillType": "awakening",
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "veteransVision": {
+    // 老兵の一隻眼
+    "skillType": "awakening",
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
   "rosesBlooming": {
     // 薔薇の早咲き
     "skillType": "awakening",
@@ -2591,24 +2591,24 @@ const SKILL_STATUS = {
       {},
     ]
   }, 
-  // "unknown": {
-  //   // 聖騎士の威風
-  //   "skillType": "awakening",
-  //   "minLevel": 15,
-  //   "maxLevel": 15,
-  //   "levels": [
-  //     {},
-  //   ]
-  // }, 
-  // "unknown": {
-  //   // 聖騎士の剣光
-  //   "skillType": "awakening",
-  //   "minLevel": 15,
-  //   "maxLevel": 15,
-  //   "levels": [
-  //     {},
-  //   ]
-  // }, 
+  "holyKnightsGrandeur": {
+    // 聖騎士の威風
+    "skillType": "awakening",
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
+  "holyKnightsLuster": {
+    // 聖騎士の剣光
+    "skillType": "awakening",
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {},
+    ]
+  }, 
   "eternalRagesMettle": {
     // 古今無双の気風
     "skillType": "awakening",
