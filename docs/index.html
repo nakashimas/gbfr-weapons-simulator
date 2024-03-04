@@ -105,7 +105,7 @@
                       <input class="form-control px-1" :id="'weapon-trait-level-' + index" type="number" v-model="weaponTraits[index].weaponTraitSkillLevel" :disabled="weaponTraits[index].weaponTraitSkillAuto">
                     </div>
                     <div class="col col-1 p-0">
-                      <input class="form-check-input px-1" type="checkbox" :id="'weapon-trait-auto' + index" v-model="weaponTraits[index].weaponTraitSkillAuto">
+                      <input class="form-check-input px-1" type="checkbox" :id="'weapon-trait-auto' + index" v-model="weaponTraits[index].weaponTraitSkillAuto" :title="'Auto Complete: ' + weaponTraits[index].weaponTraitSkillAuto">
                     </div>
                   </div>
                 </div>
@@ -275,7 +275,7 @@
                   <input class="form-control px-1 h-100" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto">
                 </div>
                 <div class="col col-1 p-0">
-                  <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto">
+                  <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto" :title="'Auto Complete: ' + sigils[index].sigilSubSkillAuto">
                 </div>
               </div>
             </div>
@@ -386,7 +386,14 @@
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <input class="form-control px-1" id="healthBase" type="number" v-model="healthBase">
+                <div class="row p-0 g-0">
+                  <div class="col col-11 p-0">
+                    <input class="form-control px-1" id="healthBase" type="number" v-model="healthBase">
+                  </div>
+                  <div class="col col-1 p-0">
+                    <input class="form-check-input px-1" type="checkbox" id="isHealthBaseAuto" v-model="isHealthBaseAuto" :title="'Auto Complete: ' + isHealthBaseAuto">
+                  </div>
+                </div>
               </div>
               <!-- =========== -->
               <!-- Other Stats -->
@@ -397,7 +404,14 @@
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <input class="form-control px-1" id="attackPowerBase" type="number" v-model="attackPowerBase">
+                <div class="row p-0 g-0">
+                  <div class="col col-11 p-0">
+                    <input class="form-control px-1" id="attackPowerBase" type="number" v-model="attackPowerBase">
+                  </div>
+                  <div class="col col-1 p-0">
+                    <input class="form-check-input px-1" type="checkbox" id="isAttackPowerBaseAuto" v-model="isAttackPowerBaseAuto" :title="'Auto Complete: ' + isAttackPowerBaseAuto">
+                  </div>
+                </div>
               </div>
               <div class="col col-2 col-lg-1 p-0">
                 <span class="input-group-text px-1 h-100">
@@ -405,7 +419,14 @@
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <input class="form-control px-1" id="criticalHitRateBase" type="number" v-model="criticalHitRateBase">
+                <div class="row p-0 g-0">
+                  <div class="col col-11 p-0">
+                    <input class="form-control px-1" id="criticalHitRateBase" type="number" v-model="criticalHitRateBase">
+                  </div>
+                  <div class="col col-1 p-0">
+                    <input class="form-check-input px-1" type="checkbox" id="isCriticalHitRateBaseAuto" v-model="isCriticalHitRateBaseAuto" :title="'Auto Complete: ' + isCriticalHitRateBaseAuto">
+                  </div>
+                </div>
               </div>
               <div class="col col-2 col-lg-1 p-0">
                 <span class="input-group-text px-1 h-100">
@@ -413,7 +434,14 @@
                 </span>
               </div>
               <div class="col col-4 col-lg-2 p-0">
-                <input class="form-control px-1" id="stunPowerBase" type="number" v-model="stunPowerBase">
+                <div class="row p-0 g-0">
+                  <div class="col col-11 p-0">
+                    <input class="form-control px-1" id="stunPowerBase" type="number" v-model="stunPowerBase">
+                  </div>
+                  <div class="col col-1 p-0">
+                    <input class="form-check-input px-1" type="checkbox" id="isStunPowerBaseAuto" v-model="isStunPowerBaseAuto" :title="'Auto Complete: ' + isStunPowerBaseAuto">
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">

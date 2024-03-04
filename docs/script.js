@@ -17,10 +17,15 @@ new Vue({
     lang: 'ja',
     // status
     healthRate: 100,
+    isHealthRateAuto: true,
     healthBase: 2500,
+    isHealthBaseAuto: true,
     attackPowerBase: 0, 
+    isAttackPowerBaseAuto: true,
     criticalHitRateBase: 0, 
+    isCriticalHitRateBaseAuto: true,
     stunPowerBase: 0,
+    isStunPowerBaseAuto: true,
     playerAbilityEquipped: 4,
     playConditions: {
       isEnemyBreak: true,
@@ -98,45 +103,6 @@ new Vue({
     this.createSigils(12);
     this.createImbues(3);
     this.createWeaponTraits(4);
-    // ===================
-    // URL param analysis
-    // ===================
-    // lang
-    let hl = this.getURLParameter(URL_LANG);
-    hl = hl ? hl : 'ja';
-    $("html").attr("lang", hl);
-    this.lang = hl;
-    // healthRate
-    let hr = this.getURLParameter(URL_HP_RATE);
-    this.healthRate = hr ? hr : this.healthRate;
-    // healthBase
-    let hb = this.getURLParameter(URL_HP_BASE);
-    this.healthBase = hb ? hb : this.healthBase;
-    // attackPowerBase 
-    let ab = this.getURLParameter(URL_ATK_BASE);
-    this.attackPowerBase = ab ? ab : this.attackPowerBase;
-    // criticalHitRateBase
-    let cb = this.getURLParameter(URL_CRT_BASE);
-    this.criticalHitRateBase = cb ? cb : this.criticalHitRateBase;
-    // stunPowerBase
-    let sb = this.getURLParameter(URL_STN_BASE);
-    this.stunPowerBase = sb ? sb : this.stunPowerBase;
-    // playerAbilityEquipped
-    let ae = this.getURLParameter(URL_ABILITY_EQUIPPED);
-    this.playerAbilityEquipped = ae ? ae : this.playerAbilityEquipped;
-    // playConditions
-    // weaponName
-    let wn = this.getURLParameter(URL_WEAPON_NAME);
-    this.weaponName = wn ? wn : this.weaponName;
-    // weaponLevel
-    let wl = this.getURLParameter(URL_WEAPON_LEVEL);
-    this.weaponLevel = wl ? wl : this.weaponLevel;
-    // mirageMunitions
-    let mm = this.getURLParameter(URL_MIRAGE_MUNITIONS);
-    this.mirageMunitions = mm ? mm : this.mirageMunitions;
-    // weaponTraits
-    // imbues
-    // sigils
   },
   mounted() {
     $('.select-2')
@@ -160,6 +126,50 @@ new Vue({
         }
       }
     );
+    
+    // ===================
+    // URL param analysis
+    // ===================
+    // lang
+    let hl = this.getURLParameter(URL_LANG);
+    hl = hl ? hl : 'ja';
+    $("html").attr("lang", hl);
+    this.lang = hl;
+    // healthRate
+    let hr = this.getURLParameter(URL_HP_RATE);
+    this.healthRate = hr ? hr : this.healthRate;
+    // healthBase
+    let hb = this.getURLParameter(URL_HP_BASE);
+    if (hb) this.isHealthBaseAuto = false;
+    this.healthBase = hb ? hb : this.healthBase;
+    // attackPowerBase 
+    let ab = this.getURLParameter(URL_ATK_BASE);
+    if (ab) this.isAttackPowerBaseAuto = false;
+    this.attackPowerBase = ab ? ab : this.attackPowerBase;
+    // criticalHitRateBase
+    let cb = this.getURLParameter(URL_CRT_BASE);
+    if (cb) this.isCriticalHitRateBaseAuto = false;
+    this.criticalHitRateBase = cb ? cb : this.criticalHitRateBase;
+    // stunPowerBase
+    let sb = this.getURLParameter(URL_STN_BASE);
+    if (sb) this.isStunPowerBaseAuto = false;
+    this.stunPowerBase = sb ? sb : this.stunPowerBase;
+    // playerAbilityEquipped
+    let ae = this.getURLParameter(URL_ABILITY_EQUIPPED);
+    this.playerAbilityEquipped = ae ? ae : this.playerAbilityEquipped;
+    // playConditions
+    // weaponName
+    let wn = this.getURLParameter(URL_WEAPON_NAME);
+    this.weaponName = wn ? wn : this.weaponName;
+    // weaponLevel
+    let wl = this.getURLParameter(URL_WEAPON_LEVEL);
+    this.weaponLevel = wl ? wl : this.weaponLevel;
+    // mirageMunitions
+    let mm = this.getURLParameter(URL_MIRAGE_MUNITIONS);
+    this.mirageMunitions = mm ? mm : this.mirageMunitions;
+    // weaponTraits
+    // imbues
+    // sigils
   },
   methods: {
     setURLParameter(name, param) {
@@ -215,7 +225,7 @@ new Vue({
         'support': 20,
         'special': 10,
       }
-      if (subSkillType == '-' || subSkillType == 'other'){
+      if (subSkillType == '-' || subSkillType == 'other' || mainSkillType == 'awakening'){
         return true;
       } else if (subSkillName == 'attackPower'){
         return true;
@@ -376,10 +386,18 @@ new Vue({
       // キャラクターでステータスの基礎値を変える(レベル毎のステータスは未実装のため0を参照)
       const characterStatus = this.characterStatus[this.weaponsStatus[this.weaponName]['character']]['levelsStatus'][0];
       // 計算
-      this.healthBase = weaponsStatus['health'] + this.mirageMunitions * 10 + characterStatus['health'];
-      this.attackPowerBase = weaponsStatus['attackPower'] + this.mirageMunitions * 2 + characterStatus['attackPower'];
-      this.criticalHitRateBase = weaponsStatus['criticalHitRate'] + characterStatus['criticalHitRate'];
-      this.stunPowerBase = weaponsStatus['stunPower'] + characterStatus['stunPower'];
+      if (this.isHealthBaseAuto) {
+        this.healthBase = weaponsStatus['health'] + this.mirageMunitions * 10 + characterStatus['health'];
+      }
+      if (this.isAttackPowerBaseAuto) {
+        this.attackPowerBase = weaponsStatus['attackPower'] + this.mirageMunitions * 2 + characterStatus['attackPower'];
+      }
+      if (this.isCriticalHitRateBaseAuto) {
+        this.criticalHitRateBase = weaponsStatus['criticalHitRate'] + characterStatus['criticalHitRate'];
+      }
+      if (this.isStunPowerBaseAuto) {
+        this.stunPowerBase = weaponsStatus['stunPower'] + characterStatus['stunPower'];
+      }
     },
     setPlayConditionsAll(playCondition) {
       Object.keys(this.playConditions).forEach(key => {
