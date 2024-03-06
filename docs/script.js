@@ -8,6 +8,8 @@ const URL_ABILITY_EQUIPPED = 'ae';
 const URL_WEAPON_NAME = 'wn';
 const URL_WEAPON_LEVEL = 'wl';
 const URL_MIRAGE_MUNITIONS = 'mm';
+const URL_SKILLSET = 'ss';
+const URL_PLAY_CONDITIONS = 'pc';
 
 // Add your JavaScript code here
 
@@ -97,12 +99,23 @@ new Vue({
     skillStatus: SKILL_STATUS,
     weaponsStatus: WEAPONS_STATUS,
     characterStatus: CHARACTER_STATUS,
+    // url params
+    urlWeaponTraits: '',
+    urlImbues: '',
+    urlSigils: '',
+    urlSkillSetParams: '',
   },
   created() {
     // ページが読み込まれたときに初期のひな形をリストに追加
     this.createSigils(12);
     this.createImbues(3);
     this.createWeaponTraits(4);
+    // weaponTraits
+    // this.convertURLToWeaponTraits();
+    // imbues 
+    // this.convertURLToImbues();
+    // sigils
+    // this.convertURLToSigils();
   },
   mounted() {
     $('.select-2')
@@ -167,11 +180,20 @@ new Vue({
     // mirageMunitions
     let mm = this.getURLParameter(URL_MIRAGE_MUNITIONS);
     this.mirageMunitions = mm ? mm : this.mirageMunitions;
-    // weaponTraits
-    // imbues
-    // sigils
   },
   methods: {
+    parseBase36ToBigInt(base36String) {
+      const base36Digits = '0123456789abcdefghijklmnopqrstuvwxyz';
+      let result = BigInt(0);
+      const base = BigInt(36);
+  
+      for (let i = 0; i < base36String.length; i++) {
+        const digitValue = BigInt(base36Digits.indexOf(base36String[i]));
+        result = result * base + digitValue;
+      }
+  
+      return result;
+    },
     setURLParameter(name, param) {
       // 現在のURLを取得
       let urlParams = new URLSearchParams(window.location.search);
@@ -196,6 +218,125 @@ new Vue({
       }
       
       return decodeURIComponent(r[2].replace(/\+/g, " "));
+    },
+    convertURLToWeaponTraits(url) {
+      // see also convertWeaponTraitsToURL()
+      let urlParams = this.getURLParameter(URL_SKILLSET, url);
+      if (!urlParams) return null;
+      urlParams = urlParams.split('-');
+
+      const urlWeaponTraitsList = ('' + this.parseBase36ToBigInt(urlParams[0])).substring(1).match(/.{1,7}/g);
+      if (!(urlWeaponTraitsList.length == 4)) return null;
+      
+      for (let i=0; i < urlWeaponTraitsList.length; i++) {
+        const wt = urlWeaponTraitsList[i];
+        this.weaponTraits[i] = {
+          weaponTraitSkillName: this.urlMessageTextSigils[wt.substring(0, 4)],
+          weaponTraitSkillLevel: parseInt(wt.substring(4, 6)),
+          weaponTraitSkillAuto: false, 
+        };
+      }
+    },
+    convertURLToImbues(url) {
+      // see also convertImbuesToURL()
+      let urlParams = this.getURLParameter(URL_SKILLSET, url);
+      if (!urlParams) return null;
+      urlParams = urlParams.split('-');
+
+      const urlImbuesList = ('' + this.parseBase36ToBigInt(urlParams[1])).substring(1).match(/.{1,6}/g);
+      if (urlImbuesList.length < 3) return null;
+      
+      for (let i=0; i < urlImbuesList.length; i++) {
+        const im = urlImbuesList[i];
+        this.imbues[i] = {
+          imbueSkillName: this.urlMessageTextSigils[im.substring(0, 4)],
+          imbueSkillLevel: parseInt(im.substring(4, 6)),
+        };
+      }
+    },
+    convertURLToSigils(url) {
+      // see also convertSigilsToURL()
+      let urlParams = this.getURLParameter(URL_SKILLSET, url);
+      if (!urlParams) return null;
+      urlParams = urlParams.split('-');
+
+      const urlSigilsList = ('' + this.parseBase36ToBigInt(urlParams[2])).substring(1).match(/.{1,19}/g);
+      if (urlSigilsList.length < 12) return null;
+      
+      for (let i=0; i < urlSigilsList.length; i++) {
+        const sl = urlSigilsList[i];
+        this.sigils[i] = {
+          sigilMainSkillName: this.urlMessageTextSigils[sl.substring(0, 4)],
+          sigilMainSkillRank: parseInt(sl.substring(4, 5)),
+          sigilMainSkillLevelCurrent: parseInt(sl.substring(5, 7)), 
+          sigilMainSkillLevelToBe: parseInt(sl.substring(7, 9)), 
+          sigilSubSkillName: this.urlMessageTextSigils[sl.substring(9, 13)], 
+          sigilSubSkillRank: parseInt(sl.substring(13, 14)), 
+          sigilSubSkillLevelCurrent: parseInt(sl.substring(14, 16)), 
+          sigilSubSkillLevelToBe: parseInt(sl.substring(16, 18)), 
+          sigilSubSkillAuto: false, 
+        };
+      }
+      console.log(this.sigils);
+    },
+    convertWeaponTraitsToURL() {
+      // weapon traits ---------------------
+      // param: <id><level><completion flag>
+      // example: 0000151
+      let urlWeaponTraitsParams = ''
+      for (let i in this.weaponTraits) {
+        const wt = this.weaponTraits[i];
+        let paramTerm = (
+          ''
+          + this.messageText['-']['sigils'][wt.weaponTraitSkillName] 
+          + ('00' + wt.weaponTraitSkillLevel).slice(-2)
+          + (wt.weaponTraitSkillAuto ? '1' : '0')
+        );
+        urlWeaponTraitsParams += paramTerm;
+      }
+      return BigInt('1' + urlWeaponTraitsParams).toString(36);
+    },
+    convertImbuesToURL() {
+      // imbues -----------------------------------------
+      // param: <id><level>
+      // example: 000010
+      let urlImbuesParams = ''
+      for (let i in this.imbues) {
+        const im = this.imbues[i];
+        let paramTerm = (
+          ''
+          + this.messageText['-']['sigils'][im.imbueSkillName] 
+          + ('00' + im.imbueSkillLevel).slice(-2)
+        );
+        urlImbuesParams += paramTerm;
+      }
+      return BigInt('1' + urlImbuesParams).toString(36);
+    },
+    convertSigilsToURL() {
+      // weaponTraits / imbues / sigilsはハイフンで区切る
+      // 数字は36進数に変換される
+      // sigils -----------------------------------------
+      // param: <id><rank><level now><level tobe><sub-id>
+      //        <sub-rank><sub-level now><sub-level tobe><completion flag>
+      // 0000515150000515151
+      let urlSigilsParams = ''
+      for (let i in this.sigils) {
+        const sl = this.sigils[i];
+        let paramTerm = (
+          ''
+          + this.messageText['-']['sigils'][sl.sigilMainSkillName] 
+          + sl.sigilMainSkillRank
+          + ('00' + sl.sigilMainSkillLevelCurrent).slice(-2)
+          + ('00' + sl.sigilMainSkillLevelToBe).slice(-2)
+          + this.messageText['-']['sigils'][sl.sigilSubSkillName] 
+          + sl.sigilSubSkillRank
+          + ('00' + sl.sigilSubSkillLevelCurrent).slice(-2)
+          + ('00' + sl.sigilSubSkillLevelToBe).slice(-2)
+          + (sl.sigilSubSkillAuto ? '1' : '0')
+        );
+        urlSigilsParams += paramTerm;
+      }
+      return BigInt('1' + urlSigilsParams).toString(36) ;
     },
     createSigils(n) {
       for (let i=0; i < n; i++) {
@@ -406,6 +547,18 @@ new Vue({
     }
   },
   computed: {
+    urlMessageTextSigils: function () {
+      return Object.entries(MESSAGE_TEXT['-']['sigils']).reduce((acc, [key, value]) => {
+        acc[value] = key;
+        return acc;
+      }, {})
+    },
+    urlMessageTextConditions: function () {
+      return Object.entries(MESSAGE_TEXT['-']['conditions']).reduce((acc, [key, value]) => {
+        acc[value] = key;
+        return acc;
+      }, {})
+    },
     totalSkillLevels: function () {
       // ジーンと加護、武器スキルのレベル合計を計算
       let totalLevels = {};
@@ -713,6 +866,16 @@ new Vue({
         this.resetWeaponSkills();
         // 武器ステータスを自動補完
         this.resetWeaponStatus();
+        // URLパラメータにセット
+        // this.urlWeaponTraits = this.convertWeaponTraitsToURL();
+      },
+      deep: true,
+      immediate: false
+    },
+    imbues: {
+      handler: function() {
+        // URLパラメータにセット
+        // this.urlImbues = this.convertImbuesToURL();
       },
       deep: true,
       immediate: false
@@ -727,8 +890,47 @@ new Vue({
             this.sigils[i].sigilSubSkillLevelToBe = this.sigils[i].sigilMainSkillLevelToBe;
           }
         }
+        // URLパラメータにセット
+        // this.urlSigils = this.convertSigilsToURL();
       },
       deep: true,
+      immediate: false
+    },
+    urlWeaponTraits: {
+      handler: function() {
+        this.urlSkillSetParams = (
+          this.urlWeaponTraits
+          + '-' + this.urlImbues 
+          + '-' + this.urlSigils
+        );
+      },
+      immediate: false
+    },
+    urlImbues: {
+      handler: function() {
+        this.urlSkillSetParams = (
+          this.urlWeaponTraits
+          + '-' + this.urlImbues 
+          + '-' + this.urlSigils
+        );
+      },
+      immediate: false
+    },
+    urlSigils: {
+      handler: function() {
+        this.urlSkillSetParams = (
+          this.urlWeaponTraits
+          + '-' + this.urlImbues 
+          + '-' + this.urlSigils
+        );
+      },
+      immediate: false
+    },
+    urlSkillSetParams: {
+      handler: function() {
+        this.setURLParameter(URL_SKILLSET, this.urlSkillSetParams);
+        console.log(this.urlSkillSetParams);
+      },
       immediate: false
     },
   }
