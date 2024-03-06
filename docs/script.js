@@ -171,6 +171,8 @@ new Vue({
     let ae = this.getURLParameter(URL_ABILITY_EQUIPPED);
     this.playerAbilityEquipped = ae ? ae : this.playerAbilityEquipped;
     // playConditions
+    const pc = this.convertURLToPlayConditions();
+    if (pc) this.playConditions = pc;
     // weaponName
     let wn = this.getURLParameter(URL_WEAPON_NAME);
     this.weaponName = wn ? wn : this.weaponName;
@@ -218,6 +220,21 @@ new Vue({
       }
       
       return decodeURIComponent(r[2].replace(/\+/g, " "));
+    },
+    convertURLToPlayConditions(url) {
+      // see also convertPlayConditionsToURL()
+      let urlParams = this.getURLParameter(URL_PLAY_CONDITIONS, url);
+      if (!urlParams) return null;
+
+      const urlPlayConditionsList = ('' + this.parseBase36ToBigInt(urlParams)).substring(1).match(/.{1,5}/g);
+      if (!(urlPlayConditionsList.length == Object.keys(this.playConditions).length)) return null;
+      
+      let newConditions = {}
+      for (let i=0; i < urlPlayConditionsList.length; i++) {
+        const pc = urlPlayConditionsList[i];
+        newConditions[this.urlMessageTextConditions[pc.substring(0, 4)]] = (pc.substring(4, 5) == '1');
+      }
+      return newConditions;
     },
     convertURLToWeaponTraits(url) {
       // see also convertWeaponTraitsToURL()
@@ -278,6 +295,21 @@ new Vue({
         };
       }
       console.log(this.sigils);
+    },
+    convertPlayConditionsToURL() {
+      // play conditions ---------------------
+      // param: <id><flag>
+      // example: 00001
+      let urlPlayConditionsParams = ''
+      for (let i in this.playConditions) {
+        let paramTerm = (
+          ''
+          + this.messageText['-']['conditions'][i]
+          + (this.playConditions[i] ? '1' : '0')
+        );
+        urlPlayConditionsParams += paramTerm;
+      }
+      return BigInt('1' + urlPlayConditionsParams).toString(36);
     },
     convertWeaponTraitsToURL() {
       // weapon traits ---------------------
@@ -819,6 +851,14 @@ new Vue({
         // update URL
         this.setURLParameter(URL_ABILITY_EQUIPPED, this.playerAbilityEquipped);
       },
+      immediate: false
+    },
+    playConditions: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_PLAY_CONDITIONS, this.convertPlayConditionsToURL());
+      },
+      deep: true,
       immediate: false
     },
     weaponName: {
