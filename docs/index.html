@@ -38,13 +38,13 @@
                 <span class="input-group-text px-1 h-100">Level</span>
               </div>
               <div class="col col-1 p-0">
-                <input class="form-control px-1 h-100" id="weaponLevel" type="number" v-model="weaponLevel">
+                <input class="form-control px-1 h-100" id="weaponLevel" type="number" v-model="weaponLevel" min="0" max="999">
               </div>
               <div class="col col-1 p-0">
                 <span class="input-group-text px-1 h-100">+</span>
               </div>
               <div class="col col-1 p-0">
-                <input class="form-control px-1 h-100" id="mirageMunitions" type="number" v-model="mirageMunitions">
+                <input class="form-control px-1 h-100" id="mirageMunitions" type="number" v-model="mirageMunitions" min="0" max="99">
               </div>
             </div>
             <!-- ============== -->
@@ -102,7 +102,7 @@
                 <div class="col col-3 p-0">
                   <div class="row g-0">
                     <div class="col col-11 p-0">
-                      <input class="form-control px-1" :id="'weapon-trait-level-' + index" type="number" v-model="weaponTraits[index].weaponTraitSkillLevel" :disabled="weaponTraits[index].weaponTraitSkillAuto">
+                      <input class="form-control px-1" :id="'weapon-trait-level-' + index" type="number" v-model="weaponTraits[index].weaponTraitSkillLevel" :disabled="weaponTraits[index].weaponTraitSkillAuto" min="0" max="99">
                     </div>
                     <div class="col col-1 p-0">
                       <input class="form-check-input px-1" type="checkbox" :id="'weapon-trait-auto' + index" v-model="weaponTraits[index].weaponTraitSkillAuto" :title="'Auto Complete: ' + weaponTraits[index].weaponTraitSkillAuto">
@@ -142,7 +142,7 @@
                 </div>
                 <!-- Skill Level -->
                 <div class="col col-3 p-0">
-                  <input class="form-control px-1 h-100" :id="'imbue-level-' + index" type="number" v-model="imbues[index].imbueSkillLevel">
+                  <input class="form-control px-1 h-100" :id="'imbue-level-' + index" type="number" v-model="imbues[index].imbueSkillLevel" min="0" max="99">
                 </div>
               </template>
             </div>
@@ -232,11 +232,11 @@
                 </div>
                 <!-- Main Skill Level Now -->
                 <div class="col col-3 p-0 h-100">
-                  <input class="form-control px-1 h-100" :id="'sigil-main-level-current-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelCurrent">
+                  <input class="form-control px-1 h-100" :id="'sigil-main-level-current-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelCurrent" min="0" max="99">
                 </div>
                 <!-- Main Skill Level Tobe -->
                 <div class="col col-3 p-0 h-100">
-                  <input class="form-control px-1 h-100" :id="'sigil-main-level-tobe-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelToBe">
+                  <input class="form-control px-1 h-100" :id="'sigil-main-level-tobe-' + index" type="number" v-model="sigils[index].sigilMainSkillLevelToBe" min="0" max="99">
                 </div>
                 <div class="col col-1 p-0 h-100">
                 </div>
@@ -247,7 +247,7 @@
             <div class="col col-3 p-0">
               <select :id="'sigil-sub-name-' + index" v-model="sigils[index].sigilSubSkillName" class="select-2 form-select">
                 <template v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']">
-                  <option v-if="isObtainableSigil(sigils[index].sigilMainSkillName, sigil_selection_idx)" :value="sigil_selection_idx">
+                  <option v-if="!sigils[index].sigilSubSkillAuto || isObtainableSigil(sigils[index].sigilMainSkillName, sigil_selection_idx)" :value="sigil_selection_idx">
                     {{sigil_selection}}
                   </option>
                 </template>
@@ -268,11 +268,11 @@
                 </div>
                 <!-- Sub Skill Level Now -->
                 <div class="col col-3 p-0 h-100">
-                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto">
+                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto" min="0" max="99">
                 </div>
                 <!-- Sub Skill Level Tobe -->
                 <div class="col col-3 p-0 h-100">
-                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto">
+                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto" min="0" max="99">
                 </div>
                 <div class="col col-1 p-0">
                   <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto" :title="'Auto Complete: ' + sigils[index].sigilSubSkillAuto">
@@ -388,7 +388,7 @@
               <div class="col col-4 col-lg-2 p-0">
                 <div class="row p-0 g-0">
                   <div class="col col-11 p-0">
-                    <input class="form-control px-1" id="healthBase" type="number" v-model="healthBase">
+                    <input class="form-control px-1" id="healthBase" type="number" v-model="healthBase" min="1" max="9999999999">
                   </div>
                   <div class="col col-1 p-0">
                     <input class="form-check-input px-1" type="checkbox" id="isHealthBaseAuto" v-model="isHealthBaseAuto" :title="'Auto Complete: ' + isHealthBaseAuto">
@@ -406,7 +406,7 @@
               <div class="col col-4 col-lg-2 p-0">
                 <div class="row p-0 g-0">
                   <div class="col col-11 p-0">
-                    <input class="form-control px-1" id="attackPowerBase" type="number" v-model="attackPowerBase">
+                    <input class="form-control px-1" id="attackPowerBase" type="number" v-model="attackPowerBase" min="0" max="9999999999">
                   </div>
                   <div class="col col-1 p-0">
                     <input class="form-check-input px-1" type="checkbox" id="isAttackPowerBaseAuto" v-model="isAttackPowerBaseAuto" :title="'Auto Complete: ' + isAttackPowerBaseAuto">
@@ -421,7 +421,7 @@
               <div class="col col-4 col-lg-2 p-0">
                 <div class="row p-0 g-0">
                   <div class="col col-11 p-0">
-                    <input class="form-control px-1" id="criticalHitRateBase" type="number" v-model="criticalHitRateBase">
+                    <input class="form-control px-1" id="criticalHitRateBase" type="number" v-model="criticalHitRateBase" min="0" max="999">
                   </div>
                   <div class="col col-1 p-0">
                     <input class="form-check-input px-1" type="checkbox" id="isCriticalHitRateBaseAuto" v-model="isCriticalHitRateBaseAuto" :title="'Auto Complete: ' + isCriticalHitRateBaseAuto">
@@ -436,7 +436,7 @@
               <div class="col col-4 col-lg-2 p-0">
                 <div class="row p-0 g-0">
                   <div class="col col-11 p-0">
-                    <input class="form-control px-1" id="stunPowerBase" type="number" v-model="stunPowerBase">
+                    <input class="form-control px-1" id="stunPowerBase" type="number" v-model="stunPowerBase" min="0" max="9999">
                   </div>
                   <div class="col col-1 p-0">
                     <input class="form-check-input px-1" type="checkbox" id="isStunPowerBaseAuto" v-model="isStunPowerBaseAuto" :title="'Auto Complete: ' + isStunPowerBaseAuto">
