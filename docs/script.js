@@ -110,12 +110,6 @@ new Vue({
     this.createSigils(12);
     this.createImbues(3);
     this.createWeaponTraits(4);
-    // weaponTraits
-    // this.convertURLToWeaponTraits();
-    // imbues 
-    // this.convertURLToImbues();
-    // sigils
-    // this.convertURLToSigils();
   },
   mounted() {
     $('.select-2')
@@ -182,6 +176,15 @@ new Vue({
     // mirageMunitions
     let mm = this.getURLParameter(URL_MIRAGE_MUNITIONS);
     this.mirageMunitions = mm ? mm : this.mirageMunitions;
+    // weaponTraits
+    let wt = this.convertURLToWeaponTraits();
+    // this.weaponTraits = wt ? wt : this.weaponTraits;
+    // imbues 
+    let im = this.convertURLToImbues();
+    // this.imbues = im ? im : this.imbues;
+    // sigils
+    let ss = this.convertURLToSigils();
+    // this.sigils = ss ? ss : this.sigils;
   },
   methods: {
     parseBase36ToBigInt(base36String) {
@@ -245,14 +248,16 @@ new Vue({
       const urlWeaponTraitsList = ('' + this.parseBase36ToBigInt(urlParams[0])).substring(1).match(/.{1,7}/g);
       if (!(urlWeaponTraitsList.length == 4)) return null;
       
+      let newWeaponTraits = {}
       for (let i=0; i < urlWeaponTraitsList.length; i++) {
         const wt = urlWeaponTraitsList[i];
-        this.weaponTraits[i] = {
+        newWeaponTraits[i] = {
           weaponTraitSkillName: this.urlMessageTextSigils[wt.substring(0, 4)],
           weaponTraitSkillLevel: parseInt(wt.substring(4, 6)),
           weaponTraitSkillAuto: false, 
         };
       }
+      return newWeaponTraits;
     },
     convertURLToImbues(url) {
       // see also convertImbuesToURL()
@@ -263,13 +268,15 @@ new Vue({
       const urlImbuesList = ('' + this.parseBase36ToBigInt(urlParams[1])).substring(1).match(/.{1,6}/g);
       if (urlImbuesList.length < 3) return null;
       
+      let newImbues = {}
       for (let i=0; i < urlImbuesList.length; i++) {
         const im = urlImbuesList[i];
-        this.imbues[i] = {
+        newImbues[i] = {
           imbueSkillName: this.urlMessageTextSigils[im.substring(0, 4)],
           imbueSkillLevel: parseInt(im.substring(4, 6)),
         };
       }
+      return newImbues;
     },
     convertURLToSigils(url) {
       // see also convertSigilsToURL()
@@ -280,9 +287,10 @@ new Vue({
       const urlSigilsList = ('' + this.parseBase36ToBigInt(urlParams[2])).substring(1).match(/.{1,19}/g);
       if (urlSigilsList.length < 12) return null;
       
+      let newSigils = {}
       for (let i=0; i < urlSigilsList.length; i++) {
         const sl = urlSigilsList[i];
-        this.sigils[i] = {
+        newSigils[i] = {
           sigilMainSkillName: this.urlMessageTextSigils[sl.substring(0, 4)],
           sigilMainSkillRank: parseInt(sl.substring(4, 5)),
           sigilMainSkillLevelCurrent: parseInt(sl.substring(5, 7)), 
@@ -294,7 +302,7 @@ new Vue({
           sigilSubSkillAuto: false, 
         };
       }
-      console.log(this.sigils);
+      return newSigils;
     },
     convertPlayConditionsToURL() {
       // play conditions ---------------------
@@ -969,7 +977,6 @@ new Vue({
     urlSkillSetParams: {
       handler: function() {
         this.setURLParameter(URL_SKILLSET, this.urlSkillSetParams);
-        console.log(this.urlSkillSetParams);
       },
       immediate: false
     },
