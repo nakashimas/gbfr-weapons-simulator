@@ -609,6 +609,82 @@ new Vue({
       if (this.comboParams.length < 2) return;
       this.comboParams.splice(idx, 1);
     },
+    // Damage Calcs
+    calcComboRate(idx, dig) {
+      const params = this.comboParams[idx];
+      let rate = 100;
+      let rateToBe = 100;
+      if (params['baseRate'] == 0) return 0;
+      // damage 与ダメージ
+      const dmg = this.getSkillEffect('damage')['damage'];
+      rate = rate * this.applySkillEffects(100, dmg, 0) / 100;
+      rateToBe = rateToBe * this.applySkillEffects(100, dmg, 1) / 100;
+      // damageWeakness 弱点部位に対する与ダメージ
+      if (true) { // 実装中
+        const ef = this.getSkillEffect('damageWeakness')['damageWeakness'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // damageBehind 背後攻撃の与ダメージ
+      if (true) { // 実装中
+        const ef = this.getSkillEffect('damageBehind')['damageBehind'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // damageCharged チャージアタックの与ダメージ
+      if (params['isCharged']) {
+        const ef = this.getSkillEffect('damageCharged')['damageCharged'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // damageThrow 投擲の与ダメージ
+      if (params['isThrow']) {
+        const ef = this.getSkillEffect('damageThrow')['damageThrow'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // damageRanged 遠距離攻撃の与ダメージ
+      if (params['isRanged']) {
+        const ef = this.getSkillEffect('damageRanged')['damageRanged'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // damageSkilled アビリティの与ダメージ
+      if (params['isSkilled']) {
+        const ef = this.getSkillEffect('damageSkilled')['damageSkilled'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // comboBooster 派生攻撃の与ダメージ
+      const cboost = this.getSkillEffect('comboBooster')['comboBooster'];
+      const cboostNow = Math.min(this.applySkillEffects(100, cboost, 0), 100 + parseInt(parseInt(params['comboCount']) / 5) * 10);
+      const cboostToBe = Math.min(this.applySkillEffects(100, cboost, 1), 100 + parseInt(parseInt(params['comboCount']) / 5) * 10);
+      rate = rate * cboostNow / 100;
+      rateToBe = rateToBe * cboostToBe / 100;
+      // damageFinisher フィニッシュの与ダメージ 
+      if (params['isFinisher']) {
+        const ef = this.getSkillEffect('damageFinisher')['damageFinisher'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // damageLinkedAttack リンクアタックの与ダメージ 
+      if (params['isLinked']) {
+        const ef = this.getSkillEffect('damageLinkedAttack')['damageLinkedAttack'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // damageSBA 奥義の与ダメージ 
+      // damageChain CBの与ダメージ
+      if (params['isSBA']) {
+        const ef = this.getSkillEffect('damageSBA')['damageSBA'];
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+      }
+      // キャラクター専用ジーン
+      // 実装中
+      if (dig) return [rate.toFixed(dig), rateToBe.toFixed(dig)];
+      return [rate, rateToBe]
+    },
   },
   computed: {
     urlMessageTextSigils: function () {

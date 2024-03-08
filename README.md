@@ -78,5 +78,8 @@ Any sigils and English Translate
 Roll of the Die sigil
 - https://steamcommunity.com/app/881020/discussions/0/4208119923884744284/
 
+Combo Booster sigil
+- https://note.com/blead_/n/nabf4fdee4c11#a4d17bcc-9159-41bc-9570-802ecbd8b936
+
 Damage Calcs
 - https://www.reddit.com/r/GranblueFantasyRelink/comments/1awnyap/relink_damage_calculator_v20/
