@@ -615,6 +615,8 @@ new Vue({
       let rate = 100;
       let rateToBe = 100;
       if (params['baseRate'] == 0) return 0;
+      rate = rate * parseFloat(params['baseRate']) / 100;
+      rateToBe = rateToBe * parseFloat(params['baseRate']) / 100;
       // damage 与ダメージ
       const dmg = this.getSkillEffect('damage')['damage'];
       rate = rate * this.applySkillEffects(100, dmg, 0) / 100;
@@ -682,9 +684,109 @@ new Vue({
       }
       // キャラクター専用ジーン
       // 実装中
-      if (dig) return [rate.toFixed(dig), rateToBe.toFixed(dig)];
+      if (!(dig === undefined)) return [rate.toFixed(dig), rateToBe.toFixed(dig)];
       return [rate, rateToBe]
     },
+    calcComboNonCriticalDamage(idx, dig) {
+      let rate = this.calcComboRate(idx);
+      // 基礎ダメージに倍率を掛ける
+      rate[0] = this.attackPower * rate[0] / 100;
+      rate[1] = this.attackPowerToBe * rate[1] / 100;
+      // 属性変換の倍率を掛ける
+      if (true) { // 実装中
+        rate[0] = rate[0] * 1.2;
+        rate[1] = rate[1] * 1.2;
+      }
+      if (!(dig === undefined)) return [rate[0].toFixed(dig), rate[1].toFixed(dig)];
+      return rate
+    },
+    calcComboCriticalDamage(idx, dig) {
+      let rate = this.calcComboRate(idx);
+      const ef = this.getSkillEffect('damageCritical')['damageCritical'];
+      // 基礎ダメージに倍率を掛ける
+      rate[0] = this.applySkillEffects(this.attackPower * (rate[0] + 100) / 100, ef, 0);
+      rate[1] = this.applySkillEffects(this.attackPower * (rate[1] + 100) / 100, ef, 1);
+      // 属性変換の倍率を掛ける
+      if (true) { // 実装中
+        rate[0] = rate[0] * 1.2;
+        rate[1] = rate[1] * 1.2;
+      }
+      if (!(dig === undefined)) return [rate[0].toFixed(dig), rate[1].toFixed(dig)];
+      return rate
+    },
+    calcComboSupplementalDamage(idx, dig) {
+      return [0, 0]; // 実装中 基礎ダメの20%に発生率を掛けたもの
+    },
+    calcComboAverageDamage(idx, dig) {
+      const dmg = this.calcComboNonCriticalDamage(idx);
+      const cdmg = this.calcComboCriticalDamage(idx);
+      const sdmg = this.calcComboSupplementalDamage(idx);
+      const dmgCap = this.calcComboDamageCap(idx);
+
+      const crt = this.criticalHitRate / 100;
+      const crtToBe = this.criticalHitRateToBe / 100;
+
+      const avgdmg = [
+        (Math.min(dmgCap[0], dmg[0]) * (1 - crt) + Math.min(dmgCap[0], cdmg[0]) * crt) + sdmg[0],
+        (Math.min(dmgCap[1], dmg[0]) * (1 - crtToBe) + Math.min(dmgCap[1], cdmg[1]) * crtToBe) + sdmg[1],
+      ];
+
+      if (!(dig === undefined)) return [avgdmg[0].toFixed(dig), avgdmg[1].toFixed(dig)];
+      return avgdmg;
+    },
+    calcComboDamageCap(idx, dig) {
+      const params = this.comboParams[idx];
+      if (params['baseDamageCap'] == 0) return 0;
+      // ベースダメージ上限
+      const cap = this.getSkillEffect('damageCap')['damageCap'];
+      let rate = this.applySkillEffects(100, cap, 0);
+      let rateToBe = this.applySkillEffects(100, cap, 1);
+
+      // 追加のダメージ上限
+      if (params['isSBA']) {
+        const ef = this.getSkillEffect('sbaDamageCap')['sbaDamageCap'];
+        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20;
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20;
+      } 
+      if (params['isSkilled']) {
+        const ef = this.getSkillEffect('skilledDamageCap')['skilledDamageCap'];
+        rate = rate + this.applySkillEffects(100, ef, 0) + 54 + 20;
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 + 20;
+      } 
+      if (!params['isSkilled'] && !params['isSkilled']) {
+        const ef = this.getSkillEffect('attackDamageCap')['attackDamageCap'];
+        rate = rate + this.applySkillEffects(100, ef, 0) + 54 + 20;
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 + 20;
+      }
+
+      rate = params['baseDamageCap'] * rate / 100;
+      rateToBe = params['baseDamageCap'] * rateToBe / 100;
+
+      // 属性変換の倍率を掛ける
+      if (true) { // 実装中
+        rate = rate * 1.2;
+        rateToBe = rateToBe * 1.2;
+      }
+
+      if (!(dig === undefined)) return [rate.toFixed(dig), rateToBe.toFixed(dig)];
+      return [rate, rateToBe];
+    },
+    calcComboDamageOvercap(idx, dig) {
+      const dmg = this.calcComboNonCriticalDamage(idx);
+      const cdmg = this.calcComboCriticalDamage(idx);
+      const dmgCap = this.calcComboDamageCap(idx);
+
+      const crt = this.criticalHitRate / 100;
+      const crtToBe = this.criticalHitRateToBe / 100;
+
+      const overcap = [
+        (dmg[0] * (1 - crt) + cdmg[0] * crt) / dmgCap[0] * 100,
+        (dmg[1] * (1 - crtToBe) + cdmg[1] * crtToBe) / dmgCap[1] * 100,
+      ];
+
+      if (!(dig === undefined)) return [overcap[0].toFixed(dig), overcap[1].toFixed(dig)];
+      return overcap;
+    }
   },
   computed: {
     urlMessageTextSigils: function () {
