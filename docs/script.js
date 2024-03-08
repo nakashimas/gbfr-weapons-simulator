@@ -194,13 +194,13 @@ new Vue({
     this.mirageMunitions = mm ? mm : this.mirageMunitions;
     // weaponTraits
     let wt = this.convertURLToWeaponTraits();
-    // this.weaponTraits = wt ? wt : this.weaponTraits;
+    this.weaponTraits = wt ? wt : this.weaponTraits;
     // imbues 
     let im = this.convertURLToImbues();
-    // this.imbues = im ? im : this.imbues;
+    this.imbues = im ? im : this.imbues;
     // sigils
     let ss = this.convertURLToSigils();
-    // this.sigils = ss ? ss : this.sigils;
+    this.sigils = ss ? ss : this.sigils;
   },
   methods: {
     parseBase36ToBigInt(base36String) {
@@ -248,7 +248,7 @@ new Vue({
       const urlPlayConditionsList = ('' + this.parseBase36ToBigInt(urlParams)).substring(1).match(/.{1,5}/g);
       if (!(urlPlayConditionsList.length == Object.keys(this.playConditions).length)) return null;
       
-      let newConditions = {}
+      let newConditions = structuredClone(this.playConditions);
       for (let i=0; i < urlPlayConditionsList.length; i++) {
         const pc = urlPlayConditionsList[i];
         newConditions[this.urlMessageTextConditions[pc.substring(0, 4)]] = (pc.substring(4, 5) == '1');
@@ -264,7 +264,7 @@ new Vue({
       const urlWeaponTraitsList = ('' + this.parseBase36ToBigInt(urlParams[0])).substring(1).match(/.{1,7}/g);
       if (!(urlWeaponTraitsList.length == 4)) return null;
       
-      let newWeaponTraits = {}
+      let newWeaponTraits = structuredClone(this.weaponTraits);
       for (let i=0; i < urlWeaponTraitsList.length; i++) {
         const wt = urlWeaponTraitsList[i];
         newWeaponTraits[i] = {
@@ -284,7 +284,7 @@ new Vue({
       const urlImbuesList = ('' + this.parseBase36ToBigInt(urlParams[1])).substring(1).match(/.{1,6}/g);
       if (urlImbuesList.length < 3) return null;
       
-      let newImbues = {}
+      let newImbues = structuredClone(this.imbues);
       for (let i=0; i < urlImbuesList.length; i++) {
         const im = urlImbuesList[i];
         newImbues[i] = {
@@ -303,7 +303,7 @@ new Vue({
       const urlSigilsList = ('' + this.parseBase36ToBigInt(urlParams[2])).substring(1).match(/.{1,19}/g);
       if (urlSigilsList.length < 12) return null;
       
-      let newSigils = {}
+      let newSigils = structuredClone(this.sigils);
       for (let i=0; i < urlSigilsList.length; i++) {
         const sl = urlSigilsList[i];
         newSigils[i] = {
@@ -949,7 +949,7 @@ new Vue({
         // 武器ステータスを自動補完
         this.resetWeaponStatus();
         // URLパラメータにセット
-        // this.urlWeaponTraits = this.convertWeaponTraitsToURL();
+        this.urlWeaponTraits = this.convertWeaponTraitsToURL();
       },
       deep: true,
       immediate: false
@@ -957,7 +957,7 @@ new Vue({
     imbues: {
       handler: function() {
         // URLパラメータにセット
-        // this.urlImbues = this.convertImbuesToURL();
+        this.urlImbues = this.convertImbuesToURL();
       },
       deep: true,
       immediate: false
@@ -973,7 +973,7 @@ new Vue({
           }
         }
         // URLパラメータにセット
-        // this.urlSigils = this.convertSigilsToURL();
+        this.urlSigils = this.convertSigilsToURL();
       },
       deep: true,
       immediate: false
