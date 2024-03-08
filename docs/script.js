@@ -706,6 +706,8 @@ new Vue({
       const idx = 0;
       // ベース
       let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
+      // カタストロフィ
+      let catastrophe = this.applySkillEffects(100, this.getSkillEffect('catastrophe')['catastrophe'], idx);
       // 裸一貫
       let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
       // tyranny 暴君
@@ -732,6 +734,9 @@ new Vue({
         based + (
           // 裸一貫
           (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
+        ) + (
+          // カタストロフィ
+          catastrophe - 100
         ) + (
           // 暴君
           tyranny - 100
@@ -778,6 +783,8 @@ new Vue({
       const idx = 1;
       // ベース
       let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
+      // カタストロフィ
+      let catastrophe = this.applySkillEffects(100, this.getSkillEffect('catastrophe')['catastrophe'], idx);
       // 裸一貫
       let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
       // tyranny 暴君
@@ -804,6 +811,9 @@ new Vue({
         based + (
           // 裸一貫
           (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
+        ) + (
+          // カタストロフィ
+          catastrophe - 100
         ) + (
           // 暴君
           tyranny - 100

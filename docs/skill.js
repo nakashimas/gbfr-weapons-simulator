@@ -2479,7 +2479,7 @@ const SKILL_STATUS = {
     "minLevel": 25,
     "maxLevel": 25,
     "levels": [
-      {"attackPower": "0|50%|health<=45000", "damageCap": "0|100%|health<=45000"}
+      {"catastrophe": "0|50%|health<=45000", "damageCap": "0|100%|health<=45000"}
     ],
   },
   // キャラクター専用ジーン
