@@ -715,20 +715,34 @@ new Vue({
       return rate
     },
     calcComboSupplementalDamage(idx, dig) {
-      return [0, 0]; // 実装中 基礎ダメの20%に発生率を掛けたもの
+      const params = this.comboParams[idx];
+      // 奥義のとき追撃は発生しない
+      if (params['isSBA']) return [0, 0];
+      
+      const avgdmg = this.calcComboAverageDamage(idx);
+      const sup = this.getSkillEffect('supplementaryDamageHitRate')['supplementaryDamageHitRate'];
+      
+      // ジーンの追撃発生率を計算
+      let supRate = this.applySkillEffects(100, sup, 0) / 100 - 1;
+      let supRateToBe = this.applySkillEffects(100, sup, 1) / 100 - 1;
+
+      // 追撃ダメージを計算
+      const supdmg = [avgdmg[0] * 0.2 * supRate, avgdmg[1] * 0.2 * supRateToBe];
+
+      if (!(dig === undefined)) return [supdmg[0].toFixed(dig), supdmg[1].toFixed(dig)];
+      return supdmg;
     },
     calcComboAverageDamage(idx, dig) {
       const dmg = this.calcComboNonCriticalDamage(idx);
       const cdmg = this.calcComboCriticalDamage(idx);
-      const sdmg = this.calcComboSupplementalDamage(idx);
       const dmgCap = this.calcComboDamageCap(idx);
 
       const crt = this.criticalHitRate / 100;
       const crtToBe = this.criticalHitRateToBe / 100;
 
       const avgdmg = [
-        (Math.min(dmgCap[0], dmg[0]) * (1 - crt) + Math.min(dmgCap[0], cdmg[0]) * crt) + sdmg[0],
-        (Math.min(dmgCap[1], dmg[0]) * (1 - crtToBe) + Math.min(dmgCap[1], cdmg[1]) * crtToBe) + sdmg[1],
+        (Math.min(dmgCap[0], dmg[0]) * (1 - crt) + Math.min(dmgCap[0], cdmg[0]) * crt),
+        (Math.min(dmgCap[1], dmg[0]) * (1 - crtToBe) + Math.min(dmgCap[1], cdmg[1]) * crtToBe),
       ];
 
       if (!(dig === undefined)) return [avgdmg[0].toFixed(dig), avgdmg[1].toFixed(dig)];
