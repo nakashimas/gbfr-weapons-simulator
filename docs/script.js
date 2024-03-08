@@ -10,6 +10,7 @@ const URL_WEAPON_LEVEL = 'wl';
 const URL_MIRAGE_MUNITIONS = 'mm';
 const URL_SKILLSET = 'ss';
 const URL_PLAY_CONDITIONS = 'pc';
+const MAX_COMBO_CONFIG = 20;
 
 // Add your JavaScript code here
 
@@ -94,6 +95,20 @@ new Vue({
       sigilSubSkillLevelToBe: 15, 
       sigilSubSkillAuto: true, 
     },
+    comboParams: [],
+    comboParamTemplate: {
+      comboName: 'Normal Attack A',
+      comboCount: 0,
+      baseRate: 100, // 100%
+      baseDamageCap: 9999,
+      isCharged: false,
+      isLinked: false,
+      isSkilled: false,
+      isSBA: false,
+      isRanged: false,
+      isFinisher: false,
+      isThrow: false,
+    },
     // const
     messageText: MESSAGE_TEXT,
     skillStatus: SKILL_STATUS,
@@ -110,6 +125,7 @@ new Vue({
     this.createSigils(12);
     this.createImbues(3);
     this.createWeaponTraits(4);
+    this.addComboParams();
   },
   mounted() {
     $('.select-2')
@@ -584,7 +600,15 @@ new Vue({
       Object.keys(this.playConditions).forEach(key => {
         this.playConditions[key] = playCondition;
       });
-    }
+    },
+    addComboParams: function() {
+      if (this.comboParams.length > (MAX_COMBO_CONFIG - 1)) return;
+      this.comboParams.push(Object.assign({}, this.comboParamTemplate));
+    },
+    delComboParams: function(idx) {
+      if (this.comboParams.length < 2) return;
+      this.comboParams.splice(idx, 1);
+    },
   },
   computed: {
     urlMessageTextSigils: function () {
