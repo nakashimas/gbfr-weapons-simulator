@@ -203,6 +203,7 @@ new Vue({
     this.sigils = ss ? ss : this.sigils;
   },
   methods: {
+    // util
     parseBase36ToBigInt(base36String) {
       const base36Digits = '0123456789abcdefghijklmnopqrstuvwxyz';
       let result = BigInt(0);
@@ -240,6 +241,7 @@ new Vue({
       
       return decodeURIComponent(r[2].replace(/\+/g, " "));
     },
+    // convert URL to DATA
     convertURLToPlayConditions(url) {
       // see also convertPlayConditionsToURL()
       let urlParams = this.getURLParameter(URL_PLAY_CONDITIONS, url);
@@ -320,6 +322,7 @@ new Vue({
       }
       return newSigils;
     },
+    // convert DATA to URL
     convertPlayConditionsToURL() {
       // play conditions ---------------------
       // param: <id><flag>
@@ -394,6 +397,7 @@ new Vue({
       }
       return BigInt('1' + urlSigilsParams).toString(36) ;
     },
+    // Initializations
     createSigils(n) {
       for (let i=0; i < n; i++) {
         this.sigils.push(Object.assign({}, this.sigilTemplate));
@@ -409,6 +413,35 @@ new Vue({
         this.weaponTraits.push(Object.assign({}, this.weaponTraitTemplate));
       }
     },
+    resetWeaponSkills() {
+      const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
+      for (let i=0; i < this.weaponTraits.length; i++) {
+        if (this.weaponTraits[i].weaponTraitSkillAuto && Object.keys(weaponsSkill).length > i) {
+          this.weaponTraits[i].weaponTraitSkillName = Object.keys(weaponsSkill)[i];
+          this.weaponTraits[i].weaponTraitSkillLevel = weaponsSkill[Object.keys(weaponsSkill)[i]];
+        }
+      }
+    },
+    resetWeaponStatus() {
+      // 武器でステータスの基礎値を変える
+      const weaponsStatus = this.weaponsStatus[this.weaponName]['levelsStatus'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
+      // キャラクターでステータスの基礎値を変える(レベル毎のステータスは未実装のため0を参照)
+      const characterStatus = this.characterStatus[this.weaponsStatus[this.weaponName]['character']]['levelsStatus'][0];
+      // 計算
+      if (this.isHealthBaseAuto) {
+        this.healthBase = weaponsStatus['health'] + this.mirageMunitions * 10 + characterStatus['health'];
+      }
+      if (this.isAttackPowerBaseAuto) {
+        this.attackPowerBase = weaponsStatus['attackPower'] + this.mirageMunitions * 2 + characterStatus['attackPower'];
+      }
+      if (this.isCriticalHitRateBaseAuto) {
+        this.criticalHitRateBase = weaponsStatus['criticalHitRate'] + characterStatus['criticalHitRate'];
+      }
+      if (this.isStunPowerBaseAuto) {
+        this.stunPowerBase = weaponsStatus['stunPower'] + characterStatus['stunPower'];
+      }
+    },
+    // accessor
     isObtainableSigil(mainSkillName, subSkillName) {
       const mainSkillType = this.skillStatus[mainSkillName]["skillType"];
       const subSkillType = this.skillStatus[subSkillName]["skillType"];
@@ -567,34 +600,6 @@ new Vue({
       skillEffectsPercentile = parseFloat(skillEffectValue.split("|")[1].replace("%", ""));
       skillEffectsNumerical = parseFloat(skillEffectValue.split("|")[0]);
       return (parseFloat(baseStatus) + skillEffectsNumerical) * (100 + skillEffectsPercentile) / 100
-    },
-    resetWeaponSkills() {
-      const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
-      for (let i=0; i < this.weaponTraits.length; i++) {
-        if (this.weaponTraits[i].weaponTraitSkillAuto && Object.keys(weaponsSkill).length > i) {
-          this.weaponTraits[i].weaponTraitSkillName = Object.keys(weaponsSkill)[i];
-          this.weaponTraits[i].weaponTraitSkillLevel = weaponsSkill[Object.keys(weaponsSkill)[i]];
-        }
-      }
-    },
-    resetWeaponStatus() {
-      // 武器でステータスの基礎値を変える
-      const weaponsStatus = this.weaponsStatus[this.weaponName]['levelsStatus'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
-      // キャラクターでステータスの基礎値を変える(レベル毎のステータスは未実装のため0を参照)
-      const characterStatus = this.characterStatus[this.weaponsStatus[this.weaponName]['character']]['levelsStatus'][0];
-      // 計算
-      if (this.isHealthBaseAuto) {
-        this.healthBase = weaponsStatus['health'] + this.mirageMunitions * 10 + characterStatus['health'];
-      }
-      if (this.isAttackPowerBaseAuto) {
-        this.attackPowerBase = weaponsStatus['attackPower'] + this.mirageMunitions * 2 + characterStatus['attackPower'];
-      }
-      if (this.isCriticalHitRateBaseAuto) {
-        this.criticalHitRateBase = weaponsStatus['criticalHitRate'] + characterStatus['criticalHitRate'];
-      }
-      if (this.isStunPowerBaseAuto) {
-        this.stunPowerBase = weaponsStatus['stunPower'] + characterStatus['stunPower'];
-      }
     },
     setPlayConditionsAll(playCondition) {
       Object.keys(this.playConditions).forEach(key => {
