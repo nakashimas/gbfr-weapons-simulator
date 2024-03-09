@@ -10,7 +10,8 @@ const URL_WEAPON_LEVEL = 'wl';
 const URL_MIRAGE_MUNITIONS = 'mm';
 const URL_SKILLSET = 'ss';
 const URL_PLAY_CONDITIONS = 'pc';
-const MAX_COMBO_CONFIG = 20;
+const URL_COMBO_CONDITIONS = 'cp';
+const MAX_COMBO_CONFIG = 2;
 
 // Add your JavaScript code here
 
@@ -125,7 +126,7 @@ new Vue({
     this.createSigils(12);
     this.createImbues(3);
     this.createWeaponTraits(4);
-    this.addComboParams();
+    for (let i = 0; i < MAX_COMBO_CONFIG; i++) this.addComboParams();
   },
   mounted() {
     // $('.select-2')
@@ -201,6 +202,9 @@ new Vue({
     // sigils
     let ss = this.convertURLToSigils();
     this.sigils = ss ? ss : this.sigils;
+    // combo
+    let cc = this.convertURLToComboParams();
+    this.comboParams = cc ? cc : this.comboParams;
   },
   methods: {
     // util
@@ -322,6 +326,32 @@ new Vue({
       }
       return newSigils;
     },
+    convertURLToComboParams(url) {
+      // see also convertSigilsToURL()
+      const urlParams = this.getURLParameter(URL_COMBO_CONDITIONS, url);
+      if (!urlParams) return null;
+
+      const urlComboParamsList = urlParams.split('-').map((x) => ('' + this.parseBase36ToBigInt(x)).substring(1));
+      if (urlComboParamsList.length < 1) return null;
+      
+      let newComboParams = structuredClone(this.comboParams);
+      for (let i=0; i < urlComboParamsList.length; i++) {
+        const cc = urlComboParamsList[i];
+        newComboParams[i] = {
+          comboCount: parseInt(cc.substring(0, 3)),
+          baseRate: parseInt(cc.substring(3, 8)),
+          baseDamageCap: parseInt(cc.substring(8, 16)),
+          isCharged: parseInt(cc.substring(16, 17)),
+          isLinked: parseInt(cc.substring(17, 18)),
+          isSkilled: parseInt(cc.substring(18, 19)),
+          isSBA: parseInt(cc.substring(19, 20)),
+          isRanged: parseInt(cc.substring(20, 21)),
+          isFinisher: parseInt(cc.substring(21, 22)),
+          isThrow: parseInt(cc.substring(22, 23)),
+        };
+      }
+      return newComboParams;
+    },
     // convert DATA to URL
     convertPlayConditionsToURL() {
       // play conditions ---------------------
@@ -396,6 +426,32 @@ new Vue({
         urlSigilsParams += paramTerm;
       }
       return BigInt('1' + urlSigilsParams).toString(36) ;
+    },
+    convertComboParamsToURL() {
+      // combo params -----------------------------------------
+      // param: <combo count><rate><dmg cap><bool value1><bool value2>...
+      // 00011111222222220101010101
+      let urlComboParams = ''
+      for (let i in this.comboParams) {
+        const cp = this.comboParams[i];
+        let paramTerm = (
+          ''
+          + ('000' + cp.comboCount).slice(-3)
+          + ('00000' + cp.baseRate).slice(-5)
+          + ('00000000' + cp.baseDamageCap).slice(-8)
+          + (cp.isCharged ? "1" : "0")
+          + (cp.isLinked ? "1" : "0")
+          + (cp.isSkilled ? "1" : "0")
+          + (cp.isSBA ? "1" : "0")
+          + (cp.isRanged ? "1" : "0")
+          + (cp.isFinisher ? "1" : "0")
+          + (cp.isThrow ? "1" : "0")
+        );
+        paramTerm = BigInt('1' + paramTerm).toString(36);
+        if (!(urlComboParams == '')) {urlComboParams += '-'}
+        urlComboParams += paramTerm;
+      }
+      return urlComboParams;
     },
     // Initializations
     createSigils(n) {
@@ -1171,6 +1227,14 @@ new Vue({
         }
         // URLパラメータにセット
         this.urlSigils = this.convertSigilsToURL();
+      },
+      deep: true,
+      immediate: false
+    },
+    comboParams: {
+      handler: function() {
+        // URLパラメータにセット
+        this.setURLParameter(URL_COMBO_CONDITIONS, this.convertComboParamsToURL());
       },
       deep: true,
       immediate: false
