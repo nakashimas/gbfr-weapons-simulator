@@ -820,18 +820,18 @@ new Vue({
       // 追加のダメージ上限
       if (params['isSBA']) {
         const ef = this.getSkillEffect('sbaDamageCap')['sbaDamageCap'];
-        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20;
-        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20;
+        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
       } 
       if (params['isSkilled']) {
         const ef = this.getSkillEffect('skilledDamageCap')['skilledDamageCap'];
-        rate = rate + this.applySkillEffects(100, ef, 0) + 54 + 20;
-        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 + 20;
+        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
       } 
       if (!params['isSkilled'] && !params['isSkilled']) {
         const ef = this.getSkillEffect('attackDamageCap')['attackDamageCap'];
-        rate = rate + this.applySkillEffects(100, ef, 0) + 54 + 20;
-        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 + 20;
+        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
       }
 
       rate = params['baseDamageCap'] * rate / 100;
