@@ -765,8 +765,8 @@ new Vue({
       let rate = this.calcComboRate(idx);
       const ef = this.getSkillEffect('damageCritical')['damageCritical'];
       // 基礎ダメージに倍率を掛ける
-      rate[0] = this.applySkillEffects(this.attackPower * (rate[0] + 100) / 100, ef, 0);
-      rate[1] = this.applySkillEffects(this.attackPower * (rate[1] + 100) / 100, ef, 1);
+      rate[0] = this.attackPower * rate[0] * (this.applySkillEffects(100, ef, 0) + 100) / 10000;
+      rate[1] = this.attackPower * rate[1] * (this.applySkillEffects(100, ef, 1) + 100) / 10000;
       // 属性変換の倍率を掛ける
       if (true) { // 実装中
         rate[0] = rate[0] * 1.2;
