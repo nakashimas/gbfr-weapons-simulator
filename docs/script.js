@@ -828,20 +828,20 @@ new Vue({
         rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
         rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
       } 
-      if (!params['isSkilled'] && !params['isSkilled']) {
+      if (!params['isSBA'] && !params['isSkilled']) {
         const ef = this.getSkillEffect('attackDamageCap')['attackDamageCap'];
         rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
         rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
       }
-
-      rate = params['baseDamageCap'] * rate / 100;
-      rateToBe = params['baseDamageCap'] * rateToBe / 100;
 
       // 属性変換の倍率を掛ける
       if (true) { // 実装中
         rate = rate * 1.2;
         rateToBe = rateToBe * 1.2;
       }
+
+      rate = params['baseDamageCap'] * rate / 100;
+      rateToBe = params['baseDamageCap'] * rateToBe / 100;
 
       if (!(dig === undefined)) return [rate.toFixed(dig), rateToBe.toFixed(dig)];
       return [rate, rateToBe];
