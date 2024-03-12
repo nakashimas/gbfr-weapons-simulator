@@ -38,6 +38,7 @@ const MESSAGE_TEXT = {
       "powerHungry": "0226",
       "berserker": "0227",
       "rollOfTheDie": "0228",
+      "warElemental": "0229",
       // 耐久
       "sandtombResistance": "0301",
       "dizzyResistance": "0302",
@@ -271,6 +272,7 @@ const MESSAGE_TEXT = {
       "alwaysDamageTripled": "常にダメージが3倍になる",
       "alwaysDamageQuadrupled": "常にダメージが4倍になる(ダメージ上限を無視する)",
       "lessIsMore": "アビリティなしの攻撃力",
+      "warElemental": "有利属性に変換",
     },
     "conditions": {
       // 敵の状態
@@ -376,6 +378,7 @@ const MESSAGE_TEXT = {
       "powerHungry": "修羅",
       "berserker": "窮鼠",
       "rollOfTheDie": "一天六地",
+      "warElemental": "有利属性変換",
       // 耐久
       "sandtombResistance": "砂だるま耐性",
       "dizzyResistance": "気絶耐性",
@@ -572,6 +575,7 @@ const MESSAGE_TEXT = {
       "alwaysDamageTripled": "Damage Tripled",
       "alwaysDamageQuadrupled": "Damage Quadrupled (Ignore DMG Cap)",
       "lessIsMore": "ATK (No Ability Equipped)",
+      "warElemental": "War Elemental",
     },
     "conditions": {
       // 敵の状態
@@ -677,6 +681,7 @@ const MESSAGE_TEXT = {
       "powerHungry": "Power Hungry",
       "berserker": "Berserker",
       "rollOfTheDie": "Roll Of The Die",
+      "warElemental": "War Elemental",
       // 耐久
       "sandtombResistance": "Sandtomb Resistance",
       "dizzyResistance": "Dizzy Resistance",

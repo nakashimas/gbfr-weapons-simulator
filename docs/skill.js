@@ -1305,6 +1305,15 @@ const SKILL_STATUS = {
       {"alwaysDamageOne": "0|46%", "alwaysDamageDoubled": "0|16%", "alwaysDamageTripled": "0|10%", "alwaysDamageQuadrupled": "0|1%"}, // 15
     ]
   },
+  "warElemental": {
+    // 有利属性変換 
+    "skillType": "attack",
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {"warElemental": "0|100%"}, // 15
+    ]
+  },
   // 耐久
   "sandtombResistance": {
     // 砂だるま耐性 

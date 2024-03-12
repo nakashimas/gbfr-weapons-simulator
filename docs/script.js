@@ -753,11 +753,12 @@ new Vue({
       // 基礎ダメージに倍率を掛ける
       rate[0] = this.attackPower * rate[0] / 100;
       rate[1] = this.attackPowerToBe * rate[1] / 100;
+      
       // 属性変換の倍率を掛ける
-      if (true) { // 実装中
-        rate[0] = rate[0] * 1.2;
-        rate[1] = rate[1] * 1.2;
-      }
+      const we = this.getSkillEffect('warElemental')['warElemental'];
+      if (we) rate[0] = rate[0] * 1.2;
+      if (we) rate[1] = rate[1] * 1.2;
+      
       if (!(dig === undefined)) return [rate[0].toFixed(dig), rate[1].toFixed(dig)];
       return rate
     },
@@ -767,11 +768,12 @@ new Vue({
       // 基礎ダメージに倍率を掛ける
       rate[0] = this.attackPower * rate[0] * (this.applySkillEffects(100, ef, 0) + 100) / 10000;
       rate[1] = this.attackPower * rate[1] * (this.applySkillEffects(100, ef, 1) + 100) / 10000;
+      
       // 属性変換の倍率を掛ける
-      if (true) { // 実装中
-        rate[0] = rate[0] * 1.2;
-        rate[1] = rate[1] * 1.2;
-      }
+      const we = this.getSkillEffect('warElemental')['warElemental'];
+      if (we) rate[0] = rate[0] * 1.2;
+      if (we) rate[1] = rate[1] * 1.2;
+
       if (!(dig === undefined)) return [rate[0].toFixed(dig), rate[1].toFixed(dig)];
       return rate
     },
@@ -835,10 +837,9 @@ new Vue({
       }
 
       // 属性変換の倍率を掛ける
-      if (true) { // 実装中
-        rate = rate * 1.2;
-        rateToBe = rateToBe * 1.2;
-      }
+      const we = this.getSkillEffect('warElemental')['warElemental'];
+      if (we) rate = rate * 1.2;
+      if (we) rateToBe = rateToBe * 1.2;
 
       rate = params['baseDamageCap'] * rate / 100;
       rateToBe = params['baseDamageCap'] * rateToBe / 100;
