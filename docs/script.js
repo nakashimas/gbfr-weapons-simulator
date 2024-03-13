@@ -470,11 +470,20 @@ new Vue({
       }
     },
     resetWeaponSkills() {
-      const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
+      const lv = Math.min(
+        this.weaponsStatus[this.weaponName]['maxLevel'] - this.weaponsStatus[this.weaponName]['minLevel'], 
+        Math.max(this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel'], 0)
+      );
+      const weaponsSkill = this.weaponsStatus[this.weaponName]['levelsSkill'][lv];
       for (let i=0; i < this.weaponTraits.length; i++) {
-        if (this.weaponTraits[i].weaponTraitSkillAuto && Object.keys(weaponsSkill).length > i) {
-          this.weaponTraits[i].weaponTraitSkillName = Object.keys(weaponsSkill)[i];
-          this.weaponTraits[i].weaponTraitSkillLevel = weaponsSkill[Object.keys(weaponsSkill)[i]];
+        if (this.weaponTraits[i].weaponTraitSkillAuto) {
+          if (Object.keys(weaponsSkill).length > i) {
+            this.weaponTraits[i].weaponTraitSkillName = Object.keys(weaponsSkill)[i];
+            this.weaponTraits[i].weaponTraitSkillLevel = weaponsSkill[Object.keys(weaponsSkill)[i]];
+          } else {
+            this.weaponTraits[i].weaponTraitSkillName = '-';
+            this.weaponTraits[i].weaponTraitSkillLevel = '15';
+          }
         }
       }
     },
