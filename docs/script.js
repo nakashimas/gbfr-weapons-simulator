@@ -129,28 +129,6 @@ new Vue({
     for (let i = 0; i < MAX_COMBO_CONFIG; i++) this.addComboParams();
   },
   mounted() {
-    // $('.select-2')
-    // .select2()
-    // .on('change', (event) => {
-    //     // mount select2 selections
-    //     if (('' + event.target.id).startsWith('sigil-main-name')) {
-    //       this.sigils[('' + event.target.id).split('-').slice(-1)[0]].sigilMainSkillName = event.target.value;
-    //     }
-    //     if (('' + event.target.id).startsWith('sigil-sub-name')) {
-    //       this.sigils[('' + event.target.id).split('-').slice(-1)[0]].sigilSubSkillName = event.target.value;
-    //     }
-    //     if (('' + event.target.id).startsWith('imbue-name')) {
-    //       this.imbues[('' + event.target.id).split('-').slice(-1)[0]].imbueSkillName = event.target.value;
-    //     }
-    //     if (('' + event.target.id).startsWith('weapon-trait')) {
-    //       this.weaponTraits[('' + event.target.id).split('-').slice(-1)[0]].weaponTraitSkillName = event.target.value;
-    //     }
-    //     if (('' + event.target.id).startsWith('weapon-name')) {
-    //       this.weaponName = event.target.value;
-    //     }
-    //   }
-    // );
-    
     // ===================
     // URL param analysis
     // ===================
@@ -509,6 +487,29 @@ new Vue({
       if (this.isStunPowerBaseAuto) {
         this.stunPowerBase = weaponsStatus['stunPower'] + characterStatus['stunPower'];
       }
+    },
+    resetSelect2() {
+      $('.select-2')
+      .select2()
+      .on('change', (event) => {
+          // mount select2 selections
+          if (('' + event.target.id).startsWith('sigil-main-name')) {
+            this.sigils[('' + event.target.id).split('-').slice(-1)[0]].sigilMainSkillName = event.target.value;
+          }
+          if (('' + event.target.id).startsWith('sigil-sub-name')) {
+            this.sigils[('' + event.target.id).split('-').slice(-1)[0]].sigilSubSkillName = event.target.value;
+          }
+          if (('' + event.target.id).startsWith('imbue-name')) {
+            this.imbues[('' + event.target.id).split('-').slice(-1)[0]].imbueSkillName = event.target.value;
+          }
+          if (('' + event.target.id).startsWith('weapon-trait')) {
+            this.weaponTraits[('' + event.target.id).split('-').slice(-1)[0]].weaponTraitSkillName = event.target.value;
+          }
+          if (('' + event.target.id).startsWith('weapon-name')) {
+            this.weaponName = event.target.value;
+          }
+        }
+      );
     },
     // accessor
     isObtainableSigil(mainSkillName, subSkillName) {
