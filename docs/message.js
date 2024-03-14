@@ -191,6 +191,14 @@ const MESSAGE_TEXT = {
       "calcComboSupplementalDamage": "追撃",
       "calcComboDamageOvercap": "上限到達率",
       "calcComboAverageDamage": "平均",
+      // 限界突破
+      "attackDamageCapBase": "通常上限",
+      "skilledDamageCapBase": "アビ上限",
+      "sbaDamageCapBase": "奥義上限",
+      "healingCapBase": "回復上限",
+      "skilledDamageBase": "アビ与ダメ",
+      "sbaDamageBase": "奥義与ダメ",
+      "chainDamageBase": "CB与ダメ",
     },
     "status": {
       "-": "-",
@@ -595,6 +603,14 @@ const MESSAGE_TEXT = {
       "calcComboSupplementalDamage": "Supp",
       "calcComboDamageOvercap": "Overcap",
       "calcComboAverageDamage": "AVG",
+      // 限界突破
+      "attackDamageCapBase": "ATK Cap",
+      "skilledDamageCapBase": "SKILL Cap",
+      "sbaDamageCapBase": "SBA Cap",
+      "healingCapBase": "Heal Cap",
+      "skilledDamageBase": "SKILL DMG",
+      "sbaDamageBase": "SBA DMG",
+      "chainDamageBase": "CB DMG",
     },
     "status": {
       "-": "-",

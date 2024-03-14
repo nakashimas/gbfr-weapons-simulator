@@ -4,6 +4,13 @@ const URL_HP_BASE = 'hb';
 const URL_ATK_BASE = 'ab';
 const URL_CRT_BASE = 'cb';
 const URL_STN_BASE = 'sb';
+const URL_SBA_CAP_BASE = 'sc';
+const URL_ATTACK_CAP_BASE = 'nc';
+const URL_ABILITY_CAP_BASE = 'ac';
+const URL_HEALING_CAP_BASE = 'hc';
+const URL_CB_DMG_BASE = 'cd';
+const URL_SBA_DMG_BASE = 'sd';
+const URL_ABILITY_DMG_BASE = 'ad';
 const URL_ABILITY_EQUIPPED = 'ae';
 const URL_WEAPON_NAME = 'wn';
 const URL_WEAPON_LEVEL = 'wl';
@@ -30,6 +37,15 @@ new Vue({
     isCriticalHitRateBaseAuto: true,
     stunPowerBase: 0,
     isStunPowerBaseAuto: true,
+    // mastery (not basic status) 54% from MSP
+    attackDamageCapBase: 74,
+    skilledDamageCapBase: 74,
+    sbaDamageCapBase: 74,
+    healingCapBase: 74,
+    skilledDamageBase: 20,
+    sbaDamageBase: 20,
+    chainDamageBase: 20,
+    // conditions
     playerAbilityEquipped: 4,
     playConditions: {
       isEnemyBreak: true,
@@ -137,6 +153,7 @@ new Vue({
     hl = hl ? hl : 'ja';
     $("html").attr("lang", hl);
     this.lang = hl;
+
     // healthRate
     let hr = this.getURLParameter(URL_HP_RATE);
     this.healthRate = hr ? hr : this.healthRate;
@@ -156,6 +173,31 @@ new Vue({
     let sb = this.getURLParameter(URL_STN_BASE);
     if (sb) this.isStunPowerBaseAuto = false;
     this.stunPowerBase = sb ? sb : this.stunPowerBase;
+    
+    // Mastery
+    // attackDamageCapBase
+    let nc = this.getURLParameter(URL_ATTACK_CAP_BASE);
+    this.attackDamageCapBase = nc ? nc : this.attackDamageCapBase;
+    // skilledDamageCapBase
+    let ac = this.getURLParameter(URL_ABILITY_CAP_BASE);
+    this.skilledDamageCapBase= ac ? ac : this.skilledDamageCapBase; 
+    // sbaDamageCapBase
+    let sc = this.getURLParameter(URL_SBA_CAP_BASE);
+    this.sbaDamageCapBase= sc ? sc : this.sbaDamageCapBase;
+    // healingCapBase
+    let hc = this.getURLParameter(URL_HEALING_CAP_BASE);
+    this.healingCapBase= hc ? hc : this.healingCapBase; 
+    // skilledDamageBase
+    let ad = this.getURLParameter(URL_ABILITY_DMG_BASE);
+    this.skilledDamageBase= ad ? ad : this.skilledDamageBase;
+    // sbaDamageBase
+    let sd = this.getURLParameter(URL_SBA_DMG_BASE);
+    this.sbaDamageBase= sd ? sd : this.sbaDamageBase; 
+    // chainDamageBase
+    let cd = this.getURLParameter(URL_CB_DMG_BASE);
+    this.chainDamageBase= cd ? cd : this.chainDamageBase;
+
+    // conditions
     // playerAbilityEquipped
     let ae = this.getURLParameter(URL_ABILITY_EQUIPPED);
     this.playerAbilityEquipped = ae ? ae : this.playerAbilityEquipped;
@@ -1121,6 +1163,7 @@ new Vue({
     },
   },
   watch: {
+    // Status
     healthRate: {
       handler: function() {
         // update URL
@@ -1156,6 +1199,57 @@ new Vue({
       },
       immediate: false
     },
+    // Mastery
+    attackDamageCapBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_ATTACK_CAP_BASE, this.attackDamageCapBase);
+      },
+      immediate: false
+    },
+    skilledDamageCapBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_ABILITY_CAP_BASE, this.skilledDamageCapBase);
+      },
+      immediate: false
+    },
+    sbaDamageCapBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_SBA_CAP_BASE, this.sbaDamageCapBase);
+      },
+      immediate: false
+    },
+    healingCapBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_HEALING_CAP_BASE, this.healingCapBase);
+      },
+      immediate: false
+    },
+    skilledDamageBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_ABILITY_DMG_BASE, this.skilledDamageBase);
+      },
+      immediate: false
+    },
+    sbaDamageBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_SBA_DMG_BASE, this.sbaDamageBase);
+      },
+      immediate: false
+    },
+    chainDamageBase: {
+      handler: function() {
+        // update URL
+        this.setURLParameter(URL_CB_DMG_BASE, this.chainDamageBase);
+      },
+      immediate: false
+    },
+    // Conditions
     playerAbilityEquipped: {
       handler: function() {
         // update URL
