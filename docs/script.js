@@ -488,8 +488,12 @@ new Vue({
       }
     },
     resetWeaponStatus() {
+      const lv = Math.min(
+        this.weaponsStatus[this.weaponName]['maxLevel'] - this.weaponsStatus[this.weaponName]['minLevel'], 
+        Math.max(this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel'], 0)
+      );
       // 武器でステータスの基礎値を変える
-      const weaponsStatus = this.weaponsStatus[this.weaponName]['levelsStatus'][this.weaponLevel - this.weaponsStatus[this.weaponName]['minLevel']];
+      const weaponsStatus = this.weaponsStatus[this.weaponName]['levelsStatus'][lv];
       // キャラクターでステータスの基礎値を変える(レベル毎のステータスは未実装のため0を参照)
       const characterStatus = this.characterStatus[this.weaponsStatus[this.weaponName]['character']]['levelsStatus'][0];
       // 計算

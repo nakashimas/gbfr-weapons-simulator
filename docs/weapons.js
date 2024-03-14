@@ -633,7 +633,7 @@ const WEAPONS_STATUS = {
   "antwerp": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "percival",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -644,7 +644,7 @@ const WEAPONS_STATUS = {
   "arkab": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "ghandagoza",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -655,7 +655,7 @@ const WEAPONS_STATUS = {
   "arshivelle": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "cagliostro",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -677,7 +677,7 @@ const WEAPONS_STATUS = {
   "blancCommeNeige": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "lancelot",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -688,7 +688,7 @@ const WEAPONS_STATUS = {
   "blossomAxe": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "vane",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -699,7 +699,7 @@ const WEAPONS_STATUS = {
   "clarion": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "eugen",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -710,7 +710,7 @@ const WEAPONS_STATUS = {
   "cortana": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "rosetta",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -721,7 +721,7 @@ const WEAPONS_STATUS = {
   "cosmicScythe": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "vaseraga",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -732,7 +732,7 @@ const WEAPONS_STATUS = {
   "eckeSachs": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "id",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -743,7 +743,7 @@ const WEAPONS_STATUS = {
   "ephemeron": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "katalina",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -754,7 +754,7 @@ const WEAPONS_STATUS = {
   "huanglongSpear": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "zeta",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -765,7 +765,7 @@ const WEAPONS_STATUS = {
   "liveWire": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "ferry",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -776,7 +776,7 @@ const WEAPONS_STATUS = {
   "sahrivar": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "charlotta",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -787,7 +787,7 @@ const WEAPONS_STATUS = {
   "stormcloud": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "rackam",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -798,7 +798,7 @@ const WEAPONS_STATUS = {
   "tupsimati": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "io",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -809,7 +809,7 @@ const WEAPONS_STATUS = {
   "ultimaSword": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "gran",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -820,7 +820,7 @@ const WEAPONS_STATUS = {
   "windhose": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "siegfried",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -831,18 +831,7 @@ const WEAPONS_STATUS = {
   "xenoPhantomDemonBlade": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
-    "levelsSkill": [
-      {"exploiter": 25, "breakAssassin": 15},
-    ],
-    "levelsStatus": [
-      {"health": 1363, "attackPower": 3320, "criticalHitRate": 0, "stunPower": 0},
-    ]
-  },
-  "albacoreBlade": {
-    "maxLevel": 150,
-    "minLevel": 150,
-    "character": "narmaya",
+    "character": "yodarha",
     "levelsSkill": [
       {"exploiter": 25, "breakAssassin": 15},
     ],
@@ -851,10 +840,21 @@ const WEAPONS_STATUS = {
     ]
   },
   // クリティカル特化
+  "albacoreBlade": {
+    "maxLevel": 150,
+    "minLevel": 150,
+    "character": "gran",
+    "levelsSkill": [
+      {"criticalHitRate": 25, "criticalDamage": 15},
+    ],
+    "levelsStatus": [
+      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+    ]
+  },
   "colossusCaneOmega": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "io",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -865,7 +865,7 @@ const WEAPONS_STATUS = {
   "crimsonFinger": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "ghandagoza",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -876,7 +876,7 @@ const WEAPONS_STATUS = {
   "flameLitCurl": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "ferry",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -898,7 +898,7 @@ const WEAPONS_STATUS = {
   "gisla": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "zeta",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -909,7 +909,7 @@ const WEAPONS_STATUS = {
   "higurashi": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "yodarha",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -920,7 +920,7 @@ const WEAPONS_STATUS = {
   "hrunting": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "siegfried",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -931,7 +931,7 @@ const WEAPONS_STATUS = {
   "joyeuse": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "percival",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -942,7 +942,7 @@ const WEAPONS_STATUS = {
   "leviathanMuzzle": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "eugen",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -953,7 +953,7 @@ const WEAPONS_STATUS = {
   "luminieraSwordOmega": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "katalina",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -964,7 +964,7 @@ const WEAPONS_STATUS = {
   "premiumSword": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "id",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -975,7 +975,7 @@ const WEAPONS_STATUS = {
   "roseCrystalKnife": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "rosetta",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -986,7 +986,7 @@ const WEAPONS_STATUS = {
   "sacredCodex": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "cagliostro",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -997,7 +997,7 @@ const WEAPONS_STATUS = {
   "soulEater": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "vaseraga",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -1008,7 +1008,7 @@ const WEAPONS_STATUS = {
   "tiamatBoltOmega": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "rackam",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -1019,7 +1019,7 @@ const WEAPONS_STATUS = {
   "ukonvasara": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "vane",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -1030,7 +1030,7 @@ const WEAPONS_STATUS = {
   "ushumgal": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "charlotta",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -1041,7 +1041,7 @@ const WEAPONS_STATUS = {
   "vegalta": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "lancelot",
     "levelsSkill": [
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
@@ -1053,7 +1053,7 @@ const WEAPONS_STATUS = {
   "alsarav": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "vaseraga",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1064,7 +1064,7 @@ const WEAPONS_STATUS = {
   "arondight": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "charlotta",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1075,7 +1075,7 @@ const WEAPONS_STATUS = {
   "asura": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "yodarha",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1086,7 +1086,7 @@ const WEAPONS_STATUS = {
   "aviaethFaussart": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "id",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1097,7 +1097,7 @@ const WEAPONS_STATUS = {
   "broadswordOfEarth": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "siegfried",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1108,7 +1108,7 @@ const WEAPONS_STATUS = {
   "dreamAtlas": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "cagliostro",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1119,7 +1119,7 @@ const WEAPONS_STATUS = {
   "durandal": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "gran",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1130,7 +1130,7 @@ const WEAPONS_STATUS = {
   "flameRapier": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "katalina",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1141,7 +1141,7 @@ const WEAPONS_STATUS = {
   "hoarfrostBladePersius": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "lancelot",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1163,7 +1163,7 @@ const WEAPONS_STATUS = {
   "leatherBelt": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "ferry",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1174,7 +1174,7 @@ const WEAPONS_STATUS = {
   "lohengrin": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "percival",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1185,7 +1185,7 @@ const WEAPONS_STATUS = {
   "matchlock": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "eugen",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1196,7 +1196,7 @@ const WEAPONS_STATUS = {
   "ropeKnuckles": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "ghandagoza",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1207,7 +1207,7 @@ const WEAPONS_STATUS = {
   "sunspotSpear": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "zeta",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1218,7 +1218,7 @@ const WEAPONS_STATUS = {
   "swan": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "vane",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1229,7 +1229,7 @@ const WEAPONS_STATUS = {
   "swordBreaker": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "rosetta",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1240,7 +1240,7 @@ const WEAPONS_STATUS = {
   "wheellockAxe": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "rackam",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
@@ -1251,7 +1251,7 @@ const WEAPONS_STATUS = {
   "zhezl": {
     "maxLevel": 150,
     "minLevel": 150,
-    "character": "narmaya",
+    "character": "io",
     "levelsSkill": [
       {"stunPower": 25, "linkedTogether": 15},
     ],
