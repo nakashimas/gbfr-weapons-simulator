@@ -281,6 +281,7 @@ const MESSAGE_TEXT = {
       "alwaysDamageQuadrupled": "常にダメージが4倍になる(ダメージ上限を無視する)",
       "lessIsMore": "アビリティなしの攻撃力",
       "warElemental": "有利属性に変換",
+      "guardBreakTaken": "ガードブレイク発生",
     },
     "conditions": {
       // 敵の状態
@@ -693,6 +694,7 @@ const MESSAGE_TEXT = {
       "alwaysDamageQuadrupled": "Damage Quadrupled (Ignore DMG Cap)",
       "lessIsMore": "ATK (No Ability Equipped)",
       "warElemental": "War Elemental",
+      "guardBreakTaken": "Guard Breakable",
     },
     "conditions": {
       // 敵の状態

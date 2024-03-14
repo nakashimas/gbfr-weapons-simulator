@@ -1396,7 +1396,38 @@ const SKILL_STATUS = {
     "skillType": "defence",
     "minLevel": 1,
     "maxLevel": 45,
-    "levels": []
+    "levels": [
+      {"guardBreakTaken": "0|-5%"}, // 1
+      {"guardBreakTaken": "0|-8%"}, // 2
+      {"guardBreakTaken": "0|-11%"}, // 3
+      {"guardBreakTaken": "0|-13%"}, // 4
+      {"guardBreakTaken": "0|-15%"}, // 5
+      {"guardBreakTaken": "0|-17%"}, // 6
+      {"guardBreakTaken": "0|-19%"}, // 7
+      {"guardBreakTaken": "0|-21%"}, // 8
+      {"guardBreakTaken": "0|-23%"}, // 9
+      {"guardBreakTaken": "0|-25%"}, // 10
+      {"guardBreakTaken": "0|-27%"}, // 11
+      {"guardBreakTaken": "0|-29%"}, // 12
+      {"guardBreakTaken": "0|-31%"}, // 13
+      {"guardBreakTaken": "0|-33%"}, // 14
+      {"guardBreakTaken": "0|-35%"}, // 15
+      {"guardBreakTaken": "0|-36%"}, // 16
+      {"guardBreakTaken": "0|-37%"}, // 17
+      {"guardBreakTaken": "0|-38%"}, // 18
+      {"guardBreakTaken": "0|-39%"}, // 19
+      {"guardBreakTaken": "0|-40%"}, // 20
+      {"guardBreakTaken": "0|-41%"}, // 21
+      {"guardBreakTaken": "0|-42%"}, // 22
+      {"guardBreakTaken": "0|-43%"}, // 23
+      {"guardBreakTaken": "0|-44%"}, // 24
+      {"guardBreakTaken": "0|-45%"}, // 25
+      {"guardBreakTaken": "0|-46%"}, // 26
+      {"guardBreakTaken": "0|-47%"}, // 27
+      {"guardBreakTaken": "0|-48%"}, // 28
+      {"guardBreakTaken": "0|-49%"}, // 29
+      {"guardBreakTaken": "0|-50%"}, // 30
+    ]
   },
   "garrison": {
     // 堅守 
