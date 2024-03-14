@@ -771,8 +771,8 @@ new Vue({
       // damageSkilled アビリティの与ダメージ
       if (params['isSkilled']) {
         const ef = this.getSkillEffect('damageSkilled')['damageSkilled'];
-        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
-        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100 * (100 + parseInt(this.skilledDamageBase)) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100 * (100 + parseInt(this.skilledDamageBase)) / 100;
       }
       // comboBooster 派生攻撃の与ダメージ
       const cboost = this.getSkillEffect('comboBooster')['comboBooster'];
@@ -793,12 +793,13 @@ new Vue({
         rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
       }
       // damageSBA 奥義の与ダメージ 
-      // damageChain CBの与ダメージ
       if (params['isSBA']) {
         const ef = this.getSkillEffect('damageSBA')['damageSBA'];
-        rate = rate * this.applySkillEffects(100, ef, 0) / 100;
-        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100;
+        rate = rate * this.applySkillEffects(100, ef, 0) / 100 * (100 + parseInt(this.sbaDamageBase)) / 100;
+        rateToBe = rateToBe * this.applySkillEffects(100, ef, 1) / 100 * (100 + parseInt(this.sbaDamageBase)) / 100;
       }
+      // damageChain CBの与ダメージ
+      // 実装中
       // キャラクター専用ジーン
       // 実装中
       if (!(dig === undefined)) return [rate.toFixed(dig), rateToBe.toFixed(dig)];
@@ -878,18 +879,18 @@ new Vue({
       // 追加のダメージ上限
       if (params['isSBA']) {
         const ef = this.getSkillEffect('sbaDamageCap')['sbaDamageCap'];
-        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
-        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
+        rate = rate + this.applySkillEffects(100, ef, 0) - 100 + parseInt(this.sbaDamageCapBase);
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) - 100 + parseInt(this.sbaDamageCapBase);
       } 
       if (params['isSkilled']) {
         const ef = this.getSkillEffect('skilledDamageCap')['skilledDamageCap'];
-        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
-        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
+        rate = rate + this.applySkillEffects(100, ef, 0) - 100 + parseInt(this.skilledDamageCapBase);
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) - 100 + parseInt(this.skilledDamageCapBase);
       } 
       if (!params['isSBA'] && !params['isSkilled']) {
         const ef = this.getSkillEffect('attackDamageCap')['attackDamageCap'];
-        rate = rate + this.applySkillEffects(100, ef, 0) + 54 - 100 + 20; // 20%は上限突破分
-        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) + 54 - 100 + 20; // 20%は上限突破分
+        rate = rate + this.applySkillEffects(100, ef, 0) - 100 + parseInt(this.attackDamageCapBase); 
+        rateToBe = rateToBe + this.applySkillEffects(100, ef, 1) - 100 + parseInt(this.attackDamageCapBase);
       }
 
       // 属性変換の倍率を掛ける
