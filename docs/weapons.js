@@ -428,7 +428,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "ascalon": {
@@ -439,7 +439,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "benedia": {
@@ -450,7 +450,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "brionac": {
@@ -461,7 +461,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "claidheamhSoluis": {
@@ -472,7 +472,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "errinerung": {
@@ -483,7 +483,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "fudoKuniyuki": {
@@ -494,7 +494,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "gambanteinn": {
@@ -505,7 +505,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "goldenFistsOfUra": {
@@ -516,7 +516,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "knightOfIce": {
@@ -527,7 +527,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "lordOfFlames": {
@@ -538,7 +538,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "loveEternal": {
@@ -549,7 +549,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "murgleis": {
@@ -560,7 +560,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "susanoo": {
@@ -571,7 +571,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "swordOfEos": {
@@ -582,7 +582,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "transmigrationTome": {
@@ -593,7 +593,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "treuerKrieger": {
@@ -604,7 +604,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "venustas": {
@@ -615,7 +615,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "wurtziteScythe": {
@@ -626,7 +626,7 @@ const WEAPONS_STATUS = {
       {"attackPower": 25, "health": 15, "damageCap": 5, "sigilBooster": 1},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 4013, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   // 弱点攻撃
@@ -848,7 +848,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "colossusCaneOmega": {
@@ -859,7 +859,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "crimsonFinger": {
@@ -870,7 +870,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "flameLitCurl": {
@@ -881,7 +881,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "fluorithiumBlade": {
@@ -892,7 +892,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "gisla": {
@@ -903,7 +903,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "higurashi": {
@@ -914,7 +914,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "hrunting": {
@@ -925,7 +925,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "joyeuse": {
@@ -936,7 +936,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "leviathanMuzzle": {
@@ -947,7 +947,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "luminieraSwordOmega": {
@@ -958,7 +958,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "premiumSword": {
@@ -969,7 +969,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "roseCrystalKnife": {
@@ -980,7 +980,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "sacredCodex": {
@@ -991,7 +991,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "soulEater": {
@@ -1002,7 +1002,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "tiamatBoltOmega": {
@@ -1013,7 +1013,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "ukonvasara": {
@@ -1024,7 +1024,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "ushumgal": {
@@ -1035,7 +1035,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "vegalta": {
@@ -1046,7 +1046,7 @@ const WEAPONS_STATUS = {
       {"criticalHitRate": 25, "criticalDamage": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   // スタン特化
@@ -1058,7 +1058,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "arondight": {
@@ -1069,7 +1069,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "asura": {
@@ -1080,7 +1080,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "aviaethFaussart": {
@@ -1091,7 +1091,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "broadswordOfEarth": {
@@ -1102,7 +1102,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "dreamAtlas": {
@@ -1113,7 +1113,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "durandal": {
@@ -1124,7 +1124,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "flameRapier": {
@@ -1135,7 +1135,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "hoarfrostBladePersius": {
@@ -1146,7 +1146,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "kotetsu": {
@@ -1157,7 +1157,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "leatherBelt": {
@@ -1168,7 +1168,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "lohengrin": {
@@ -1179,7 +1179,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "matchlock": {
@@ -1190,7 +1190,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "ropeKnuckles": {
@@ -1201,7 +1201,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "sunspotSpear": {
@@ -1212,7 +1212,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "swan": {
@@ -1223,7 +1223,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "swordBreaker": {
@@ -1234,7 +1234,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "wheellockAxe": {
@@ -1245,7 +1245,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
   "zhezl": {
@@ -1256,7 +1256,7 @@ const WEAPONS_STATUS = {
       {"stunPower": 25, "linkedTogether": 15},
     ],
     "levelsStatus": [
-      {"health": 0, "attackPower": 0, "criticalHitRate": 0, "stunPower": 0},
+      {"health": 2575, "attackPower": 2003, "criticalHitRate": 0, "stunPower": 0},
     ]
   },
 }
