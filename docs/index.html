@@ -211,7 +211,7 @@
             <div class="col col-3 p-0">
               <select :id="'sigil-main-name-' + index" v-model="sigils[index].sigilMainSkillName" class="select-2 form-select">
                 <template v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']">
-                  <option :value="sigil_selection_idx">
+                  <option v-if="!sigils[index].sigilSubSkillAuto || isObtainableSigil(sigil_selection_idx, undefined)" :value="sigil_selection_idx">
                     {{sigil_selection}}
                   </option>
                 </template>

@@ -556,7 +556,6 @@ new Vue({
     // accessor
     isObtainableSigil(mainSkillName, subSkillName) {
       const mainSkillType = this.skillStatus[mainSkillName]["skillType"];
-      const subSkillType = this.skillStatus[subSkillName]["skillType"];
       const skillWeight = {
         '-': 90,
         'other': 80,
@@ -567,12 +566,38 @@ new Vue({
         'support': 20,
         'special': 10,
       }
-      if (subSkillType == '-' || subSkillType == 'other' || mainSkillType == 'awakening'){
-        return true;
-      } else if (subSkillName == 'attackPower'){
-        return true;
+      if (subSkillName) {
+        const subSkillType = this.skillStatus[subSkillName]["skillType"];
+        const weightResult = skillWeight[mainSkillType] > skillWeight[subSkillType];
+        if (subSkillType == 'awakening') {
+          const ws = this.weaponsStatus[this.weaponName];
+          if (!ws) return weightResult;
+          const cs = this.characterStatus[ws['character']];
+          if (!cs || !(cs['sigilAwakening'])) return weightResult;
+          // キャラクター専用ジーンにあるかどうか
+          if (cs['sigilAwakening'].includes(subSkillName)) {
+            if (mainSkillType == 'awakening') return true;
+            return skillWeight[mainSkillType] > skillWeight[subSkillType]
+          };
+          return false;
+        } else if (subSkillType == '-' || subSkillType == 'other' || mainSkillType == 'awakening'){
+          return true;
+        } else if (subSkillName == 'attackPower'){
+          return true;
+        } else {
+          return skillWeight[mainSkillType] > skillWeight[subSkillType];
+        }
       } else {
-        return skillWeight[mainSkillType] > skillWeight[subSkillType]
+        if (mainSkillType == 'awakening') {
+          const ws = this.weaponsStatus[this.weaponName];
+          if (!ws) return true;
+          const cs = this.characterStatus[ws['character']];
+          if (!cs || !(cs['sigilAwakening'])) return true;
+          // キャラクター専用ジーンにあるかどうか
+          return cs['sigilAwakening'].includes(mainSkillName);
+        } else {
+          return true;
+        }
       }
     },
     getSkillEffect(statusName) {
