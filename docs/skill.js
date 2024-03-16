@@ -2546,6 +2546,90 @@ const SKILL_STATUS = {
       {"catastrophe": "0|50%|health<=45000", "damageCap": "0|100%|health<=45000"}
     ],
   },
+  "alpha": {
+    // アルファ・コード
+    "skillType": "other",
+    "minLevel": 11,
+    "maxLevel": 30,
+    "levels": [
+      {"attackDamageCap": "0|17%", "alpha": "0|0%"}, // 11
+      {"attackDamageCap": "0|19%", "alpha": "0|0%"}, // 12
+      {"attackDamageCap": "0|21%", "alpha": "0|0%"}, // 13
+      {"attackDamageCap": "0|22%", "alpha": "0|0%"}, // 14
+      {"attackDamageCap": "0|25%", "alpha": "0|0%"}, // 15
+      {"attackDamageCap": "0|26%", "alpha": "0|0%"}, // 16
+      {"attackDamageCap": "0|27%", "alpha": "0|0%"}, // 17
+      {"attackDamageCap": "0|28%", "alpha": "0|0%"}, // 18
+      {"attackDamageCap": "0|29%", "alpha": "0|0%"}, // 19
+      {"attackDamageCap": "0|30%", "alpha": "0|0%"}, // 20
+      {"attackDamageCap": "0|31%", "alpha": "0|0%"}, // 21
+      {"attackDamageCap": "0|32%", "alpha": "0|0%"}, // 22
+      {"attackDamageCap": "0|33%", "alpha": "0|0%"}, // 23
+      {"attackDamageCap": "0|34%", "alpha": "0|0%"}, // 24
+      {"attackDamageCap": "0|35%", "alpha": "0|0%"}, // 25
+      {"attackDamageCap": "0|36%", "alpha": "0|0%"}, // 26
+      {"attackDamageCap": "0|37%", "alpha": "0|0%"}, // 27
+      {"attackDamageCap": "0|38%", "alpha": "0|0%"}, // 28
+      {"attackDamageCap": "0|39%", "alpha": "0|0%"}, // 29
+      {"attackDamageCap": "0|40%", "alpha": "0|30%"}, // 30
+    ]
+  },
+  "beta": {
+    // ベータ・コード
+    "skillType": "other",
+    "minLevel": 11,
+    "maxLevel": 30,
+    "levels": [
+      {"skilledDamageCap": "0|23%", "beta": "0|0%"}, // 11
+      {"skilledDamageCap": "0|26%", "beta": "0|0%"}, // 12
+      {"skilledDamageCap": "0|29%", "beta": "0|0%"}, // 13
+      {"skilledDamageCap": "0|32%", "beta": "0|0%"}, // 14
+      {"skilledDamageCap": "0|35%", "beta": "0|0%"}, // 15
+      {"skilledDamageCap": "0|36%", "beta": "0|0%"}, // 16
+      {"skilledDamageCap": "0|37%", "beta": "0|0%"}, // 17
+      {"skilledDamageCap": "0|38%", "beta": "0|0%"}, // 18
+      {"skilledDamageCap": "0|39%", "beta": "0|0%"}, // 19
+      {"skilledDamageCap": "0|40%", "beta": "0|0%"}, // 20
+      {"skilledDamageCap": "0|41%", "beta": "0|0%"}, // 21
+      {"skilledDamageCap": "0|42%", "beta": "0|0%"}, // 22
+      {"skilledDamageCap": "0|43%", "beta": "0|0%"}, // 23
+      {"skilledDamageCap": "0|44%", "beta": "0|0%"}, // 24
+      {"skilledDamageCap": "0|45%", "beta": "0|0%"}, // 25
+      {"skilledDamageCap": "0|46%", "beta": "0|0%"}, // 26
+      {"skilledDamageCap": "0|47%", "beta": "0|0%"}, // 27
+      {"skilledDamageCap": "0|48%", "beta": "0|0%"}, // 28
+      {"skilledDamageCap": "0|49%", "beta": "0|0%"}, // 29
+      {"skilledDamageCap": "0|50%", "beta": "0|10%"}, // 30
+    ]
+  },
+  "gamma": {
+    // ガンマ・コード
+    "skillType": "other",
+    "minLevel": 11,
+    "maxLevel": 30,
+    "levels": [
+      {"sbaDamageCap": "0|11%", "gamma": "0|0%"}, // 11
+      {"sbaDamageCap": "0|12%", "gamma": "0|0%"}, // 12
+      {"sbaDamageCap": "0|13%", "gamma": "0|0%"}, // 13
+      {"sbaDamageCap": "0|14%", "gamma": "0|0%"}, // 14
+      {"sbaDamageCap": "0|15%", "gamma": "0|0%"}, // 15
+      {"sbaDamageCap": "0|16%", "gamma": "0|0%"}, // 16
+      {"sbaDamageCap": "0|17%", "gamma": "0|0%"}, // 17
+      {"sbaDamageCap": "0|18%", "gamma": "0|0%"}, // 18
+      {"sbaDamageCap": "0|19%", "gamma": "0|0%"}, // 19
+      {"sbaDamageCap": "0|20%", "gamma": "0|0%"}, // 20
+      {"sbaDamageCap": "0|21%", "gamma": "0|0%"}, // 21
+      {"sbaDamageCap": "0|22%", "gamma": "0|0%"}, // 22
+      {"sbaDamageCap": "0|23%", "gamma": "0|0%"}, // 23
+      {"sbaDamageCap": "0|24%", "gamma": "0|0%"}, // 24
+      {"sbaDamageCap": "0|25%", "gamma": "0|0%"}, // 25
+      {"sbaDamageCap": "0|26%", "gamma": "0|0%"}, // 26
+      {"sbaDamageCap": "0|27%", "gamma": "0|0%"}, // 27
+      {"sbaDamageCap": "0|28%", "gamma": "0|0%"}, // 28
+      {"sbaDamageCap": "0|29%", "gamma": "0|0%"}, // 29
+      {"sbaDamageCap": "0|30%", "gamma": "50000|0%"}, // 30
+    ]
+  },
   // キャラクター専用ジーン
   "fearlessDrive": {
     // ブレイブドライブ

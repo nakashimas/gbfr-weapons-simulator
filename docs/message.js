@@ -89,6 +89,9 @@ const MESSAGE_TEXT = {
       "stoutHeart": "0511",
       "crabbyResonance": "0512",
       "crabvestmentReturns": "0513",
+      "alpha": "0514",
+      "beta": "0515",
+      "gamma": "0516",
       // キャラクター専用
       "fearlessDrive": "0601",
       "fearlessSpirit": "0602",
@@ -282,6 +285,9 @@ const MESSAGE_TEXT = {
       "alwaysDamageQuadrupled": "常にダメージが4倍になる(ダメージ上限を無視する)",
       "lessIsMore": "アビリティなしの攻撃力",
       "warElemental": "有利属性に変換",
+      "alpha": "奥義発動時奥義ゲージ分配",
+      "beta": "奥義発動時クールダウン解消",
+      "gamma": "奥義発動時バリア獲得",
       "guardBreakTaken": "ガードブレイク発生",
     },
     "conditions": {
@@ -542,6 +548,9 @@ const MESSAGE_TEXT = {
       "crabvestmentReturns": "カニの恩返し",
       "catastrophe": "カタストロフィ",
       "sigilBooster": "ジーン強化",
+      "alpha": "アルファ・コード",
+      "beta": "ベータ・コード",
+      "gamma": "ガンマ・コード",
       // キャラクター専用
       "fearlessDrive": "ブレイブドライブ",
       "fearlessSpirit": "ブレイブオーラ",
@@ -696,6 +705,9 @@ const MESSAGE_TEXT = {
       "alwaysDamageQuadrupled": "Damage Quadrupled (Ignore DMG Cap)",
       "lessIsMore": "ATK (No Ability Equipped)",
       "warElemental": "War Elemental",
+      "alpha": "Gain SBA Gauge (by SBA)",
+      "beta": "Shorterns Skill Cooldowns (by SBA)",
+      "gamma": "Gain Nullifies Shield (by SBA)",
       "guardBreakTaken": "Guard Breakable",
     },
     "conditions": {
@@ -956,6 +968,9 @@ const MESSAGE_TEXT = {
       "crabvestmentReturns": "Crabvestment Returns",
       "catastrophe": "Catastrophe",
       "sigilBooster": "Sigil Booster",
+      "alpha": "Alpha",
+      "beta": "Beta",
+      "gamma": "Gamma",
       // キャラクター専用
       "fearlessDrive": "Fearless Drive",
       "fearlessSpirit": "Fearless Spirit",
