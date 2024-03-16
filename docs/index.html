@@ -280,6 +280,25 @@
               </div>
             </div>
           </div>
+          <div class="row" id="sigilSkillsHeader">
+            <!-- Main Skill Name -->
+            <div class="col col-2 p-0">
+              <span class="input-group-text px-1 h-100">Type:</span>
+            </div>
+            <div class="col col-4 p-0">
+              <select class="form-select h-100">
+                <option value="dmg-cap-min">DMG (MIN)</option>
+                <option value="dmg-cap-min">DMG (MAX)</option>
+                <option value="dmg-cap-max">CAP</option>
+              </select>
+            </div>
+            <div class="col col-3 p-0">
+              <button class="btn btn-success h-100 w-100" v-on:click="autoCompleteSigils()">Auto Complete</button>
+            </div>
+            <div class="col col-3 p-0">
+              <button class="btn btn-danger h-100 w-100" v-on:click="resetSigils()">Reset All</button>
+            </div>
+          </div>
         </div>
       </div>
       <!-- ======================= -->
