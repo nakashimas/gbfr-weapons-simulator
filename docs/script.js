@@ -110,7 +110,7 @@ new Vue({
       sigilSubSkillRank: 4, 
       sigilSubSkillLevelCurrent: 15, 
       sigilSubSkillLevelToBe: 15, 
-      sigilSubSkillAuto: true, 
+      sigilSkillAuto: true, 
     },
     comboParams: [],
     comboParamTemplate: {
@@ -341,7 +341,7 @@ new Vue({
           sigilSubSkillRank: parseInt(sl.substring(13, 14)), 
           sigilSubSkillLevelCurrent: parseInt(sl.substring(14, 16)), 
           sigilSubSkillLevelToBe: parseInt(sl.substring(16, 18)), 
-          sigilSubSkillAuto: false, 
+          sigilSkillAuto: false, 
         };
       }
       return newSigils;
@@ -441,7 +441,7 @@ new Vue({
           + sl.sigilSubSkillRank
           + ('00' + sl.sigilSubSkillLevelCurrent).slice(-2)
           + ('00' + sl.sigilSubSkillLevelToBe).slice(-2)
-          + (sl.sigilSubSkillAuto ? '1' : '0')
+          + (sl.sigilSkillAuto ? '1' : '0')
         );
         urlSigilsParams += paramTerm;
       }
@@ -552,6 +552,17 @@ new Vue({
           }
         }
       );
+    },
+    resetSigils() {
+      for (let i=0; i < this.sigils.length; i++){
+        if (this.sigils[i].sigilSkillAuto) {
+          this.sigils[i] = Object.assign(this.sigils[i], this.sigilTemplate)
+        }
+      }
+    },
+    autoCompleteSigils(completionType) {
+      if (!completionType) {
+      }
     },
     // accessor
     isObtainableSigil(mainSkillName, subSkillName) {
@@ -981,9 +992,9 @@ new Vue({
         const mainName = this.sigils[i].sigilMainSkillName;
         const subName = this.sigils[i].sigilSubSkillName;
         let mainLevel = this.sigils[i].sigilMainSkillLevelCurrent;
-        let subLevel = this.sigils[i].sigilSubSkillAuto ? mainLevel : this.sigils[i].sigilSubSkillLevelCurrent;
+        let subLevel = this.sigils[i].sigilSkillAuto ? mainLevel : this.sigils[i].sigilSubSkillLevelCurrent;
         let mainLevelTo = this.sigils[i].sigilMainSkillLevelToBe;
-        let subLevelTo = this.sigils[i].sigilSubSkillAuto ? mainLevelTo : this.sigils[i].sigilSubSkillLevelToBe;
+        let subLevelTo = this.sigils[i].sigilSkillAuto ? mainLevelTo : this.sigils[i].sigilSubSkillLevelToBe;
 
         if('sigilBooster' in totalLevels){
           // ジーンにジーン強化が実装された場合ここで判定するとバグが起きるので注意
@@ -1354,7 +1365,7 @@ new Vue({
       handler: function() {
         // サブスキルのレベルを自動補完
         for (let i=0; i < this.sigils.length; i++) {
-          if (this.sigils[i].sigilSubSkillAuto) {
+          if (this.sigils[i].sigilSkillAuto) {
             this.sigils[i].sigilSubSkillRank = this.sigils[i].sigilMainSkillRank;
             this.sigils[i].sigilSubSkillLevelCurrent = this.sigils[i].sigilMainSkillLevelCurrent;
             this.sigils[i].sigilSubSkillLevelToBe = this.sigils[i].sigilMainSkillLevelToBe;

@@ -211,7 +211,7 @@
             <div class="col col-3 p-0">
               <select :id="'sigil-main-name-' + index" v-model="sigils[index].sigilMainSkillName" class="select-2 form-select">
                 <template v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']">
-                  <option v-if="!sigils[index].sigilSubSkillAuto || isObtainableSigil(sigil_selection_idx, undefined)" :value="sigil_selection_idx">
+                  <option v-if="!sigils[index].sigilSkillAuto || isObtainableSigil(sigil_selection_idx, undefined)" :value="sigil_selection_idx">
                     {{sigil_selection}}
                   </option>
                 </template>
@@ -247,7 +247,7 @@
             <div class="col col-3 p-0">
               <select :id="'sigil-sub-name-' + index" v-model="sigils[index].sigilSubSkillName" class="select-2 form-select">
                 <template v-for="(sigil_selection, sigil_selection_idx) in messageText[lang]['sigils']">
-                  <option v-if="!sigils[index].sigilSubSkillAuto || isObtainableSigil(sigils[index].sigilMainSkillName, sigil_selection_idx)" :value="sigil_selection_idx">
+                  <option v-if="!sigils[index].sigilSkillAuto || isObtainableSigil(sigils[index].sigilMainSkillName, sigil_selection_idx)" :value="sigil_selection_idx">
                     {{sigil_selection}}
                   </option>
                 </template>
@@ -258,7 +258,7 @@
               <div class="row g-0 h-100">
                 <!-- Sub Skill Rank -->
                 <div class="col col-5 p-0 h-100">
-                  <select :id="'sigil-sub-rank-' + index" class="form-select px-2 h-100" v-model="sigils[index].sigilSubSkillRank" :disabled="sigils[index].sigilSubSkillAuto">
+                  <select :id="'sigil-sub-rank-' + index" class="form-select px-2 h-100" v-model="sigils[index].sigilSubSkillRank" :disabled="sigils[index].sigilSkillAuto">
                     <option value="4">V</option>
                     <option value="3">IV</option>
                     <option value="2">III</option>
@@ -268,14 +268,14 @@
                 </div>
                 <!-- Sub Skill Level Now -->
                 <div class="col col-3 p-0 h-100">
-                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSubSkillAuto" min="0" max="99">
+                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-current-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelCurrent" :disabled="sigils[index].sigilSkillAuto" min="0" max="99">
                 </div>
                 <!-- Sub Skill Level Tobe -->
                 <div class="col col-3 p-0 h-100">
-                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSubSkillAuto" min="0" max="99">
+                  <input class="form-control px-1 h-100" :id="'sigil-sub-level-tobe-' + index" type="number" v-model="sigils[index].sigilSubSkillLevelToBe" :disabled="sigils[index].sigilSkillAuto" min="0" max="99">
                 </div>
                 <div class="col col-1 p-0">
-                  <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSubSkillAuto" :title="'Auto Complete: ' + sigils[index].sigilSubSkillAuto">
+                  <input class="form-check-input px-1" type="checkbox" :id="'sigil-sub-auto' + index" v-model="sigils[index].sigilSkillAuto" :title="'Auto Complete: ' + sigils[index].sigilSkillAuto">
                 </div>
               </div>
             </div>
