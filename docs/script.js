@@ -18,7 +18,7 @@ const URL_MIRAGE_MUNITIONS = 'mm';
 const URL_SKILLSET = 'ss';
 const URL_PLAY_CONDITIONS = 'pc';
 const URL_COMBO_CONDITIONS = 'cp';
-const MAX_COMBO_CONFIG = 2;
+const MAX_COMBO_CONFIG = 1;
 
 // Add your JavaScript code here
 
