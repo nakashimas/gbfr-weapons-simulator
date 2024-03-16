@@ -65,6 +65,7 @@ const MESSAGE_TEXT = {
       "skillSealedResistance": "0323",
       "darkflameResistance": "0324",
       "untouchable": "0325",
+      "naturalDefences": "0326",
       // 支援
       "uplift": "0401",
       "quickCooldown": "0402",
