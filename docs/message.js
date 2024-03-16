@@ -515,6 +515,7 @@ const MESSAGE_TEXT = {
       "skillSealedResistance": "アビリティ封印耐性",
       "darkflameResistance": "レジストオルタ",
       "untouchable": "回避距離",
+      "naturalDefences": "全弱体効果耐性",
       // 支援
       "uplift": "高揚",
       "quickCooldown": "クイックアビリティ",
@@ -928,6 +929,7 @@ const MESSAGE_TEXT = {
       "skillSealedResistance": "Skill Sealed Resistance",
       "darkflameResistance": "Darkflame Resistance",
       "untouchable": "Untouchable",
+      "naturalDefences": "Natural Defences",
       // 支援
       "uplift": "Uplift",
       "quickCooldown": "Quick Cooldown",

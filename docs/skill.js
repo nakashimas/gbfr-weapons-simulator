@@ -2034,6 +2034,30 @@ const SKILL_STATUS = {
     "maxLevel": 45,
     "levels": []
   },
+  "naturalDefences": {
+    "skillType": "defence",
+    "minLevel": 15,
+    "maxLevel": 15,
+    "levels": [
+      {
+        "sandtombDuration": "0|-100%", 
+        "dizzyDuration": "0|-100%",
+        "slowDuration": "0|-100%",
+        "paralysisDuration": "0|-100%",
+        "skillSealedDuration": "0|-100%",
+        "darkflameDuration": "0|-100%",
+        "attackDownDuration": "0|-100%",
+        "deffenceDownDuration": "0|-100%",
+        "heldUnderDuration": "0|-100%",
+        "glaciateDuration": "0|-100%",
+        "sbaSealedDuration": "0|-100%",
+        "burnDamageTaken": "0|-100%",
+        "blightDamageTaken": "0|-100%",
+        "poisonDamageTaken": "0|-100%",
+        "moveRestrictionTaken": "0|-100%",
+      },
+    ]
+  },
   // 支援
   "uplift": {
     // 高揚 
