@@ -101,6 +101,7 @@ new Vue({
     },
     // sigils
     sigils: [],
+    sigilsCompletionType: 'dmg-max',
     sigilTemplate: {
       sigilMainSkillName: '-',
       sigilMainSkillRank: 4,
@@ -560,8 +561,63 @@ new Vue({
         }
       }
     },
+    autoCompleteSigil(idx, isMainSkill, completionType) {
+      // ジーン一つを選ぶ関数
+      if (!completionType) {
+        completionType = this.sigilsCompletionType;
+      }
+
+      const skillsKey = isMainSkill ? 'sigilMainSkillName' : 'sigilSubSkillName';
+      const levelsKey = isMainSkill ? 'sigilMainSkillLevelCurrent' : 'sigilSubSkillLevelCurrent';
+      let maxResult = 0;
+      let prevSkill = '' + this.sigils[idx][skillsKey];
+
+      this.sigils[idx][levelsKey] = 15;
+      this.sigils[idx][levelsKey.replace('Current', 'ToBe')] = 15;
+
+      const skills = Object.keys(this.skillStatus).reverse();
+      
+      for (let i=0; i < skills.length; i++) {
+        const skill = skills[i];
+        if (isMainSkill && this.isObtainableSigil(skill) || !isMainSkill && this.isObtainableSigil(this.sigils[idx].sigilMainSkillName, skill)) {
+          // 取りうるジーンの組み合わせのうち
+          // ゲーム内で取得可能なものを省く
+          if ((skill == 'alpha' || skill == 'beta' || skill == 'gamma') && (isMainSkill || !(this.sigils[idx].sigilMainSkillName == 'damageCap'))) continue;
+          if (!isMainSkill && (skill == 'stoutHeart' || skill == 'crabbyResonance' || skill == 'crabvestmentReturns' || skill == 'naturalDefences')) continue;
+          if (skill == 'catastrophe') continue;
+          
+          // キーをセット
+          this.sigils[idx][skillsKey] = skill;
+          
+          // タイプによって評価関数を変える
+          let currentResult = 0;
+          if (completionType == 'dmg-max') currentResult = this.calcComboCriticalDamage(0)[0];
+          if (completionType == 'dmg-min') currentResult = Math.min(100, this.calcComboDamageOvercap(0)[0]);
+          if (completionType == 'cap') currentResult = this.calcComboDamageCap(0)[0];
+          
+          // 最高記録を更新した場合キーを入れ替え
+          if (currentResult > maxResult) {
+            if (maxResult) prevSkill = skill;
+            maxResult = currentResult;
+          } else {
+            this.sigils[idx][skillsKey] = prevSkill;
+          }
+        }
+      }
+    },
     autoCompleteSigils(completionType) {
       if (!completionType) {
+        completionType = this.sigilsCompletionType;
+      }
+      for (let i=0; i < this.sigils.length; i++){
+        if (this.sigils[i].sigilSkillAuto) {
+          if (this.sigils[i].sigilMainSkillName == '-') {
+            this.autoCompleteSigil(i, true, completionType);
+          }
+          if (this.sigils[i].sigilSubSkillName == '-') {
+            this.autoCompleteSigil(i, false, completionType);
+          }
+        }
       }
     },
     // accessor
