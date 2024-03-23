@@ -570,6 +570,9 @@ new Vue({
       const skillsKey = isMainSkill ? 'sigilMainSkillName' : 'sigilSubSkillName';
       const levelsKey = isMainSkill ? 'sigilMainSkillLevelCurrent' : 'sigilSubSkillLevelCurrent';
       let maxResult = 0;
+      if (completionType == 'dmg-max') maxResult = this.calcComboCriticalDamage(0)[0];
+      if (completionType == 'dmg-min') maxResult = Math.min(100, this.calcComboDamageOvercap(0)[0]);
+      if (completionType == 'cap') maxResult = this.calcComboDamageCap(0)[0];
       let prevSkill = '' + this.sigils[idx][skillsKey];
 
       this.sigils[idx][levelsKey] = 15;
@@ -580,11 +583,18 @@ new Vue({
       for (let i=0; i < skills.length; i++) {
         const skill = skills[i];
         if (isMainSkill && this.isObtainableSigil(skill) || !isMainSkill && this.isObtainableSigil(this.sigils[idx].sigilMainSkillName, skill)) {
+          const skillType = this.skillStatus[skill]['skillType'];
+
           // 取りうるジーンの組み合わせのうち
           // ゲーム内で取得可能なものを省く
           if ((skill == 'alpha' || skill == 'beta' || skill == 'gamma') && (isMainSkill || !(this.sigils[idx].sigilMainSkillName == 'damageCap'))) continue;
           if (!isMainSkill && (skill == 'stoutHeart' || skill == 'crabbyResonance' || skill == 'crabvestmentReturns' || skill == 'naturalDefences')) continue;
           if (skill == 'catastrophe') continue;
+
+          // タイプで不要なジーンは飛ばす
+          if (completionType == 'cap' && (skillType == 'support' || skillType == 'defence' || skillType == 'basic')) continue;
+          if (completionType == 'dmg-max' && (skillType == 'defence'|| skill == 'health' || skill == 'stunPower')) continue;
+          if (completionType == 'dmg-min' && (skillType == 'defence' || skill == 'health' || skill == 'stunPower')) continue;
           
           // キーをセット
           this.sigils[idx][skillsKey] = skill;
@@ -597,13 +607,14 @@ new Vue({
           
           // 最高記録を更新した場合キーを入れ替え
           if (currentResult > maxResult) {
-            if (maxResult) prevSkill = skill;
+            prevSkill = skill;
             maxResult = currentResult;
           } else {
             this.sigils[idx][skillsKey] = prevSkill;
           }
         }
       }
+      console.log(this.sigils);
     },
     autoCompleteSigils(completionType) {
       if (!completionType) {
@@ -647,7 +658,9 @@ new Vue({
             return skillWeight[mainSkillType] > skillWeight[subSkillType]
           };
           return false;
-        } else if (subSkillType == '-' || subSkillType == 'other' || mainSkillType == 'awakening'){
+        } else if (subSkillType == 'other') {
+          return false;
+        } else if (subSkillType == '-' || mainSkillType == 'awakening'){
           return true;
         } else if (subSkillName == 'attackPower'){
           return true;
@@ -771,7 +784,7 @@ new Vue({
       if (a.split("|").length > 2) {
         // aに条件あり、それを満たさない場合0にする
         const aCase = a.split("|")[2];
-        let aCaseFailed = !this.evaluateSkillEffectsCaseConditions(aCase);
+        const aCaseFailed = !this.evaluateSkillEffectsCaseConditions(aCase);
         if (aCaseFailed) {
           aPercentile = 0;
           aNumerical = 0;
@@ -780,7 +793,7 @@ new Vue({
       if (b.split("|").length > 2) {
         // bに条件あり、それを満たさない場合0にする
         const bCase = b.split("|")[2];
-        let bCaseFailed = !this.evaluateSkillEffectsCaseConditions(bCase);
+        const bCaseFailed = !this.evaluateSkillEffectsCaseConditions(bCase);
         if (bCaseFailed) {
           bPercentile = 0;
           bNumerical = 0;
@@ -817,6 +830,73 @@ new Vue({
     delComboParams: function(idx) {
       if (this.comboParams.length < 2) return;
       this.comboParams.splice(idx, 1);
+    },
+    // Status Calcs
+    calcAttckPower(idx) {
+      // カタストロフィ
+      let catastrophe = this.applySkillEffects(100, this.getSkillEffect('catastrophe')['catastrophe'], idx);
+      // 裸一貫
+      let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
+      // tyranny 暴君
+      let tyranny = this.applySkillEffects(100, this.getSkillEffect('tyranny')['tyranny'], idx);
+      // lifeOnTheLine 捨て身
+      let lifeOnTheLine = this.applySkillEffects(100, this.getSkillEffect('lifeOnTheLine')['lifeOnTheLine'], idx);
+      // glassCannon 紙一重
+      let glassCannon = this.applySkillEffects(100, this.getSkillEffect('glassCannon')['glassCannon'], idx);
+      // headStart 先制
+      let headStart = this.applySkillEffects(100, this.getSkillEffect('headStart')['headStart'], idx);
+      // powerHungry 修羅
+      let powerHungry = this.applySkillEffects(100, this.getSkillEffect('powerHungry')['powerHungry'], idx);
+      // berserker 窮鼠
+      let berserker = this.applySkillEffects(100, this.getSkillEffect('berserker')['berserker'], idx);
+      // enmity 背水
+      let enmity = this.applySkillEffects(100, this.getSkillEffect('enmity')['enmity'], idx);
+      // stamina 渾身
+      let stamina = this.applySkillEffects(100, this.getSkillEffect('stamina')['stamina'], idx);
+      // alwaysAttackHalf 攻撃力半減
+      let alwaysAttackHalf = this.applySkillEffects(100, this.getSkillEffect('alwaysAttackHalf')['alwaysAttackHalf'], idx);
+      alwaysAttackHalf = alwaysAttackHalf >= 200 ? 0.5 : 1.0;
+      
+      // 倍率全体
+      let power = (
+        100 + (
+          // 裸一貫
+          (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
+        ) + (
+          // カタストロフィ
+          catastrophe - 100
+        ) + (
+          // 暴君
+          tyranny - 100
+        ) + (
+          // 捨て身
+          lifeOnTheLine - 100
+        ) + (
+          // 紙一重
+          glassCannon - 100
+        ) + (
+          // 先制
+          headStart - 100
+        ) + (
+          // 修羅
+          powerHungry - 100
+        ) + (
+          // 窮鼠
+          berserker - 100
+        ) + (
+          // 背水
+          // 100%から0%(1)までの幅で変化すると計算
+          (100 - parseFloat(this.healthRate)) * (enmity - 100) / 100
+        ) + (
+          // 渾身
+          // 最低値は最大値の15%で、100%から25%までの幅で変化すると計算
+          (15 + Math.max(0, (parseFloat(this.healthRate) - 25) / 75) * 85) * (stamina - 100) / 100
+        )
+      ) / 100;
+
+      // 最後に固定値で上がるベースを掛け、フラジャイルドッジの効果を計算
+      power = this.applySkillEffects(parseFloat(this.attackPowerBase) * power, this.getSkillEffect('attackPower')['attackPower'], idx) * alwaysAttackHalf;
+      return power;
     },
     // Damage Calcs
     calcComboRate(idx, dig) {
@@ -1105,69 +1185,7 @@ new Vue({
       return this.applySkillEffects(this.healthBase, this.getSkillEffect('health')['health'], 0);
     },
     attackPower: function() {
-      // 攻撃力を計算
-      const idx = 0;
-      // ベース
-      let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
-      // カタストロフィ
-      let catastrophe = this.applySkillEffects(100, this.getSkillEffect('catastrophe')['catastrophe'], idx);
-      // 裸一貫
-      let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
-      // tyranny 暴君
-      let tyranny = this.applySkillEffects(100, this.getSkillEffect('tyranny')['tyranny'], idx);
-      // lifeOnTheLine 捨て身
-      let lifeOnTheLine = this.applySkillEffects(100, this.getSkillEffect('lifeOnTheLine')['lifeOnTheLine'], idx);
-      // glassCannon 紙一重
-      let glassCannon = this.applySkillEffects(100, this.getSkillEffect('glassCannon')['glassCannon'], idx);
-      // headStart 先制
-      let headStart = this.applySkillEffects(100, this.getSkillEffect('headStart')['headStart'], idx);
-      // powerHungry 修羅
-      let powerHungry = this.applySkillEffects(100, this.getSkillEffect('powerHungry')['powerHungry'], idx);
-      // berserker 窮鼠
-      let berserker = this.applySkillEffects(100, this.getSkillEffect('berserker')['berserker'], idx);
-      // enmity 背水
-      let enmity = this.applySkillEffects(100, this.getSkillEffect('enmity')['enmity'], idx);
-      // stamina 渾身
-      let stamina = this.applySkillEffects(100, this.getSkillEffect('stamina')['stamina'], idx);
-      // alwaysAttackHalf 攻撃力半減
-      let alwaysAttackHalf = this.applySkillEffects(100, this.getSkillEffect('alwaysAttackHalf')['alwaysAttackHalf'], idx);
-      alwaysAttackHalf = alwaysAttackHalf >= 200 ? 0.5 : 1.0;
-      // 全体
-      return this.attackPowerBase * (
-        based + (
-          // 裸一貫
-          (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
-        ) + (
-          // カタストロフィ
-          catastrophe - 100
-        ) + (
-          // 暴君
-          tyranny - 100
-        ) + (
-          // 捨て身
-          lifeOnTheLine - 100
-        ) + (
-          // 紙一重
-          glassCannon - 100
-        ) + (
-          // 先制
-          headStart - 100
-        ) + (
-          // 修羅
-          powerHungry - 100
-        ) + (
-          // 窮鼠
-          berserker - 100
-        ) + (
-          // 背水
-          // 100%から0%(1)までの幅で変化すると計算
-          (100 - this.healthRate) * (enmity - 100) / 100
-        ) + (
-          // 渾身
-          // 最低値は最大値の15%で、100%から25%までの幅で変化すると計算
-          (15 + Math.max(0, (this.healthRate - 25) / 75) * 85) * (stamina - 100) / 100
-        )
-      ) / 100 * alwaysAttackHalf;
+      return this.calcAttckPower(0);
     },
     criticalHitRate: function() {
       // クリティカル率を計算
@@ -1182,69 +1200,7 @@ new Vue({
       return this.applySkillEffects(this.healthBase, this.getSkillEffect('health')['health'], 1);
     },
     attackPowerToBe: function() {
-      // 攻撃力を計算 (ToBeの方のレベルで計算)
-      const idx = 1;
-      // ベース
-      let based = this.applySkillEffects(100, this.getSkillEffect('attackPower')['attackPower'], idx);
-      // カタストロフィ
-      let catastrophe = this.applySkillEffects(100, this.getSkillEffect('catastrophe')['catastrophe'], idx);
-      // 裸一貫
-      let lessIsMore = this.applySkillEffects(100, this.getSkillEffect('lessIsMore')['lessIsMore'], idx);
-      // tyranny 暴君
-      let tyranny = this.applySkillEffects(100, this.getSkillEffect('tyranny')['tyranny'], idx);
-      // lifeOnTheLine 捨て身
-      let lifeOnTheLine = this.applySkillEffects(100, this.getSkillEffect('lifeOnTheLine')['lifeOnTheLine'], idx);
-      // glassCannon 紙一重
-      let glassCannon = this.applySkillEffects(100, this.getSkillEffect('glassCannon')['glassCannon'], idx);
-      // headStart 先制
-      let headStart = this.applySkillEffects(100, this.getSkillEffect('headStart')['headStart'], idx);
-      // powerHungry 修羅
-      let powerHungry = this.applySkillEffects(100, this.getSkillEffect('powerHungry')['powerHungry'], idx);
-      // berserker 窮鼠
-      let berserker = this.applySkillEffects(100, this.getSkillEffect('berserker')['berserker'], idx);
-      // enmity 背水
-      let enmity = this.applySkillEffects(100, this.getSkillEffect('enmity')['enmity'], idx);
-      // stamina 渾身
-      let stamina = this.applySkillEffects(100, this.getSkillEffect('stamina')['stamina'], idx);
-      // alwaysAttackHalf 攻撃力半減
-      let alwaysAttackHalf = this.applySkillEffects(100, this.getSkillEffect('alwaysAttackHalf')['alwaysAttackHalf'], idx);
-      alwaysAttackHalf = alwaysAttackHalf >= 200 ? 0.5 : 1.0;
-      // 全体
-      return this.attackPowerBase * (
-        based + (
-          // 裸一貫
-          (lessIsMore - 100) * (4 - this.playerAbilityEquipped) / 4
-        ) + (
-          // カタストロフィ
-          catastrophe - 100
-        ) + (
-          // 暴君
-          tyranny - 100
-        ) + (
-          // 捨て身
-          lifeOnTheLine - 100
-        ) + (
-          // 紙一重
-          glassCannon - 100
-        ) + (
-          // 先制
-          headStart - 100
-        ) + (
-          // 修羅
-          powerHungry - 100
-        ) + (
-          // 窮鼠
-          berserker - 100
-        ) + (
-          // 背水
-          // 100%から0%(1)までの幅で変化すると計算
-          (100 - this.healthRate) * (enmity - 100) / 100
-        ) + (
-          // 渾身
-          // 最低値は最大値の15%で、100%から25%までの幅で変化すると計算
-          (15 + Math.max(0, (this.healthRate - 25) / 75) * 85) * (stamina - 100) / 100
-        )
-      ) / 100 * alwaysAttackHalf;
+      return this.calcAttckPower(1);
     },
     criticalHitRateToBe: function() {
       // クリティカル率を計算 (ToBeの方のレベルで計算)
