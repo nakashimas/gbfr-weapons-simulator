@@ -2597,7 +2597,7 @@ const SKILL_STATUS = {
   },
   "stoutHeart": {
     // 怯み無効 
-    "skillType": "special",
+    "skillType": "other",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2606,7 +2606,7 @@ const SKILL_STATUS = {
   },
   "crabbyResonance": {
     // カニの共鳴 
-    "skillType": "special",
+    "skillType": "other",
     "minLevel": 1,
     "maxLevel": 45,
     "levels": [
@@ -2659,7 +2659,7 @@ const SKILL_STATUS = {
   },
   "crabvestmentReturns": {
     // カニの恩返し 
-    "skillType": "special",
+    "skillType": "other",
     "minLevel": 15,
     "maxLevel": 15,
     "levels": [
@@ -2686,7 +2686,7 @@ const SKILL_STATUS = {
   },
   "alpha": {
     // アルファ・コード
-    "skillType": "other",
+    "skillType": "special",
     "minLevel": 11,
     "maxLevel": 30,
     "levels": [
@@ -2714,7 +2714,7 @@ const SKILL_STATUS = {
   },
   "beta": {
     // ベータ・コード
-    "skillType": "other",
+    "skillType": "special",
     "minLevel": 11,
     "maxLevel": 30,
     "levels": [
@@ -2742,7 +2742,7 @@ const SKILL_STATUS = {
   },
   "gamma": {
     // ガンマ・コード
-    "skillType": "other",
+    "skillType": "special",
     "minLevel": 11,
     "maxLevel": 30,
     "levels": [
