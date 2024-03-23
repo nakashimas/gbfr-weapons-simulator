@@ -2746,26 +2746,26 @@ const SKILL_STATUS = {
     "minLevel": 11,
     "maxLevel": 30,
     "levels": [
-      {"sbaDamageCap": "0|11%", "gamma": "0|0%"}, // 11
-      {"sbaDamageCap": "0|12%", "gamma": "0|0%"}, // 12
-      {"sbaDamageCap": "0|13%", "gamma": "0|0%"}, // 13
-      {"sbaDamageCap": "0|14%", "gamma": "0|0%"}, // 14
-      {"sbaDamageCap": "0|15%", "gamma": "0|0%"}, // 15
-      {"sbaDamageCap": "0|16%", "gamma": "0|0%"}, // 16
-      {"sbaDamageCap": "0|17%", "gamma": "0|0%"}, // 17
-      {"sbaDamageCap": "0|18%", "gamma": "0|0%"}, // 18
-      {"sbaDamageCap": "0|19%", "gamma": "0|0%"}, // 19
-      {"sbaDamageCap": "0|20%", "gamma": "0|0%"}, // 20
-      {"sbaDamageCap": "0|21%", "gamma": "0|0%"}, // 21
-      {"sbaDamageCap": "0|22%", "gamma": "0|0%"}, // 22
-      {"sbaDamageCap": "0|23%", "gamma": "0|0%"}, // 23
-      {"sbaDamageCap": "0|24%", "gamma": "0|0%"}, // 24
-      {"sbaDamageCap": "0|25%", "gamma": "0|0%"}, // 25
-      {"sbaDamageCap": "0|26%", "gamma": "0|0%"}, // 26
-      {"sbaDamageCap": "0|27%", "gamma": "0|0%"}, // 27
-      {"sbaDamageCap": "0|28%", "gamma": "0|0%"}, // 28
-      {"sbaDamageCap": "0|29%", "gamma": "0|0%"}, // 29
-      {"sbaDamageCap": "0|30%", "gamma": "50000|0%"}, // 30
+      {"damageCap": "0|11%", "gamma": "0|0%"}, // 11
+      {"damageCap": "0|12%", "gamma": "0|0%"}, // 12
+      {"damageCap": "0|13%", "gamma": "0|0%"}, // 13
+      {"damageCap": "0|14%", "gamma": "0|0%"}, // 14
+      {"damageCap": "0|15%", "gamma": "0|0%"}, // 15
+      {"damageCap": "0|16%", "gamma": "0|0%"}, // 16
+      {"damageCap": "0|17%", "gamma": "0|0%"}, // 17
+      {"damageCap": "0|18%", "gamma": "0|0%"}, // 18
+      {"damageCap": "0|19%", "gamma": "0|0%"}, // 19
+      {"damageCap": "0|20%", "gamma": "0|0%"}, // 20
+      {"damageCap": "0|21%", "gamma": "0|0%"}, // 21
+      {"damageCap": "0|22%", "gamma": "0|0%"}, // 22
+      {"damageCap": "0|23%", "gamma": "0|0%"}, // 23
+      {"damageCap": "0|24%", "gamma": "0|0%"}, // 24
+      {"damageCap": "0|25%", "gamma": "0|0%"}, // 25
+      {"damageCap": "0|26%", "gamma": "0|0%"}, // 26
+      {"damageCap": "0|27%", "gamma": "0|0%"}, // 27
+      {"damageCap": "0|28%", "gamma": "0|0%"}, // 28
+      {"damageCap": "0|29%", "gamma": "0|0%"}, // 29
+      {"damageCap": "0|30%", "gamma": "50000|0%"}, // 30
     ]
   },
   // キャラクター専用ジーン
